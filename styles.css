@@ -46,5 +46,5 @@ body {
 }
 
 .a, a:visited {
-  background-color: #F56D73;
+  background-color: #F56D73 !important;
 }
