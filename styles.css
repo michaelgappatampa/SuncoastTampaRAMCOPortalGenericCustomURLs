@@ -29,6 +29,8 @@ body {
 }
 #sponsorBlock {
   background-color: #F56D73;
+  color: white;
+  font-weight: bold;
 }
 
 .large-setupnotice p {
@@ -42,7 +44,7 @@ body {
     background-color: #F56D73 !important;
 }
 #top-line {
-  background: coral !important;
+  background: #4FAEC3 !important;
 }
 nav ul.menu li.active > a:hover {
   background-color: #707070;
