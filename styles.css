@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 .large-notice {
   font-size : 18px;
 }
@@ -11,6 +11,7 @@ body {
     color: #666;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
+  font-family: 'Poppins', sans-serif;
 }
 #login {
   background-color: #F6F6F6;
@@ -18,3 +19,10 @@ body {
 #FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton{
   background-color: #F56D73;
 }
+#navigation {
+  background-color: #F56D73;
+}
+.active {
+  background-color: #F56D73;
+}
+
