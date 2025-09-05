@@ -1,4 +1,8 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Header */
+
 .large-notice {
   font-size : 18px;
 }
@@ -16,6 +20,7 @@ body {
 #login {
   background-color: #F6F6F6;
 }
+
 #FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton{
   background-color: #F56D73;
 }
@@ -25,4 +30,14 @@ body {
 .active {
   background-color: #F56D73;
 }
+#sponsorBlock {
+  background-color: #F56D73;
+}
 
+.large-setupnotice p {
+  font-size: 18pt;
+  font-weight: lighter;
+  font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  color: #21465F;
+  line-height: 30px;
+}
