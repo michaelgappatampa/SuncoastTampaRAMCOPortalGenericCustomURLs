@@ -10,7 +10,7 @@
     font-size: 18pt;
     font-weight: lighter;
     font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
-    color: white;
+    color: white !important;
     line-height: 30px;
 }
 body {
