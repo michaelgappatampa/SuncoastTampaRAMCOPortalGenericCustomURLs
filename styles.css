@@ -55,10 +55,3 @@ nav ul.menu li.active {
   background-color: #707070;
 }
 
-ul.menu li.active > a:hover {
-  background-color: #F56D73 !important;
-}
-.active {
-    background-color: #F56D73 !important;
-}
-
