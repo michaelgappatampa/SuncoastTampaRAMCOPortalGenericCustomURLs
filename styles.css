@@ -44,3 +44,7 @@ body {
 .button.color {
   background-color: #F56D73;
 }
+
+.a, a:visited {
+  background-color: #F56D73;
+}
