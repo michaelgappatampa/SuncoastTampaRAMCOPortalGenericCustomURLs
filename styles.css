@@ -44,7 +44,7 @@ body {
 #top-line {
   background-color: coral;
 }
-na ul.menu li.active > a:hover {
+nav ul.menu li.active > a:hover {
   background-color: #707070;
 }
 
