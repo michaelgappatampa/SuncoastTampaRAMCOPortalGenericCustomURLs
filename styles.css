@@ -6,6 +6,13 @@
 .large-notice {
   font-size : 18px;
 }
+.large-setupnotice p {
+    font-size: 18pt;
+    font-weight: lighter;
+    font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    color: white;
+    line-height: 30px;
+}
 body {
   background-image: url('https://cdn.jsdelivr.net/gh/michaelgappatampa/SuncoastTampaRAMCOPortalGenericCustomURLs@main/Source%20Image%20-%20Full%20Size%20-%20No%20Crop%20(2).jpg');
   background-repeat: no-repeat;   /* prevents tiling */
