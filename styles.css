@@ -52,3 +52,20 @@ nav ul.menu li.active {
   background-color: #707070;
 }
 
+.button.gray, .highlight.gray
+Specificity: (0,2,0)
+ {
+    background: #4FAEC3;
+}
+
+#FormContentPlaceHolder_A1{
+  background-color: #4FAEC3;
+}
+#FormContentPlaceHolder_A1:hover{
+  background-color: #707070;
+}
+
+#footer-bottom{
+  background-color: #F56D73;
+  color: white;
+}
