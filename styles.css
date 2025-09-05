@@ -12,3 +12,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
 }
+#login {
+  background-color: #F6F6F6;
+}
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton{
+  background-color: #F56D73;
+}
