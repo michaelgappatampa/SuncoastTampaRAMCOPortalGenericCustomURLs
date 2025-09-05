@@ -2,3 +2,9 @@
 .large-notice {
   font-size : 18px;
 }
+#wrapper {
+  background-image: url('Star_Logo_horizontal_b(1).png');
+  background-repeat: no-repeat;   /* prevents tiling */
+  background-size: cover;        /* makes image cover entire area */
+  background-position: center;   /* centers the image */
+}
