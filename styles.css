@@ -77,3 +77,23 @@ Specificity: (0,2,0)
 #sub-menu ul li a {
     color: white;
 }
+
+/* Navigation */
+select.selectnav {
+  background-color: #707070;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif; /* custom font if added */
+  appearance: none;        /* removes native arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select.selectnav option {
+  background: #fff;
+  color: #333;
+}
+
