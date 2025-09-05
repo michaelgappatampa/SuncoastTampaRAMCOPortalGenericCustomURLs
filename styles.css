@@ -39,14 +39,6 @@ body {
   color: white;
   font-weight: bold;
 }
-
-.large-setupnotice p {
-  font-size: 18pt;
-  font-weight: lighter;
-  font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
-  color: #21465F;
-  line-height: 30px;
-}
 .button.color {
     background-color: #F56D73 !important;
 }
