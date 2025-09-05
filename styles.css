@@ -42,7 +42,7 @@ body {
     background-color: #F56D73 !important;
 }
 #top-line {
-  background-color: coral;
+  background: coral !important;
 }
 nav ul.menu li.active > a:hover {
   background-color: #707070;
