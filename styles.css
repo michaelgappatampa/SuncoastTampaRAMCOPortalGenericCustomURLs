@@ -47,11 +47,8 @@ body {
 #top-line {
   background-color: coral;
 }
-ul.menu li.active > a:hover {
-  background-color: #F56D73 !important;
-}
-.active {
-    background-color: #F56D73 !important;
+na ul.menu li.active > a:hover {
+  background-color: #707070;
 }
 
 nav ul.menu li.active {
