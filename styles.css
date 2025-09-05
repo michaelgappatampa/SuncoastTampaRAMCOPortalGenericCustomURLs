@@ -41,3 +41,6 @@ body {
   color: #21465F;
   line-height: 30px;
 }
+.button.color {
+  background-color: #F56D73;
+}
