@@ -48,3 +48,13 @@ body {
 .a, a:visited {
   background-color: #F56D73 !important;
 }
+
+.menu>li>a {
+    background-color: #F56D73 ! !important;
+}
+.menu>li>a:hover {
+    background-color: #707070 ! !important;
+}
+#top-line {
+  background-color: coral;
+}
