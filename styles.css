@@ -2,7 +2,7 @@
 .large-notice {
   font-size : 18px;
 }
-#wrapper {
+body {
   background-image: url('https://cdn.jsdelivr.net/gh/michaelgappatampa/SuncoastTampaRAMCOPortalGenericCustomURLs@main/Source%20Image%20-%20Full%20Size%20-%20No%20Crop%20(2).jpg');
   background-repeat: no-repeat;   /* prevents tiling */
   background-size: cover;        /* makes image cover entire area */
