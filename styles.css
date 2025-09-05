@@ -72,3 +72,7 @@ Specificity: (0,2,0)
 .copyright {
     color: white;
 }
+
+#sub-menu ul li a {
+    color: white;
+}
