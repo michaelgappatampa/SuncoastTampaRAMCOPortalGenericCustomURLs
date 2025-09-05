@@ -49,11 +49,22 @@ body {
 nav ul.menu li.active > a:hover {
   background-color: #F56D73;
 }
-
+nav .menu>li>a:hover {
+    border-right: 1px solid #F56D73;
+}
 nav ul.menu li.active {
   background-color: #F56D73;
 }
 
+.menu>li:hover>a {
+    background-color: #F56D73;
+    border-left: none;
+    padding-left: 20px;
+    border-right: 1px solid #707070;
+}
+.menu>li>a {
+    border-right: 1px solid #F56D73;
+}
 .button.gray, .highlight.gray
 Specificity: (0,2,0)
  {
@@ -78,6 +89,8 @@ Specificity: (0,2,0)
 #sub-menu ul li a {
     color: white;
 }
-
+.menu>li>a {
+    border-right: 1px solid #F56D73;
+}
 /* Navigation */
 /* Make the select look like a styled button */
