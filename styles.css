@@ -24,6 +24,14 @@ body {
     -webkit-text-size-adjust: 100%;
   font-family: 'Poppins', sans-serif;
 }
+td.my-cell span,
+td.my-cell font {
+  all: revert;       /* reset back to UA (browser) defaults, not author CSS */
+  color: inherit;    /* follow td color */
+  font: inherit;     /* follow td font */
+}
+
+
 #login {
   background-color: #F6F6F6;
 }
@@ -43,6 +51,8 @@ body {
 .button.color {
     background-color: #21465F !important;
 }
+
+
 #top-line {
   background: #F56D73 !important;
 }
