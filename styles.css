@@ -63,7 +63,7 @@ nav ul.menu li.active {
     border-right: 1px solid #707070;
 }
 .menu>li>a {
-    border-right: 1px solid #21465F;
+    border-right: 1px solid #21465F !important; 
 }
 .button.gray, .highlight.gray
 Specificity: (0,2,0)
