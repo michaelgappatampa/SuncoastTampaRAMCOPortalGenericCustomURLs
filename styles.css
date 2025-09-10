@@ -29,7 +29,7 @@ body {
 }
 
 #FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton{
-  background-color: #4FAEC3;
+  background-color: #21465F;
   
 }
 #navigation {
@@ -41,7 +41,7 @@ body {
   font-weight: bold;
 }
 .button.color {
-    background-color: #F56D73 !important;
+    background-color: #21465F !important;
 }
 #top-line {
   background: #F56D73 !important;
