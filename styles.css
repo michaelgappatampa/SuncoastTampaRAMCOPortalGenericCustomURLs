@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 /* Header */
 
+#header{
+  padding-bottom: 10px;
+}
+span#LoggedInUserLabel {
+    color: black;
+}
 .large-notice {
   font-size : 18px;
 }
