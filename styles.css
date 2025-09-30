@@ -5,7 +5,7 @@
 
 header#header {
   background-color: white !important;
-  padding-bottom: 10px;
+  padding-bottom: 0px !important;
 }
 .social-icons {
     color: black !important;
