@@ -1,45 +1,45 @@
-/* Base: Hide hamburger and show normal nav on wide screens */
-#nav-toggle-placeholder {
-  display: none;
-}
-
-/* Mobile Styles */
 @media screen and (max-width: 958px) {
-  /* Hide the full menu initially */
-  #TabMenu {
-    display: none;
-    flex-direction: column;
-    background-color: #2c3e50; /* Adjust to match your site */
-    padding: 10px;
+  /* Force hide the menu initially */
+  nav#navigation ul#TabMenu {
+    display: none !important;
+    flex-direction: column !important;
+    background-color: #2c3e50 !important;
+    padding: 10px !important;
+    position: relative !important;
+    z-index: 999 !important;
   }
 
-  /* Create a pseudo-button for the hamburger */
-  #navigation::before {
+  /* Add a pseudo "hamburger" button using ::before */
+  nav#navigation::before {
     content: "☰ Menu";
-    display: block;
-    background: #e74c3c;
-    color: white;
-    padding: 12px 16px;
-    cursor: pointer;
-    font-size: 18px;
-    text-align: left;
+    display: block !important;
+    background: #e74c3c !important;
+    color: white !important;
+    padding: 12px 16px !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    text-align: left !important;
   }
 
-  /* Show menu when hovered (on desktop) */
-  #navigation:hover #TabMenu,
-  #navigation:focus-within #TabMenu {
-    display: flex;
+  /* Show the menu on hover or focus */
+  nav#navigation:hover ul#TabMenu,
+  nav#navigation:focus-within ul#TabMenu {
+    display: flex !important;
   }
 
-  /* Optional: style the menu items for vertical display */
-  #TabMenu li {
-    margin: 8px 0;
+  /* Style list items for vertical display */
+  nav#navigation ul#TabMenu > li {
+    margin: 10px 0 !important;
   }
 
-  #TabMenu li ul {
-    position: static;
+  /* Fix submenu styles for mobile */
+  nav#navigation ul#TabMenu li ul {
+    position: static !important;
+    background: none !important;
+    padding-left: 15px !important;
   }
 }
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
