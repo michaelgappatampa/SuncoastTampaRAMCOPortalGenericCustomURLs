@@ -2,17 +2,14 @@
 
 /* === Responsive Navigation (Hamburger Menu) === */
 @media screen and (max-width: 958px) {
-  nav#navigation {
-    position: relative !important;
-  }
-
-  /* Hide the menu initially and set transition styles */
-  nav#navigation ul#TabMenu {
+  /* Strong specificity to target the nav menu */
+  html body nav#navigation ul#TabMenu {
     max-height: 0 !important;
     overflow: hidden !important;
+    display: flex !important;
     flex-direction: column !important;
     background-color: #2c3e50 !important;
-    padding: 0 10px !important;
+    padding: 0px 10px !important;
     position: relative !important;
     z-index: 999 !important;
     opacity: 0 !important;
@@ -20,11 +17,27 @@
     transition: max-height 0.4s ease, opacity 0.4s ease !important;
   }
 
-  /* Add a pseudo "hamburger" button using ::before */
-  nav#navigation::before {
+  /* Force submenu positioning for mobile */
+  html body nav#navigation ul#TabMenu li ul {
+    position: static !important;
+    background: none !important;
+    padding-left: 15px !important;
+  }
+
+  /* Show nav menu when hovered or focused */
+  html body nav#navigation:hover ul#TabMenu,
+  html body nav#navigation:focus-within ul#TabMenu {
+    max-height: 1000px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    padding: 10px !important;
+  }
+
+  /* Hamburger button (pseudo) */
+  html body nav#navigation::before {
     content: "☰ Menu";
     display: block !important;
-    background: #21465F !important;
+    background-color: #21465F !important;
     color: white !important;
     padding: 12px 16px !important;
     font-size: 18px !important;
@@ -34,25 +47,9 @@
     border-bottom: 1px solid #F56D73 !important;
   }
 
-  /* Show the menu when nav is hovered or focused */
-  nav#navigation:hover ul#TabMenu,
-  nav#navigation:focus-within ul#TabMenu {
-    max-height: 1000px !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    padding: 10px !important;
-  }
-
-  /* Style list items vertically */
-  nav#navigation ul#TabMenu > li {
+  /* Vertical menu item spacing */
+  html body nav#navigation ul#TabMenu > li {
     margin: 10px 0 !important;
-  }
-
-  /* Fix submenu display for mobile */
-  nav#navigation ul#TabMenu li ul {
-    position: static !important;
-    background: none !important;
-    padding-left: 15px !important;
   }
 }
 
