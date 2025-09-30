@@ -4,10 +4,11 @@
 /* Header */
 
 #header{
+  background-color: white !important;
   padding-bottom: 10px;
 }
-span#LoggedInUserLabel {
-    color: black;
+.social-icons {
+    color: black !important;
 }
 .large-notice {
   font-size : 18px;
