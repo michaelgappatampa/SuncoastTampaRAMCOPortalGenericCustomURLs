@@ -1,53 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* === Responsive Navigation: Mobile Styles === */
 @media screen and (max-width: 958px) {
-  /* Menu container hidden by default */
-  html body nav#navigation ul#TabMenu {
-    max-height: 0 !important;
-    overflow: hidden !important;
-    display: flex !important;
+  /* Force hide the menu initially */
+  nav#navigation ul#TabMenu {
+    display: none !important;
     flex-direction: column !important;
     background-color: #2c3e50 !important;
-    padding: 0 10px !important;
+    padding: 10px !important;
     position: relative !important;
     z-index: 999 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease !important;
   }
 
-  /* Show menu when .menu-open class is added by JS */
-  html body nav#navigation.menu-open ul#TabMenu {
-    max-height: 1000px !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    padding: 10px !important;
-  }
-
-  /* Hamburger button using ::before */
-  html body nav#navigation::before {
+  /* Add a pseudo "hamburger" button using ::before */
+  nav#navigation::before {
     content: "☰ Menu";
     display: block !important;
-    background-color: #21465F !important;
+    background: #21465F !important;
     color: white !important;
     padding: 12px 16px !important;
     font-size: 18px !important;
     cursor: pointer !important;
     text-align: left !important;
-    font-family: 'Poppins', sans-serif !important;
-    border-bottom: 1px solid #F56D73 !important;
   }
 
-  /* Stack menu items vertically */
-  html body nav#navigation ul#TabMenu > li {
+  /* Show the menu on hover or focus */
+  nav#navigation:hover ul#TabMenu,
+  nav#navigation:focus-within ul#TabMenu {
+    display: flex !important;
+  }
+
+  /* Style list items for vertical display */
+  nav#navigation ul#TabMenu > li {
     margin: 10px 0 !important;
   }
 
-  /* Submenu tweaks for mobile */
-  html body nav#navigation ul#TabMenu li ul {
+  /* Fix submenu styles for mobile */
+  nav#navigation ul#TabMenu li ul {
     position: static !important;
     background: none !important;
     padding-left: 15px !important;
   }
 }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Header */
+
+header#header {
+  background-color: white !important;
+  padding-bottom: 0px !important;
+}
+.social-icons {
+    color: black !important;
+}
+.large-notice {
+  font-size : 18px;
+}
+.large-setupnotice p {
+    font-size: 18pt;
+    font-weight: lighter;
+    font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    color: white !important;
+    line-height: 30px;
+}
+body {
+  background-image: url('https://cdn.jsdelivr.net/gh/michaelgappatampa/SuncoastTampaRAMCOPortalGenericCustomURLs@main/Source%20Image%20-%20Full%20Size%20-%20No%20Crop%20(2).jpg');
+  background-repeat: no-repeat;   /* prevents tiling */
+  background-size: cover;        /* makes image cover entire area */
+  background-position: center;   /* centers the image */
+      font-size: 13px;
+    color: #666;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+td.my-cell span,
+td.my-cell font {
+  all: revert;       /* reset back to UA (browser) defaults, not author CSS */
+  color: inherit;    /* follow td color */
+  font: inherit;     /* follow td font */
+}
+
+
+#login {
+  background-color: #F6F6F6;
+}
+
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton{
+  background-color: #21465F;
+  
+}
+#navigation {
+  background-color: #21465F;
+}
+#sponsorBlock {
+  background-color: #F56D73;
+  color: white;
+  font-weight: bold;
+}
+.button.color {
+    background-color: #21465F !important;
+}
+
+
+#top-line {
+  background: #F56D73 !important;
+}
+nav ul.menu li.active > a:hover {
+  background-color: #F56D73;
+}
+nav .menu>li>a:hover {
+    border-right: 1px solid #F56D73;
+}
+nav ul.menu li.active {
+  background-color: #F56D73;
+}
+
+.menu>li:hover>a {
+    background-color: #F56D73;
+    border-left: none;
+    padding-left: 20px;
+    border-right: 1px solid #707070;
+}
+.menu>li>a {
+    border-right: 1px solid #21465F !important; 
+}
+.button.gray, .highlight.gray
+Specificity: (0,2,0)
+ {
+    background: #4FAEC3;
+}
+
+#FormContentPlaceHolder_A1{
+  background-color: #21465F;
+}
+#FormContentPlaceHolder_A1:hover{
+  background-color: #21465F;
+}
+
+#footer-bottom{
+  background-color: #21465F;
+  color: white;
+}
+.copyright {
+    color: white;
+}
+
+#sub-menu ul li a {
+    color: white;
+}
+.menu>li>a {
+    border-right: 1px solid #F56D73;
+}
+/* Navigation */
+/* Make the select look like a styled button */
