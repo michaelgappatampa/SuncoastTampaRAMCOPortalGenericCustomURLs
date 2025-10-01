@@ -1,6 +1,6 @@
 (function () {
   // Check if current hostname is NOT "greatertampaisv.ramcoams.org"
-  if (window.location.hostname !== 'greatertampacrm.ramcoams.org') {
+  if (window.location.hostname !== 'greatertampaisv.ramcoams.org') {
     document.addEventListener('DOMContentLoaded', function () {
       var se = document.createElement('script');
       se.type = 'text/javascript';
