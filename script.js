@@ -4,27 +4,18 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Create the div element
       var widgetDiv = document.createElement('div');
-      widgetDiv.id = 'snapengage-chat-widget';
+      widgetDiv.id = 'bf-revz-widget-3146340650';
 
-      // Create the SnapEngage script element
-      var se = document.createElement('script');
-      se.type = 'text/javascript';
-      se.async = true;
-      se.src = 'https://storage.googleapis.com/code.snapengage.com/js/1d363fa7-55f0-42fd-8d24-c20df812db52.js';
-
-      var done = false;
-      se.onload = se.onreadystatechange = function () {
-        if (!done && (!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete')) {
-          done = true;
-          // Optional: Run SnapEngage API calls after it loads
-          // Example: SnapEngage.allowChatSound(true);
-        }
-      };
+      // Create the script element for Birdeye
+      var script = document.createElement('script');
+      script.defer = true;
+      script.type = 'text/javascript';
+      script.src = 'https://birdeye.com/embed/v6/126335/1/3146340650/e011d59fe64f8badee44eb0fc418975a6d3a68f83e09826a?emailRequired=1';
 
       // Append elements to <footer> if it exists, otherwise <body>
       var target = document.querySelector('footer') || document.body;
+      target.appendChild(script);
       target.appendChild(widgetDiv);
-      target.appendChild(se);
     });
   }
 })();
