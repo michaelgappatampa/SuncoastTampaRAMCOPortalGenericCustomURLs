@@ -1,7 +1,12 @@
 (function () {
-  // Check if current hostname is NOT "greatertampaisv.ramcoams.org"
+  // Only run if not on the specified hostname
   if (window.location.hostname !== 'greatertampaisv.ramcoams.org') {
     document.addEventListener('DOMContentLoaded', function () {
+      // Create the div element
+      var widgetDiv = document.createElement('div');
+      widgetDiv.id = 'snapengage-chat-widget';
+
+      // Create the SnapEngage script element
       var se = document.createElement('script');
       se.type = 'text/javascript';
       se.async = true;
@@ -11,13 +16,14 @@
       se.onload = se.onreadystatechange = function () {
         if (!done && (!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete')) {
           done = true;
-          // ✅ Optional SnapEngage API calls after script is loaded:
+          // Optional: Run SnapEngage API calls after it loads
           // Example: SnapEngage.allowChatSound(true);
         }
       };
 
-      // ✅ Append script to <footer> if it exists, otherwise to <body>
+      // Append elements to <footer> if it exists, otherwise <body>
       var target = document.querySelector('footer') || document.body;
+      target.appendChild(widgetDiv);
       target.appendChild(se);
     });
   }
