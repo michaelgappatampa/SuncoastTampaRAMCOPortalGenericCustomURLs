@@ -290,6 +290,537 @@ nav ul.menu li.active > a:focus,
 
 
 /* =========================================================
+   ORDERS PAGE — MODERN TABLE LAYOUT (TABLET + DESKTOP)
+   Mobile card rules below 768px remain unchanged.
+   ========================================================= */
+
+@media screen and (min-width: 768px) {
+    /* ---------- Orders page heading and renewal notice ---------- */
+
+    body:has(#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid)
+    #pageTitleDiv {
+        margin: 0 0 14px !important;
+        color: var(--star-navy) !important;
+        font-size: 30px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid)
+    #intrdouctionTextPageTextDiv {
+        position: relative !important;
+        margin: 0 0 6px !important;
+        padding: 20px 22px 20px 26px !important;
+        border: 1px solid rgba(245, 109, 115, 0.28) !important;
+        border-left: 5px solid var(--star-coral) !important;
+        border-radius: 14px !important;
+        background: linear-gradient(135deg, var(--star-coral-light), #ffffff 72%) !important;
+        box-shadow: 0 8px 24px rgba(23, 53, 72, 0.06) !important;
+        box-sizing: border-box !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid)
+    #intrdouctionTextPageTextDiv h2 {
+        margin: 0 0 8px !important;
+        padding: 0 !important;
+        color: var(--star-navy) !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid)
+    #intrdouctionTextPageTextDiv h2 strong {
+        color: var(--star-navy) !important;
+        font-weight: 700 !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid)
+    #intrdouctionTextPageTextDiv > div:not(:last-child) {
+        display: none !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid)
+    #intrdouctionTextPageTextDiv > div:last-child {
+        margin: 0 !important;
+        color: var(--star-text-muted) !important;
+        font-size: 13px !important;
+        line-height: 1.65 !important;
+    }
+
+    /* ---------- Main orders content ---------- */
+
+    #FormContentPlaceHolder_Panel {
+        padding-bottom: 36px !important;
+    }
+
+    #FormContentPlaceHolder_Panel .editForm {
+        padding-top: 4px !important;
+    }
+
+    #FormContentPlaceHolder_Panel h3.desc {
+        margin: 38px 0 5px !important;
+        color: var(--star-coral-dark) !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.09em !important;
+        text-transform: uppercase !important;
+    }
+
+    #FormContentPlaceHolder_Panel .section {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+    }
+
+    #FormContentPlaceHolder_Panel .section h3 {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin: 0 0 16px !important;
+        padding: 0 !important;
+        color: var(--star-navy) !important;
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.015em !important;
+    }
+
+    #FormContentPlaceHolder_Panel .section h3::before {
+        content: "" !important;
+        flex: 0 0 10px !important;
+        width: 10px !important;
+        height: 10px !important;
+        border-radius: 50% !important;
+        background: var(--star-coral) !important;
+        box-shadow: 0 0 0 5px rgba(245, 109, 115, 0.13) !important;
+    }
+
+    #FormContentPlaceHolder_Panel .section h3::after {
+        content: "" !important;
+        flex: 1 1 auto !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, var(--star-border), transparent) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGridFormAjaxGridUpdatePanelli,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGridFormAjaxGridUpdatePanelli {
+        margin-bottom: 38px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child {
+        width: 100% !important;
+        max-width: 100% !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 16px !important;
+        background: var(--star-surface) !important;
+        box-shadow: var(--star-card-shadow) !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child {
+        border-top: 4px solid var(--star-coral) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child {
+        border-top: 4px solid var(--star-navy-light) !important;
+    }
+
+    /* ---------- Shared desktop table styling ---------- */
+
+    table#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid,
+    table#FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border: 0 !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        background: var(--star-surface) !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th {
+        padding: 15px 14px !important;
+        border: 0 !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+        background: linear-gradient(135deg, var(--star-navy), var(--star-navy-dark)) !important;
+        color: #ffffff !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        line-height: 1.35 !important;
+        letter-spacing: 0.055em !important;
+        text-align: left !important;
+        text-transform: uppercase !important;
+        vertical-align: middle !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:last-child,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:last-child {
+        border-right: 0 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td {
+        padding: 16px 14px !important;
+        border: 0 !important;
+        border-bottom: 1px solid var(--star-border) !important;
+        background: #ffffff !important;
+        color: var(--star-text) !important;
+        font-size: 13px !important;
+        line-height: 1.55 !important;
+        vertical-align: middle !important;
+        box-sizing: border-box !important;
+        transition: background-color 0.15s ease !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle:hover > td,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle:hover > td {
+        background: #f8fbfc !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(3),
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(4),
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(6),
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(7),
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(2),
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(3) {
+        white-space: nowrap !important;
+    }
+
+    /* ---------- Open orders column sizing ---------- */
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:nth-child(1) {
+        width: 118px !important;
+        font-size: 0 !important;
+        text-align: center !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:nth-child(1)::after {
+        content: "Action" !important;
+        font-size: 11px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:nth-child(1) input {
+        display: none !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:nth-child(3) {
+        width: 112px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:nth-child(4) {
+        width: 92px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:nth-child(6) {
+        width: 128px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.HeaderStyle > th:nth-child(7) {
+        width: 104px !important;
+    }
+
+    /* ---------- Order-name links ---------- */
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(2) a,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) a {
+        color: var(--star-navy) !important;
+        font-weight: 600 !important;
+        line-height: 1.5 !important;
+        text-decoration: none !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(2) a:hover,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(2) a:focus,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) a:hover,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) a:focus {
+        color: var(--star-coral-dark) !important;
+        text-decoration: underline !important;
+        text-decoration-thickness: 2px !important;
+        text-underline-offset: 3px !important;
+    }
+
+    /* ---------- Primary action button ---------- */
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) {
+        text-align: center !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) > a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: auto !important;
+        min-width: 92px !important;
+        min-height: 38px !important;
+        padding: 8px 14px !important;
+        border: 1px solid var(--star-coral) !important;
+        border-radius: 8px !important;
+        background: linear-gradient(135deg, var(--star-coral), #f77f84) !important;
+        color: #ffffff !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        box-shadow: 0 5px 14px rgba(245, 109, 115, 0.24) !important;
+        box-sizing: border-box !important;
+        transition: transform 0.1s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) > a:hover,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) > a:focus {
+        border-color: var(--star-coral-dark) !important;
+        background: linear-gradient(135deg, var(--star-coral-dark), var(--star-coral)) !important;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        box-shadow: 0 8px 18px rgba(245, 109, 115, 0.32) !important;
+        transform: translateY(-1px) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(1) > a:focus-visible {
+        outline: 3px solid rgba(245, 109, 115, 0.28) !important;
+        outline-offset: 3px !important;
+    }
+
+    /* ---------- Status badge ---------- */
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(6) {
+        text-align: center !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(6) a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: auto !important;
+        min-height: 32px !important;
+        padding: 6px 11px !important;
+        border: 1px solid rgba(33, 70, 95, 0.18) !important;
+        border-radius: 999px !important;
+        background: rgba(33, 70, 95, 0.07) !important;
+        color: var(--star-navy) !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(6) a:hover,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(6) a:focus {
+        border-color: rgba(33, 70, 95, 0.32) !important;
+        background: rgba(33, 70, 95, 0.12) !important;
+        color: var(--star-navy-dark) !important;
+        text-decoration: none !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(4),
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(7),
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.RowStyle > td:nth-child(3) {
+        color: var(--star-navy-dark) !important;
+        font-weight: 600 !important;
+    }
+
+    /* ---------- Open-order totals panel ---------- */
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.FooterStyle > td {
+        padding: 0 !important;
+        border: 0 !important;
+        background: var(--star-surface-soft) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.FooterStyle > td > table {
+        width: 100% !important;
+        margin: 0 !important;
+        border: 0 !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        background: transparent !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.FooterStyle > td > table > tbody > tr > td:first-child {
+        display: none !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.FooterStyle > td > table > tbody > tr > td:last-child {
+        width: 100% !important;
+        padding: 18px 20px !important;
+        border: 0 !important;
+        background: transparent !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.FooterStyle > td > table > tbody > tr > td:last-child > table {
+        width: auto !important;
+        min-width: 330px !important;
+        margin-left: auto !important;
+        border: 1px solid var(--star-border) !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        border-radius: 11px !important;
+        background: #ffffff !important;
+        box-shadow: 0 6px 18px rgba(23, 53, 72, 0.07) !important;
+        overflow: hidden !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid
+    > tbody > tr.FooterStyle .TableSubHeader {
+        padding: 8px 11px !important;
+        border: 0 !important;
+        background: #ffffff !important;
+        color: var(--star-text) !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        white-space: nowrap !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid_orderBalanceRow
+    > td {
+        border-top: 1px solid var(--star-border) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid_balanceLabel {
+        color: var(--star-coral-dark) !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+    }
+
+    /* ---------- Paid-order pager ---------- */
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.PagerStyle > td {
+        padding: 14px 18px !important;
+        border: 0 !important;
+        background: var(--star-surface-soft) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.PagerStyle > td > table {
+        width: 100% !important;
+        border: 0 !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        background: transparent !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    > tbody > tr.PagerStyle > td > table > tbody > tr > td {
+        padding: 4px !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: var(--star-text-muted) !important;
+        font-size: 12px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    .PagerStyle a,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    .PagerStyle > td > table > tbody > tr > td:first-child > span {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 34px !important;
+        height: 34px !important;
+        padding: 0 9px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 7px !important;
+        background: #ffffff !important;
+        color: var(--star-navy) !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    .PagerStyle > td > table > tbody > tr > td:first-child > span {
+        border-color: var(--star-coral) !important;
+        background: var(--star-coral) !important;
+        color: #ffffff !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid
+    .PagerStyle select {
+        min-height: 38px !important;
+        margin-left: 6px !important;
+        padding: 7px 30px 7px 10px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 7px !important;
+        background: #ffffff !important;
+        color: var(--star-text) !important;
+        font: 600 12px/1.3 'Poppins', sans-serif !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Keep table columns readable on tablet-sized viewports. */
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    table#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid {
+        min-width: 860px !important;
+    }
+
+    table#FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid {
+        min-width: 640px !important;
+    }
+}
+
+
+
+/* =========================================================
    5. TABLET NORMALIZATION
    Keep tables as tables from 768px through 959px.
    ========================================================= */
