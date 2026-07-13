@@ -1,156 +1,1504 @@
-@media screen and (max-width: 958px) {
-  /* Force hide the menu initially */
-  nav#navigation ul#TabMenu {
-    display: none !important;
-    flex-direction: column !important;
-    background-color: #2c3e50 !important; /* Main menu background */
-    padding: 10px !important;
-    position: relative !important;
-    z-index: 999 !important;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-  /* Add a pseudo "hamburger" button using ::before */
-  nav#navigation::before {
-    content: "☰ Menu";
-    display: block !important;
-    background: #21465F !important;
-    color: white !important;
-    padding: 12px 16px !important;
-    font-size: 18px !important;
-    cursor: pointer !important;
-    text-align: left !important;
-  }
+/*
+ * Suncoast Tampa Association of REALTORS®
+ * RAMCO Portal — Central Theme Stylesheet
+ *
+ * Replace the repository's existing styles.css with this file.
+ * Page-specific modules below only activate when their matching RAMCO IDs exist.
+ */
 
-  /* Show the menu on hover or focus */
-  nav#navigation:hover ul#TabMenu,
-  nav#navigation:focus-within ul#TabMenu {
-    display: flex !important;
-  }
+/* =========================================================
+   1. SHARED STAR DESIGN TOKENS
+   ========================================================= */
 
-  /* Style list items for vertical display */
-  nav#navigation ul#TabMenu > li {
-    margin: 10px 0 !important;
-  }
+:root {
+    --star-coral: #f56d73;
+    --star-coral-dark: #dc5961;
+    --star-coral-light: #fff1f2;
 
-  /* ✅ Fix submenu styles for mobile with white background */
-  nav#navigation ul#TabMenu li ul {
-    position: static !important;
-    padding-left: 15px !important;
-    background-color: white !important;
-  }
+    --star-navy: #21465f;
+    --star-navy-dark: #173548;
+    --star-navy-light: #4faec3;
+
+    --star-text: #25333d;
+    --star-text-muted: #64727c;
+
+    --star-border: #e4e9ec;
+    --star-surface: #ffffff;
+    --star-surface-soft: #f7f9fa;
+
+    --star-card-shadow:
+        0 12px 30px rgba(23, 53, 72, 0.09),
+        0 3px 8px rgba(23, 53, 72, 0.06);
+
+    --star-dialog-shadow:
+        0 24px 70px rgba(23, 53, 72, 0.24),
+        0 8px 24px rgba(23, 53, 72, 0.12);
 }
 
 
+/* =========================================================
+   2. GLOBAL PORTAL THEME
+   ========================================================= */
 
+body {
+    background-image: url('https://cdn.jsdelivr.net/gh/michaelgappatampa/SuncoastTampaRAMCOPortalGenericCustomURLs@main/Source%20Image%20-%20Full%20Size%20-%20No%20Crop%20(2).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-/* Header */
+    color: #666666;
+    font-family: 'Poppins', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
 
 header#header {
-  background-color: white !important;
-  padding-bottom: 0px !important;
+    padding-bottom: 0 !important;
+    background: var(--star-surface) !important;
 }
+
 .social-icons {
-    color: black !important;
+    color: #111111 !important;
 }
+
 .large-notice {
-  font-size : 18px;
+    font-size: 18px;
 }
+
 .large-setupnotice p {
+    color: #ffffff !important;
+    font-family: 'Poppins', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
     font-size: 18pt;
-    font-weight: lighter;
-    font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
-    color: white !important;
-    line-height: 30px;
+    font-weight: 400;
+    line-height: 1.65;
 }
-body {
-  background-image: url('https://cdn.jsdelivr.net/gh/michaelgappatampa/SuncoastTampaRAMCOPortalGenericCustomURLs@main/Source%20Image%20-%20Full%20Size%20-%20No%20Crop%20(2).jpg');
-  background-repeat: no-repeat;   /* prevents tiling */
-  background-size: cover;        /* makes image cover entire area */
-  background-position: center;   /* centers the image */
-      font-size: 13px;
-    color: #666;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-  font-family: 'Poppins', sans-serif;
-}
+
+/* Preserve legacy table-cell typography where RAMCO requires it. */
 td.my-cell span,
 td.my-cell font {
-  all: revert;       /* reset back to UA (browser) defaults, not author CSS */
-  color: inherit;    /* follow td color */
-  font: inherit;     /* follow td font */
+    all: revert;
+    color: inherit;
+    font: inherit;
 }
-
 
 #login {
-  background-color: #F6F6F6;
+    background: #f6f6f6;
 }
 
-#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton{
-  background-color: #21465F;
-  
-}
-#navigation {
-  background-color: #21465F;
-}
 #sponsorBlock {
-  background-color: #F56D73;
-  color: white;
-  font-weight: bold;
+    background: var(--star-coral);
+    color: #ffffff;
+    font-weight: 700;
 }
-.button.color {
-    background-color: #21465F !important;
-}
-
 
 #top-line {
-  background: #F56D73 !important;
-}
-nav ul.menu li.active > a:hover {
-  background-color: #F56D73;
-}
-nav .menu>li>a:hover {
-    border-right: 1px solid #F56D73;
-}
-nav ul.menu li.active {
-  background-color: #F56D73;
+    background: var(--star-coral) !important;
 }
 
-.menu>li:hover>a {
-    background-color: #F56D73;
-    border-left: none;
-    padding-left: 20px;
-    border-right: 1px solid #707070;
-}
-.menu>li>a {
-    border-right: 1px solid #21465F !important; 
-}
-.button.gray, .highlight.gray
-Specificity: (0,2,0)
- {
-    background: #4FAEC3;
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton,
+#FormContentPlaceHolder_A1,
+.button.color {
+    border-color: var(--star-navy) !important;
+    background: var(--star-navy) !important;
+    color: #ffffff !important;
 }
 
-#FormContentPlaceHolder_A1{
-  background-color: #21465F;
-}
-#FormContentPlaceHolder_A1:hover{
-  background-color: #21465F;
-}
-
-#footer-bottom{
-  background-color: #21465F;
-  color: white;
-}
-.copyright {
-    color: white;
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton:hover,
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton:focus,
+#FormContentPlaceHolder_A1:hover,
+#FormContentPlaceHolder_A1:focus,
+.button.color:hover,
+.button.color:focus {
+    border-color: var(--star-navy-dark) !important;
+    background: var(--star-navy-dark) !important;
+    color: #ffffff !important;
 }
 
+.button.gray,
+.highlight.gray {
+    background: var(--star-navy-light) !important;
+    color: #ffffff !important;
+}
+
+#footer-bottom {
+    background: var(--star-navy) !important;
+    color: #ffffff !important;
+}
+
+#footer-bottom .copyright,
+#footer-bottom .copyright *,
+#sub-menu ul li,
 #sub-menu ul li a {
-    color: white;
+    color: #ffffff !important;
 }
-.menu>li>a {
-    border-right: 1px solid #F56D73;
+
+
+/* =========================================================
+   3. PRIMARY NAVIGATION
+   ========================================================= */
+
+#navigation {
+    background: var(--star-navy) !important;
 }
-/* Navigation */
-/* Make the select look like a styled button */
+
+.menu > li > a {
+    border-right: 1px solid rgba(245, 109, 115, 0.8) !important;
+}
+
+nav ul.menu li.active,
+nav ul.menu li.active > a,
+nav ul.menu li.active > a:hover,
+nav ul.menu li.active > a:focus,
+.menu > li:hover > a,
+.menu > li:focus-within > a {
+    background: var(--star-coral) !important;
+    color: #ffffff !important;
+}
+
+.menu > li:hover > a,
+.menu > li:focus-within > a {
+    border-left: 0 !important;
+    border-right-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+/* Style select navigation generated by the existing selectnav plug-in. */
+#navigation select,
+#navigation .selectnav {
+    min-height: 44px;
+    padding: 9px 38px 9px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    background-color: var(--star-navy-dark);
+    color: #ffffff;
+    font: 600 14px/1.3 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   4. MOBILE NAVIGATION
+   CSS-only fallback for the legacy menu.
+   ========================================================= */
+
+@media screen and (max-width: 958px) {
+    nav#navigation {
+        position: relative !important;
+        border-radius: 10px !important;
+        box-shadow: 0 8px 22px rgba(23, 53, 72, 0.18) !important;
+        overflow: visible !important;
+    }
+
+    nav#navigation ul#TabMenu {
+        position: relative !important;
+        z-index: 999 !important;
+
+        display: none !important;
+        flex-direction: column !important;
+
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 8px !important;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
+        border-radius: 0 0 10px 10px !important;
+        background: var(--star-navy-dark) !important;
+
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation::before {
+        content: "☰  Menu";
+
+        display: block !important;
+        padding: 13px 16px !important;
+
+        border-radius: 10px !important;
+        background: linear-gradient(135deg, var(--star-navy), var(--star-navy-dark)) !important;
+        color: #ffffff !important;
+
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.01em !important;
+        text-align: left !important;
+
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation:hover::before,
+    nav#navigation:focus-within::before {
+        border-radius: 10px 10px 0 0 !important;
+        background: var(--star-navy-dark) !important;
+    }
+
+    nav#navigation:hover ul#TabMenu,
+    nav#navigation:focus-within ul#TabMenu {
+        display: flex !important;
+    }
+
+    nav#navigation ul#TabMenu > li {
+        width: 100% !important;
+        margin: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    nav#navigation ul#TabMenu > li:last-child {
+        border-bottom: 0 !important;
+    }
+
+    nav#navigation ul#TabMenu > li > a {
+        display: block !important;
+        width: 100% !important;
+        padding: 12px 13px !important;
+        border: 0 !important;
+        border-radius: 7px !important;
+        color: #ffffff !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation ul#TabMenu li ul {
+        position: static !important;
+        width: 100% !important;
+        margin: 0 0 8px !important;
+        padding: 6px !important;
+        border: 0 !important;
+        border-radius: 8px !important;
+        background: #ffffff !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation ul#TabMenu li ul a {
+        display: block !important;
+        padding: 10px 12px !important;
+        border-radius: 6px !important;
+        color: var(--star-navy) !important;
+    }
+
+    nav#navigation ul#TabMenu li ul a:hover,
+    nav#navigation ul#TabMenu li ul a:focus {
+        background: var(--star-coral-light) !important;
+        color: var(--star-navy-dark) !important;
+    }
+}
+
+
+/* =========================================================
+   5. TABLET NORMALIZATION
+   Keep tables as tables from 768px through 959px.
+   ========================================================= */
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    #content > .container.floated,
+    #content .grid,
+    #content .grid > .row,
+    #updatePanel,
+    #formPanel,
+    #SingleColumnLayout,
+    #SingleColumnLayout > .sixteen,
+    #FormContentPlaceHolder_PanelDiv,
+    #FormContentPlaceHolder_Panel,
+    #FormContentPlaceHolder_Panel .editForm,
+    #FormContentPlaceHolder_Panel .row,
+    #FormContentPlaceHolder_Panel .span10,
+    #FormContentPlaceHolder_panelDiv,
+    #FormContentPlaceHolder_panel,
+    #FormContentPlaceHolder_panel .editForm,
+    #FormContentPlaceHolder_panel .row,
+    #FormContentPlaceHolder_panel .span10 {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        float: none !important;
+        box-sizing: border-box !important;
+    }
+
+    #content > .container.floated {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child,
+    #FormContentPlaceHolder_panel_GridFormAjaxGridUpdatePanel > div:first-child {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+/* =========================================================
+   6. SHARED MOBILE LAYOUT NORMALIZATION
+   The max-device-width clause helps pages that lack a viewport meta tag.
+   ========================================================= */
+
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+    html,
+    body,
+    #body,
+    #form,
+    #wrapper,
+    #content,
+    #content > .container,
+    #content > .container.floated,
+    #content .grid,
+    #content .grid > .row,
+    #updatePanel,
+    #formPanel,
+    #SingleColumnLayout,
+    #SingleColumnLayout > .sixteen,
+    #SingleColumnLayout > .sixteen.floated,
+    #FormContentPlaceHolder_PanelDiv,
+    #FormContentPlaceHolder_Panel,
+    #FormContentPlaceHolder_Panel .editForm,
+    #FormContentPlaceHolder_Panel .row,
+    #FormContentPlaceHolder_Panel .span10,
+    #FormContentPlaceHolder_panelDiv,
+    #FormContentPlaceHolder_panel,
+    #FormContentPlaceHolder_panel .editForm,
+    #FormContentPlaceHolder_panel .row,
+    #FormContentPlaceHolder_panel .span10 {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        float: none !important;
+        box-sizing: border-box !important;
+    }
+
+    #content > .container,
+    #content > .container.floated {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    #content,
+    #content > .container,
+    #content > .container.floated,
+    #content .grid,
+    #content .grid > .row,
+    #updatePanel,
+    #formPanel {
+        overflow-x: visible !important;
+    }
+
+    #FormContentPlaceHolder_Panel h3.desc,
+    #FormContentPlaceHolder_panel h3.desc {
+        margin: 28px 0 8px !important;
+        color: var(--star-navy) !important;
+        font-size: 22px !important;
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.01em !important;
+    }
+
+    #FormContentPlaceHolder_Panel .section h3,
+    #FormContentPlaceHolder_panel .section h3 {
+        margin: 0 0 16px !important;
+        color: var(--star-text) !important;
+        font-size: 17px !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+}
+
+
+/* =========================================================
+   7. ORDERS PAGE — MOBILE CARDS
+   ========================================================= */
+
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGridFormAjaxGridUpdatePanelli,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGridFormAjaxGridUpdatePanelli,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGridFormAjaxGridUpdatePanel,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGridFormAjaxGridUpdatePanel,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGridFormAjaxGridUpdatePanel > div:first-child {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    table#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid,
+    table#FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid,
+    table#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody,
+    table#FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-sizing: border-box !important;
+    }
+
+    table#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.HeaderStyle,
+    table#FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.HeaderStyle,
+    table#FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.HeaderStyle > th,
+    table#FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.HeaderStyle > th {
+        display: none !important;
+    }
+
+    /* ---------- Open-order cards ---------- */
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.RowStyle {
+        position: relative !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 0 20px !important;
+        padding: 22px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 16px !important;
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 75%, #fbfcfd 100%) !important;
+        box-shadow: var(--star-card-shadow) !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.RowStyle::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 4px !important;
+        background: linear-gradient(90deg, var(--star-coral), #ff9a9f) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.RowStyle:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 75%, #fbfcfd 100%) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.RowStyle > td {
+        display: block !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 13px 0 !important;
+        border: 0 !important;
+        border-bottom: 1px solid var(--star-border) !important;
+        color: var(--star-text) !important;
+        text-align: left !important;
+        white-space: normal !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Order */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(2) {
+        order: 1;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        padding-top: 4px !important;
+        color: var(--star-navy) !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+    }
+
+    /* Order date */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(3) {
+        order: 2;
+        flex: 0 0 50% !important;
+        width: 50% !important;
+        padding-right: 16px !important;
+    }
+
+    /* Total */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(4) {
+        order: 3;
+        flex: 0 0 50% !important;
+        width: 50% !important;
+        padding-left: 16px !important;
+    }
+
+    /* Source */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(5) {
+        order: 4;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+    }
+
+    /* Balance */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(7) {
+        order: 5;
+        flex: 0 0 50% !important;
+        width: 50% !important;
+        padding-right: 16px !important;
+    }
+
+    /* Status */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(6) {
+        order: 6;
+        flex: 0 0 50% !important;
+        width: 50% !important;
+        padding-left: 16px !important;
+    }
+
+    /* Primary action */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) {
+        order: 7;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        margin-top: 8px !important;
+        padding: 18px 0 0 !important;
+        border-bottom: 0 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td::before {
+        display: block !important;
+        margin-bottom: 6px !important;
+        color: var(--star-text-muted) !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.065em !important;
+        text-transform: uppercase !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(1)::before { content: "Available Action"; }
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(2)::before { content: "Order"; }
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(3)::before { content: "Order Date"; }
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(4)::before { content: "Total"; }
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(5)::before { content: "Source"; }
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(6)::before { content: "Current Status"; }
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(7)::before { content: "Balance"; }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(2) a {
+        color: var(--star-navy) !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+        text-decoration: none !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(2) a:hover,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(2) a:focus {
+        color: var(--star-coral-dark) !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+    }
+
+    /* Status pill */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(6) a {
+        display: inline-flex !important;
+        align-items: center !important;
+        width: auto !important;
+        min-height: 32px !important;
+        padding: 6px 12px !important;
+        border: 1px solid rgba(33, 70, 95, 0.18) !important;
+        border-radius: 999px !important;
+        background: rgba(33, 70, 95, 0.07) !important;
+        color: var(--star-navy) !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Coral primary button */
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) > a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 50px !important;
+        padding: 14px 20px !important;
+        border: 1px solid var(--star-coral) !important;
+        border-radius: 10px !important;
+        background: linear-gradient(135deg, var(--star-coral), #f77f84) !important;
+        color: #ffffff !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        line-height: 20px !important;
+        letter-spacing: 0.01em !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        text-shadow: none !important;
+        box-shadow: 0 8px 18px rgba(245, 109, 115, 0.26) !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            box-shadow 0.15s ease,
+            transform 0.08s ease !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) > a:hover {
+        border-color: var(--star-coral-dark) !important;
+        background: linear-gradient(135deg, var(--star-coral-dark), var(--star-coral)) !important;
+        color: #ffffff !important;
+        box-shadow: 0 10px 24px rgba(245, 109, 115, 0.34) !important;
+        transform: translateY(-1px) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) > a:focus {
+        border-color: var(--star-coral-dark) !important;
+        color: #ffffff !important;
+        outline: 3px solid rgba(245, 109, 115, 0.28) !important;
+        outline-offset: 3px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) > a:active {
+        box-shadow: 0 4px 10px rgba(245, 109, 115, 0.24) !important;
+        transform: translateY(1px) !important;
+    }
+
+    /* ---------- Paid-order cards ---------- */
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.RowStyle {
+        position: relative !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 0 18px !important;
+        padding: 20px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 16px !important;
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 75%, #fbfcfd 100%) !important;
+        box-shadow: var(--star-card-shadow) !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.RowStyle::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 4px !important;
+        background: linear-gradient(90deg, var(--star-navy), var(--star-navy-light)) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.RowStyle:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 75%, #fbfcfd 100%) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.RowStyle > td {
+        display: block !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 13px 0 !important;
+        border: 0 !important;
+        border-bottom: 1px solid var(--star-border) !important;
+        color: var(--star-text) !important;
+        text-align: left !important;
+        white-space: normal !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) {
+        order: 1;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        padding-top: 4px !important;
+        color: var(--star-navy) !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(2) {
+        order: 2;
+        flex: 0 0 50% !important;
+        width: 50% !important;
+        padding-right: 16px !important;
+        border-bottom: 0 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(3) {
+        order: 3;
+        flex: 0 0 50% !important;
+        width: 50% !important;
+        padding-left: 16px !important;
+        border-bottom: 0 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td::before {
+        display: block !important;
+        margin-bottom: 6px !important;
+        color: var(--star-text-muted) !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.065em !important;
+        text-transform: uppercase !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(1)::before { content: "Order"; }
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(2)::before { content: "Date Paid"; }
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(3)::before { content: "Total"; }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) a {
+        color: var(--star-navy) !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) a:hover,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) a:focus {
+        color: var(--star-coral-dark) !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle td *,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle td * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+    }
+
+    /* ---------- Orders footer and pager ---------- */
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.FooterStyle,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.FooterStyle > td,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.PagerStyle,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.PagerStyle > td {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid .FooterStyle > td,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid .PagerStyle > td {
+        margin-top: 4px !important;
+        padding: 16px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 14px !important;
+        background: var(--star-surface-soft) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid .FooterStyle table,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid .PagerStyle table {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid .FooterStyle .TableSubHeader {
+        padding: 7px 4px !important;
+        border: 0 !important;
+        color: var(--star-text) !important;
+        font-size: 14px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid .PagerStyle select {
+        min-height: 40px !important;
+        padding: 7px 30px 7px 10px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 7px !important;
+        background: #ffffff !important;
+        color: var(--star-text) !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   8. COMMITTEES PAGE — MOBILE CARDS
+   Exact grid ID from the committee page.
+   ========================================================= */
+
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+    #FormContentPlaceHolder_panel_GridFormAjaxGridUpdatePanelli,
+    #FormContentPlaceHolder_panel_GridFormAjaxGridUpdatePanel,
+    #FormContentPlaceHolder_panel_GridFormAjaxGridUpdatePanel > div:first-child {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    table#FormContentPlaceHolder_panel_Grid,
+    table#FormContentPlaceHolder_panel_Grid > tbody {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-sizing: border-box !important;
+    }
+
+    table#FormContentPlaceHolder_panel_Grid > tbody > tr.HeaderStyle,
+    table#FormContentPlaceHolder_panel_Grid > tbody > tr.HeaderStyle > th {
+        display: none !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid > tbody > tr.RowStyle {
+        position: relative !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 0 18px !important;
+        padding: 20px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 16px !important;
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 78%, #fbfcfd 100%) !important;
+        box-shadow: var(--star-card-shadow) !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid > tbody > tr.RowStyle::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 4px !important;
+        background: linear-gradient(90deg, var(--star-navy), var(--star-navy-light)) !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid > tbody > tr.RowStyle:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 78%, #fbfcfd 100%) !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid > tbody > tr.RowStyle > td {
+        display: block !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 13px 0 !important;
+        border: 0 !important;
+        border-bottom: 1px solid var(--star-border) !important;
+        color: var(--star-text) !important;
+        text-align: left !important;
+        white-space: normal !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Committee name */
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(1) {
+        order: 1;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        padding-top: 4px !important;
+        color: var(--star-navy) !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+    }
+
+    /* Description is blank in the supplied markup, so omit it on mobile. */
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(2) {
+        display: none !important;
+    }
+
+    /* Status */
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(3) {
+        order: 2;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        border-bottom: 0 !important;
+    }
+
+    /* Volunteer and nomination stay hidden unless RAMCO outputs an action. */
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(4),
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(5) {
+        display: none !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(4):has(a[href], button, input, select, textarea),
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(5):has(a[href], button, input, select, textarea) {
+        display: block !important;
+        order: 3;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        padding-top: 16px !important;
+        border-bottom: 0 !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td::before {
+        display: block !important;
+        margin-bottom: 6px !important;
+        color: var(--star-text-muted) !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        letter-spacing: 0.065em !important;
+        text-transform: uppercase !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(1)::before { content: "Committee"; }
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(3)::before { content: "Status"; }
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(4)::before { content: "Volunteer"; }
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(5)::before { content: "Nomination"; }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(1) a {
+        color: var(--star-navy) !important;
+        font-weight: 700 !important;
+        line-height: 1.45 !important;
+        text-decoration: none !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(1) a:hover,
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(1) a:focus {
+        color: var(--star-coral-dark) !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(3) .labeldesc {
+        display: inline-flex !important;
+        align-items: center !important;
+        min-height: 32px !important;
+        padding: 6px 12px !important;
+        border: 1px solid rgba(33, 70, 95, 0.18) !important;
+        border-radius: 999px !important;
+        background: rgba(33, 70, 95, 0.07) !important;
+        color: var(--star-navy) !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(4) a,
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle > td:nth-child(5) a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        padding: 12px 16px !important;
+        border: 1px solid var(--star-coral) !important;
+        border-radius: 9px !important;
+        background: linear-gradient(135deg, var(--star-coral), #f77f84) !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid tr.RowStyle td * {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+    }
+
+    /* Committee pager */
+    #FormContentPlaceHolder_panel_Grid > tbody > tr.PagerStyle,
+    #FormContentPlaceHolder_panel_Grid > tbody > tr.PagerStyle > td {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid .PagerStyle > td {
+        margin-top: 4px !important;
+        padding: 16px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 14px !important;
+        background: var(--star-surface-soft) !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid .PagerStyle > td > table {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid .PagerStyle > td > table > tbody,
+    #FormContentPlaceHolder_panel_Grid .PagerStyle > td > table > tbody > tr {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 8px !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid .PagerStyle > td > table > tbody > tr > td {
+        display: block !important;
+        width: auto !important;
+        padding: 4px !important;
+        border: 0 !important;
+        white-space: normal !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid .PagerStyle a,
+    #FormContentPlaceHolder_panel_Grid .PagerStyle > td > table > tbody > tr > td:first-child span {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 36px !important;
+        height: 36px !important;
+        padding: 0 10px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 7px !important;
+        background: #ffffff !important;
+        color: var(--star-navy) !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid .PagerStyle > td > table > tbody > tr > td:first-child span {
+        border-color: var(--star-coral) !important;
+        background: var(--star-coral) !important;
+        color: #ffffff !important;
+    }
+
+    #FormContentPlaceHolder_panel_Grid .PagerStyle select {
+        min-height: 40px !important;
+        padding: 7px 30px 7px 10px !important;
+        border: 1px solid var(--star-border) !important;
+        border-radius: 7px !important;
+        background: #ffffff !important;
+        color: var(--star-text) !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* =========================================================
+   9. VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 520px),
+       screen and (max-device-width: 520px) {
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid > tbody > tr.RowStyle,
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid > tbody > tr.RowStyle,
+    #FormContentPlaceHolder_panel_Grid > tbody > tr.RowStyle {
+        padding: 18px !important;
+        border-radius: 14px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(3),
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(4),
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(6),
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(7),
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(2),
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(3) {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(6),
+    #FormContentPlaceHolder_Panel_FulfilledOrders_salesOrderGrid tr.RowStyle > td:nth-child(3) {
+        border-bottom: 0 !important;
+    }
+}
+
+
+/* =========================================================
+   10. SESSION-EXPIRATION DIALOG
+   These rules are intentionally outside the mobile media query.
+   ========================================================= */
+
+.ui-widget-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, rgba(23, 53, 72, 0.78), rgba(33, 70, 95, 0.62)) !important;
+    opacity: 1 !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 1000000 !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: calc(100% - 32px) !important;
+    min-width: 0 !important;
+    max-width: 500px !important;
+    height: auto !important;
+    max-height: calc(100vh - 32px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 18px !important;
+    background: var(--star-surface) !important;
+    box-shadow: var(--star-dialog-shadow) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    z-index: 1000001 !important;
+    animation: starDialogOpen 0.22s ease-out both;
+}
+
+@keyframes starDialogOpen {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -47%) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-resizable-handle {
+    display: none !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 60px !important;
+    padding: 12px 16px 12px 20px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: linear-gradient(135deg, var(--star-navy), var(--star-navy-dark)) !important;
+    box-sizing: border-box !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar::before {
+    content: "Session Expiring" !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.01em !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, var(--star-coral), #ff9a9f) !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-title {
+    display: none !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    font-size: 0 !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close::before,
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 16px !important;
+    height: 2px !important;
+    border-radius: 999px !important;
+    background: #ffffff !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close::before {
+    transform: rotate(45deg) !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close::after {
+    transform: rotate(-45deg) !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close .ui-icon,
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close .ui-button-icon,
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close .ui-button-icon-space {
+    display: none !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close:hover {
+    border-color: rgba(255, 255, 255, 0.75) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: rotate(4deg) !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close:focus {
+    border-color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    outline: 3px solid rgba(245, 109, 115, 0.5) !important;
+    outline-offset: 3px !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] #timeout.ui-dialog-content {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: calc(100vh - 220px) !important;
+    margin: 0 !important;
+    padding: 34px 34px 28px !important;
+    border: 0 !important;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 72%, #fbfcfd 100%) !important;
+    color: var(--star-text) !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] #timeout.ui-dialog-content::before {
+    content: "!" !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 54px !important;
+    height: 54px !important;
+    margin: 0 0 20px !important;
+    border-radius: 50% !important;
+    background: var(--star-coral-light) !important;
+    color: var(--star-coral) !important;
+    font-size: 30px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] #timeout h1 {
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+    color: var(--star-navy) !important;
+    font-family: inherit !important;
+    font-size: clamp(26px, 5vw, 34px) !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] #timeout p {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--star-text-muted) !important;
+    font-family: inherit !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px 34px 30px !important;
+    border: 0 !important;
+    border-top: 1px solid var(--star-border) !important;
+    background: var(--star-surface-soft) !important;
+    box-sizing: border-box !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane .ui-dialog-buttonset {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    margin: 0 !important;
+    float: none !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 13px 22px !important;
+    border: 1px solid var(--star-coral) !important;
+    border-radius: 9px !important;
+    background: linear-gradient(135deg, var(--star-coral), #f77f84) !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center !important;
+    text-shadow: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 18px rgba(245, 109, 115, 0.26) !important;
+    box-sizing: border-box !important;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.08s ease !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button:hover {
+    border-color: var(--star-coral-dark) !important;
+    background: linear-gradient(135deg, var(--star-coral-dark), var(--star-coral)) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 24px rgba(245, 109, 115, 0.34) !important;
+    transform: translateY(-1px) !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button:focus {
+    border-color: var(--star-coral-dark) !important;
+    color: #ffffff !important;
+    outline: 3px solid rgba(245, 109, 115, 0.28) !important;
+    outline-offset: 3px !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button:active {
+    box-shadow: 0 4px 10px rgba(245, 109, 115, 0.24) !important;
+    transform: translateY(1px) !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button .ui-button-text {
+    padding: 0 !important;
+}
+
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button .ui-icon,
+.ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button .ui-button-icon-space {
+    display: none !important;
+}
+
+
+/* =========================================================
+   11. SESSION DIALOG — MOBILE ADJUSTMENTS
+   ========================================================= */
+
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+    .ui-dialog[aria-describedby="timeout"] {
+        width: calc(100% - 28px) !important;
+        max-width: 460px !important;
+        border-radius: 16px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] #timeout.ui-dialog-content {
+        padding: 30px 28px 24px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane {
+        padding: 18px 28px 26px !important;
+    }
+}
+
+@media screen and (max-width: 520px),
+       screen and (max-device-width: 520px) {
+    .ui-dialog[aria-describedby="timeout"] {
+        width: calc(100% - 20px) !important;
+        max-height: calc(100vh - 20px) !important;
+        border-radius: 14px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar {
+        min-height: 54px !important;
+        padding: 9px 12px 9px 16px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar::before {
+        font-size: 15px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] #timeout.ui-dialog-content {
+        max-height: calc(100vh - 190px) !important;
+        padding: 25px 22px 21px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] #timeout.ui-dialog-content::before {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 17px !important;
+        font-size: 26px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] #timeout h1 {
+        margin-bottom: 10px !important;
+        font-size: 26px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] #timeout p {
+        font-size: 14px !important;
+        line-height: 1.55 !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane {
+        padding: 16px 22px 22px !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button {
+        min-height: 48px !important;
+        padding: 12px 18px !important;
+        border-radius: 8px !important;
+    }
+}
+
+
+/* =========================================================
+   12. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .ui-dialog[aria-describedby="timeout"] {
+        animation: none !important;
+    }
+
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-titlebar-close,
+    .ui-dialog[aria-describedby="timeout"] .ui-dialog-buttonpane button,
+    #FormContentPlaceHolder_Panel_OpenOrders_salesOrderGrid tr.RowStyle > td:nth-child(1) > a {
+        transition: none !important;
+    }
+}
