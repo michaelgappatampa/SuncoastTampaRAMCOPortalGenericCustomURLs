@@ -2043,8 +2043,8 @@ nav ul.menu li.active > a:focus,
 
    Key behavior:
    - CSS automatically applies to elements added later by JS.
-   - #topRow stays visible when alerts or notices are present.
-   - Script-only validation wrappers do not create blank space.
+   - #topRow stays visible while visible alerts keep system styling.
+   - The script-only validation wrapper does not create blank space.
    - Event styles apply only to cards containing recent-blog.
    - JS-created sponsorship/history cards receive their own style.
    - Inline padding, floats, margins, and widths are overridden.
@@ -2119,156 +2119,17 @@ body:has(#TwoColumnHomePageLayout) #pageTitleDiv {
 }
 
 /* =========================================================
-   TOP-ROW ALERTS AND JS-GENERATED VALIDATION CONTENT
+   TOP ROW — PRESERVE SERVER/JAVASCRIPT ALERT STYLING
+
+   The visible member-benefit alert and Strategic Partner
+   banners intentionally keep the RAMCO/system styling.
+   Only the script-only validation item is removed from layout;
+   its script still executes normally.
    ========================================================= */
 
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection ul,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection li {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection > ul {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 12px !important;
-    width: 100% !important;
-}
-
-/* A script is stored inside the first validation item. Keep it in the
-   document, but remove list spacing around its nonvisual wrappers. */
 #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script) {
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    line-height: 0 !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script)
-span,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script)
-ul,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script)
-li {
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    line-height: 0 !important;
-}
-
-/* Business Journal/member-benefit notice. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has([data-teams]) {
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    padding: 18px 20px 18px 56px !important;
-    border: 1px solid rgba(79, 174, 195, 0.28) !important;
-    border-radius: 14px !important;
-    background: linear-gradient(135deg, #f7fcfd 0%, #ffffff 100%) !important;
-    color: var(--star-text, #25333d) !important;
-    box-shadow: 0 8px 22px rgba(23, 53, 72, 0.07) !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has([data-teams])::before {
-    content: "i" !important;
-    position: absolute !important;
-    top: 17px !important;
-    left: 18px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 26px !important;
-    height: 26px !important;
-    border-radius: 50% !important;
-    background: var(--star-navy-light, #4faec3) !important;
-    color: #ffffff !important;
-    font-size: 15px !important;
-    font-weight: 800 !important;
-    font-style: normal !important;
-    line-height: 1 !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams],
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams] span,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams] center {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    color: inherit !important;
-    font-family: inherit !important;
-    font-size: inherit !important;
-    white-space: normal !important;
-    text-align: left !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams] p {
-    margin: 0 !important;
-    padding: 0 !important;
-    color: var(--star-text, #25333d) !important;
-    font-family: inherit !important;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-    white-space: normal !important;
-}
-
-/* Premier Strategic Partner banner. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.premier-member-banner {
-    position: relative !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    gap: 6px 12px !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 17px 20px !important;
-    border: 1px solid rgba(245, 109, 115, 0.3) !important;
-    border-left: 5px solid var(--star-coral, #f56d73) !important;
-    border-radius: 14px !important;
-    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%) !important;
-    color: var(--star-text, #25333d) !important;
-    box-shadow: 0 8px 22px rgba(23, 53, 72, 0.07) !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.premier-member-banner strong {
-    color: var(--star-coral-dark, #dc5961) !important;
-    font-size: 14px !important;
-    font-weight: 800 !important;
-    line-height: 1.4 !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.premier-member-banner span {
-    color: var(--star-text-muted, #64727c) !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
+> ul > li:has(script):not(:has([data-teams])) {
+    display: none !important;
 }
 
 /* =========================================================
@@ -3093,29 +2954,6 @@ button.button.small.color:focus-within {
     #TwoColumnHomePageLayout #rightMiddleContent > .large-notice {
         padding: 19px !important;
         border-radius: 15px !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    > ul > li:has([data-teams]) {
-        padding: 16px 16px 16px 50px !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner {
-        display: block !important;
-        padding: 15px 16px !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner strong,
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner span {
-        display: block !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner strong {
-        margin-bottom: 4px !important;
     }
 
     #TwoColumnHomePageLayout #leftMiddleContent
