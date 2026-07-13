@@ -3457,3 +3457,332 @@ button.button.small.color:focus-within {
         transform: none !important;
     }
 }
+
+/* =========================================================
+   HOME PAGE — DYNAMIC ACTION BUTTON CORRECTION
+   Matches the Update Your Profile button
+   ========================================================= */
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+.star-card-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    width: 100% !important;
+    gap: 14px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+.star-card-action-group {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+.star-card-copy {
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+}
+
+/*
+ * Generated action links:
+ * - Sponsorship Opportunity Calendar
+ * - Class Sponsorship History
+ * - Event Sponsorship History
+ */
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-action-link.button.small.color,
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-card-action {
+    position: relative !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 215px !important;
+    min-height: 43px !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 11px 18px !important;
+
+    float: none !important;
+
+    border: 1px solid #21465f !important;
+    border-radius: 7px !important;
+
+    background: #21465f !important;
+    background-image: none !important;
+
+    color: #ffffff !important;
+
+    font-family: inherit !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+    letter-spacing: 0 !important;
+
+    text-align: center !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    white-space: normal !important;
+
+    box-shadow:
+        0 8px 18px rgba(33, 70, 95, 0.22) !important;
+
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.08s ease !important;
+}
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-action-link.button.small.color:hover,
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-action-link.button.small.color:focus,
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-card-action:hover,
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-card-action:focus {
+    border-color: #173548 !important;
+
+    background: #173548 !important;
+    background-image: none !important;
+
+    color: #ffffff !important;
+    text-decoration: none !important;
+
+    box-shadow:
+        0 10px 22px rgba(33, 70, 95, 0.3) !important;
+
+    transform: translateY(-1px) !important;
+}
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-action-link.button.small.color:focus-visible,
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-card-action:focus-visible {
+    outline: 3px solid rgba(245, 109, 115, 0.42) !important;
+    outline-offset: 3px !important;
+}
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-action-link.button.small.color:active,
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .star-action-card
+a.star-card-action:active {
+    box-shadow:
+        0 4px 10px rgba(33, 70, 95, 0.2) !important;
+
+    transform: translateY(1px) !important;
+}
+
+
+/* =========================================================
+   FALLBACK FOR THE ORIGINAL JAVASCRIPT MARKUP
+
+   The original script generated:
+   <button class="button small color">
+       <a href="...">...</a>
+   </button>
+   ========================================================= */
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .large-notice
+button.button.small.color:has(
+    > a[href*="Sponsorship"]
+),
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .large-notice
+button.button.small.color:has(
+    > a[href*="/Education/History/MyClasses.aspx"]
+),
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .large-notice
+button.button.small.color:has(
+    > a[href*="/Meetings/MyMeetings.aspx"]
+) {
+    display: inline-block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
+    box-shadow: none !important;
+}
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .large-notice
+button.button.small.color
+> a[href*="Sponsorship"],
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .large-notice
+button.button.small.color
+> a[href*="/Education/History/MyClasses.aspx"],
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .large-notice
+button.button.small.color
+> a[href*="/Meetings/MyMeetings.aspx"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 215px !important;
+    min-height: 43px !important;
+    max-width: 100% !important;
+
+    padding: 11px 18px !important;
+
+    border: 1px solid #21465f !important;
+    border-radius: 7px !important;
+
+    background: #21465f !important;
+    color: #ffffff !important;
+
+    font-family: inherit !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+
+    text-align: center !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    white-space: normal !important;
+
+    box-shadow:
+        0 8px 18px rgba(33, 70, 95, 0.22) !important;
+
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout
+#rightMiddleContent
+> .large-notice
+button.button.small.color
+> br {
+    display: none !important;
+}
+
+
+/* =========================================================
+   PHONE LAYOUT
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+    #TwoColumnHomePageLayout
+    #rightMiddleContent
+    > .star-action-card
+    a.star-action-link.button.small.color,
+
+    #TwoColumnHomePageLayout
+    #rightMiddleContent
+    > .star-action-card
+    a.star-card-action,
+
+    #TwoColumnHomePageLayout
+    #rightMiddleContent
+    > .large-notice
+    button.button.small.color
+    > a[href*="Sponsorship"],
+
+    #TwoColumnHomePageLayout
+    #rightMiddleContent
+    > .large-notice
+    button.button.small.color
+    > a[href*="/Education/History/MyClasses.aspx"],
+
+    #TwoColumnHomePageLayout
+    #rightMiddleContent
+    > .large-notice
+    button.button.small.color
+    > a[href*="/Meetings/MyMeetings.aspx"] {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    #TwoColumnHomePageLayout
+    #rightMiddleContent
+    > .star-action-card
+    a.star-action-link,
+
+    #TwoColumnHomePageLayout
+    #rightMiddleContent
+    > .star-action-card
+    a.star-card-action {
+        transition: none !important;
+    }
+}
