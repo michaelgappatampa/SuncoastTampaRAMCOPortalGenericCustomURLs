@@ -2179,33 +2179,13 @@ li {
     position: relative !important;
     display: block !important;
     width: 100% !important;
-    padding: 18px 20px 18px 56px !important;
+    padding: 18px 20px !important;
     border: 1px solid rgba(79, 174, 195, 0.28) !important;
     border-radius: 14px !important;
     background: linear-gradient(135deg, #f7fcfd 0%, #ffffff 100%) !important;
     color: var(--star-text, #25333d) !important;
     box-shadow: 0 8px 22px rgba(23, 53, 72, 0.07) !important;
     box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has([data-teams])::before {
-    content: "i" !important;
-    position: absolute !important;
-    top: 17px !important;
-    left: 18px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 26px !important;
-    height: 26px !important;
-    border-radius: 50% !important;
-    background: var(--star-navy-light, #4faec3) !important;
-    color: #ffffff !important;
-    font-size: 15px !important;
-    font-weight: 800 !important;
-    font-style: normal !important;
-    line-height: 1 !important;
 }
 
 #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
@@ -3097,7 +3077,7 @@ button.button.small.color:focus-within {
 
     #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
     > ul > li:has([data-teams]) {
-        padding: 16px 16px 16px 50px !important;
+        padding: 16px !important;
     }
 
     #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
@@ -3999,16 +3979,27 @@ a.star-card-action,
 
 /* =========================================================
    HOME PAGE — DYNAMIC ACTION BUTTON CORRECTION
-   Keeps generated sponsorship/history actions consistent
-   with the Update Your Profile button.
+
+   Keeps the following buttons visually identical to
+   "Update Your Profile":
+   - Sponsorship Opportunity Calendar
+   - Class Sponsorship History
+   - Event Sponsorship History
+
+   Supports both the current anchor-based markup and the
+   original nested <button><a> JavaScript markup.
    ========================================================= */
 
+/* Keep the generated history actions compact and vertically grouped. */
 #TwoColumnHomePageLayout #rightMiddleContent
 > .star-action-card .star-card-actions {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    justify-content: flex-start !important;
     width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
     gap: 14px !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -4019,6 +4010,8 @@ a.star-card-action,
 > .star-action-card .star-card-action-group {
     display: block !important;
     width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
@@ -4033,6 +4026,7 @@ a.star-card-action,
     line-height: 1.55 !important;
 }
 
+/* Current markup: the anchor itself is the action button. */
 #TwoColumnHomePageLayout #rightMiddleContent
 > .star-action-card a.star-action-link.button.small.color,
 #TwoColumnHomePageLayout #rightMiddleContent
@@ -4041,31 +4035,45 @@ a.star-card-action,
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+
     width: auto !important;
     min-width: 215px !important;
-    min-height: 43px !important;
     max-width: 100% !important;
+    min-height: 42px !important;
+
     margin: 0 !important;
-    padding: 11px 18px !important;
+    padding: 10px 16px !important;
     float: none !important;
+
     border: 1px solid var(--star-navy, #21465f) !important;
-    border-radius: 7px !important;
-    background: var(--star-navy, #21465f) !important;
-    background-image: none !important;
+    border-radius: 9px !important;
+
+    background: linear-gradient(
+        135deg,
+        var(--star-navy, #21465f),
+        var(--star-navy-dark, #173548)
+    ) !important;
+
     color: #ffffff !important;
     font-family: inherit !important;
     font-size: 13px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     line-height: 20px !important;
     letter-spacing: 0 !important;
+
     text-align: center !important;
     text-decoration: none !important;
     text-shadow: none !important;
     white-space: normal !important;
-    box-shadow: 0 8px 18px rgba(33, 70, 95, 0.22) !important;
+
+    box-shadow: 0 7px 16px rgba(33, 70, 95, 0.2) !important;
     cursor: pointer !important;
     box-sizing: border-box !important;
-    transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.08s ease !important;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.16s ease,
+        background-color 0.16s ease !important;
 }
 
 #TwoColumnHomePageLayout #rightMiddleContent
@@ -4078,30 +4086,23 @@ a.star-card-action,
 > .star-action-card a.star-card-action:focus {
     border-color: var(--star-navy-dark, #173548) !important;
     background: var(--star-navy-dark, #173548) !important;
-    background-image: none !important;
     color: #ffffff !important;
     text-decoration: none !important;
-    box-shadow: 0 10px 22px rgba(33, 70, 95, 0.30) !important;
+    box-shadow: 0 9px 20px rgba(33, 70, 95, 0.27) !important;
     transform: translateY(-1px) !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-action-link.button.small.color:focus-visible,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-card-action:focus-visible {
-    outline: 3px solid rgba(245, 109, 115, 0.42) !important;
-    outline-offset: 3px !important;
+    outline: 3px solid rgba(79, 174, 195, 0.22) !important;
+    outline-offset: 2px !important;
 }
 
 #TwoColumnHomePageLayout #rightMiddleContent
 > .star-action-card a.star-action-link.button.small.color:active,
 #TwoColumnHomePageLayout #rightMiddleContent
 > .star-action-card a.star-card-action:active {
-    box-shadow: 0 4px 10px rgba(33, 70, 95, 0.20) !important;
+    box-shadow: 0 4px 10px rgba(33, 70, 95, 0.2) !important;
     transform: translateY(1px) !important;
 }
 
-/* Fallback for the original nested <button><a> script markup. */
+/* Legacy markup: make the outer button invisible and style its anchor. */
 #TwoColumnHomePageLayout #rightMiddleContent
 > .large-notice button.button.small.color:has(> a[href*="Sponsorship"]),
 #TwoColumnHomePageLayout #rightMiddleContent
@@ -4109,11 +4110,18 @@ a.star-card-action,
 #TwoColumnHomePageLayout #rightMiddleContent
 > .large-notice button.button.small.color:has(> a[href*="/Meetings/MyMeetings.aspx"]) {
     display: inline-block !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
+    border-radius: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
+    overflow: visible !important;
+    transform: none !important;
+    outline: 0 !important;
 }
 
 #TwoColumnHomePageLayout #rightMiddleContent
@@ -4125,25 +4133,63 @@ a.star-card-action,
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+
     width: auto !important;
     min-width: 215px !important;
-    min-height: 43px !important;
     max-width: 100% !important;
-    padding: 11px 18px !important;
+    min-height: 42px !important;
+
+    padding: 10px 16px !important;
+
     border: 1px solid var(--star-navy, #21465f) !important;
-    border-radius: 7px !important;
-    background: var(--star-navy, #21465f) !important;
+    border-radius: 9px !important;
+
+    background: linear-gradient(
+        135deg,
+        var(--star-navy, #21465f),
+        var(--star-navy-dark, #173548)
+    ) !important;
+
     color: #ffffff !important;
     font-family: inherit !important;
     font-size: 13px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     line-height: 20px !important;
+
     text-align: center !important;
     text-decoration: none !important;
     text-shadow: none !important;
     white-space: normal !important;
-    box-shadow: 0 8px 18px rgba(33, 70, 95, 0.22) !important;
+
+    box-shadow: 0 7px 16px rgba(33, 70, 95, 0.2) !important;
     box-sizing: border-box !important;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.16s ease,
+        background-color 0.16s ease !important;
+}
+
+#TwoColumnHomePageLayout #rightMiddleContent
+> .large-notice button.button.small.color > a[href*="Sponsorship"]:hover,
+#TwoColumnHomePageLayout #rightMiddleContent
+> .large-notice button.button.small.color > a[href*="Sponsorship"]:focus,
+#TwoColumnHomePageLayout #rightMiddleContent
+> .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"]:hover,
+#TwoColumnHomePageLayout #rightMiddleContent
+> .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"]:focus,
+#TwoColumnHomePageLayout #rightMiddleContent
+> .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"]:hover,
+#TwoColumnHomePageLayout #rightMiddleContent
+> .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"]:focus {
+    border-color: var(--star-navy-dark, #173548) !important;
+    background: var(--star-navy-dark, #173548) !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: 0 9px 20px rgba(33, 70, 95, 0.27) !important;
+    transform: translateY(-1px) !important;
+    outline: 3px solid rgba(79, 174, 195, 0.22) !important;
+    outline-offset: 2px !important;
 }
 
 #TwoColumnHomePageLayout #rightMiddleContent
@@ -4171,18 +4217,31 @@ a.star-card-action,
     #TwoColumnHomePageLayout #rightMiddleContent
     > .star-action-card a.star-action-link,
     #TwoColumnHomePageLayout #rightMiddleContent
-    > .star-action-card a.star-card-action {
+    > .star-action-card a.star-card-action,
+    #TwoColumnHomePageLayout #rightMiddleContent
+    > .large-notice button.button.small.color > a[href*="Sponsorship"],
+    #TwoColumnHomePageLayout #rightMiddleContent
+    > .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"],
+    #TwoColumnHomePageLayout #rightMiddleContent
+    > .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"] {
         transition: none !important;
     }
 }
 
-
 /* =========================================================
+   EVENTS CALENDAR STYLES — TEMPORARILY DISABLED
+
+   The complete calendar source from the uploaded stylesheet is preserved
+   below, but it is inside this comment and therefore does not affect the
+   portal. Existing comment delimiters were converted to readable markers
+   so the entire calendar module can remain safely commented out.
+
+[CALENDAR COMMENT START] =========================================================
    EVENTS CALENDAR — MODERN STAR THEME
    Scoped to the RAMCO EventsCalendar controls and FullCalendar.
-   ========================================================= */
+   ========================================================= [CALENDAR COMMENT END]
 
-/* Calendar page layout and form wrappers */
+[CALENDAR COMMENT START] Calendar page layout and form wrappers [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm,
 #FormContentPlaceHolder_EditForm > .editForm,
 #FormContentPlaceHolder_EditForm > .editForm > .row,
@@ -4200,9 +4259,9 @@ a.star-card-action,
     clear: both !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Search and event-type filters
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm .event-filters.horizontal {
     position: relative !important;
@@ -4470,9 +4529,9 @@ a.star-card-action,
     font-weight: 700 !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    FullCalendar shell and toolbar
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar {
     position: relative !important;
@@ -4636,9 +4695,9 @@ a.star-card-action,
     font-size: 1.1em !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Calendar grid, days, and current date
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-view-container {
     width: 100% !important;
@@ -4753,9 +4812,9 @@ a.star-card-action,
     overflow: visible !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Month-grid and agenda events
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-event {
     border: 0 !important;
@@ -4846,7 +4905,7 @@ a.star-card-action,
     color: #ffffff !important;
 }
 
-/* Agenda day/week view */
+[CALENDAR COMMENT START] Agenda day/week view [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-agenda-view .fc-axis,
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-time-grid .fc-slats td {
     color: var(--star-text-muted, #64727c) !important;
@@ -4873,7 +4932,7 @@ a.star-card-action,
     -webkit-line-clamp: initial !important;
 }
 
-/* Event overflow popover */
+[CALENDAR COMMENT START] Event overflow popover [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-popover {
     border: 1px solid var(--star-border, #e4e9ec) !important;
     border-radius: 12px !important;
@@ -4899,7 +4958,7 @@ a.star-card-action,
     background: #ffffff !important;
 }
 
-/* Optional list view, if enabled later */
+[CALENDAR COMMENT START] Optional list view, if enabled later [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-list-view {
     border: 0 !important;
 }
@@ -4915,9 +4974,9 @@ a.star-card-action,
     background: rgba(79, 174, 195, 0.08) !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Tablet and mobile calendar layout
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 @media screen and (max-width: 959px) {
     #FormContentPlaceHolder_EditForm,
@@ -5076,12 +5135,12 @@ a.star-card-action,
 }
 
 
-/* =========================================================
+[CALENDAR COMMENT START] =========================================================
    EVENTS CALENDAR — MODERN STAR THEME
    Scoped to the RAMCO EventsCalendar controls and FullCalendar.
-   ========================================================= */
+   ========================================================= [CALENDAR COMMENT END]
 
-/* Calendar page layout and form wrappers */
+[CALENDAR COMMENT START] Calendar page layout and form wrappers [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm,
 #FormContentPlaceHolder_EditForm > .editForm,
 #FormContentPlaceHolder_EditForm > .editForm > .row,
@@ -5099,9 +5158,9 @@ a.star-card-action,
     clear: both !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Search and event-type filters
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm .event-filters.horizontal {
     position: relative !important;
@@ -5375,9 +5434,9 @@ a.star-card-action,
     font-weight: 700 !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    FullCalendar shell and toolbar
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar {
     position: relative !important;
@@ -5541,9 +5600,9 @@ a.star-card-action,
     font-size: 1.1em !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Calendar grid, days, and current date
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-view-container {
     width: 100% !important;
@@ -5658,9 +5717,9 @@ a.star-card-action,
     overflow: visible !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Month-grid and agenda events
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-event {
     border: 0 !important;
@@ -5751,7 +5810,7 @@ a.star-card-action,
     color: #ffffff !important;
 }
 
-/* Agenda day/week view */
+[CALENDAR COMMENT START] Agenda day/week view [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-agenda-view .fc-axis,
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-time-grid .fc-slats td {
     color: var(--star-text-muted, #64727c) !important;
@@ -5778,7 +5837,7 @@ a.star-card-action,
     -webkit-line-clamp: initial !important;
 }
 
-/* Event overflow popover */
+[CALENDAR COMMENT START] Event overflow popover [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-popover {
     border: 1px solid var(--star-border, #e4e9ec) !important;
     border-radius: 12px !important;
@@ -5804,7 +5863,7 @@ a.star-card-action,
     background: #ffffff !important;
 }
 
-/* Optional list view, if enabled later */
+[CALENDAR COMMENT START] Optional list view, if enabled later [CALENDAR COMMENT END]
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar .fc-list-view {
     border: 0 !important;
 }
@@ -5820,9 +5879,9 @@ a.star-card-action,
     background: rgba(79, 174, 195, 0.08) !important;
 }
 
-/* ---------------------------------------------------------
+[CALENDAR COMMENT START] ---------------------------------------------------------
    Tablet and mobile calendar layout
-   --------------------------------------------------------- */
+   --------------------------------------------------------- [CALENDAR COMMENT END]
 
 @media screen and (max-width: 959px) {
     #FormContentPlaceHolder_EditForm,
@@ -5979,3 +6038,6 @@ a.star-card-action,
         transition: none !important;
     }
 }
+
+   END OF TEMPORARILY DISABLED CALENDAR STYLES
+   ========================================================= */
