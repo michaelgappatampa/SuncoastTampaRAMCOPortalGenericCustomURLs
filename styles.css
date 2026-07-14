@@ -4265,16 +4265,19 @@ a.star-card-action,
 @media screen and (min-width: 960px) {
 
     /*
-     * Override the legacy fixed-width column that contains
-     * the entire event-calendar form.
+     * Center the complete calendar form and maintain
+     * an equal 16px gutter on both sides.
      */
     .sixteen.floated:has(> #FormContentPlaceHolder_EditForm) {
-        width: calc(100% - 32px) !important;
+        display: block !important;
+        width: 100% !important;
         min-width: 0 !important;
-        max-width: calc(100% - 32px) !important;
-        margin-left: 16px !important;
-        margin-right: 16px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
         float: none !important;
+        clear: both !important;
         box-sizing: border-box !important;
     }
 
