@@ -3003,9 +3003,20 @@ button.button.small.color:focus-within {
 
 @media screen and (min-width: 960px) {
     #TwoColumnHomePageLayout {
-        grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.25fr) !important;
+        grid-template-columns:
+            minmax(300px, 0.9fr)
+            minmax(0, 1.25fr) !important;
         align-items: start !important;
         gap: 24px !important;
+
+        /*
+         * Restore an outside gutter around the dashboard.
+         * Width must be auto so the margins do not create
+         * horizontal overflow.
+         */
+        width: auto !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
     }
 
     #TwoColumnHomePageLayout #topRow {
@@ -3022,7 +3033,9 @@ button.button.small.color:focus-within {
 
 @media screen and (min-width: 1180px) {
     #TwoColumnHomePageLayout {
-        grid-template-columns: minmax(330px, 0.82fr) minmax(0, 1.38fr) !important;
+        grid-template-columns:
+            minmax(330px, 0.82fr)
+            minmax(0, 1.38fr) !important;
         gap: 28px !important;
     }
 
@@ -3031,7 +3044,6 @@ button.button.small.color:focus-within {
         padding: 28px !important;
     }
 }
-
 /* =========================================================
    TABLET
    ========================================================= */
