@@ -4258,24 +4258,44 @@ a.star-card-action,
     --star-calendar-active: 1;
 }
 
-/* Prevent the legacy 16-column grid from fixing the calendar at 1000px. */
-#formPanel > .sixteen.floated:has(
-    #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar
-),
-#FormContentPlaceHolder_EditForm,
-#FormContentPlaceHolder_EditForm > .editForm,
-#FormContentPlaceHolder_EditForm > .editForm > .row,
-#FormContentPlaceHolder_EditForm > .editForm > .row > .span10,
-#FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendarli {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    float: none !important;
-    box-sizing: border-box !important;
-}
+/* =========================================================
+   EVENT CALENDAR — DESKTOP FORM WIDTH
+   ========================================================= */
 
+@media screen and (min-width: 960px) {
+
+    /*
+     * Override the legacy fixed-width column that contains
+     * the entire event-calendar form.
+     */
+    .sixteen.floated:has(> #FormContentPlaceHolder_EditForm) {
+        width: calc(100% - 32px) !important;
+        min-width: 0 !important;
+        max-width: calc(100% - 32px) !important;
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        float: none !important;
+        box-sizing: border-box !important;
+    }
+
+    /*
+     * Allow the form and its inner rows to fit within
+     * the available width.
+     */
+    #FormContentPlaceHolder_EditForm,
+    #FormContentPlaceHolder_EditForm > .editForm,
+    #FormContentPlaceHolder_EditForm > .editForm > .row,
+    #FormContentPlaceHolder_EditForm > .editForm > .row > .span10,
+    #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendarli {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        float: none !important;
+        box-sizing: border-box !important;
+    }
+}
 #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendarli {
     clear: both !important;
 }
