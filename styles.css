@@ -2127,7 +2127,7 @@ body:has(#TwoColumnHomePageLayout) #pageTitleDiv {
     min-width: 0 !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 0 16px !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
 }
 
