@@ -3101,8 +3101,9 @@ button.button.small.color:focus-within {
     }
 
     #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    > ul > li:has([data-teams]) {
-        padding: 16px !important;
+    > ul
+    > li:has([data-teams]) {
+        padding: 0 !important;
     }
 
     #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
@@ -4257,6 +4258,10 @@ a.star-card-action,
     --star-calendar-active: 1;
 }
 
+/* Prevent the legacy 16-column grid from fixing the calendar at 1000px. */
+#formPanel > .sixteen.floated:has(
+    #FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar
+),
 #FormContentPlaceHolder_EditForm,
 #FormContentPlaceHolder_EditForm > .editForm,
 #FormContentPlaceHolder_EditForm > .editForm > .row,
@@ -4267,6 +4272,7 @@ a.star-card-action,
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    float: none !important;
     box-sizing: border-box !important;
 }
 
