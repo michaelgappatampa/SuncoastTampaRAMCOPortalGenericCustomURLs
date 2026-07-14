@@ -2176,15 +2176,14 @@ li {
 /* Business Journal/member-benefit notice. */
 #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
 > ul > li:has([data-teams]) {
-    position: relative !important;
     display: block !important;
     width: 100% !important;
-    padding: 18px 20px !important;
-    border: 1px solid rgba(79, 174, 195, 0.28) !important;
-    border-radius: 14px !important;
-    background: linear-gradient(135deg, #f7fcfd 0%, #ffffff 100%) !important;
-    color: var(--star-text, #25333d) !important;
-    box-shadow: 0 8px 22px rgba(23, 53, 72, 0.07) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
     box-sizing: border-box !important;
 }
 
