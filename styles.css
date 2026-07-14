@@ -2253,35 +2253,72 @@ li {
    ALERT PADDING AND ROUNDED CORNERS
    ========================================================= */
 
+/* Ensure all RAMCO alert wrappers preserve the rounded shape. */
 #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.successSummary > ul > li.success:not(:has(script)),
+> ul
+> li
+> span.successSummary,
 #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.errorSummary > ul > li.error:not(:has(script)) {
+> ul
+> li
+> span.errorSummary {
+    display: block !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+span.successSummary > ul,
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+span.errorSummary > ul {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: inherit !important;
+    overflow: hidden !important;
+    list-style: none !important;
+    box-sizing: border-box !important;
+}
+
+/* Apply the visible shape directly to the alert box. */
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+span.successSummary > ul > li.success:not(:has(script)),
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+span.errorSummary > ul > li.error:not(:has(script)) {
+    display: block !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 16px 18px !important;
     border-radius: 12px !important;
+    overflow: hidden !important;
+    background-clip: padding-box !important;
     box-sizing: border-box !important;
     overflow-wrap: anywhere !important;
 }
 
-/* Remove spacing added by the nested RAMCO lists. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.successSummary > ul,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.errorSummary > ul {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
 @media screen and (max-width: 639px) {
     #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .successSummary > ul > li.success:not(:has(script)),
+    > ul
+    > li
+    > span.successSummary,
     #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .errorSummary > ul > li.error:not(:has(script)) {
-        padding: 14px 15px !important;
+    > ul
+    > li
+    > span.errorSummary,
+    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+    span.successSummary > ul > li.success:not(:has(script)),
+    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+    span.errorSummary > ul > li.error:not(:has(script)) {
         border-radius: 10px !important;
+    }
+
+    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+    span.successSummary > ul > li.success:not(:has(script)),
+    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+    span.errorSummary > ul > li.error:not(:has(script)) {
+        padding: 14px 15px !important;
     }
 }
 /* =========================================================
