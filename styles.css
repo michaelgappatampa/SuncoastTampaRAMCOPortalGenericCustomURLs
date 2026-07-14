@@ -5397,7 +5397,7 @@ ul.categories > li {
     box-sizing: border-box !important;
 }
 
-#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+
 ul.categories > li > a {
     display: block !important;
 
@@ -5439,19 +5439,10 @@ ul.categories > li > a:focus {
 
 #LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
 ul.categories > li.current > a {
-    border-color: var(--star-coral, #f56d73) !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--star-coral, #f56d73),
-            #f77f84
-        ) !important;
-
+    border-color: #21465f !important;
+    background: #21465f !important;
     color: #ffffff !important;
-
-    box-shadow:
-        0 5px 14px rgba(245, 109, 115, 0.24) !important;
+    box-shadow: 0 5px 14px rgba(33, 70, 95, 0.24) !important;
 }
 
 
@@ -5937,13 +5928,11 @@ input.button.active {
 input.button:hover,
 #LeftSidebarRightContentPlaceHolder_Panel
 [id$="_WizardNavigationli"]
-input.button:focus {
-    border-color: var(--star-navy-light, #4faec3) !important;
-
-    outline:
-        3px solid rgba(79, 174, 195, 0.16) !important;
-
-    outline-offset: 2px !important;
+input.button.active {
+    border-color: #21465f !important;
+    background: #21465f !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(33, 70, 95, 0.25) !important;
 }
 
 
