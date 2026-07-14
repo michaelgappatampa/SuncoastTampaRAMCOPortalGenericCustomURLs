@@ -5238,3 +5238,520 @@ a.star-card-action,
         transition: none !important;
     }
 }
+
+/* =========================================================
+   UPDATE PROFILE — SIDEBAR AND FORM
+   ========================================================= */
+
+/* Scope all rules to pages containing the profile sidebar. */
+body:has(#LeftSidebarLayout) #LeftSidebarLayout {
+    display: grid !important;
+    grid-template-columns: minmax(210px, 250px) minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 26px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 18px 16px 36px !important;
+    box-sizing: border-box !important;
+}
+
+/* Remove legacy fixed column widths and floats. */
+body:has(#LeftSidebarLayout) #leftSidebarLeftContent,
+body:has(#LeftSidebarLayout) #leftSidebarRightContent {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   PROFILE SECTION NAVIGATION
+   ========================================================= */
+
+body:has(#LeftSidebarLayout) #leftSidebar {
+    position: sticky !important;
+    top: 18px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    border: 1px solid var(--star-border) !important;
+    border-top: 4px solid var(--star-navy-light) !important;
+    border-radius: 16px !important;
+    background: var(--star-surface) !important;
+    box-shadow: var(--star-card-shadow) !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#LeftSidebarLayout) #leftSidebar > h4 {
+    margin: 0 0 15px !important;
+    padding: 0 !important;
+    color: var(--star-navy) !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu nav.widget {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu ul.categories {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu ul.categories > li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    list-style: none !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu ul.categories > li > a {
+    display: block !important;
+    width: 100% !important;
+    padding: 11px 13px !important;
+    border: 1px solid transparent !important;
+    border-radius: 9px !important;
+    background: transparent !important;
+    color: var(--star-navy) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li > a:hover,
+body:has(#LeftSidebarLayout)
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li > a:focus {
+    border-color: rgba(79, 174, 195, 0.24) !important;
+    background: rgba(79, 174, 195, 0.09) !important;
+    color: var(--star-navy-dark) !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li.current > a {
+    border-color: var(--star-coral) !important;
+    background: linear-gradient(
+        135deg,
+        var(--star-coral),
+        #f77f84
+    ) !important;
+    color: #ffffff !important;
+    box-shadow: 0 5px 14px rgba(245, 109, 115, 0.23) !important;
+}
+
+
+/* =========================================================
+   PROFILE FORM CARD
+   ========================================================= */
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_PanelDiv {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 28px !important;
+    border: 1px solid var(--star-border) !important;
+    border-top: 4px solid var(--star-coral) !important;
+    border-radius: 18px !important;
+    background: var(--star-surface) !important;
+    box-shadow: var(--star-card-shadow) !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel > .editForm {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   FORM ROWS AND COLUMNS
+   ========================================================= */
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px 24px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 0 20px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Summary and navigation rows span the full form width. */
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row:has(> .span10) {
+    grid-template-columns: minmax(0, 1fr) !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row > .span5,
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row > .span10 {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel h3,
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel h3.desc {
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+    color: var(--star-navy) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.01em !important;
+    text-transform: none !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+h3 span {
+    color: var(--star-text-muted) !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+
+/* Add space when one column contains multiple fields. */
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.span5 > .input-control + h3 {
+    margin-top: 20px !important;
+}
+
+
+/* =========================================================
+   INPUTS AND SELECTS
+   ========================================================= */
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel .input-control {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input[type="text"],
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input[type="email"],
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input[type="tel"],
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control select {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 46px !important;
+    margin: 0 !important;
+    padding: 10px 13px !important;
+    border: 1px solid #ccd8de !important;
+    border-radius: 9px !important;
+    background-color: #ffffff !important;
+    color: var(--star-text) !important;
+    font: 500 13px/1.4 "Poppins", sans-serif !important;
+    box-shadow: 0 1px 2px rgba(23, 53, 72, 0.04) !important;
+    box-sizing: border-box !important;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input:focus,
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control select:focus {
+    border-color: var(--star-navy-light) !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 3px rgba(79, 174, 195, 0.17) !important;
+}
+
+/* Read-only fields. */
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input:disabled,
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input.aspNetDisabled {
+    border-color: var(--star-border) !important;
+    background: #f1f4f5 !important;
+    color: #76848d !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+}
+
+/* Hide legacy helper buttons that do not contain visible content. */
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control > button.helper {
+    display: none !important;
+}
+
+
+/* =========================================================
+   OFFICE PHONE AND EXTENSION
+   ========================================================= */
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+[id$="_CompositePhoneli"] > .input-control {
+    display: grid !important;
+    grid-template-columns: minmax(0, 2fr) minmax(85px, 0.75fr) !important;
+    gap: 10px !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control.seventy,
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control.thirty {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    float: none !important;
+}
+
+
+/* =========================================================
+   PLACEHOLDERS AND VALIDATION
+   ========================================================= */
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel .phholder {
+    pointer-events: none !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel .placeholder {
+    color: #8a969e !important;
+    font-size: 12px !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel p.error {
+    margin: 5px 0 0 !important;
+    padding: 0 !important;
+    color: var(--star-coral-dark) !important;
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+}
+
+
+/* =========================================================
+   SAVE AND CANCEL BUTTONS
+   ========================================================= */
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli {
+    margin: 10px 0 0 !important;
+    padding: 20px 0 0 !important;
+    border-top: 1px solid var(--star-border) !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+.button-set {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    float: none !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 110px !important;
+    min-height: 43px !important;
+    margin: 0 !important;
+    padding: 9px 18px !important;
+    border: 1px solid var(--star-border) !important;
+    border-radius: 9px !important;
+    background: var(--star-surface-soft) !important;
+    color: var(--star-navy) !important;
+    font: 700 13px/1.3 "Poppins", sans-serif !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button.active {
+    border-color: var(--star-coral) !important;
+    background: linear-gradient(
+        135deg,
+        var(--star-coral),
+        #f77f84
+    ) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px rgba(245, 109, 115, 0.25) !important;
+}
+
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button:hover,
+body:has(#LeftSidebarLayout)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button:focus {
+    border-color: var(--star-navy-light) !important;
+    outline: 3px solid rgba(79, 174, 195, 0.16) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (min-width: 640px) and (max-width: 959px) {
+    body:has(#LeftSidebarLayout) #LeftSidebarLayout {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+        padding: 14px !important;
+    }
+
+    body:has(#LeftSidebarLayout) #leftSidebar {
+        position: static !important;
+        padding: 16px !important;
+    }
+
+    body:has(#LeftSidebarLayout)
+    #LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+    ul.categories {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    body:has(#LeftSidebarLayout) #LeftSidebarLayout {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+        padding: 10px 0 28px !important;
+    }
+
+    body:has(#LeftSidebarLayout) #leftSidebar {
+        position: static !important;
+        padding: 14px !important;
+        border-radius: 13px !important;
+    }
+
+    body:has(#LeftSidebarLayout)
+    #LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+    ul.categories {
+        gap: 4px !important;
+    }
+
+    body:has(#LeftSidebarLayout)
+    #LeftSidebarRightContentPlaceHolder_Panel {
+        padding: 18px 15px !important;
+        border-radius: 14px !important;
+    }
+
+    body:has(#LeftSidebarLayout)
+    #LeftSidebarRightContentPlaceHolder_Panel
+    .editForm > .row {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+        margin-bottom: 18px !important;
+    }
+
+    body:has(#LeftSidebarLayout)
+    #LeftSidebarRightContentPlaceHolder_Panel
+    [id$="_CompositePhoneli"] > .input-control {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#LeftSidebarLayout)
+    #LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+    .button-set {
+        flex-direction: column-reverse !important;
+    }
+
+    body:has(#LeftSidebarLayout)
+    #LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+    input.button {
+        width: 100% !important;
+    }
+}
