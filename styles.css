@@ -2249,7 +2249,41 @@ li {
     font-size: 14px !important;
     line-height: 1.5 !important;
 }
+/* =========================================================
+   ALERT PADDING AND ROUNDED CORNERS
+   ========================================================= */
 
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+.successSummary > ul > li.success:not(:has(script)),
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+.errorSummary > ul > li.error:not(:has(script)) {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 16px 18px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* Remove spacing added by the nested RAMCO lists. */
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+.successSummary > ul,
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+.errorSummary > ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+@media screen and (max-width: 639px) {
+    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+    .successSummary > ul > li.success:not(:has(script)),
+    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
+    .errorSummary > ul > li.error:not(:has(script)) {
+        padding: 14px 15px !important;
+        border-radius: 10px !important;
+    }
+}
 /* =========================================================
    SHARED HOME-PAGE CARD SURFACE
    ========================================================= */
