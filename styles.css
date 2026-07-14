@@ -5585,7 +5585,14 @@ ul.categories > li.current > a {
 .editForm > .row > :only-child {
     grid-column: 1 / -1 !important;
 }
-
+/* Remove legacy clearfix elements from profile grid rows. */
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row::before,
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row::after {
+    display: none !important;
+    content: none !important;
+}
 
 /* =========================================================
    LABELS
