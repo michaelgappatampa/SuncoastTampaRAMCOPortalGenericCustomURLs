@@ -5240,26 +5240,21 @@ a.star-card-action,
 }
 
 /* =========================================================
-   UPDATE PROFILE — SIDEBAR AND FORM
+   PROFILE PAGES — SHARED LAYOUT
    ========================================================= */
 
-/* Scope all rules to pages containing the profile sidebar. */
-body:has(#LeftSidebarLayout) #LeftSidebarLayout {
-    display: grid !important;
-    grid-template-columns: minmax(210px, 250px) minmax(0, 1fr) !important;
-    align-items: start !important;
-    gap: 26px !important;
+#LeftSidebarLayout {
+    display: block !important;
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 18px 16px 36px !important;
+    padding: 14px !important;
     box-sizing: border-box !important;
 }
 
-/* Remove legacy fixed column widths and floats. */
-body:has(#LeftSidebarLayout) #leftSidebarLeftContent,
-body:has(#LeftSidebarLayout) #leftSidebarRightContent {
+#leftSidebarLeftContent,
+#leftSidebarRightContent {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
@@ -5267,6 +5262,464 @@ body:has(#LeftSidebarLayout) #leftSidebarRightContent {
     padding: 0 !important;
     float: none !important;
     box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   PROFILE SECTION MENU
+   ========================================================= */
+
+#leftSidebar {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 18px !important;
+    border: 1px solid var(--star-border, #dfe7eb) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 16px !important;
+    background: var(--star-surface, #ffffff) !important;
+    box-shadow: var(
+        --star-card-shadow,
+        0 10px 26px rgba(23, 53, 72, 0.1)
+    ) !important;
+    box-sizing: border-box !important;
+}
+
+#leftSidebar > h4 {
+    margin: 0 0 14px !important;
+    padding: 0 !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu nav.widget,
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu ul.categories {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu ul.categories {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    list-style: none !important;
+}
+
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    list-style: none !important;
+}
+
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li > a {
+    display: block !important;
+    width: 100% !important;
+    padding: 11px 13px !important;
+    border: 1px solid transparent !important;
+    border-radius: 9px !important;
+    background: transparent !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+}
+
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li > a:hover,
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li > a:focus {
+    border-color: rgba(79, 174, 195, 0.28) !important;
+    background: rgba(79, 174, 195, 0.1) !important;
+    outline: none !important;
+}
+
+#LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+ul.categories > li.current > a {
+    border-color: var(--star-coral, #f56d73) !important;
+    background: var(--star-coral, #f56d73) !important;
+    color: #ffffff !important;
+    box-shadow: 0 5px 14px rgba(245, 109, 115, 0.24) !important;
+}
+
+
+/* =========================================================
+   SHARED PROFILE FORM CARD
+   ========================================================= */
+
+#LeftSidebarRightContentPlaceHolder_PanelDiv,
+#LeftSidebarRightContentPlaceHolder_Panel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#LeftSidebarRightContentPlaceHolder_Panel {
+    padding: 22px !important;
+    border: 1px solid var(--star-border, #dfe7eb) !important;
+    border-top: 4px solid var(--star-coral, #f56d73) !important;
+    border-radius: 16px !important;
+    background: var(--star-surface, #ffffff) !important;
+    box-shadow: var(
+        --star-card-shadow,
+        0 10px 26px rgba(23, 53, 72, 0.1)
+    ) !important;
+}
+
+#LeftSidebarRightContentPlaceHolder_Panel > .editForm {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   MAIN PROFILE PAGE ONLY
+   Do not apply these rules to Mailing Address, Personal Info,
+   Preferences, Payment Information, or other profile pages.
+   ========================================================= */
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 0 20px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row > .span5,
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.editForm > .row > .span10 {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+h3,
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+h3.desc {
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.span5 > .input-control + h3 {
+    margin-top: 20px !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input[type="text"],
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control select {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 10px 13px !important;
+    border: 1px solid #ccd8de !important;
+    border-radius: 9px !important;
+    background-color: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input:focus,
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control select:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(79, 174, 195, 0.17) !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control input:disabled {
+    background: #f1f4f5 !important;
+    color: #76848d !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control > button.helper {
+    display: none !important;
+}
+
+
+/* Office phone and extension. */
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+[id$="_CompositePhoneli"] > .input-control {
+    display: grid !important;
+    grid-template-columns: minmax(0, 2fr) minmax(85px, 0.75fr) !important;
+    gap: 10px !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control.seventy,
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel
+.input-control.thirty {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    float: none !important;
+}
+
+
+/* Save and Cancel. */
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli {
+    margin-top: 8px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid var(--star-border, #dfe7eb) !important;
+}
+
+#LeftSidebarLayout:has(
+    #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+)
+#LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+.button-set {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    float: none !important;
+}
+
+
+/* =========================================================
+   TABLET — 640px TO 959px
+   ========================================================= */
+
+@media screen and (min-width: 640px) and (max-width: 959px) {
+    #LeftSidebarLayout {
+        display: block !important;
+        padding: 14px !important;
+    }
+
+    #leftSidebar {
+        position: static !important;
+    }
+
+    #leftSidebarRightContent {
+        margin-top: 18px !important;
+    }
+
+    #LeftSidebarLeftContentPlaceHolder_profileUpdateMenu
+    ul.categories {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel
+    .editForm > .row {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px 20px !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel
+    .editForm > .row:has(> .span10) {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP — 960px AND WIDER
+   ========================================================= */
+
+@media screen and (min-width: 960px) {
+    #LeftSidebarLayout {
+        display: grid !important;
+        grid-template-columns: minmax(220px, 250px) minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 24px !important;
+        padding: 18px 16px 36px !important;
+    }
+
+    #leftSidebarLeftContent {
+        grid-column: 1 !important;
+    }
+
+    #leftSidebarRightContent {
+        grid-column: 2 !important;
+    }
+
+    #leftSidebar {
+        position: sticky !important;
+        top: 18px !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel {
+        padding: 28px !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel
+    .editForm > .row {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px 24px !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel
+    .editForm > .row:has(> .span10) {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — BELOW 640px
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    #LeftSidebarLayout {
+        display: block !important;
+        padding: 10px 0 28px !important;
+    }
+
+    #leftSidebar {
+        position: static !important;
+        padding: 14px !important;
+        border-radius: 13px !important;
+    }
+
+    #leftSidebarRightContent {
+        margin-top: 16px !important;
+    }
+
+    #LeftSidebarRightContentPlaceHolder_Panel {
+        padding: 18px 15px !important;
+        border-radius: 14px !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel
+    [id$="_CompositePhoneli"] > .input-control {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+    .button-set {
+        flex-direction: column-reverse !important;
+    }
+
+    #LeftSidebarLayout:has(
+        #LeftSidebarRightContentPlaceHolder_Panel_ContactInfoControl_ContactInfoPanel_FirstNameli
+    )
+    #LeftSidebarRightContentPlaceHolder_Panel_Panel_WizardNavigationli
+    input.button {
+        width: 100% !important;
+    }
 }
 
 
