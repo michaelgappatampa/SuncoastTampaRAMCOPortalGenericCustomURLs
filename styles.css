@@ -2530,7 +2530,11 @@ a.button.small.color:focus {
 > .large-notice:has(a[href*="/Sales/Orders.aspx"]) {
     padding-top: 28px !important;
     border-color: rgba(245, 109, 115, 0.24) !important;
-    background: linear-gradient(145deg, #ffffff 0%, #fff9f9 100%) !important;
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #fff9f9 100%
+    ) !important;
 }
 
 #TwoColumnHomePageLayout #leftMiddleContent
@@ -2542,6 +2546,7 @@ a.button.small.color:focus {
     ) !important;
 }
 
+/* Account balance content layout. */
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
 > div {
@@ -2554,207 +2559,139 @@ a.button.small.color:focus {
     align-items: start !important;
     column-gap: 16px !important;
     row-gap: 5px !important;
+
     width: 100% !important;
     min-width: 0 !important;
+
     margin: 0 !important;
+
     float: none !important;
+    box-sizing: border-box !important;
 }
 
+/* Account balance icon. */
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
 .large-notice-icon {
     grid-area: balance-icon !important;
+
     display: block !important;
+
     width: 54px !important;
     height: 54px !important;
+
     margin: 0 !important;
     padding: 10px !important;
+
     float: none !important;
+
     border-radius: 15px !important;
     background: var(--star-coral-light, #fff1f2) !important;
+
     object-fit: contain !important;
     box-sizing: border-box !important;
 }
 
+/* Account balance heading. */
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
 h2 {
     grid-area: balance-title !important;
+
     margin: 0 !important;
+
     font-size: 20px !important;
+    line-height: 1.3 !important;
 }
 
+/* Account balance description. */
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
 p {
     grid-area: balance-copy !important;
+
     margin: 0 !important;
     padding: 0 0 8px !important;
+
     font-size: 14px !important;
     line-height: 1.5 !important;
 }
 
+/* Payment action container. */
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
-> div > div:has(> a[href*="/Sales/Orders.aspx"]) {
+> div
+> div:has(> a[href*="/Sales/Orders.aspx"]) {
     grid-area: balance-action !important;
+
     margin: 0 !important;
     padding: 0 !important;
 }
 
+/* Payment button. */
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
 a.button.small.color {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+
     min-height: 44px !important;
+
     margin: 0 !important;
     padding: 11px 17px !important;
-    border: 1px solid var(--star-coral, #f56d73) !important;
+
+    border: 1px solid var(--star-navy, #21465f) !important;
     border-radius: 9px !important;
+
     background: linear-gradient(
         135deg,
-        var(--star-coral, #f56d73),
-        #f77f84
+        var(--star-navy, #21465f),
+        var(--star-navy-dark, #173548)
     ) !important;
+
     color: #ffffff !important;
+
     font-size: 13px !important;
     font-weight: 700 !important;
     line-height: 20px !important;
+
     text-align: center !important;
     text-decoration: none !important;
     text-shadow: none !important;
-    box-shadow: 0 8px 18px rgba(245, 109, 115, 0.25) !important;
+
+    box-shadow:
+        0 8px 18px rgba(33, 70, 95, 0.25) !important;
+
     box-sizing: border-box !important;
+
     transition:
         transform 0.12s ease,
         box-shadow 0.16s ease,
-        background-color 0.16s ease !important;
+        filter 0.16s ease !important;
 }
 
+/* Payment button hover and keyboard focus. */
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
 a.button.small.color:hover,
 #TwoColumnHomePageLayout #leftMiddleContent
 > .large-notice:has(a[href*="/Sales/Orders.aspx"])
 a.button.small.color:focus {
-    border-color: var(--star-coral-dark, #dc5961) !important;
-    background: var(--star-coral-dark, #dc5961) !important;
+    border-color: var(--star-navy-dark, #173548) !important;
+
+    background: var(--star-navy-dark, #173548) !important;
     color: #ffffff !important;
-    box-shadow: 0 10px 22px rgba(245, 109, 115, 0.34) !important;
+
+    box-shadow:
+        0 10px 22px rgba(33, 70, 95, 0.34) !important;
+
     transform: translateY(-1px) !important;
-    outline: 3px solid rgba(245, 109, 115, 0.24) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.24) !important;
     outline-offset: 2px !important;
 }
 
-/* =========================================================
-   OFFICE / ORGANIZATION CARDS
-   ========================================================= */
-
-#TwoColumnHomePageLayout .large-notice:has(.tile-content) {
-    padding-top: 28px !important;
-}
-
-/* Reset the RAMCO list wrapping the organization cards. */
-#TwoColumnHomePageLayout .large-notice:has(.tile-content) > ul {
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    list-style: none !important;
-}
-
-/* Shared organization-card layout. */
-#TwoColumnHomePageLayout .large-notice:has(.tile-content) .tile-content {
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-}
-
-/* The first card does not need a divider or additional spacing. */
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content:first-child {
-    padding: 0 !important;
-}
-
-/* Separate every additional organization card. */
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content + .tile-content {
-    margin: 22px 0 0 !important;
-    padding: 22px 0 0 !important;
-    border-top: 1px solid var(--star-border, #e4e9ec) !important;
-}
-
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > h2 {
-    margin: 0 0 10px !important;
-    font-size: 20px !important;
-}
-
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > p {
-    margin: 0 0 7px !important;
-    padding: 0 !important;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-}
-
-/* Organization action buttons. */
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > ul.plus-list {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 9px !important;
-    margin: 16px 0 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > ul.plus-list > li {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
-/* Hide empty placeholder links generated by RAMCO. */
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > ul.plus-list > li:has(> a[href="#"]:empty) {
-    display: none !important;
-}
-
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > ul.plus-list > li > a:not(:empty) {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 38px !important;
-    padding: 8px 13px !important;
-    border: 1px solid rgba(33, 70, 95, 0.18) !important;
-    border-radius: 8px !important;
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    color: var(--star-navy, #21465f) !important;
-    font-size: 12.5px !important;
-    font-weight: 700 !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > ul.plus-list > li > a:not(:empty):hover,
-#TwoColumnHomePageLayout .large-notice:has(.tile-content)
-.tile-content > ul.plus-list > li > a:not(:empty):focus {
-    border-color: var(--star-navy-light, #4faec3) !important;
-    background: #ffffff !important;
-    color: var(--star-coral-dark, #dc5961) !important;
-    outline: 3px solid rgba(79, 174, 195, 0.18) !important;
-    outline-offset: 2px !important;
-}
 /* =========================================================
    JS-CREATED SPONSORSHIP / HISTORY ACTION CARDS
    ========================================================= */
