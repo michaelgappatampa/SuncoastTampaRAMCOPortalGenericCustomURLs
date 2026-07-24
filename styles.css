@@ -16940,3 +16940,965 @@ body:has(#FormContentPlaceHolder_editForm_resultsGrid)
         padding: 11px 12px !important;
     }
 }
+/* =========================================================
+   OFFICE DETAILS PAGE
+   ========================================================= */
+
+/* Normalize the page layout. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#SingleColumnLayout,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#SingleColumnLayout > .sixteen.floated {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   OFFICE DETAILS CARD
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_PanelDiv,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel {
+    max-width: 1100px !important;
+
+    margin: 24px auto 40px !important;
+    padding: 28px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 18px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f9fbfc 100%
+        ) !important;
+
+    box-shadow:
+        0 12px 30px rgba(23, 53, 72, 0.09) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel > .editForm {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LEGACY ROW RESET
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 0 24px !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row::before,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row
+> .span5,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row
+> .span10 {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   OFFICE CONTACT INFORMATION
+   ========================================================= */
+
+/* First row contains address, phone, fax and webpage. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+
+    margin-bottom: 26px !important;
+}
+
+/* Each half becomes an information card. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5 {
+    padding: 20px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 13px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+
+    box-shadow:
+        0 4px 13px rgba(23, 53, 72, 0.04) !important;
+}
+
+/* Office address. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_addressLiteralli {
+    margin: 0 0 20px !important;
+    padding: 0 0 17px !important;
+
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.7 !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_addressLiteralli::before {
+    display: block !important;
+
+    margin: 0 0 7px !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    content: "Office Address" !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+/* Contact-information headings. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel
+h3.desc {
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+
+    text-transform: none !important;
+}
+
+/* Add spacing between stacked contact fields. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_faxNumberLabelli
++ h3.desc,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_officeNumberLabelli
++ h3.desc {
+    margin-top: 20px !important;
+}
+
+/* Office phone, fax and website values. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_officeNumberLabelli,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_faxNumberLabelli,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_webPageLabelli {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_officeNumberLabel,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_faxNumberLabel,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_webPageLabel {
+    display: block !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.55 !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+/* Website link. */
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_webPageLabel
+a {
+    color: #0070c9 !important;
+
+    font-weight: 600 !important;
+    text-decoration: none !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_webPageLabel
+a:hover,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_officeDetails_webPageLabel
+a:focus {
+    color: var(--star-navy, #21465f) !important;
+
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+
+    outline: none !important;
+}
+
+
+/* =========================================================
+   AGENT TABLE WRAPPERS
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGridFormAjaxGridUpdatePanelli,
+#FormContentPlaceHolder_Panel_officeDetails_resultsGridFormAjaxGridUpdatePanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGridFormAjaxGridUpdatePanel
+> div:first-child {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 15px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 8px 22px rgba(23, 53, 72, 0.07) !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   AGENT TABLE BASE
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+
+    table-layout: fixed !important;
+
+    background: #ffffff !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+th,
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+td {
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   AGENT TABLE COLUMN WIDTHS
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(1),
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(1) {
+    width: 24% !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(2),
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2) {
+    width: 56% !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(3),
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3) {
+    width: 20% !important;
+}
+
+
+/* =========================================================
+   AGENT TABLE HEADER
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.HeaderStyle {
+    background: var(--star-navy, #21465f) !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th {
+    padding: 14px 15px !important;
+
+    border: 0 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-bottom: 1px solid var(--star-navy-dark, #173548) !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.04em !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+
+    vertical-align: middle !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:first-child {
+    border-top-left-radius: 14px !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:last-child {
+    border-top-right-radius: 14px !important;
+    border-right: 0 !important;
+}
+
+
+/* =========================================================
+   AGENT TABLE ROWS
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle {
+    background: #ffffff !important;
+
+    transition:
+        background-color 0.15s ease !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle:nth-child(odd) {
+    background: var(--star-surface-soft, #f7f9fa) !important;
+}
+
+/* Replace the legacy yellow hover. */
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle:hover {
+    background: rgba(79, 174, 195, 0.10) !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td {
+    padding: 13px 15px !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+    background: transparent !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+    vertical-align: top !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Agent name links. */
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:first-child
+a {
+    color: #0070c9 !important;
+
+    font-size: inherit !important;
+    font-weight: 600 !important;
+    line-height: inherit !important;
+
+    text-decoration: none !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:first-child
+a:hover,
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:first-child
+a:focus {
+    color: var(--star-navy, #21465f) !important;
+
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+
+    outline: none !important;
+}
+
+/* Designations. */
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2) {
+    color: var(--star-text-muted, #64727c) !important;
+}
+
+/* Phone number. */
+#FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3) {
+    color: var(--star-navy, #21465f) !important;
+
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli {
+    width: 100% !important;
+
+    margin: 2px 0 0 !important;
+    padding: 22px 0 0 !important;
+
+    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli::before,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+.button-set {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 115px !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 19px !important;
+
+    border: 1px solid var(--star-navy, #21465f) !important;
+    border-radius: 9px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    color: #ffffff !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.23) !important;
+
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton:hover,
+body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton:focus {
+    border-color: var(--star-navy-dark, #173548) !important;
+
+    background: var(--star-navy-dark, #173548) !important;
+    color: #ffffff !important;
+
+    transform: translateY(-1px) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.17) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (min-width: 701px) and (max-width: 959px) {
+    body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+    #FormContentPlaceHolder_Panel {
+        max-width: 100% !important;
+        padding: 23px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th,
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td {
+        padding: 11px 10px !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(1),
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1) {
+        width: 25% !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(2),
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2) {
+        width: 53% !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(3),
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3) {
+        width: 22% !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE AGENT CARDS
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+    body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+    #FormContentPlaceHolder_Panel {
+        margin-top: 14px !important;
+        padding: 18px 15px !important;
+
+        border-radius: 14px !important;
+    }
+
+    /* Stack the office contact cards. */
+    body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child
+    > .span5 {
+        padding: 17px !important;
+    }
+
+    /* Remove the desktop table container treatment. */
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGridFormAjaxGridUpdatePanel
+    > div:first-child {
+        border: 0 !important;
+        border-radius: 0 !important;
+
+        background: transparent !important;
+
+        box-shadow: none !important;
+
+        overflow: visible !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        background: transparent !important;
+
+        table-layout: auto !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.HeaderStyle {
+        display: none !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 0 12px !important;
+
+        border: 1px solid var(--star-border, #e4e9ec) !important;
+        border-radius: 12px !important;
+
+        background: #ffffff !important;
+
+        box-shadow:
+            0 5px 15px rgba(23, 53, 72, 0.06) !important;
+
+        overflow: hidden !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle:hover {
+        background: #ffffff !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1),
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2),
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3) {
+        display: grid !important;
+        grid-template-columns: 96px minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 11px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        padding: 12px 14px !important;
+
+        border: 0 !important;
+        border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+        background: #ffffff !important;
+
+        white-space: normal !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:last-child {
+        border-bottom: 0 !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td::before {
+        color: var(--star-navy, #21465f) !important;
+
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1)::before {
+        content: "Agent" !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2)::before {
+        content: "Designations" !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3)::before {
+        content: "Phone" !important;
+    }
+
+    /* Prevent values from breaking one character per line. */
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td
+    > a {
+        display: block !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        hyphens: none !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2) {
+        color: var(--star-text-muted, #64727c) !important;
+    }
+
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3) {
+        white-space: normal !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+    .button-set {
+        display: block !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton {
+        width: 100% !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1),
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2),
+    #FormContentPlaceHolder_Panel_officeDetails_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3) {
+        grid-template-columns: 80px minmax(0, 1fr) !important;
+
+        gap: 9px !important;
+        padding: 11px 12px !important;
+    }
+}
