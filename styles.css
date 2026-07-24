@@ -446,65 +446,225 @@ nav#navigation select[id^="selectnav"] {
 
 
 /* =========================================================
-   MOBILE NAVIGATION — 767PX AND BELOW
+   MOBILE PORTAL NAVIGATION — COLLAPSIBLE
+   767PX AND BELOW
    ========================================================= */
 
 @media screen and (max-width: 767px),
 screen and (max-device-width: 767px) {
 
     nav#navigation {
-        margin-top: 10px !important;
-        padding: 8px !important;
-
-        border-radius: 10px !important;
-
-        overflow: visible !important;
-    }
-
-    /*
-     * Use a compact two-column menu rather than displaying
-     * eight full-width links in one long vertical list.
-     */
-    nav#navigation ul#TabMenu {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        align-items: start !important;
-        gap: 6px !important;
+        position: relative !important;
+        z-index: 100 !important;
 
         width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
 
+        margin-top: 10px !important;
         padding: 0 !important;
 
         border: 0 !important;
-        border-radius: 0 !important;
+        border-radius: 10px !important;
 
-        background: transparent !important;
+        background:
+            linear-gradient(
+                135deg,
+                var(--star-navy, #21465f),
+                var(--star-navy-dark, #173548)
+            ) !important;
+
+        box-shadow:
+            0 8px 22px rgba(23, 53, 72, 0.18) !important;
+
+        overflow: visible !important;
+        box-sizing: border-box !important;
     }
 
+    nav#navigation > .left-corner,
+    nav#navigation > .right-corner {
+        display: none !important;
+    }
+
+    /* Remove any older generated Menu heading. */
+    nav#navigation::before {
+        display: none !important;
+        content: none !important;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU BUTTON
+       ===================================================== */
+
+    nav#navigation .portal-menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 12px !important;
+
+        width: 100% !important;
+        min-height: 50px !important;
+
+        margin: 0 !important;
+        padding: 13px 15px !important;
+
+        border: 0 !important;
+        border-radius: 10px !important;
+
+        background: transparent !important;
+        color: #ffffff !important;
+
+        font-family:
+            "Poppins",
+            "Open Sans",
+            Verdana,
+            Arial,
+            sans-serif !important;
+
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation .portal-menu-toggle::before {
+        content: "☰" !important;
+
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+    }
+
+    nav#navigation .portal-menu-toggle::after {
+        content: "▾" !important;
+
+        margin-left: auto !important;
+
+        font-size: 14px !important;
+        line-height: 1 !important;
+
+        transition: transform 0.18s ease !important;
+    }
+
+    nav#navigation.mobile-menu-open
+    .portal-menu-toggle {
+        border-radius: 10px 10px 0 0 !important;
+
+        background: rgba(0, 0, 0, 0.10) !important;
+    }
+
+    nav#navigation.mobile-menu-open
+    .portal-menu-toggle::after {
+        transform: rotate(180deg) !important;
+    }
+
+    nav#navigation .portal-menu-toggle:focus-visible {
+        outline: 3px solid rgba(79, 174, 195, 0.38) !important;
+        outline-offset: -3px !important;
+    }
+
+
+    /* =====================================================
+       COLLAPSED TOP-LEVEL MENU
+       ===================================================== */
+
+    nav#navigation ul#TabMenu {
+        position: static !important;
+
+        display: none !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 8px !important;
+
+        border: 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+        border-radius: 0 0 10px 10px !important;
+
+        background: var(--star-navy-dark, #173548) !important;
+
+        list-style: none !important;
+
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation.mobile-menu-open
+    ul#TabMenu {
+        display: block !important;
+    }
+
+
+    /* =====================================================
+       TOP-LEVEL ITEMS
+       ===================================================== */
+
     nav#navigation ul#TabMenu > li {
+        position: relative !important;
+
         display: block !important;
 
         width: 100% !important;
         min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 0 5px !important;
+        padding: 0 !important;
 
         border: 0 !important;
+
+        background: transparent !important;
+
+        list-style: none !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation ul#TabMenu > li:last-child {
+        margin-bottom: 0 !important;
     }
 
     nav#navigation ul#TabMenu > li > a {
+        display: flex !important;
+        align-items: center !important;
         justify-content: flex-start !important;
+        gap: 9px !important;
 
-        min-height: 48px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 46px !important;
 
-        padding: 10px 11px !important;
+        margin: 0 !important;
+        padding: 11px 42px 11px 13px !important;
 
         border: 1px solid rgba(255, 255, 255, 0.10) !important;
         border-radius: 8px !important;
 
         background: rgba(255, 255, 255, 0.04) !important;
+        color: #ffffff !important;
 
-        font-size: 11px !important;
+        font-size: 11.5px !important;
+        font-weight: 600 !important;
+        line-height: 1.35 !important;
         text-align: left !important;
+        text-decoration: none !important;
         white-space: normal !important;
+
+        box-shadow: none !important;
+
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation ul#TabMenu > li > a > i {
+        flex: 0 0 auto !important;
+
+        margin: 0 !important;
     }
 
     nav#navigation ul#TabMenu > li.active > a {
@@ -517,14 +677,54 @@ screen and (max-device-width: 767px) {
                 #f77f84
             ) !important;
 
-        box-shadow: none !important;
+        color: #ffffff !important;
     }
 
-    /*
-     * Critical correction:
-     * nested dropdowns remain hidden until their parent item
-     * is hovered or receives keyboard/touch focus.
-     */
+    nav#navigation ul#TabMenu > li > a:hover,
+    nav#navigation ul#TabMenu > li > a:focus {
+        background: rgba(255, 255, 255, 0.11) !important;
+        color: #ffffff !important;
+
+        outline: none !important;
+    }
+
+
+    /* =====================================================
+       SUBMENU ARROW
+       ===================================================== */
+
+    nav#navigation ul#TabMenu
+    > li.has-portal-submenu
+    > a::after {
+        position: absolute !important;
+        top: 50% !important;
+        right: 15px !important;
+
+        content: "▾" !important;
+
+        color: rgba(255, 255, 255, 0.86) !important;
+
+        font-size: 13px !important;
+        line-height: 1 !important;
+
+        transform: translateY(-50%) !important;
+
+        transition: transform 0.18s ease !important;
+    }
+
+    nav#navigation ul#TabMenu
+    > li.has-portal-submenu.submenu-open
+    > a::after {
+        transform:
+            translateY(-50%)
+            rotate(180deg) !important;
+    }
+
+
+    /* =====================================================
+       COLLAPSIBLE SUBMENUS
+       ===================================================== */
+
     nav#navigation ul#TabMenu > li > ul {
         position: static !important;
 
@@ -534,44 +734,354 @@ screen and (max-device-width: 767px) {
         min-width: 0 !important;
         max-width: 100% !important;
 
-        margin: 6px 0 0 !important;
+        margin: 5px 0 2px !important;
         padding: 6px !important;
 
-        border: 0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.10) !important;
         border-radius: 8px !important;
 
         background: #ffffff !important;
 
         box-shadow: none !important;
 
+        list-style: none !important;
+
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
 
         transform: none !important;
+
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /*
+     * Open only when JavaScript applies .submenu-open.
+     * Hover and focus no longer control mobile submenus.
+     */
+    nav#navigation ul#TabMenu
+    > li.submenu-open
+    > ul {
+        display: block !important;
+    }
+
+    nav#navigation ul#TabMenu
+    > li:hover
+    > ul,
+    nav#navigation ul#TabMenu
+    > li:focus-within
+    > ul {
+        display: none !important;
+    }
+
+    nav#navigation ul#TabMenu
+    > li.submenu-open:hover
+    > ul,
+    nav#navigation ul#TabMenu
+    > li.submenu-open:focus-within
+    > ul {
+        display: block !important;
+    }
+
+    nav#navigation ul#TabMenu > li > ul > li {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: 0 !important;
+
+        list-style: none !important;
+    }
+
+    nav#navigation ul#TabMenu
+    > li
+    > ul
+    > li
+    > a {
+        display: block !important;
+
+        width: 100% !important;
+        min-height: 40px !important;
+
+        margin: 0 !important;
+        padding: 10px 11px !important;
+
+        border: 0 !important;
+        border-radius: 6px !important;
+
+        background: transparent !important;
+        color: var(--star-navy, #21465f) !important;
+
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        text-decoration: none !important;
+    }
+
+    nav#navigation ul#TabMenu
+    > li
+    > ul
+    > li
+    > a:hover,
+    nav#navigation ul#TabMenu
+    > li
+    > ul
+    > li
+    > a:focus {
+        background: var(--star-coral-light, #fff1f2) !important;
+        color: var(--star-navy-dark, #173548) !important;
+
+        outline: none !important;
+    }
+
+
+    /* Hide duplicate selectnav output. */
+    nav#navigation .selectnav,
+    nav#navigation select[id^="selectnav"] {
+        display: none !important;
+    }
+}
+
+/* =========================================================
+   TABLET NAVIGATION — 768PX TO 959PX
+   ========================================================= */
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+
+    nav#navigation {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin-top: 12px !important;
+        padding: 0 !important;
+
+        border-radius: 11px !important;
+
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    /*
+     * Display the eight navigation items as two rows
+     * of four items instead of squeezing them into one row.
+     */
+    nav#navigation ul#TabMenu {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation ul#TabMenu > li {
+        position: static !important;
+
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation ul#TabMenu > li > a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 48px !important;
+
+        margin: 0 !important;
+        padding: 8px 7px !important;
+
+        border: 0 !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.13) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13) !important;
+        border-radius: 0 !important;
+
+        background: transparent !important;
+        color: #ffffff !important;
+
+        font-size: 10.5px !important;
+        font-weight: 600 !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+        white-space: normal !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /*
+     * Keep the navigation icons small enough that they
+     * do not compete with the wording.
+     */
+    nav#navigation ul#TabMenu > li > a > i {
+        flex: 0 0 auto !important;
+
+        margin: 0 !important;
+
+        transform: scale(0.88) !important;
+        transform-origin: center !important;
+    }
+
+    /* Remove the right border from items 4 and 8. */
+    nav#navigation ul#TabMenu > li:nth-child(4n) > a {
+        border-right: 0 !important;
+    }
+
+    /* Remove the bottom border from the second row. */
+    nav#navigation ul#TabMenu > li:nth-child(n + 5) > a {
+        border-bottom: 0 !important;
+    }
+
+    /* Correct tablet corner rounding. */
+    nav#navigation ul#TabMenu > li:nth-child(1) > a {
+        border-radius: 11px 0 0 0 !important;
+    }
+
+    nav#navigation ul#TabMenu > li:nth-child(4) > a {
+        border-radius: 0 11px 0 0 !important;
+    }
+
+    nav#navigation ul#TabMenu > li:nth-child(5) > a {
+        border-radius: 0 0 0 11px !important;
+    }
+
+    nav#navigation ul#TabMenu > li:nth-child(8) > a {
+        border-radius: 0 0 11px 0 !important;
+    }
+
+    nav#navigation ul#TabMenu > li.active > a {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--star-coral, #f56d73),
+                #f77f84
+            ) !important;
+
+        color: #ffffff !important;
+
+        box-shadow:
+            inset 0 -3px 0 rgba(220, 89, 97, 0.48) !important;
+    }
+
+    nav#navigation ul#TabMenu > li:not(.active):hover > a,
+    nav#navigation ul#TabMenu > li:not(.active):focus-within > a {
+        background: rgba(255, 255, 255, 0.10) !important;
+        color: #ffffff !important;
+    }
+
+
+    /* =====================================================
+       TABLET DROPDOWNS
+       ===================================================== */
+
+    /*
+     * Because the navigation now has two rows, place opened
+     * dropdowns beneath the entire navigation instead of
+     * overlapping the second row.
+     */
+    nav#navigation ul#TabMenu > li > ul {
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        right: 0 !important;
+        left: 0 !important;
+        z-index: 1000 !important;
+
+        display: grid !important;
+        grid-template-columns:
+            repeat(auto-fit, minmax(150px, 1fr)) !important;
+        gap: 5px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 9px !important;
+
+        border: 1px solid var(--star-border, #e4e9ec) !important;
+        border-radius: 11px !important;
+
+        background: #ffffff !important;
+
+        box-shadow:
+            0 14px 34px rgba(23, 53, 72, 0.20) !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+        transform: translateY(-6px) !important;
+
+        box-sizing: border-box !important;
     }
 
     nav#navigation ul#TabMenu > li:hover > ul,
     nav#navigation ul#TabMenu > li:focus-within > ul {
-        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+        transform: translateY(0) !important;
     }
 
-    /*
-     * Let an opened dropdown occupy both mobile columns.
-     */
-    nav#navigation ul#TabMenu > li:has(> ul):focus-within {
-        grid-column: 1 / -1 !important;
+    nav#navigation ul#TabMenu > li > ul > li {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     nav#navigation ul#TabMenu > li > ul > li > a {
-        min-height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
 
-        padding: 10px 11px !important;
+        width: 100% !important;
+        min-height: 42px !important;
+
+        margin: 0 !important;
+        padding: 10px 12px !important;
+
+        border-radius: 7px !important;
+
+        color: var(--star-navy, #21465f) !important;
 
         font-size: 11px !important;
+        font-weight: 600 !important;
+        line-height: 1.4 !important;
+        white-space: normal !important;
+
+        box-sizing: border-box !important;
     }
 }
-
 
 /* =========================================================
    VERY SMALL MOBILE
