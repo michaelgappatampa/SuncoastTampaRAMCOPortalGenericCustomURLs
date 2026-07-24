@@ -12885,3 +12885,82 @@ body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
         width: 100% !important;
     }
 }
+/* =========================================================
+   PAYMENT FORM — FIELD SPACING
+   ========================================================= */
+
+/* Add consistent spacing after each form control. */
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel
+.span5
+> .input-control {
+    margin-bottom: 22px !important;
+}
+
+/* Avoid extra space after the final field in each column. */
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel
+.span5
+> .input-control:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Keep labels close to their corresponding fields. */
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel
+h3.desc {
+    margin: 0 0 9px !important;
+}
+
+/* Prevent the previous heading rule from doubling the spacing. */
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel
+.span5
+> .input-control
++ h3.desc,
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel
+.span5
+> div
++ h3.desc {
+    margin-top: 0 !important;
+}
+
+/* Space between expiration month and year. */
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel_CCInfo_expirationDateDatePickerli {
+    column-gap: 12px !important;
+    row-gap: 12px !important;
+}
+
+/* Add more separation between major form sections. */
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row {
+    margin-bottom: 30px !important;
+}
+
+/* Keep the action-button row from having excess bottom spacing. */
+body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:has(#FormContentPlaceHolder_Panel_Panel_WizardNavigationli) {
+    margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 639px) {
+    body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+    #FormContentPlaceHolder_Panel
+    .span5
+    > .input-control {
+        margin-bottom: 18px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row {
+        margin-bottom: 24px !important;
+    }
+}
