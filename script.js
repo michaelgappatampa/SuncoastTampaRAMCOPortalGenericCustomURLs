@@ -5,144 +5,10 @@
        CONFIGURATION
        ===================================================== */
 
-    var REPOSITORY_NAME =
-        "michaelgappatampa/" +
-        "SuncoastTampaRAMCOPortalGenericCustomURLs";
-
-    var CDN_ROOT =
-        "https://cdn.jsdelivr.net/gh/" +
-        REPOSITORY_NAME +
-        "@";
-
-    /*
-     * Pin the stylesheet independently from script.js.
-     *
-     * This prevents a script committed at one revision from
-     * replacing the page stylesheet with styles.css from that
-     * same JavaScript revision.
-     *
-     * Update this value whenever the production CSS commit
-     * changes, or override it with data-styles-version on the
-     * script element.
-     */
-    var DEFAULT_STYLESHEET_VERSION =
-        "8715497a7218d8ff3314e3652434f04cbaf9f845";
-
-    var STYLESHEET_ID = "star-portal-central-styles";
     var MOBILE_BREAKPOINT = 767;
 
     var aspNetLoadRegistered = false;
     var globalNavigationEventsRegistered = false;
-
-
-    /* =====================================================
-       SCRIPT AND STYLESHEET CONFIGURATION
-       ===================================================== */
-
-    function getPortalScriptElement() {
-        var scripts = document.getElementsByTagName("script");
-        var scriptElement = document.currentScript;
-
-        var repositoryPattern =
-            /SuncoastTampaRAMCOPortalGenericCustomURLs@[^/]+\/script\.js(?:[?#].*)?$/i;
-
-        var index;
-
-        if (
-            scriptElement &&
-            scriptElement.src &&
-            repositoryPattern.test(scriptElement.src)
-        ) {
-            return scriptElement;
-        }
-
-        for (
-            index = scripts.length - 1;
-            index >= 0;
-            index -= 1
-        ) {
-            if (
-                scripts[index].src &&
-                repositoryPattern.test(scripts[index].src)
-            ) {
-                return scripts[index];
-            }
-        }
-
-        return null;
-    }
-
-    function getStylesheetVersion() {
-        var scriptElement = getPortalScriptElement();
-        var configuredVersion;
-
-        if (scriptElement) {
-            configuredVersion = (
-                scriptElement.getAttribute(
-                    "data-styles-version"
-                ) || ""
-            ).trim();
-
-            if (configuredVersion) {
-                return configuredVersion;
-            }
-        }
-
-        return DEFAULT_STYLESHEET_VERSION;
-    }
-
-    var STYLESHEET_VERSION = getStylesheetVersion();
-
-    var STYLESHEET_URL =
-        CDN_ROOT +
-        STYLESHEET_VERSION +
-        "/styles.css";
-
-
-    /* =====================================================
-       STYLESHEET LOADER
-       ===================================================== */
-
-    function ensurePortalStyles() {
-        var stylesheet;
-
-        if (!document.head) {
-            return;
-        }
-
-        stylesheet = document.getElementById(
-            STYLESHEET_ID
-        );
-
-        if (!stylesheet) {
-            stylesheet = document.querySelector(
-                'link[rel~="stylesheet"]' +
-                '[href*="SuncoastTampaRAMCOPortalGenericCustomURLs"]' +
-                '[href*="styles.css"]'
-            );
-        }
-
-        if (!stylesheet) {
-            stylesheet = document.createElement("link");
-            stylesheet.id = STYLESHEET_ID;
-            stylesheet.rel = "stylesheet";
-            stylesheet.media = "all";
-
-            document.head.appendChild(stylesheet);
-        } else if (!stylesheet.id) {
-            stylesheet.id = STYLESHEET_ID;
-        }
-
-        if (
-            stylesheet.getAttribute("href") !==
-            STYLESHEET_URL
-        ) {
-            stylesheet.setAttribute(
-                "href",
-                STYLESHEET_URL
-            );
-        }
-    }
 
 
     /* =====================================================
@@ -169,8 +35,7 @@
         if (
             window.Sys &&
             Sys.Application &&
-            typeof Sys.Application.add_load ===
-                "function"
+            typeof Sys.Application.add_load === "function"
         ) {
             Sys.Application.add_load(callback);
             aspNetLoadRegistered = true;
@@ -184,8 +49,8 @@
 
     function getDirectChildByTag(parent, tagName) {
         var children;
-        var index;
         var expectedTag;
+        var index;
 
         if (!parent) {
             return null;
@@ -328,7 +193,17 @@
 
         closePortalSubmenus(menu);
 
-        menu.setAttribute("aria-hidden", "true");
+        if (isMobileNavigation()) {
+            menu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+        } else {
+            menu.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+        }
 
         if (toggle) {
             toggle.setAttribute(
@@ -359,14 +234,15 @@
 
         mobile = isMobileNavigation();
 
-        /*
-         * Prevent the browser-default toggle from appearing
-         * on tablet and desktop even when CSS is delayed.
-         */
         if (toggle) {
             if (mobile) {
-                toggle.style.removeProperty("display");
-                toggle.removeAttribute("aria-hidden");
+                toggle.style.removeProperty(
+                    "display"
+                );
+
+                toggle.removeAttribute(
+                    "aria-hidden"
+                );
             } else {
                 toggle.style.setProperty(
                     "display",
@@ -449,6 +325,7 @@
             );
 
             toggle.type = "button";
+
             toggle.className =
                 "portal-menu-toggle";
 
@@ -466,8 +343,8 @@
             );
 
             /*
-             * Hide the control until responsive state has
-             * been calculated.
+             * Prevent the browser-default button from
+             * appearing briefly on desktop.
              */
             toggle.style.display = "none";
 
@@ -532,9 +409,9 @@
         );
 
         /*
-         * Bind navigation events once per rendered nav.
-         * A replacement created by an ASP.NET partial update
-         * will be initialized independently.
+         * Bind events only once to each rendered navigation.
+         * If ASP.NET replaces the navigation, the replacement
+         * element can be initialized separately.
          */
         if (
             navigation.getAttribute(
@@ -573,11 +450,16 @@
                         return;
                     }
 
+                    /*
+                     * Main mobile navigation toggle.
+                     */
                     if (
                         currentToggle &&
                         (
                             target === currentToggle ||
-                            currentToggle.contains(target)
+                            currentToggle.contains(
+                                target
+                            )
                         )
                     ) {
                         event.preventDefault();
@@ -609,8 +491,9 @@
                     }
 
                     /*
-                     * Find the clicked anchor without using
-                     * Element.closest() for older browsers.
+                     * Find the selected anchor without using
+                     * Element.closest() for compatibility with
+                     * older portal browsers.
                      */
                     while (
                         target &&
@@ -632,7 +515,7 @@
                     item = link.parentNode;
 
                     /*
-                     * Do not intercept submenu links.
+                     * Do not intercept links inside a submenu.
                      */
                     if (
                         !item ||
@@ -660,11 +543,11 @@
                         );
 
                     /*
-                     * First tap opens a submenu.
+                     * First tap opens the submenu.
                      *
-                     * Placeholder parent links remain
-                     * toggle-only. A real parent URL can be
-                     * followed with a second tap.
+                     * Placeholder links remain toggle-only.
+                     * Parent links with real URLs can be
+                     * followed on the second tap.
                      */
                     if (
                         !isOpen ||
@@ -782,6 +665,7 @@
 
     function loadSnapEngage() {
         var snapEngageScript;
+        var target;
 
         /*
          * Preserve the existing environment exclusion.
@@ -793,6 +677,10 @@
             return;
         }
 
+        /*
+         * Prevent duplicate SnapEngage scripts during
+         * ASP.NET partial-page updates.
+         */
         if (
             document.querySelector(
                 'script[data-star-snapengage="true"]'
@@ -819,10 +707,14 @@
             "code.snapengage.com/js/" +
             "1d363fa7-55f0-42fd-8d24-c20df812db52.js";
 
-        (
+        target =
             document.head ||
-            document.body
-        ).appendChild(snapEngageScript);
+            document.body ||
+            document.documentElement;
+
+        target.appendChild(
+            snapEngageScript
+        );
     }
 
 
@@ -831,29 +723,21 @@
        ===================================================== */
 
     function initializePortal() {
-        ensurePortalStyles();
         initializePortalNavigation();
         registerGlobalNavigationEvents();
     }
 
     function handleAspNetLoad() {
-        ensurePortalStyles();
         initializePortalNavigation();
     }
-
-    /*
-     * Load CSS as early as possible to reduce unstyled-page
-     * flashing.
-     */
-    ensurePortalStyles();
 
     onDocumentReady(function () {
         initializePortal();
         loadSnapEngage();
 
         /*
-         * Sys.Application may become available only after
-         * the initial page scripts finish loading.
+         * Register navigation initialization for RAMCO
+         * ASP.NET partial-page updates.
          */
         registerAspNetLoad(
             handleAspNetLoad
