@@ -135,4 +135,138 @@
 
     /* RAMCO uses ASP.NET partial-page updates. */
     registerAspNetLoad(ensurePortalStyles);
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const navigation = document.getElementById("navigation");
+    const menu = document.getElementById("TabMenu");
+
+    if (!navigation || !menu) {
+        return;
+    }
+
+    let toggle = navigation.querySelector(".portal-menu-toggle");
+
+    if (!toggle) {
+        toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "portal-menu-toggle";
+        toggle.textContent = "Portal Navigation";
+        toggle.setAttribute("aria-controls", "TabMenu");
+        toggle.setAttribute("aria-expanded", "false");
+
+        navigation.insertBefore(toggle, menu);
+    }
+
+    const submenuItems = Array.from(
+        menu.querySelectorAll(":scope > li")
+    ).filter(function (item) {
+        return item.querySelector(":scope > ul");
+    });
+
+    submenuItems.forEach(function (item) {
+        const link = item.querySelector(":scope > a");
+        const submenu = item.querySelector(":scope > ul");
+
+        if (!link || !submenu) {
+            return;
+        }
+
+        item.classList.add("has-portal-submenu");
+
+        const submenuId =
+            item.id
+                ? item.id + "-submenu"
+                : "portal-submenu-" +
+                  Math.random().toString(36).slice(2);
+
+        submenu.id = submenuId;
+
+        link.setAttribute("aria-controls", submenuId);
+        link.setAttribute("aria-expanded", "false");
+
+        link.addEventListener("click", function (event) {
+            if (window.innerWidth > 767) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const willOpen =
+                !item.classList.contains("submenu-open");
+
+            submenuItems.forEach(function (otherItem) {
+                otherItem.classList.remove("submenu-open");
+
+                const otherLink =
+                    otherItem.querySelector(":scope > a");
+
+                if (otherLink) {
+                    otherLink.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            });
+
+            if (willOpen) {
+                item.classList.add("submenu-open");
+                link.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+    toggle.addEventListener("click", function () {
+        const isOpen =
+            navigation.classList.toggle("mobile-menu-open");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
+
+        if (!isOpen) {
+            submenuItems.forEach(function (item) {
+                item.classList.remove("submenu-open");
+
+                const link =
+                    item.querySelector(":scope > a");
+
+                if (link) {
+                    link.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            });
+        }
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 767) {
+            navigation.classList.remove(
+                "mobile-menu-open"
+            );
+
+            toggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            submenuItems.forEach(function (item) {
+                item.classList.remove("submenu-open");
+
+                const link =
+                    item.querySelector(":scope > a");
+
+                if (link) {
+                    link.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+                }
+            });
+        }
+    });
+});
+
 })();
