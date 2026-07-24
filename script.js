@@ -26,7 +26,7 @@
      * script element.
      */
     var DEFAULT_STYLESHEET_VERSION =
-        "8ff6aeb502c69255e31b40e0baf3d917e50d9d7e";
+        "8715497a7218d8ff3314e3652434f04cbaf9f845";
 
     var STYLESHEET_ID = "star-portal-central-styles";
     var MOBILE_BREAKPOINT = 767;
