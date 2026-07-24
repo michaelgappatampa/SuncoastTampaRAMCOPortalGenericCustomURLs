@@ -6902,3 +6902,28 @@ body:has(#SingleColumnLayout #login)
         width: 100% !important;
     }
 }
+
+/* =========================================================
+   LOGIN FIELD SPACING
+   ========================================================= */
+
+/* Add space between Username and Password. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.editForm > .row:first-child
+> .span5:first-child
+> .input-control + .input-control {
+    margin-top: 14px !important;
+}
+
+/* Add space above Remember Me. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_RememberMeli {
+    margin-top: 16px !important;
+}
+
+/* Add breathing room before the Login button area. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStripli {
+    margin-top: 8px !important;
+}
