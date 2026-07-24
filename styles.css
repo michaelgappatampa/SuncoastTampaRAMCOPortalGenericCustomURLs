@@ -9807,3 +9807,1470 @@ body:has(#FormContentPlaceHolder_panel_amountTextBox)
         width: 100% !important;
     }
 }
+/* =========================================================
+   RPAC CONTRIBUTION — PAYMENT INFORMATION
+   ========================================================= */
+
+/* Normalize the single-column page wrapper. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#SingleColumnLayout {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 24px 16px 40px !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+.sixteen.floated:has(#FormContentPlaceHolder_panel) {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   PAYMENT FORM CARD
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panelDiv,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel {
+    max-width: 980px !important;
+
+    margin: 0 auto !important;
+    padding: 30px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 18px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f9fbfc 100%
+        ) !important;
+
+    box-shadow:
+        0 12px 30px rgba(23, 53, 72, 0.09) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel > .editForm {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   FORM ROWS AND COLUMNS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+    gap: 24px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 0 26px !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Remove legacy clearfix pseudo-elements. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row::before,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Reset legacy span widths and inline padding. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row
+> .span5,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row
+> .span10 {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: none !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Full-width rows. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row:has(> .span10) {
+    grid-template-columns: minmax(0, 1fr) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row
+> .span10 {
+    grid-column: 1 / -1 !important;
+}
+
+/* Hide the empty validation row when there are no messages. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row:has(#FormContentPlaceHolder_panel_validationSummaryli:empty) {
+    display: none !important;
+}
+
+
+/* =========================================================
+   FIELD LABELS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+h3.desc {
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+h3.desc span {
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+/* Space between fields stacked inside the same column. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.span5
+> .input-control
++ h3.desc,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.span5
+> div
++ h3.desc {
+    margin-top: 21px !important;
+}
+
+
+/* =========================================================
+   INPUT CONTROL WRAPPERS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.input-control {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TEXT FIELDS AND SELECTS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.input-control
+input[type="text"],
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.input-control
+select {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 47px !important;
+
+    margin: 0 !important;
+    padding: 10px 13px !important;
+
+    border: 1px solid #ccd8de !important;
+    border-radius: 9px !important;
+
+    background-color: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+
+    box-shadow:
+        0 1px 2px rgba(23, 53, 72, 0.04) !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.input-control
+input[type="text"]:focus,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.input-control
+select:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 174, 195, 0.17) !important;
+}
+
+/* Hide unused helper buttons beside text fields. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+.input-control.text
+> button.helper {
+    display: none !important;
+}
+
+/*
+ * Preserve the hidden state/province text field until RAMCO
+ * changes its inline display setting.
+ */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_StateProvinceDropDownTextBox[style*="display:none"],
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_StateProvinceDropDownTextBox[style*="display: none"] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   EXPIRATION DATE
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_expirationDateDatePickerli {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(110px, 0.65fr) !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_expirationDateDatePickerli
+p.error {
+    grid-column: 1 / -1 !important;
+}
+
+
+/* =========================================================
+   SAVE CARD CHECKBOX
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_createProfileCheckBoxli {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 15px 17px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 11px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_createProfileCheckBoxli
+label.input-control.checkbox {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+
+    cursor: pointer !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_createProfileCheckBoxli
+input[type="checkbox"] {
+    flex: 0 0 auto !important;
+
+    width: 18px !important;
+    height: 18px !important;
+
+    margin: 0 !important;
+
+    accent-color: var(--star-navy, #21465f) !important;
+}
+
+
+/* =========================================================
+   SAME-AS ADDRESS OPTIONS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDownli {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 11px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown
+label.input-control.radio {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 48px !important;
+
+    margin: 0 !important;
+    padding: 11px 13px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 10px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+
+    cursor: pointer !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown
+label.input-control.radio:hover {
+    border-color: var(--star-navy-light, #4faec3) !important;
+    background: rgba(79, 174, 195, 0.08) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown
+label.input-control.radio:has(input:checked) {
+    border-color: var(--star-navy, #21465f) !important;
+    background: rgba(33, 70, 95, 0.08) !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(33, 70, 95, 0.08) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown
+input[type="radio"] {
+    flex: 0 0 auto !important;
+
+    width: 18px !important;
+    height: 18px !important;
+
+    margin: 0 !important;
+
+    accent-color: var(--star-navy, #21465f) !important;
+}
+
+/* Hide the empty helper span beside each radio. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown
+label.input-control.radio
+> span.helper:empty {
+    display: none !important;
+}
+
+
+/* =========================================================
+   BILLING ADDRESS SECTION
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row:has(
+    #FormContentPlaceHolder_panel_creditCardInformation_addressControl_Street1Textli
+) {
+    margin-top: 4px !important;
+    padding-top: 26px !important;
+
+    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+}
+
+
+/* =========================================================
+   VALIDATION MESSAGES
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+p.error {
+    margin: 6px 0 0 !important;
+    padding: 0 !important;
+
+    color: var(--star-coral-dark, #dc5961) !important;
+
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    line-height: 1.45 !important;
+}
+
+
+/* =========================================================
+   SAVED CARD PROFILES
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_creditCardProfilesFormAjaxGridUpdatePanelli,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_creditCardProfilesFormAjaxGridUpdatePanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Remove spacing when no saved-card table is rendered. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row:has(
+    #FormContentPlaceHolder_panel_creditCardInformation_creditCardProfilesFormAjaxGridUpdatePanel
+):not(:has(table.standard-table)) {
+    margin-bottom: 0 !important;
+}
+
+/* Style the saved-card table when RAMCO renders one. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_creditCardProfilesFormAjaxGridUpdatePanel
+table.standard-table {
+    width: 100% !important;
+
+    margin: 0 0 24px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-radius: 12px !important;
+
+    background: #ffffff !important;
+
+    overflow: hidden !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_creditCardProfilesFormAjaxGridUpdatePanel
+table.standard-table
+tr.HeaderStyle
+> th {
+    padding: 13px 15px !important;
+
+    border: 0 !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_creditCardInformation_creditCardProfilesFormAjaxGridUpdatePanel
+table.standard-table
+tr.RowStyle
+> td {
+    padding: 13px 15px !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+    background: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+}
+
+
+/* =========================================================
+   BACK AND CONTINUE BUTTONS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli {
+    width: 100% !important;
+
+    margin: 4px 0 0 !important;
+    padding: 22px 0 0 !important;
+
+    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli::before,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+.button-set {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+input.button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 115px !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 19px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 9px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    cursor: pointer !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+/* Continue button. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton {
+    border-color: var(--star-navy, #21465f) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.23) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+input.button:hover,
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+input.button:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    transform: translateY(-1px) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.17) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* Hide the unused Home layout below the payment form. */
+body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+#formPanel
+> #TwoColumnHomePageLayout {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TABLET — 640px TO 959px
+   ========================================================= */
+
+@media screen and (min-width: 640px) and (max-width: 959px) {
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel {
+        max-width: 100% !important;
+        padding: 24px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel
+    > .editForm
+    > .row {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — BELOW 640px
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #SingleColumnLayout {
+        padding: 12px 0 30px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel {
+        padding: 20px 16px !important;
+        border-radius: 14px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel
+    > .editForm
+    > .row {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+
+        margin-bottom: 22px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel_creditCardInformation_expirationDateDatePickerli {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel_creditCardInformation_addressControl_SameAsDropDown {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel_panel_WizardNavigationli
+    .button-set {
+        flex-direction: column-reverse !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_creditCardInformation_cardTypeDropDown)
+    #FormContentPlaceHolder_panel_panel_WizardNavigationli
+    input.button {
+        width: 100% !important;
+    }
+}
+/* =========================================================
+   STAR BENEFITS PAGE
+   ========================================================= */
+
+#star-benefits-page {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 1180px !important;
+
+    margin: 0 auto !important;
+    padding: 0 0 40px !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    box-sizing: border-box !important;
+}
+
+#star-benefits-page *,
+#star-benefits-page *::before,
+#star-benefits-page *::after {
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   PAGE HERO
+   ========================================================= */
+
+#star-benefits-page .star-benefits__hero {
+    position: relative !important;
+
+    margin: 0 0 24px !important;
+    padding: 28px 30px !important;
+
+    border: 1px solid rgba(79, 174, 195, 0.25) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 18px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f4fafb 100%
+        ) !important;
+
+    box-shadow:
+        0 12px 30px rgba(23, 53, 72, 0.08) !important;
+
+    overflow: hidden !important;
+}
+
+#star-benefits-page .star-benefits__hero::after {
+    position: absolute !important;
+    top: -70px !important;
+    right: -70px !important;
+
+    width: 190px !important;
+    height: 190px !important;
+
+    border-radius: 50% !important;
+
+    background:
+        rgba(79, 174, 195, 0.08) !important;
+
+    content: "" !important;
+
+    pointer-events: none !important;
+}
+
+#star-benefits-page .star-benefits__eyebrow,
+#star-benefits-page .star-benefits__section-label {
+    display: block !important;
+
+    margin: 0 0 6px !important;
+
+    color: var(--star-navy-light, #4faec3) !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+}
+
+#star-benefits-page .star-benefits__hero h2 {
+    position: relative !important;
+    z-index: 1 !important;
+
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+}
+
+#star-benefits-page .star-benefits__hero p {
+    position: relative !important;
+    z-index: 1 !important;
+
+    max-width: 760px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+}
+
+
+/* =========================================================
+   QUICK-LINK CARDS
+   ========================================================= */
+
+#star-benefits-page .star-benefits__quick-links {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+
+    margin: 0 0 34px !important;
+}
+
+#star-benefits-page .star-benefits__feature-card {
+    display: grid !important;
+    grid-template-columns: 46px minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 14px !important;
+
+    margin: 0 !important;
+    padding: 20px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 15px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 8px 22px rgba(23, 53, 72, 0.07) !important;
+}
+
+#star-benefits-page .star-benefits__icon,
+#star-benefits-page .star-benefits__benefit-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    border-radius: 12px !important;
+
+    background: rgba(79, 174, 195, 0.12) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 19px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+}
+
+#star-benefits-page .star-benefits__feature-card h3 {
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+#star-benefits-page .star-benefits__feature-card p {
+    margin: 0 0 15px !important;
+    padding: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.6 !important;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+#star-benefits-page .star-benefits__section {
+    margin: 0 0 36px !important;
+}
+
+#star-benefits-page .star-benefits__section-heading {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    gap: 24px !important;
+
+    margin: 0 0 17px !important;
+    padding: 0 2px 14px !important;
+
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+}
+
+#star-benefits-page .star-benefits__section-heading h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+#star-benefits-page .star-benefits__section-heading > p {
+    max-width: 480px !important;
+
+    margin: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+    text-align: right !important;
+}
+
+
+/* =========================================================
+   GOVERNING DOCUMENTS
+   ========================================================= */
+
+#star-benefits-page .star-benefits__resource-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+#star-benefits-page .star-benefits__resource-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 18px !important;
+
+    min-height: 84px !important;
+
+    margin: 0 !important;
+    padding: 16px 18px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 12px !important;
+
+    background: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 4px 13px rgba(23, 53, 72, 0.05) !important;
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+#star-benefits-page a.star-benefits__resource-card:hover,
+#star-benefits-page a.star-benefits__resource-card:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    box-shadow:
+        0 8px 20px rgba(23, 53, 72, 0.10) !important;
+
+    transform: translateY(-1px) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.15) !important;
+    outline-offset: 2px !important;
+}
+
+#star-benefits-page .star-benefits__resource-card strong {
+    display: block !important;
+
+    margin: 0 0 4px !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+#star-benefits-page .star-benefits__resource-card small {
+    display: block !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+}
+
+#star-benefits-page .star-benefits__arrow {
+    flex: 0 0 auto !important;
+
+    color: var(--star-navy-light, #4faec3) !important;
+
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+#star-benefits-page .star-benefits__resource-card--disabled {
+    border-style: dashed !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+
+    box-shadow: none !important;
+}
+
+#star-benefits-page .star-benefits__status {
+    flex: 0 0 auto !important;
+
+    padding: 5px 9px !important;
+
+    border-radius: 999px !important;
+
+    background: var(--star-coral-light, #fff1f2) !important;
+    color: var(--star-coral-dark, #dc5961) !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+
+/* =========================================================
+   EXCLUSIVE BENEFIT CARDS
+   ========================================================= */
+
+#star-benefits-page .star-benefits__benefit-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+}
+
+#star-benefits-page .star-benefits__benefit-card {
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 22px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 16px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fafcfd 100%
+        ) !important;
+
+    box-shadow:
+        0 8px 22px rgba(23, 53, 72, 0.07) !important;
+}
+
+/* The app card is wider because it contains detailed steps. */
+#star-benefits-page
+.star-benefits__benefit-card:first-child {
+    grid-row: span 2 !important;
+}
+
+#star-benefits-page .star-benefits__benefit-header {
+    display: grid !important;
+    grid-template-columns: 46px minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 13px !important;
+
+    margin: 0 0 16px !important;
+}
+
+#star-benefits-page .star-benefits__badge {
+    display: inline-block !important;
+
+    margin: 0 0 4px !important;
+    padding: 4px 8px !important;
+
+    border-radius: 999px !important;
+
+    background: rgba(79, 174, 195, 0.10) !important;
+    color: var(--star-navy-light, #4faec3) !important;
+
+    font-size: 9.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+}
+
+#star-benefits-page .star-benefits__benefit-card h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+}
+
+#star-benefits-page .star-benefits__benefit-card > p {
+    margin: 0 0 15px !important;
+    padding: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.65 !important;
+}
+
+#star-benefits-page .star-benefits__fine-print {
+    padding: 12px 14px !important;
+
+    border-left: 3px solid var(--star-navy-light, #4faec3) !important;
+
+    background: rgba(79, 174, 195, 0.07) !important;
+
+    font-size: 11.5px !important;
+}
+
+
+/* =========================================================
+   MEMBER HUB STEPS
+   ========================================================= */
+
+#star-benefits-page .star-benefits__steps {
+    margin: 0 0 20px !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+    counter-reset: benefit-step !important;
+}
+
+#star-benefits-page .star-benefits__steps > li {
+    position: relative !important;
+
+    margin: 0 !important;
+    padding: 0 0 14px 40px !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.6 !important;
+
+    counter-increment: benefit-step !important;
+}
+
+#star-benefits-page .star-benefits__steps > li::before {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 27px !important;
+    height: 27px !important;
+
+    border-radius: 8px !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    content: counter(benefit-step) !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+#star-benefits-page .star-benefits__steps > li:not(:last-child)::after {
+    position: absolute !important;
+    top: 29px !important;
+    bottom: 2px !important;
+    left: 13px !important;
+
+    width: 1px !important;
+
+    background: var(--star-border, #e4e9ec) !important;
+
+    content: "" !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+#star-benefits-page .star-benefits__button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: fit-content !important;
+    min-height: 40px !important;
+
+    margin: auto 0 0 !important;
+    padding: 9px 14px !important;
+
+    border-radius: 8px !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+#star-benefits-page .star-benefits__button--primary {
+    border: 1px solid var(--star-navy, #21465f) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.22) !important;
+}
+
+#star-benefits-page .star-benefits__button--secondary {
+    border: 1px solid rgba(33, 70, 95, 0.20) !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+}
+
+#star-benefits-page .star-benefits__button:hover,
+#star-benefits-page .star-benefits__button:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    transform: translateY(-1px) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.16) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 959px) {
+    #star-benefits-page .star-benefits__quick-links {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #star-benefits-page .star-benefits__section-heading {
+        display: block !important;
+    }
+
+    #star-benefits-page .star-benefits__section-heading > p {
+        max-width: none !important;
+
+        margin-top: 8px !important;
+
+        text-align: left !important;
+    }
+
+    #star-benefits-page .star-benefits__benefit-list {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #star-benefits-page
+    .star-benefits__benefit-card:first-child {
+        grid-row: auto !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    #star-benefits-page {
+        padding-bottom: 24px !important;
+    }
+
+    #star-benefits-page .star-benefits__hero {
+        padding: 22px 18px !important;
+        border-radius: 14px !important;
+    }
+
+    #star-benefits-page .star-benefits__hero h2 {
+        font-size: 23px !important;
+    }
+
+    #star-benefits-page .star-benefits__resource-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #star-benefits-page .star-benefits__feature-card,
+    #star-benefits-page .star-benefits__benefit-card {
+        padding: 17px !important;
+    }
+
+    #star-benefits-page .star-benefits__feature-card {
+        grid-template-columns: 40px minmax(0, 1fr) !important;
+    }
+
+    #star-benefits-page .star-benefits__icon,
+    #star-benefits-page .star-benefits__benefit-icon {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    #star-benefits-page .star-benefits__button {
+        width: 100% !important;
+    }
+
+    #star-benefits-page .star-benefits__resource-card {
+        min-height: 0 !important;
+        padding: 14px !important;
+    }
+}
