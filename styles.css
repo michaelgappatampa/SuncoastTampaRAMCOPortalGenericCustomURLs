@@ -15680,3 +15680,959 @@ body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
         width: 100% !important;
     }
 }
+/* =========================================================
+   MEMBER DIRECTORY — RESPONSIVE RESULTS TABLE
+   ========================================================= */
+
+/* Normalize the row and column containing the results. */
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row:has(#FormContentPlaceHolder_editForm_resultsGrid) {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row:has(#FormContentPlaceHolder_editForm_resultsGrid)::before,
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row:has(#FormContentPlaceHolder_editForm_resultsGrid)::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row:has(#FormContentPlaceHolder_editForm_resultsGrid)
+> .span10 {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   AJAX AND TABLE WRAPPERS
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanelli,
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+> div:first-child {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 15px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 8px 22px rgba(23, 53, 72, 0.07) !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TABLE BASE
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_resultsGrid {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+
+    table-layout: fixed !important;
+
+    background: #ffffff !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+th,
+#FormContentPlaceHolder_editForm_resultsGrid
+td {
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   COLUMN WIDTHS
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(1),
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(1) {
+    width: 25% !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(2),
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2) {
+    width: 45% !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(3),
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3) {
+    width: 30% !important;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle {
+    background: var(--star-navy, #21465f) !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th {
+    padding: 14px 15px !important;
+
+    border: 0 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-bottom: 1px solid var(--star-navy-dark, #173548) !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.04em !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+
+    vertical-align: middle !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:last-child {
+    border-right: 0 !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:first-child {
+    border-top-left-radius: 14px !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:last-child {
+    border-top-right-radius: 14px !important;
+}
+
+/* Sortable heading links. */
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th
+> a {
+    display: block !important;
+
+    color: #ffffff !important;
+
+    font: inherit !important;
+    text-decoration: none !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th
+> a:hover,
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th
+> a:focus {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+
+    outline: none !important;
+}
+
+
+/* =========================================================
+   DIRECTORY ROWS
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle {
+    background: #ffffff !important;
+
+    transition:
+        background-color 0.15s ease !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle:nth-child(odd) {
+    background: var(--star-surface-soft, #f7f9fa) !important;
+}
+
+/* Replace the legacy yellow JavaScript hover. */
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle:hover {
+    background: rgba(79, 174, 195, 0.10) !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td {
+    padding: 13px 15px !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+    background: transparent !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+}
+
+/* Directory links. */
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td
+> a {
+    color: #0070c9 !important;
+
+    font-size: inherit !important;
+    font-weight: 500 !important;
+    line-height: inherit !important;
+
+    text-decoration: none !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:first-child
+> a {
+    font-weight: 600 !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td
+> a:hover,
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td
+> a:focus {
+    color: var(--star-navy, #21465f) !important;
+
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+
+    outline: none !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3)
+> span {
+    display: block !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+
+/* =========================================================
+   DIRECTORY PAGER
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td {
+    padding: 14px 15px !important;
+
+    border: 0 !important;
+
+    background: #ffffff !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-collapse: collapse !important;
+
+    background: transparent !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody {
+    display: block !important;
+    width: 100% !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td {
+    display: block !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    font-size: 12px !important;
+}
+
+/* Page links and selected page. */
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> a,
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> span:not(:only-child),
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> span:only-child {
+    text-decoration: none !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> a,
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> span:only-child {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 32px !important;
+    height: 32px !important;
+
+    padding: 0 8px !important;
+
+    border: 1px solid #d7e1e6 !important;
+    border-radius: 7px !important;
+
+    background: #ffffff !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> a:hover,
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> a:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    background: rgba(79, 174, 195, 0.10) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.14) !important;
+    outline-offset: 1px !important;
+}
+
+/* Current page number. */
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td
+> span:only-child {
+    border-color: var(--star-navy, #21465f) !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PAGE SIZE AND RESULT COUNT
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td:nth-last-child(2) {
+    margin-left: auto !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td:nth-last-child(2)
+> div {
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+
+    width: auto !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td:nth-last-child(2)
+span {
+    display: inline !important;
+
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+tr.PagerStyle
+select {
+    width: auto !important;
+    min-width: 64px !important;
+    min-height: 34px !important;
+
+    margin: 0 !important;
+    padding: 5px 26px 5px 8px !important;
+
+    border: 1px solid #ccd8de !important;
+    border-radius: 7px !important;
+
+    background-color: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 11.5px !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td:last-child {
+    margin-left: 12px !important;
+}
+
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.PagerStyle
+> td
+> table
+> tbody
+> tr
+> td:last-child
+> div {
+    width: auto !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    text-align: right !important;
+}
+
+
+/* =========================================================
+   MOBILE DIRECTORY CARDS — BELOW 700px
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+    #FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+    > div:first-child {
+        border: 0 !important;
+        border-radius: 0 !important;
+
+        background: transparent !important;
+
+        box-shadow: none !important;
+
+        overflow: visible !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        background: transparent !important;
+
+        table-layout: auto !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Column headings are replaced with labels inside each card. */
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle {
+        display: none !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle {
+        display: block !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin: 0 0 12px !important;
+
+        border: 1px solid var(--star-border, #e4e9ec) !important;
+        border-radius: 12px !important;
+
+        background: #ffffff !important;
+
+        box-shadow:
+            0 5px 15px rgba(23, 53, 72, 0.06) !important;
+
+        overflow: hidden !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle:hover {
+        background: #ffffff !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td {
+        display: grid !important;
+        grid-template-columns: 82px minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 12px !important;
+
+        width: 100% !important;
+
+        padding: 12px 14px !important;
+
+        border: 0 !important;
+        border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+        background: #ffffff !important;
+
+        font-size: 12.5px !important;
+        text-align: left !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:last-child {
+        border-bottom: 0 !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td::before {
+        color: var(--star-navy, #21465f) !important;
+
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1)::before {
+        content: "Name" !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2)::before {
+        content: "Office" !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3)::before {
+        content: "Location" !important;
+    }
+
+
+    /* Mobile pager card. */
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin-top: 16px !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td {
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 14px !important;
+
+        border: 1px solid var(--star-border, #e4e9ec) !important;
+        border-radius: 12px !important;
+
+        background: #ffffff !important;
+
+        box-shadow:
+            0 5px 15px rgba(23, 53, 72, 0.05) !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr {
+        justify-content: center !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr
+    > td:nth-last-child(2),
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr
+    > td:last-child {
+        flex: 1 1 100% !important;
+
+        width: 100% !important;
+
+        margin: 8px 0 0 !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr
+    > td:nth-last-child(2)
+    > div {
+        justify-content: center !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr
+    > td:last-child
+    > div {
+        text-align: center !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td {
+        grid-template-columns: 70px minmax(0, 1fr) !important;
+
+        gap: 9px !important;
+        padding: 11px 12px !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td {
+        padding: 12px !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr {
+        gap: 5px !important;
+    }
+
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr
+    > td
+    > a,
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.PagerStyle
+    > td
+    > table
+    > tbody
+    > tr
+    > td
+    > span:only-child {
+        min-width: 30px !important;
+        height: 30px !important;
+
+        padding: 0 7px !important;
+    }
+}
