@@ -6270,3 +6270,635 @@ input.button.active {
         width: 100% !important;
     }
 }
+/* =========================================================
+   LOGIN / ACCOUNT SETUP PAGE
+   ========================================================= */
+
+/*
+ * Normalize the legacy single-column wrapper.
+ */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 24px 16px 40px !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout > .sixteen.floated,
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout > .sixteen.floated > .editForm {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Hide the unused empty row above the login cards. */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row:first-child {
+    display: none !important;
+}
+
+/*
+ * Remove legacy clearfix pseudo-elements before turning
+ * the row into a grid.
+ */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row::before,
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Login and account-setup card layout. */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row:has(#login) {
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(280px, 0.65fr) !important;
+
+    align-items: stretch !important;
+    gap: 24px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Reset legacy span widths and floats. */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+.row:has(#login)
+> .span8,
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+.row:has(#login)
+> .span4 {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#login {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 30px !important;
+
+    float: none !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 18px !important;
+
+    background: var(--star-surface, #ffffff) !important;
+
+    box-shadow:
+        var(
+            --star-card-shadow,
+            0 12px 30px rgba(23, 53, 72, 0.1)
+        ) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#login > h2 {
+    margin: 0 0 22px !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 26px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm > .editForm {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Login form rows. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.editForm > .row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 0 18px !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.editForm > .row::before,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.editForm > .row::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Reset nested legacy columns. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.editForm > .row
+> .span5,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.editForm > .row
+> .span10 {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LOGIN INPUTS
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control {
+    display: block !important;
+    position: relative !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control input[type="text"],
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control input[type="password"] {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+
+    margin: 0 !important;
+    padding: 11px 14px !important;
+
+    border: 1px solid #ccd8de !important;
+    border-radius: 10px !important;
+
+    background: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+
+    box-shadow:
+        0 1px 2px rgba(23, 53, 72, 0.04) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control input:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 174, 195, 0.18) !important;
+}
+
+/* Hide the unused helper buttons beside text fields. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control.text > button.helper,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control.password > button.helper {
+    display: none !important;
+}
+
+/* Legacy placeholders. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.phholder {
+    pointer-events: none !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.placeholder {
+    color: #83919a !important;
+
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   REMEMBER ME
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_RememberMeli {
+    margin: 2px 0 0 !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_RememberMeli
+label.input-control.checkbox {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_RememberMeli
+input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+
+    margin: 0 !important;
+
+    accent-color: var(--star-navy, #21465f) !important;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStripli {
+    width: 100% !important;
+
+    margin: 4px 0 0 !important;
+    padding: 20px 0 0 !important;
+
+    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStripli
+.button-set {
+    display: flex !important;
+    justify-content: flex-end !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 130px !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 22px !important;
+
+    border: 1px solid var(--star-navy, #21465f) !important;
+    border-radius: 9px !important;
+
+    background: linear-gradient(
+        135deg,
+        var(--star-navy, #21465f),
+        var(--star-navy-dark, #173548)
+    ) !important;
+
+    color: #ffffff !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 8px 18px rgba(33, 70, 95, 0.25) !important;
+
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton:hover,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton:focus {
+    border-color: var(--star-navy-dark, #173548) !important;
+    background: var(--star-navy-dark, #173548) !important;
+
+    transform: translateY(-1px) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.2) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   NEW MEMBER / ACCOUNT SETUP CARD
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#sponsorBlock {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 30px !important;
+
+    float: none !important;
+
+    border: 1px solid rgba(79, 174, 195, 0.24) !important;
+    border-top: 4px solid var(--star-coral, #f56d73) !important;
+    border-radius: 18px !important;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff 0%,
+        #f7fbfc 100%
+    ) !important;
+
+    box-shadow:
+        var(
+            --star-card-shadow,
+            0 12px 30px rgba(23, 53, 72, 0.1)
+        ) !important;
+
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#sponsorBlock p {
+    max-width: 300px !important;
+
+    margin: 0 0 22px !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.65 !important;
+}
+
+/* Hide the legacy line break controlling the spacing. */
+body:has(#SingleColumnLayout #login)
+#sponsorBlock > br {
+    display: none !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#sponsorBlock a.button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 150px !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 20px !important;
+
+    border: 1px solid var(--star-navy, #21465f) !important;
+    border-radius: 9px !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 8px 18px rgba(33, 70, 95, 0.22) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#sponsorBlock a.button:hover,
+body:has(#SingleColumnLayout #login)
+#sponsorBlock a.button:focus {
+    border-color: var(--star-navy-dark, #173548) !important;
+    background: var(--star-navy-dark, #173548) !important;
+    color: #ffffff !important;
+
+    transform: translateY(-1px) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.2) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* Hide the unused Home Page layout on the login page. */
+body:has(#SingleColumnLayout #login)
+#formPanel > #TwoColumnHomePageLayout {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TABLET — 640px TO 959px
+   ========================================================= */
+
+@media screen and (min-width: 640px) and (max-width: 959px) {
+    body:has(#SingleColumnLayout #login)
+    #SingleColumnLayout
+    > .sixteen.floated
+    > .editForm
+    > .row:has(#login) {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+    }
+
+    body:has(#SingleColumnLayout #login)
+    #login,
+    body:has(#SingleColumnLayout #login)
+    #sponsorBlock {
+        min-height: 0 !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — BELOW 640px
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    body:has(#SingleColumnLayout #login)
+    #SingleColumnLayout {
+        padding: 12px 0 30px !important;
+    }
+
+    body:has(#SingleColumnLayout #login)
+    #SingleColumnLayout
+    > .sixteen.floated
+    > .editForm
+    > .row:has(#login) {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    body:has(#SingleColumnLayout #login)
+    #login,
+    body:has(#SingleColumnLayout #login)
+    #sponsorBlock {
+        min-height: 0 !important;
+        padding: 22px 18px !important;
+        border-radius: 14px !important;
+    }
+
+    body:has(#SingleColumnLayout #login)
+    #login > h2 {
+        font-size: 23px !important;
+    }
+
+    body:has(#SingleColumnLayout #login)
+    #FormContentPlaceHolder_LoginEditForm_LoginButtonStripli
+    .button-set {
+        display: block !important;
+    }
+
+    body:has(#SingleColumnLayout #login)
+    #FormContentPlaceHolder_LoginEditForm_LoginButtonStrip_LoginButton,
+    body:has(#SingleColumnLayout #login)
+    #sponsorBlock a.button {
+        width: 100% !important;
+    }
+}
