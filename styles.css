@@ -16636,3 +16636,175 @@ select {
         padding: 0 7px !important;
     }
 }
+/* =========================================================
+   DIRECTORY TABLE — LOCATION COLUMN FIX
+   ========================================================= */
+
+/*
+ * Higher-specificity override for the older 760px minimum-width
+ * rule that is causing the Location column to be clipped.
+ */
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+table#FormContentPlaceHolder_editForm_resultsGrid.standard-table {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    table-layout: fixed !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Give Location more room while keeping Office readable. */
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(1),
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(1) {
+    width: 25% !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(2),
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2) {
+    width: 41% !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(3),
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3) {
+    width: 34% !important;
+}
+
+/* Allow Office and Location values to wrap instead of being cut off. */
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2),
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3) {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2)
+> a,
+body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+#FormContentPlaceHolder_editForm_resultsGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3)
+> span {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+}
+
+
+/* =========================================================
+   TABLET — 701px TO 959px
+   ========================================================= */
+
+@media screen and (min-width: 701px) and (max-width: 959px) {
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th,
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td {
+        padding: 11px 10px !important;
+    }
+
+    /* Slightly increase Location at narrower tablet widths. */
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(1),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1) {
+        width: 25% !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(2),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2) {
+        width: 39% !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(3),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3) {
+        width: 36% !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th {
+        font-size: 10px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td {
+        font-size: 11px !important;
+    }
+}
