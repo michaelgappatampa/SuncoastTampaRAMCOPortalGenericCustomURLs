@@ -7775,3 +7775,712 @@ tr.PagerStyle div > span {
         padding-right: 12px !important;
     }
 }
+/* =========================================================
+   MEMBER DIRECTORY — SEARCH FORM AND RESULTS
+   ========================================================= */
+
+/*
+ * Scope this section only to the Member Directory page.
+ */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#SingleColumnLayout {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 24px 16px 40px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Reset the legacy 16-column wrapper. */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#SingleColumnLayout > .sixteen.floated {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   DIRECTORY FORM CARD
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm > .editForm {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 28px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 18px !important;
+
+    background: var(--star-surface, #ffffff) !important;
+
+    box-shadow:
+        var(
+            --star-card-shadow,
+            0 12px 30px rgba(23, 53, 72, 0.09)
+        ) !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   DIRECTORY FORM ROWS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+    gap: 22px 26px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 0 24px !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+/*
+ * Remove legacy clearfix pseudo-elements.
+ * Otherwise they become invisible grid items and shift fields.
+ */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row::before,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Reset legacy span widths and inline padding. */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row
+> .span5,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row
+> .span10 {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: none !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Button and results rows occupy the full form width. */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row:has(> .span10) {
+    grid-template-columns: minmax(0, 1fr) !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row
+> .span10 {
+    grid-column: 1 / -1 !important;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+h3,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+h3.desc {
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+
+    letter-spacing: 0.01em !important;
+    text-transform: none !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+h3 span {
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+/* Add spacing between multiple fields in the same column. */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.span5 > .input-control + h3,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.span5 > div + h3 {
+    margin-top: 20px !important;
+}
+
+
+/* =========================================================
+   INPUT CONTROL WRAPPERS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.input-control {
+    display: block !important;
+    position: relative !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TEXT INPUTS AND SELECTS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.input-control input[type="text"],
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.input-control select {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 46px !important;
+
+    margin: 0 !important;
+    padding: 10px 13px !important;
+
+    border: 1px solid #ccd8de !important;
+    border-radius: 9px !important;
+
+    background-color: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+
+    box-shadow:
+        0 1px 2px rgba(23, 53, 72, 0.04) !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.input-control input:focus,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.input-control select:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 174, 195, 0.17) !important;
+}
+
+/* Hide the unused helper buttons beside text fields. */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+.input-control.text > button.helper {
+    display: none !important;
+}
+
+
+/* =========================================================
+   SERVICES PROVIDED CHECKBOXES
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvidedli {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvided {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-collapse: collapse !important;
+
+    background: transparent !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvided
+tbody,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvided
+tr {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvided
+td {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvided
+label.input-control.checkbox {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+
+    width: 100% !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 12px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 9px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvided
+input[type="checkbox"] {
+    flex: 0 0 auto !important;
+
+    width: 18px !important;
+    height: 18px !important;
+
+    margin: 0 !important;
+
+    accent-color: var(--star-navy, #21465f) !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_servicesProvided
+span.helper {
+    display: inline !important;
+
+    color: inherit !important;
+
+    font-size: inherit !important;
+    line-height: 1.35 !important;
+}
+
+
+/* =========================================================
+   VALIDATION
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm
+p.error {
+    margin: 5px 0 0 !important;
+    padding: 0 !important;
+
+    color: var(--star-coral-dark, #dc5961) !important;
+
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+}
+
+
+/* =========================================================
+   SEARCH AND CANCEL BUTTONS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStripli {
+    width: 100% !important;
+
+    margin: 4px 0 0 !important;
+    padding: 20px 0 0 !important;
+
+    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStripli::before,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStripli::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStripli
+.button-set {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStripli
+input.button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 110px !important;
+    min-height: 43px !important;
+
+    margin: 0 !important;
+    padding: 9px 18px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 9px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+/* Search button. */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStrip_searchButton {
+    border-color: var(--star-navy, #21465f) !important;
+
+    background: linear-gradient(
+        135deg,
+        var(--star-navy, #21465f),
+        var(--star-navy-dark, #173548)
+    ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.23) !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStripli
+input.button:hover,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_initialSearchButtonStripli
+input.button:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    outline: 3px solid rgba(79, 174, 195, 0.17) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   DIRECTORY RESULTS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanelli,
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/*
+ * This applies when RAMCO inserts the directory results table
+ * into the update panel after a search.
+ */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+table.standard-table {
+    width: 100% !important;
+    min-width: 760px !important;
+
+    margin: 0 !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-radius: 14px !important;
+
+    background: #ffffff !important;
+
+    overflow: hidden !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+table.standard-table
+tr.HeaderStyle > th {
+    padding: 14px 15px !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid #16394f !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+table.standard-table
+tr.RowStyle > td {
+    padding: 13px 15px !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+    background: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+table.standard-table
+tr.RowStyle:nth-child(odd) > td {
+    background: var(--star-surface-soft, #f7f9fa) !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel
+table.standard-table
+tr.RowStyle:hover > td {
+    background: rgba(79, 174, 195, 0.10) !important;
+}
+
+
+/* Hide the unused Home Page layout rendered below this page. */
+body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+#formPanel > #TwoColumnHomePageLayout {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TABLET — 640px TO 959px
+   ========================================================= */
+
+@media screen and (min-width: 640px) and (max-width: 959px) {
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm
+    > .editForm
+    > .row {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm
+    > .editForm {
+        padding: 22px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — BELOW 640px
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #SingleColumnLayout {
+        padding: 12px 0 30px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm
+    > .editForm {
+        padding: 18px 15px !important;
+        border-radius: 14px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm
+    > .editForm
+    > .row {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm_servicesProvided
+    tbody,
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm_servicesProvided
+    tr {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm_initialSearchButtonStripli
+    .button-set {
+        flex-direction: column-reverse !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm_initialSearchButtonStripli
+    input.button {
+        width: 100% !important;
+    }
+
+    body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
+    #FormContentPlaceHolder_editForm_resultsGridFormAjaxGridUpdatePanel {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+    }
+}
