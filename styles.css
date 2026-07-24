@@ -13773,3 +13773,437 @@ body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
         width: 100% !important;
     }
 }
+/* =========================================================
+   PAYMENT FEE SUMMARY TABLE
+   ========================================================= */
+
+/* Ajax and table wrappers. */
+#FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdatePanelli,
+#FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdatePanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Visible scrolling container. */
+#FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdatePanel
+> div:first-child {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 15px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 8px 22px rgba(23, 53, 72, 0.07) !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TABLE BASE
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid {
+    width: 100% !important;
+    min-width: 720px !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+
+    background: #ffffff !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle {
+    background: var(--star-navy, #21465f) !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th {
+    padding: 15px 16px !important;
+
+    border: 0 !important;
+    border-bottom:
+        1px solid var(--star-navy-dark, #173548) !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.03em !important;
+    text-transform: uppercase !important;
+
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:first-child {
+    border-top-left-radius: 14px !important;
+    text-align: left !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:last-child {
+    border-top-right-radius: 14px !important;
+    text-align: right !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(2),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(3),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(4) {
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   PRODUCT ROW
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle {
+    background: #ffffff !important;
+
+    transition:
+        background-color 0.15s ease !important;
+}
+
+/* Override the legacy yellow JavaScript hover. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle:hover {
+    background: rgba(79, 174, 195, 0.10) !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td {
+    padding: 17px 16px !important;
+
+    border: 0 !important;
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    background: transparent !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    vertical-align: middle !important;
+}
+
+/* Product name. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:first-child {
+    color: var(--star-navy, #21465f) !important;
+
+    font-weight: 700 !important;
+    text-align: left !important;
+}
+
+/* List Price, Your Price and Quantity. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(4) {
+    text-align: center !important;
+}
+
+/* Line-item total. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:last-child {
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-align: right !important;
+}
+
+
+/* =========================================================
+   TOTALS FOOTER
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td {
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7fafb 0%,
+            #ffffff 100%
+        ) !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table {
+    width: 100% !important;
+    max-width: 430px !important;
+
+    margin: 0 0 0 auto !important;
+    padding: 14px 16px !important;
+
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+
+    background: transparent !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table
+> tbody
+> tr
+> td {
+    padding: 7px 5px !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+}
+
+/* Footer labels. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table
+> tbody
+> tr
+> td:first-child {
+    width: 100% !important;
+
+    text-align: right !important;
+}
+
+/* Footer values. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table
+> tbody
+> tr
+> td:last-child {
+    min-width: 95px !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-weight: 600 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   ORDER TOTAL
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table
+> tbody
+> tr:has(
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid_ordertotalLabel
+)
+> td {
+    padding-top: 12px !important;
+
+    border-top:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid_ordertotalLabel {
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 14px !important;
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   BALANCE
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table
+> tbody
+> tr:has(
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid_balanceLabel
+)
+> td {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 15px !important;
+    font-weight: 800 !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid_balanceLabel {
+    display: inline-block !important;
+
+    min-width: 72px !important;
+
+    padding: 6px 10px !important;
+
+    border-radius: 8px !important;
+
+    background: rgba(245, 109, 115, 0.12) !important;
+    color: var(--star-coral-dark, #dc5961) !important;
+
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   EMPTY FOOTER ROWS
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid_Tr1,
+#FormContentPlaceHolder_panel_feeSummary_detailGrid_Tr2 {
+    display: none !important;
+}
+
+
+/* =========================================================
+   LOADING INDICATOR
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdateProgress {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    #FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdatePanel
+    > div:first-child {
+        border-radius: 12px !important;
+    }
+
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid {
+        min-width: 680px !important;
+    }
+
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid
+    > tbody
+    > tr.HeaderStyle
+    > th,
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid
+    > tbody
+    > tr.RowStyle
+    > td {
+        padding-left: 13px !important;
+        padding-right: 13px !important;
+    }
+
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid
+    > tbody
+    > tr.FooterStyle
+    > td
+    > table {
+        max-width: 100% !important;
+        padding: 12px !important;
+    }
+}
