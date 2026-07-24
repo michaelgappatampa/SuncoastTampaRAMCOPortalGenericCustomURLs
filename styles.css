@@ -6927,3 +6927,415 @@ body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm_LoginButtonStripli {
     margin-top: 8px !important;
 }
+
+/* =========================================================
+   LOGIN INSTRUCTIONS
+   ========================================================= */
+
+/*
+ * If the instructions are injected into the first row,
+ * do not allow the previous empty-row rule to hide them.
+ */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row:first-child:has(#star-login-help) {
+    display: block !important;
+}
+
+/* Normalize the legacy row containing the injected content. */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row:has(#star-login-help) {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 0 24px !important;
+    padding: 0 !important;
+    float: none !important;
+    clear: both !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row:has(#star-login-help)::before,
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row:has(#star-login-help)::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+.row:has(#star-login-help)
+> .span10 {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   INSTRUCTION CARD
+   ========================================================= */
+
+#star-login-help {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 28px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 18px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fbfc 100%
+        ) !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    box-shadow:
+        0 12px 30px rgba(23, 53, 72, 0.09) !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+#star-login-help .star-login-help__header {
+    margin: 0 0 22px !important;
+}
+
+#star-login-help .star-login-help__eyebrow {
+    display: block !important;
+    margin: 0 0 5px !important;
+
+    color: var(--star-navy-light, #4faec3) !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+}
+
+#star-login-help h2 {
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+}
+
+#star-login-help .star-login-help__header p {
+    max-width: 720px !important;
+    margin: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+
+/* =========================================================
+   IMPORTANT NOTICE
+   ========================================================= */
+
+#star-login-help .star-login-help__notice {
+    display: grid !important;
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 13px !important;
+
+    margin: 0 0 24px !important;
+    padding: 15px 17px !important;
+
+    border: 1px solid rgba(245, 109, 115, 0.30) !important;
+    border-radius: 12px !important;
+
+    background: var(--star-coral-light, #fff1f2) !important;
+
+    box-sizing: border-box !important;
+}
+
+#star-login-help .star-login-help__notice-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 32px !important;
+    height: 32px !important;
+
+    border-radius: 50% !important;
+
+    background: var(--star-coral, #f56d73) !important;
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+}
+
+#star-login-help .star-login-help__notice strong {
+    display: block !important;
+    margin: 0 0 3px !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+#star-login-help .star-login-help__notice p {
+    margin: 0 !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+}
+
+#star-login-help .star-login-help__notice a {
+    color: var(--star-navy, #21465f) !important;
+    font-weight: 700 !important;
+    overflow-wrap: anywhere !important;
+}
+
+
+/* =========================================================
+   NUMBERED STEPS
+   ========================================================= */
+
+#star-login-help .star-login-help__steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+
+    margin: 0 0 22px !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+}
+
+#star-login-help .star-login-help__steps > li {
+    display: grid !important;
+    grid-template-columns: 34px minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 11px !important;
+
+    margin: 0 !important;
+    padding: 16px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 12px !important;
+
+    background: #ffffff !important;
+
+    list-style: none !important;
+    box-shadow: 0 4px 12px rgba(23, 53, 72, 0.05) !important;
+
+    box-sizing: border-box !important;
+}
+
+#star-login-help .star-login-help__step-number {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 32px !important;
+    height: 32px !important;
+
+    border-radius: 9px !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+#star-login-help .star-login-help__steps strong {
+    display: block !important;
+    margin: 1px 0 5px !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+#star-login-help .star-login-help__steps p {
+    margin: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+}
+
+
+/* =========================================================
+   SUPPORT AND EXAMPLE
+   ========================================================= */
+
+#star-login-help .star-login-help__details {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.4fr) minmax(230px, 0.6fr) !important;
+    gap: 14px !important;
+
+    margin: 0 0 16px !important;
+}
+
+#star-login-help .star-login-help__support,
+#star-login-help .star-login-help__example {
+    margin: 0 !important;
+    padding: 16px 18px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 12px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+
+    box-sizing: border-box !important;
+}
+
+#star-login-help .star-login-help__details h3 {
+    margin: 0 0 6px !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+}
+
+#star-login-help .star-login-help__support p {
+    margin: 0 !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+}
+
+#star-login-help .star-login-help__example dl {
+    margin: 0 !important;
+}
+
+#star-login-help .star-login-help__example dl > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+
+    padding: 5px 0 !important;
+}
+
+#star-login-help .star-login-help__example dt {
+    color: var(--star-text-muted, #64727c) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+#star-login-help .star-login-help__example dd {
+    margin: 0 !important;
+}
+
+#star-login-help .star-login-help__example code {
+    padding: 4px 7px !important;
+
+    border: 1px solid #d5e0e5 !important;
+    border-radius: 6px !important;
+
+    background: #ffffff !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   COOKIES NOTE
+   ========================================================= */
+
+#star-login-help .star-login-help__cookies {
+    margin: 0 !important;
+    padding: 11px 14px !important;
+
+    border-left: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 0 8px 8px 0 !important;
+
+    background: rgba(79, 174, 195, 0.08) !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   TABLET AND MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 959px) {
+    #star-login-help .star-login-help__steps {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #star-login-help .star-login-help__details {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    #star-login-help {
+        padding: 20px 16px !important;
+        border-radius: 14px !important;
+    }
+
+    #star-login-help h2 {
+        font-size: 22px !important;
+    }
+
+    #star-login-help .star-login-help__notice {
+        grid-template-columns: 30px minmax(0, 1fr) !important;
+        padding: 14px !important;
+    }
+
+    #star-login-help .star-login-help__notice-icon {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 15px !important;
+    }
+
+    #star-login-help .star-login-help__steps > li {
+        padding: 14px !important;
+    }
+}
