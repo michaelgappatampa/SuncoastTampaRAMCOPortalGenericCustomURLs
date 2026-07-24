@@ -15316,3 +15316,367 @@ body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
         width: 100% !important;
     }
 }
+/* =========================================================
+   LOWERCASE ORDER SUMMARY — WIDTH / OVERFLOW CORRECTION
+   ========================================================= */
+
+/*
+ * Constrain every major legacy wrapper to the available
+ * page width. This prevents padding and old float widths
+ * from making the form wider than the white content area.
+ */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#SingleColumnLayout,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#SingleColumnLayout > .sixteen.floated,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panelDiv,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel > .editForm {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   ROW CONTAINMENT
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row
+> .span5,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row
+> .span10 {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TABLE CONTAINMENT
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdatePanelli,
+#FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdatePanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGridFormAjaxGridUpdatePanel
+> div:first-child {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    overscroll-behavior-inline: contain !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/*
+ * Allow the table to fit the desktop page.
+ * The previous 720px minimum width caused it to push outside
+ * narrower content containers.
+ */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    table-layout: fixed !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Assign predictable column widths. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(1),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(1) {
+    width: 46% !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(2),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(2) {
+    width: 14% !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(3),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(3) {
+    width: 14% !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(4),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(4) {
+    width: 9% !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.HeaderStyle
+> th:nth-child(5),
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:nth-child(5) {
+    width: 17% !important;
+}
+
+/* Prevent long product names from widening the table. */
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.RowStyle
+> td:first-child {
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+}
+
+
+/* =========================================================
+   TOTALS FOOTER CONTAINMENT
+   ========================================================= */
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table {
+    width: 100% !important;
+    max-width: 430px !important;
+
+    margin-left: auto !important;
+    margin-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table
+> td:first-child {
+    width: auto !important;
+}
+
+#FormContentPlaceHolder_panel_feeSummary_detailGrid
+> tbody
+> tr.FooterStyle
+> td
+> table
+> td:last-child {
+    width: 95px !important;
+    min-width: 95px !important;
+}
+
+
+/* =========================================================
+   SAVINGS AND COUPON WIDTH
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_feeSummary_totalSavingLabelli,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControlli,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControlli
+.CouponComposite {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Keep the coupon button from pushing outside the page. */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControlli
+.CouponComposite {
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(130px, auto) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_couponCodeTextboxli {
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_couponCodeTextbox {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+
+/* =========================================================
+   BUTTON CONTAINMENT
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+.button-set {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   SMALL TABLET AND MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 760px) {
+    /*
+     * On smaller screens, allow horizontal table scrolling
+     * instead of squeezing all five columns too tightly.
+     */
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid {
+        min-width: 680px !important;
+        max-width: none !important;
+
+        table-layout: auto !important;
+    }
+
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid
+    > tbody
+    > tr.HeaderStyle
+    > th,
+    #FormContentPlaceHolder_panel_feeSummary_detailGrid
+    > tbody
+    > tr.RowStyle
+    > td {
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+    #FormContentPlaceHolder_panel_Coupon_CouponControlli
+    .CouponComposite {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+    #FormContentPlaceHolder_panel_panel_WizardNavigationli
+    .button-set {
+        flex-direction: column-reverse !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+    #FormContentPlaceHolder_panel_panel_WizardNavigationli
+    input.button {
+        width: 100% !important;
+    }
+}
