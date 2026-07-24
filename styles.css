@@ -18803,3 +18803,656 @@ body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
         text-align: center !important;
     }
 }
+/* =========================================================
+   MEMBER DETAILS — CORRECTED LAYOUT
+   ========================================================= */
+
+/* Keep the complete member-details page within its container. */
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel > .editForm,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel > .editForm > .row,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel > .editForm > .row > .span5,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel > .editForm > .row > .span10 {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   PRIMARY TWO-COLUMN LAYOUT
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child {
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(280px, 0.85fr) !important;
+    align-items: stretch !important;
+    gap: 18px !important;
+
+    width: 100% !important;
+    margin: 0 0 18px !important;
+}
+
+
+/* =========================================================
+   LEFT MEMBER PROFILE CARD
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:first-child {
+    display: grid !important;
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+    grid-template-areas:
+        "member-photo member-name"
+        "member-photo member-association"
+        "member-photo member-address"
+        "member-photo member-email" !important;
+    align-content: start !important;
+    align-items: start !important;
+    column-gap: 18px !important;
+    row-gap: 12px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 20px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 14px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fbfc 100%
+        ) !important;
+
+    box-shadow:
+        0 6px 18px rgba(23, 53, 72, 0.05) !important;
+
+    overflow: hidden !important;
+}
+
+
+/* =========================================================
+   MEMBER PHOTO — COLLAPSE FIX
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli {
+    grid-area: member-photo !important;
+    align-self: start !important;
+    justify-self: start !important;
+
+    display: block !important;
+
+    width: 120px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+
+    margin: 0 !important;
+    padding: 4px !important;
+
+    border: 1px solid rgba(79, 174, 195, 0.30) !important;
+    border-radius: 12px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #edf6f8
+        ) !important;
+
+    box-shadow:
+        0 6px 16px rgba(23, 53, 72, 0.11) !important;
+
+    font-size: 0 !important;
+    line-height: 0 !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli
+> img {
+    position: static !important;
+
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 8px !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    transform: none !important;
+    clip: auto !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   NAME AND LICENSE
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli {
+    grid-area: member-name !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 0 13px !important;
+
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+    overflow-wrap: break-word !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+b:first-of-type {
+    display: block !important;
+
+    margin: 0 0 8px !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+b:last-of-type {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    margin: 0 !important;
+    padding: 5px 8px !important;
+
+    border-radius: 999px !important;
+
+    background: rgba(79, 174, 195, 0.10) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+
+
+/* =========================================================
+   ASSOCIATION, ADDRESS AND EMAIL
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_primaryAssociationLabelli {
+    grid-area: member-association !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_primaryAssociationLabel {
+    display: block !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+
+    overflow-wrap: break-word !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_addressLiteralli {
+    grid-area: member-address !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 12px 13px !important;
+
+    border-left: 3px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 0 8px 8px 0 !important;
+
+    background: rgba(79, 174, 195, 0.08) !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_addressLiteralli
+a {
+    color: #0070c9 !important;
+
+    font-weight: 700 !important;
+    text-decoration: none !important;
+
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+    grid-area: member-email !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli
+a {
+    display: block !important;
+
+    width: fit-content !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    padding: 8px 10px !important;
+
+    border: 1px solid rgba(33, 70, 95, 0.15) !important;
+    border-radius: 8px !important;
+
+    background: #ffffff !important;
+    color: #0070c9 !important;
+
+    font-size: 10.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   RIGHT CONTACT DETAILS CARD
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-content: start !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 15px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 14px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+
+    box-shadow:
+        0 6px 18px rgba(23, 53, 72, 0.05) !important;
+
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Hide the original headings and recreate compact labels. */
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+> h3.desc {
+    display: none !important;
+}
+
+/* Style all current and optional member-detail values. */
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+> div[id*="_memberDetails_"] {
+    position: relative !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 72px !important;
+
+    margin: 0 !important;
+    padding: 31px 12px 12px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 10px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 3px 10px rgba(23, 53, 72, 0.04) !important;
+
+    white-space: normal !important;
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Designations use the complete row. */
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli {
+    grid-column: 1 / -1 !important;
+}
+
+/* Any optional website field uses the complete row. */
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+> div[id*="_memberDetails_"]:has(a[href^="http"]) {
+    grid-column: 1 / -1 !important;
+    min-height: 0 !important;
+}
+
+
+/* =========================================================
+   RIGHT CARD LABELS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli::before,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_contactLabelli::before,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_officeLabelli::before,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_faxLabelli::before,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+> div[id*="_memberDetails_"]:has(a[href^="http"])::before {
+    position: absolute !important;
+    top: 11px !important;
+    left: 12px !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 8.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli::before {
+    content: "Designations" !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_contactLabelli::before {
+    content: "Contact" !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_officeLabelli::before {
+    content: "Office" !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel_memberDetails_faxLabelli::before {
+    content: "Fax" !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+> div[id*="_memberDetails_"]:has(a[href^="http"])::before {
+    content: "Website" !important;
+}
+
+
+/* =========================================================
+   RIGHT CARD VALUES AND WEBSITE OVERFLOW FIX
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+span.labeldesc,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+a {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:first-child
+> .span5:last-child
+a {
+    color: #0070c9 !important;
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   EMPTY BIOGRAPHY ROW
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:has(#FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli:empty) {
+    display: none !important;
+}
+
+
+/* =========================================================
+   NAVIGATION ROW
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+#FormContentPlaceHolder_Panel
+> .editForm
+> .row:has(#FormContentPlaceHolder_Panel_Panel_WizardNavigationli) {
+    margin: 0 !important;
+    padding: 16px 0 0 !important;
+
+    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (min-width: 701px) and (max-width: 959px) {
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child {
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(250px, 0.75fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child
+    > .span5:first-child {
+        grid-template-columns: 105px minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli {
+        width: 105px !important;
+        min-width: 105px !important;
+        max-width: 105px !important;
+
+        height: 135px !important;
+        min-height: 135px !important;
+        max-height: 135px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child
+    > .span5:first-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-areas:
+            "member-photo"
+            "member-name"
+            "member-association"
+            "member-address"
+            "member-email" !important;
+
+        justify-items: stretch !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli {
+        justify-self: center !important;
+
+        width: 135px !important;
+        min-width: 135px !important;
+        max-width: 135px !important;
+
+        height: 165px !important;
+        min-height: 165px !important;
+        max-height: 165px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli,
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel_memberDetails_primaryAssociationLabelli {
+        text-align: center !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child
+    > .span5:last-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel_memberDetails_designationsLabelli,
+    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+    #FormContentPlaceHolder_Panel
+    > .editForm
+    > .row:first-child
+    > .span5:last-child
+    > div[id*="_memberDetails_"] {
+        grid-column: auto !important;
+    }
+}
