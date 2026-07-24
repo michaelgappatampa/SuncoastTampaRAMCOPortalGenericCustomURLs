@@ -16808,3 +16808,135 @@ body:has(#FormContentPlaceHolder_editForm_resultsGrid)
         font-size: 11px !important;
     }
 }
+/* =========================================================
+   DIRECTORY — MOBILE CARD WIDTH CORRECTION
+   ========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    /*
+     * Override the desktop percentage-based column widths.
+     * Every table cell must occupy the full card width.
+     */
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3) {
+        display: grid !important;
+        grid-template-columns: 84px minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 12px !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        padding: 12px 14px !important;
+
+        white-space: normal !important;
+        overflow: visible !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /*
+     * Prevent member names, offices, and locations from
+     * breaking between every character.
+     */
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td
+    > a,
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td
+    > span {
+        display: block !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        hyphens: none !important;
+
+        line-height: 1.5 !important;
+    }
+
+    /* Keep the card itself within the available page width. */
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Reset desktop column widths on the hidden header as well. */
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(1),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(2),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.HeaderStyle
+    > th:nth-child(3) {
+        width: auto !important;
+    }
+}
+
+
+/* =========================================================
+   DIRECTORY — SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(1),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(2),
+    body:has(#FormContentPlaceHolder_editForm_resultsGrid)
+    #FormContentPlaceHolder_editForm_resultsGrid
+    > tbody
+    > tr.RowStyle
+    > td:nth-child(3) {
+        grid-template-columns: 72px minmax(0, 1fr) !important;
+        gap: 9px !important;
+
+        padding: 11px 12px !important;
+    }
+}
