@@ -14803,3 +14803,516 @@ body:has(
         width: 100% !important;
     }
 }
+/* =========================================================
+   LOWERCASE PANEL — ORDER SUMMARY ACTIONS
+   ========================================================= */
+
+/* Normalize rows surrounding this order-summary page. */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 0 24px !important;
+    padding: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row::before,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row
+> .span5,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row
+> .span10 {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   ORDER SUMMARY HEADING
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_formSectionli {
+    margin: 0 !important;
+    padding: 0 0 18px !important;
+
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_formSectionli::before {
+    display: block !important;
+
+    width: 44px !important;
+    height: 4px !important;
+
+    margin: 0 0 12px !important;
+
+    border-radius: 999px !important;
+
+    background:
+        var(--star-navy-light, #4faec3) !important;
+
+    content: "" !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_formSectionli
+h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+
+/* =========================================================
+   SAVINGS MESSAGE
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_feeSummary_totalSavingLabelli {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 14px 17px !important;
+
+    border:
+        1px solid rgba(79, 174, 195, 0.26) !important;
+    border-left:
+        4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 10px !important;
+
+    background: rgba(79, 174, 195, 0.08) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_feeSummary_totalSavingLabel {
+    display: block !important;
+
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_feeSummary_totalSavingLabel
+strong {
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 15px !important;
+    font-weight: 800 !important;
+}
+
+
+/* =========================================================
+   COUPON FIELD
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControlli {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControlli
+.CouponComposite {
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto !important;
+    align-items: start !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 16px !important;
+
+    border:
+        1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 12px !important;
+
+    background:
+        var(--star-surface-soft, #f7f9fa) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_couponCodeTextboxli {
+    position: relative !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_couponCodeTextbox {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 13px !important;
+
+    border: 1px solid #ccd8de !important;
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 500 !important;
+
+    box-shadow:
+        0 1px 2px rgba(23, 53, 72, 0.04) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_couponCodeTextbox:focus {
+    border-color:
+        var(--star-navy-light, #4faec3) !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 174, 195, 0.17) !important;
+}
+
+/* Hide the unused helper button beside the coupon input. */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_couponCodeTextboxli
+> button.helper {
+    display: none !important;
+}
+
+/* Apply Coupon button uses uppercase class="Button". */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_ApplyRemoveCouponButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 130px !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 17px !important;
+
+    border:
+        1px solid var(--star-navy, #21465f) !important;
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    cursor: pointer !important;
+
+    box-shadow:
+        0 4px 11px rgba(33, 70, 95, 0.10) !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_ApplyRemoveCouponButton:hover,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_Coupon_CouponControl_ApplyRemoveCouponButton:focus {
+    border-color:
+        var(--star-navy-light, #4faec3) !important;
+
+    background:
+        rgba(79, 174, 195, 0.08) !important;
+
+    transform: translateY(-1px) !important;
+
+    outline:
+        3px solid rgba(79, 174, 195, 0.16) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   BACK, CANCEL AND PAY NOW BUTTONS
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli {
+    width: 100% !important;
+
+    margin: 2px 0 0 !important;
+    padding: 22px 0 0 !important;
+
+    border-top:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli::before,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli::after {
+    display: none !important;
+    content: none !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+.button-set {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+input.button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 110px !important;
+    min-height: 44px !important;
+
+    margin: 0 !important;
+    padding: 10px 19px !important;
+
+    border:
+        1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 9px !important;
+
+    background:
+        var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    cursor: pointer !important;
+
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+/* Back button. */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardBackButton {
+    border-color: rgba(33, 70, 95, 0.20) !important;
+
+    background: #ffffff !important;
+    color: var(--star-navy, #21465f) !important;
+}
+
+/* Cancel button. */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardCancelButton {
+    border-color:
+        rgba(245, 109, 115, 0.30) !important;
+
+    background:
+        var(--star-coral-light, #fff1f2) !important;
+    color:
+        var(--star-coral-dark, #dc5961) !important;
+}
+
+/* Pay Now button. */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton {
+    min-width: 130px !important;
+
+    border-color:
+        var(--star-navy, #21465f) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.24) !important;
+}
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+input.button:hover,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+input.button:focus {
+    border-color:
+        var(--star-navy-light, #4faec3) !important;
+
+    transform: translateY(-1px) !important;
+
+    outline:
+        3px solid rgba(79, 174, 195, 0.17) !important;
+    outline-offset: 2px !important;
+}
+
+/* Slightly darken Pay Now on interaction. */
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton:hover,
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton:focus {
+    border-color:
+        var(--star-navy-dark, #173548) !important;
+
+    background:
+        var(--star-navy-dark, #173548) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 9px 20px rgba(33, 70, 95, 0.30) !important;
+}
+
+
+/* =========================================================
+   UNUSED CANCEL LIGHTBOX
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+#FormContentPlaceHolder_panel
+> .editForm
+> .row:has(#FormContentPlaceHolder_panel_panelLightboxli) {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+    #FormContentPlaceHolder_panel_Coupon_CouponControlli
+    .CouponComposite {
+        grid-template-columns:
+            minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+    #FormContentPlaceHolder_panel_Coupon_CouponControl_ApplyRemoveCouponButton {
+        width: 100% !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+    #FormContentPlaceHolder_panel_panel_WizardNavigationli
+    .button-set {
+        flex-direction: column-reverse !important;
+    }
+
+    body:has(#FormContentPlaceHolder_panel_feeSummary_detailGrid)
+    #FormContentPlaceHolder_panel_panel_WizardNavigationli
+    input.button {
+        width: 100% !important;
+    }
+}
