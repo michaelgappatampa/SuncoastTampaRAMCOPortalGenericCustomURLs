@@ -8484,3 +8484,369 @@ body:has(#FormContentPlaceHolder_editForm_memberTypePicklist)
         overflow-y: hidden !important;
     }
 }
+/* =========================================================
+   CONTRIBUTION PAGE — CURRENT AND PAST CYCLES
+   ========================================================= */
+
+/* Normalize the contribution form and legacy rows. */
+body:has(#FormContentPlaceHolder_editForm_currentCyclesGrid)
+#FormContentPlaceHolder_editForm,
+body:has(#FormContentPlaceHolder_editForm_currentCyclesGrid)
+#FormContentPlaceHolder_editForm > .editForm {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_editForm_currentCyclesGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 0 24px !important;
+    padding: 0 !important;
+    float: none !important;
+    clear: both !important;
+    box-sizing: border-box !important;
+}
+
+/* Remove legacy clearfix items. */
+body:has(#FormContentPlaceHolder_editForm_currentCyclesGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row::before,
+body:has(#FormContentPlaceHolder_editForm_currentCyclesGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Reset the legacy full-width span. */
+body:has(#FormContentPlaceHolder_editForm_currentCyclesGrid)
+#FormContentPlaceHolder_editForm
+> .editForm
+> .row
+> .span10 {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TABLE WRAPPERS
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_currentCyclesGridFormAjaxGridUpdatePanelli,
+#FormContentPlaceHolder_editForm_currentCyclesGridFormAjaxGridUpdatePanel,
+#FormContentPlaceHolder_editForm_pastLevelsGridFormAjaxGridUpdatePanelli,
+#FormContentPlaceHolder_editForm_pastLevelsGridFormAjaxGridUpdatePanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Visible table containers. */
+#FormContentPlaceHolder_editForm_currentCyclesGridFormAjaxGridUpdatePanel
+> div:first-child,
+#FormContentPlaceHolder_editForm_pastLevelsGridFormAjaxGridUpdatePanel
+> div:first-child {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 16px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 10px 26px rgba(23, 53, 72, 0.08) !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   CONTRIBUTION TABLE BASE
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid,
+#FormContentPlaceHolder_editForm_pastLevelsGrid {
+    width: 100% !important;
+    min-width: 620px !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+
+    background: #ffffff !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    box-sizing: border-box !important;
+}
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid th,
+#FormContentPlaceHolder_editForm_currentCyclesGrid td,
+#FormContentPlaceHolder_editForm_pastLevelsGrid th,
+#FormContentPlaceHolder_editForm_pastLevelsGrid td {
+    vertical-align: middle !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   CURRENT CYCLE HEADER
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.HeaderStyle {
+    background: var(--star-navy, #21465f) !important;
+}
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.HeaderStyle > th {
+    padding: 15px 17px !important;
+
+    background: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.03em !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+
+    white-space: nowrap !important;
+}
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.HeaderStyle > th:first-child {
+    border-top-left-radius: 15px !important;
+}
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.HeaderStyle > th:last-child {
+    border-top-right-radius: 15px !important;
+}
+
+/* Center contribution amount and level columns. */
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.HeaderStyle > th:nth-child(n + 2) {
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   CURRENT CYCLE ROWS
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle {
+    background: #ffffff !important;
+
+    transition:
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+/* Override the legacy inline yellow hover effect. */
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle:hover {
+    background: rgba(79, 174, 195, 0.10) !important;
+}
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle > td {
+    padding: 17px !important;
+
+    background: transparent !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+}
+
+/* Center contribution amount and level values. */
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle > td:nth-child(n + 2) {
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   CYCLE LINK
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle > td:first-child a {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.45 !important;
+
+    text-decoration: none !important;
+}
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle > td:first-child a:hover,
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle > td:first-child a:focus {
+    color: var(--star-navy-light, #4faec3) !important;
+
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+
+    outline: none !important;
+}
+
+
+/* =========================================================
+   CONTRIBUTION AMOUNT
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_currentCyclesGrid
+tr.RowStyle > td:nth-child(2) {
+    color: var(--star-navy, #21465f) !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   EMPTY PAST-CONTRIBUTION STATE
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_pastLevelsGrid {
+    min-width: 0 !important;
+}
+
+#FormContentPlaceHolder_editForm_pastLevelsGrid
+tr.EmptyRowStyle > td {
+    padding: 34px 22px !important;
+
+    border-bottom: 0 !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            var(--star-surface-soft, #f7f9fa) 100%
+        ) !important;
+
+    color: var(--star-text-muted, #64727c) !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+}
+
+#FormContentPlaceHolder_editForm_pastLevelsGrid
+tr.EmptyRowStyle > td::before {
+    display: block !important;
+
+    width: 42px !important;
+    height: 42px !important;
+
+    margin: 0 auto 12px !important;
+
+    border-radius: 50% !important;
+
+    background:
+        rgba(79, 174, 195, 0.12) !important;
+
+    color: var(--star-navy-light, #4faec3) !important;
+
+    content: "—" !important;
+
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    line-height: 42px !important;
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   LOADING INDICATORS
+   ========================================================= */
+
+#FormContentPlaceHolder_editForm_currentCyclesGridFormAjaxGridUpdateProgress,
+#FormContentPlaceHolder_editForm_pastLevelsGridFormAjaxGridUpdateProgress {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+
+/* =========================================================
+   TABLET AND MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 959px) {
+    #FormContentPlaceHolder_editForm_currentCyclesGrid {
+        min-width: 580px !important;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    #FormContentPlaceHolder_editForm_currentCyclesGridFormAjaxGridUpdatePanel
+    > div:first-child,
+    #FormContentPlaceHolder_editForm_pastLevelsGridFormAjaxGridUpdatePanel
+    > div:first-child {
+        border-radius: 12px !important;
+    }
+
+    #FormContentPlaceHolder_editForm_currentCyclesGrid
+    tr.HeaderStyle > th,
+    #FormContentPlaceHolder_editForm_currentCyclesGrid
+    tr.RowStyle > td {
+        padding-left: 13px !important;
+        padding-right: 13px !important;
+    }
+
+    #FormContentPlaceHolder_editForm_pastLevelsGrid
+    tr.EmptyRowStyle > td {
+        padding: 28px 16px !important;
+    }
+}
