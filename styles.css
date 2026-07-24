@@ -21977,4 +21977,32 @@ a {
     font-weight: 700 !important;
     line-height: inherit !important;
 
-    text-decoration:
+    text-decoration: none !important;
+    text-underline-offset: 3px !important;
+
+    overflow-wrap: anywhere !important;
+
+    transition:
+        color 0.15s ease,
+        text-decoration-color 0.15s ease !important;
+}
+
+body:not(:has(#star-benefits-page)):has(
+    #intrdouctionTextPageTextDiv
+    a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
+)
+#intrdouctionTextPageTextDiv
+a:hover,
+body:not(:has(#star-benefits-page)):has(
+    #intrdouctionTextPageTextDiv
+    a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
+)
+#intrdouctionTextPageTextDiv
+a:focus {
+    color: var(--star-navy, #21465f) !important;
+
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+
+    outline: none !important;
+}
