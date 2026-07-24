@@ -7339,3 +7339,40 @@ body:has(#SingleColumnLayout #login)
         padding: 14px !important;
     }
 }
+/* =========================================================
+   LOGIN PAGE TITLE SPACING
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#pageTitleDiv {
+    width: 100% !important;
+    margin: 0 0 24px !important;
+    padding-bottom: 14px !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+    box-sizing: border-box !important;
+}
+
+/* Remove unpredictable heading margins inside the title wrapper. */
+body:has(#SingleColumnLayout #login)
+#pageTitleDiv h1,
+body:has(#SingleColumnLayout #login)
+#pageTitleDiv h2,
+body:has(#SingleColumnLayout #login)
+#pageTitleDiv h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure the instruction card does not pull toward the page title. */
+body:has(#SingleColumnLayout #login)
+#star-login-help {
+    margin-top: 0 !important;
+}
+
+@media screen and (max-width: 639px) {
+    body:has(#SingleColumnLayout #login)
+    #pageTitleDiv {
+        margin-bottom: 18px !important;
+        padding-bottom: 12px !important;
+    }
+}
