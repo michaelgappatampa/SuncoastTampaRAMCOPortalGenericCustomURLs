@@ -21804,7 +21804,7 @@ screen and (max-device-width: 767px) {
  * This page does not currently use #star-benefits-page.
  * Scope the fallback to its unique opt-in link instead.
  */
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
@@ -21826,7 +21826,7 @@ body:has(
     box-sizing: border-box !important;
 }
 
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
@@ -21856,7 +21856,7 @@ body:has(
    MAIN BENEFITS CARD
    ========================================================= */
 
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
@@ -21906,31 +21906,31 @@ body:has(
    REMOVE COPIED INLINE TYPOGRAPHY
    ========================================================= */
 
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
 #intrdouctionTextPageTextDiv
 font,
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
 #intrdouctionTextPageTextDiv
 span,
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
 #intrdouctionTextPageTextDiv
 div,
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
 #intrdouctionTextPageTextDiv
 b,
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
@@ -21943,13 +21943,13 @@ strong {
     background-color: transparent !important;
 }
 
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
 #intrdouctionTextPageTextDiv
 strong,
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
@@ -21964,7 +21964,7 @@ b {
    GENERAL LINKS
    ========================================================= */
 
-body:has(
+body:not(:has(#star-benefits-page)):has(
     #intrdouctionTextPageTextDiv
     a[href*="analytics.clickdimensions.com/cn/aba7v/optin"]
 )
