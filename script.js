@@ -14,6 +14,20 @@
         REPOSITORY_NAME +
         "@";
 
+    /*
+     * Pin the stylesheet independently from script.js.
+     *
+     * This prevents a script committed at one revision from
+     * replacing the page stylesheet with styles.css from that
+     * same JavaScript revision.
+     *
+     * Update this value whenever the production CSS commit
+     * changes, or override it with data-styles-version on the
+     * script element.
+     */
+    var DEFAULT_STYLESHEET_VERSION =
+        "8ff6aeb502c69255e31b40e0baf3d917e50d9d7e";
+
     var STYLESHEET_ID = "star-portal-central-styles";
     var MOBILE_BREAKPOINT = 767;
 
@@ -22,49 +36,72 @@
 
 
     /* =====================================================
-       STYLESHEET LOADER
+       SCRIPT AND STYLESHEET CONFIGURATION
        ===================================================== */
 
-    function getLoadedScriptVersion() {
+    function getPortalScriptElement() {
         var scripts = document.getElementsByTagName("script");
         var scriptElement = document.currentScript;
 
         var repositoryPattern =
-            /SuncoastTampaRAMCOPortalGenericCustomURLs@([^/]+)\/script\.js(?:[?#].*)?$/i;
+            /SuncoastTampaRAMCOPortalGenericCustomURLs@[^/]+\/script\.js(?:[?#].*)?$/i;
 
         var index;
-        var match;
 
-        if (!scriptElement || !scriptElement.src) {
-            for (index = scripts.length - 1; index >= 0; index -= 1) {
-                if (
-                    repositoryPattern.test(
-                        scripts[index].src || ""
-                    )
-                ) {
-                    scriptElement = scripts[index];
-                    break;
-                }
+        if (
+            scriptElement &&
+            scriptElement.src &&
+            repositoryPattern.test(scriptElement.src)
+        ) {
+            return scriptElement;
+        }
+
+        for (
+            index = scripts.length - 1;
+            index >= 0;
+            index -= 1
+        ) {
+            if (
+                scripts[index].src &&
+                repositoryPattern.test(scripts[index].src)
+            ) {
+                return scripts[index];
             }
         }
 
-        if (scriptElement && scriptElement.src) {
-            match = scriptElement.src.match(repositoryPattern);
-
-            if (match && match[1]) {
-                return match[1];
-            }
-        }
-
-        return "main";
+        return null;
     }
 
-    var STYLESHEET_VERSION = getLoadedScriptVersion();
+    function getStylesheetVersion() {
+        var scriptElement = getPortalScriptElement();
+        var configuredVersion;
+
+        if (scriptElement) {
+            configuredVersion = (
+                scriptElement.getAttribute(
+                    "data-styles-version"
+                ) || ""
+            ).trim();
+
+            if (configuredVersion) {
+                return configuredVersion;
+            }
+        }
+
+        return DEFAULT_STYLESHEET_VERSION;
+    }
+
+    var STYLESHEET_VERSION = getStylesheetVersion();
 
     var STYLESHEET_URL =
         CDN_ROOT +
         STYLESHEET_VERSION +
         "/styles.css";
+
+
+    /* =====================================================
+       STYLESHEET LOADER
+       ===================================================== */
 
     function ensurePortalStyles() {
         var stylesheet;
@@ -157,7 +194,11 @@
         children = parent.children;
         expectedTag = tagName.toUpperCase();
 
-        for (index = 0; index < children.length; index += 1) {
+        for (
+            index = 0;
+            index < children.length;
+            index += 1
+        ) {
             if (
                 children[index].tagName ===
                 expectedTag
@@ -180,7 +221,11 @@
 
         children = menu.children;
 
-        for (index = 0; index < children.length; index += 1) {
+        for (
+            index = 0;
+            index < children.length;
+            index += 1
+        ) {
             if (children[index].tagName === "LI") {
                 items.push(children[index]);
             }
@@ -315,9 +360,8 @@
         mobile = isMobileNavigation();
 
         /*
-         * This inline fallback prevents the plain browser
-         * button from appearing on tablet or desktop even
-         * when the CSS default hide rule is missing.
+         * Prevent the browser-default toggle from appearing
+         * on tablet and desktop even when CSS is delayed.
          */
         if (toggle) {
             if (mobile) {
@@ -422,9 +466,8 @@
             );
 
             /*
-             * Hide the new control until responsive state
-             * is calculated. This prevents a desktop flash
-             * of the browser's default button styling.
+             * Hide the control until responsive state has
+             * been calculated.
              */
             toggle.style.display = "none";
 
@@ -489,9 +532,9 @@
         );
 
         /*
-         * Bind navigation events only once per rendered
-         * navigation element. If ASP.NET replaces the nav,
-         * the new element will initialize normally.
+         * Bind navigation events once per rendered nav.
+         * A replacement created by an ASP.NET partial update
+         * will be initialized independently.
          */
         if (
             navigation.getAttribute(
@@ -567,8 +610,7 @@
 
                     /*
                      * Find the clicked anchor without using
-                     * Element.closest(), for compatibility
-                     * with older portal browsers.
+                     * Element.closest() for older browsers.
                      */
                     while (
                         target &&
@@ -590,9 +632,7 @@
                     item = link.parentNode;
 
                     /*
-                     * Only intercept direct top-level links.
-                     * Links inside an opened submenu continue
-                     * to work normally.
+                     * Do not intercept submenu links.
                      */
                     if (
                         !item ||
@@ -620,14 +660,11 @@
                         );
 
                     /*
-                     * First tap opens the submenu.
+                     * First tap opens a submenu.
                      *
-                     * Events and Classes uses href="#", so
-                     * it remains a toggle-only parent.
-                     *
-                     * Committees has a real URL. Its first
-                     * tap opens the submenu; a second tap
-                     * follows the parent URL.
+                     * Placeholder parent links remain
+                     * toggle-only. A real parent URL can be
+                     * followed with a second tap.
                      */
                     if (
                         !isOpen ||
@@ -668,6 +705,8 @@
             navigation.addEventListener(
                 "keydown",
                 function (event) {
+                    var currentToggle;
+
                     if (
                         event.key !== "Escape" &&
                         event.keyCode !== 27
@@ -683,7 +722,7 @@
 
                     closePortalNavigation();
 
-                    var currentToggle =
+                    currentToggle =
                         navigation.querySelector(
                             ".portal-menu-toggle"
                         );
@@ -803,8 +842,8 @@
     }
 
     /*
-     * Load the CSS as early as possible to reduce the
-     * unstyled-page flash.
+     * Load CSS as early as possible to reduce unstyled-page
+     * flashing.
      */
     ensurePortalStyles();
 
@@ -813,8 +852,8 @@
         loadSnapEngage();
 
         /*
-         * Sys.Application may not exist until after the
-         * initial page scripts finish loading.
+         * Sys.Application may become available only after
+         * the initial page scripts finish loading.
          */
         registerAspNetLoad(
             handleAspNetLoad
@@ -823,7 +862,7 @@
 
     /*
      * Register immediately when ASP.NET AJAX is already
-     * available at the time this file executes.
+     * available.
      */
     registerAspNetLoad(
         handleAspNetLoad
