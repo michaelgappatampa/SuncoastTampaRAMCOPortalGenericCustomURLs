@@ -22067,3 +22067,33 @@ input[type="password"]::placeholder {
         margin-bottom: 24px !important;
     }
 }
+
+/* =========================================================
+   LOGIN PAGE — PAGE TITLE ALIGNMENT
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#introDiv
+> .sixteen.floated.page-title {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#introDiv
+> .sixteen.floated.page-title
+h1 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+@media screen and (max-width: 639px) {
+    body:has(#SingleColumnLayout #login)
+    #introDiv
+    > .sixteen.floated.page-title {
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+    }
+}
