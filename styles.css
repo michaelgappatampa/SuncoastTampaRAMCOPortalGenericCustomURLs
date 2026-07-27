@@ -21834,3 +21834,236 @@ screen and (max-device-width: 767px) {
         color: #ffffff !important;
     }
 }
+/* =========================================================
+   LOGIN PAGE — SPACING AND PLACEHOLDER ALIGNMENT FIX
+   ========================================================= */
+
+/*
+ * Add more room inside the actual Login card.
+ */
+body:has(#SingleColumnLayout #login)
+#login {
+    padding: 38px 36px 42px !important;
+}
+
+/*
+ * Add more separation between the Login Instructions card
+ * and the row containing the Login and account setup cards.
+ */
+body:has(#SingleColumnLayout #login)
+#SingleColumnLayout
+> .sixteen.floated
+> .editForm
+> .row:has(#star-login-help) {
+    margin-bottom: 36px !important;
+}
+
+/*
+ * Use a broader password selector. The previous rule only
+ * worked when both fields were direct siblings inside one
+ * specific first-row column.
+ */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control.password {
+    margin-top: 16px !important;
+}
+
+
+/* =========================================================
+   LOGIN INPUTS
+   ========================================================= */
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control.text,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control.password {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control
+input[type="text"],
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control
+input[type="password"] {
+    width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+
+    margin: 0 !important;
+    padding: 0 14px !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LEGACY RAMCO PLACEHOLDERS
+   ========================================================= */
+
+/*
+ * RAMCO may generate a .phholder overlay rather than using
+ * the browser's normal placeholder attribute.
+ */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control
+.phholder {
+    position: absolute !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: 0 !important;
+    z-index: 2 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    height: 48px !important;
+
+    margin: 0 !important;
+    padding: 0 14px !important;
+
+    pointer-events: none !important;
+
+    transform: none !important;
+
+    box-sizing: border-box !important;
+}
+
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control
+.phholder
+.placeholder {
+    position: static !important;
+
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #83919a !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+
+    transform: none !important;
+}
+
+
+/*
+ * Fallback for pages where .placeholder is placed directly
+ * inside the input-control without a .phholder wrapper.
+ */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control
+> .placeholder {
+    position: absolute !important;
+
+    top: 0 !important;
+    right: 14px !important;
+    bottom: auto !important;
+    left: 14px !important;
+    z-index: 2 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    height: 48px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #83919a !important;
+
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+
+    pointer-events: none !important;
+
+    transform: none !important;
+}
+
+
+/* Native browser placeholders. */
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+input[type="text"]::placeholder,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+input[type="password"]::placeholder {
+    color: #83919a !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 13px !important;
+    font-weight: 400 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+    body:has(#SingleColumnLayout #login)
+    #login {
+        padding: 28px 20px 32px !important;
+    }
+
+    body:has(#SingleColumnLayout #login)
+    #SingleColumnLayout
+    > .sixteen.floated
+    > .editForm
+    > .row:has(#star-login-help) {
+        margin-bottom: 24px !important;
+    }
+}
