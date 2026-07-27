@@ -21795,3 +21795,42 @@ screen and (max-device-width: 767px) {
         box-sizing: border-box !important;
     }
 }
+/* =========================================================
+   DESKTOP NAVIGATION — DROPDOWN HOVER BRIDGE
+   ========================================================= */
+
+@media screen and (min-width: 960px) {
+
+    /*
+     * Preserve the visual spacing while creating an
+     * invisible hoverable bridge between the parent item
+     * and its submenu.
+     */
+    nav#navigation ul#TabMenu > li > ul::before {
+        content: "" !important;
+
+        position: absolute !important;
+        top: -10px !important;
+        right: 0 !important;
+        left: 0 !important;
+
+        display: block !important;
+
+        width: 100% !important;
+        height: 10px !important;
+
+        background: transparent !important;
+
+        pointer-events: auto !important;
+    }
+
+    /*
+     * Keep the parent item highlighted while the pointer
+     * is over the dropdown.
+     */
+    nav#navigation ul#TabMenu > li:hover > a,
+    nav#navigation ul#TabMenu > li:focus-within > a {
+        background: rgba(255, 255, 255, 0.10) !important;
+        color: #ffffff !important;
+    }
+}
