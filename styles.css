@@ -20908,9 +20908,11 @@ input[type="password"] {
    ========================================================= */
 
 /*
- * RAMCO may generate a .phholder overlay rather than using
- * the browser's normal placeholder attribute.
+ * RAMCO uses JavaScript to show and hide these placeholder
+ * elements. Do not apply !important to display, because that
+ * prevents RAMCO's inline display:none from taking effect.
  */
+
 body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm
 .input-control
@@ -20923,7 +20925,7 @@ body:has(#SingleColumnLayout #login)
     left: 0 !important;
     z-index: 2 !important;
 
-    display: flex !important;
+    display: flex;
     align-items: center !important;
 
     width: 100% !important;
@@ -20946,7 +20948,7 @@ body:has(#SingleColumnLayout #login)
 .placeholder {
     position: static !important;
 
-    display: block !important;
+    display: block;
 
     width: auto !important;
     height: auto !important;
@@ -20972,8 +20974,8 @@ body:has(#SingleColumnLayout #login)
 
 
 /*
- * Fallback for pages where .placeholder is placed directly
- * inside the input-control without a .phholder wrapper.
+ * Fallback for pages where .placeholder is directly inside
+ * the input-control instead of inside .phholder.
  */
 body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm
@@ -20987,7 +20989,7 @@ body:has(#SingleColumnLayout #login)
     left: 14px !important;
     z-index: 2 !important;
 
-    display: flex !important;
+    display: flex;
     align-items: center !important;
 
     height: 48px !important;
@@ -21007,26 +21009,20 @@ body:has(#SingleColumnLayout #login)
 }
 
 
-/* Native browser placeholders. */
+/*
+ * Immediate fallback: hide the custom placeholder whenever
+ * its field has focus, even before RAMCO updates its inline
+ * display state.
+ */
 body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm
-input[type="text"]::placeholder,
+.input-control:focus-within
+.phholder,
 body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm
-input[type="password"]::placeholder {
-    color: #83919a !important;
-
-    font-family:
-        "Poppins",
-        "Open Sans",
-        Verdana,
-        Arial,
-        sans-serif !important;
-
-    font-size: 13px !important;
-    font-weight: 400 !important;
-
-    opacity: 1 !important;
+.input-control:focus-within
+> .placeholder {
+    display: none !important;
 }
 
 
