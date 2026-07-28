@@ -20904,58 +20904,32 @@ input[type="password"] {
 
 
 /* =========================================================
-   LEGACY RAMCO PLACEHOLDERS
+   LOGIN PAGE — NATIVE PLACEHOLDERS
    ========================================================= */
 
 /*
- * RAMCO uses JavaScript to show and hide these placeholder
- * elements. Do not apply !important to display, because that
- * prevents RAMCO's inline display:none from taking effect.
+ * JavaScript copies the RAMCO placeholder text into the
+ * input's native placeholder attribute and adds this class.
  */
-
 body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm
-.input-control
-.phholder {
-    position: absolute !important;
-
-    top: 0 !important;
-    right: 0 !important;
-    bottom: auto !important;
-    left: 0 !important;
-    z-index: 2 !important;
-
-    display: flex;
-    align-items: center !important;
-
-    width: 100% !important;
-    height: 48px !important;
-
-    margin: 0 !important;
-    padding: 0 14px !important;
-
-    pointer-events: none !important;
-
-    transform: none !important;
-
-    box-sizing: border-box !important;
+.input-control.star-native-placeholder
+.phholder,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+.input-control.star-native-placeholder
+> .placeholder {
+    display: none !important;
 }
 
+
+/* Native Username and Password placeholders. */
 body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm
-.input-control
-.phholder
-.placeholder {
-    position: static !important;
-
-    display: block;
-
-    width: auto !important;
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
+input[type="text"]::placeholder,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+input[type="password"]::placeholder {
     color: #83919a !important;
 
     font-family:
@@ -20967,62 +20941,20 @@ body:has(#SingleColumnLayout #login)
 
     font-size: 13px !important;
     font-weight: 400 !important;
-    line-height: 1.2 !important;
 
-    transform: none !important;
+    opacity: 1 !important;
 }
 
 
-/*
- * Fallback for pages where .placeholder is directly inside
- * the input-control instead of inside .phholder.
- */
+/* Optional browser compatibility. */
 body:has(#SingleColumnLayout #login)
 #FormContentPlaceHolder_LoginEditForm
-.input-control
-> .placeholder {
-    position: absolute !important;
-
-    top: 0 !important;
-    right: 14px !important;
-    bottom: auto !important;
-    left: 14px !important;
-    z-index: 2 !important;
-
-    display: flex;
-    align-items: center !important;
-
-    height: 48px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
+input[type="text"]::-webkit-input-placeholder,
+body:has(#SingleColumnLayout #login)
+#FormContentPlaceHolder_LoginEditForm
+input[type="password"]::-webkit-input-placeholder {
     color: #83919a !important;
-
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    line-height: 1.2 !important;
-
-    pointer-events: none !important;
-
-    transform: none !important;
-}
-
-
-/*
- * Immediate fallback: hide the custom placeholder whenever
- * its field has focus, even before RAMCO updates its inline
- * display state.
- */
-body:has(#SingleColumnLayout #login)
-#FormContentPlaceHolder_LoginEditForm
-.input-control:focus-within
-.phholder,
-body:has(#SingleColumnLayout #login)
-#FormContentPlaceHolder_LoginEditForm
-.input-control:focus-within
-> .placeholder {
-    display: none !important;
+    opacity: 1 !important;
 }
 
 
