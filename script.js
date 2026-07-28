@@ -716,7 +716,70 @@
             snapEngageScript
         );
     }
+    function initializeLoginPlaceholders() {
+    var form =
+        document.getElementById(
+            "FormContentPlaceHolder_LoginEditForm"
+        );
 
+    var controls;
+    var index;
+    var control;
+    var input;
+    var placeholderElement;
+    var placeholderText;
+
+    if (!form) {
+        return;
+    }
+
+    controls = form.querySelectorAll(
+        ".input-control.text, " +
+        ".input-control.password"
+    );
+
+    for (
+        index = 0;
+        index < controls.length;
+        index += 1
+    ) {
+        control = controls[index];
+
+        input = control.querySelector(
+            'input[type="text"], ' +
+            'input[type="password"]'
+        );
+
+        placeholderElement =
+            control.querySelector(".placeholder");
+
+        if (!input || !placeholderElement) {
+            continue;
+        }
+
+        placeholderText = (
+            placeholderElement.textContent ||
+            placeholderElement.innerText ||
+            ""
+        )
+            .replace(/\s+/g, " ")
+            .trim();
+
+        if (
+            placeholderText &&
+            !input.getAttribute("placeholder")
+        ) {
+            input.setAttribute(
+                "placeholder",
+                placeholderText
+            );
+        }
+
+        control.classList.add(
+            "star-native-placeholder"
+        );
+    }
+}
 
     /* =====================================================
        INITIALIZATION
@@ -724,11 +787,13 @@
 
     function initializePortal() {
         initializePortalNavigation();
+        initializeLoginPlaceholders();
         registerGlobalNavigationEvents();
     }
 
     function handleAspNetLoad() {
         initializePortalNavigation();
+        initializeLoginPlaceholders();
     }
 
     onDocumentReady(function () {
