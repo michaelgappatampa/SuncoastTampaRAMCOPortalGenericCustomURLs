@@ -21748,43 +21748,88 @@ body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
     box-sizing: border-box !important;
 }
 
-/* Opt-out choice. */
+/* =========================================================
+   CONTRIBUTION OPT-OUT CHECKBOX
+   ========================================================= */
+
 body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
 #FormContentPlaceHolder_wizardPanel_editControl_contributionListli,
 body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
 #FormContentPlaceHolder_wizardPanel_editControl_contributionList {
+    display: block !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
     box-sizing: border-box !important;
 }
 
 body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
-#FormContentPlaceHolder_wizardPanel_editControl_contributionList td {
-    padding: 0 !important;
-    border: 0 !important;
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
 }
 
 body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
 #FormContentPlaceHolder_wizardPanel_editControl_contributionList
+tbody,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+tr,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+td {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Checkbox card. */
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
 label.input-control.checkbox {
+    position: relative !important;
+
     display: inline-flex !important;
     align-items: center !important;
+    justify-content: flex-start !important;
     gap: 10px !important;
 
     width: auto !important;
     min-width: 0 !important;
     max-width: 100% !important;
+    min-height: 44px !important;
 
     margin: 0 !important;
-    padding: 11px 13px !important;
+    padding: 11px 14px !important;
 
-    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border:
+        1px solid var(--star-border, #e4e9ec) !important;
     border-radius: 10px !important;
 
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    color: var(--star-text, #25333d) !important;
+    background:
+        var(--star-surface-soft, #f7f9fa) !important;
+    color:
+        var(--star-text, #25333d) !important;
 
     font-family:
         "Poppins",
@@ -21792,47 +21837,202 @@ label.input-control.checkbox {
         Verdana,
         Arial,
         sans-serif !important;
+
     font-size: 12.5px !important;
     font-weight: 600 !important;
     line-height: 1.45 !important;
 
     cursor: pointer !important;
+
     box-sizing: border-box !important;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
 }
+
+
+/* Hover state. */
 
 body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
 #FormContentPlaceHolder_wizardPanel_editControl_contributionList
 label.input-control.checkbox:hover {
-    border-color: var(--star-navy-light, #4faec3) !important;
+    border-color:
+        var(--star-navy-light, #4faec3) !important;
+
     background: #eef8fa !important;
+
+    box-shadow:
+        0 4px 12px rgba(33, 70, 95, 0.08) !important;
 }
+
+
+/* Selected state. */
 
 body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
 #FormContentPlaceHolder_wizardPanel_editControl_contributionList
-input[type='checkbox'] {
-    flex: 0 0 auto !important;
+label.input-control.checkbox:has(input[type="checkbox"]:checked) {
+    border-color:
+        var(--star-navy, #21465f) !important;
 
-    width: 19px !important;
-    height: 19px !important;
-    min-height: 0 !important;
+    background: rgba(33, 70, 95, 0.08) !important;
+    color:
+        var(--star-navy, #21465f) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 174, 195, 0.12) !important;
+}
+
+
+/* =========================================================
+   NATIVE CHECKBOX RESET
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList_0 {
+    position: static !important;
+    inset: auto !important;
+    z-index: auto !important;
+
+    appearance: auto !important;
+    -webkit-appearance: checkbox !important;
+
+    display: inline-block !important;
+    flex: 0 0 18px !important;
+
+    width: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
+
+    height: 18px !important;
+    min-height: 18px !important;
+    max-height: 18px !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
-    accent-color: var(--star-navy, #21465f) !important;
+    border: initial !important;
+    border-radius: initial !important;
+
+    background: initial !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    clip: auto !important;
+    clip-path: none !important;
+
+    pointer-events: auto !important;
+    cursor: pointer !important;
+
+    accent-color:
+        var(--star-navy, #21465f) !important;
+
+    box-shadow: none !important;
+    transform: none !important;
 }
+
+
+/* Keyboard focus. */
 
 body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
 #FormContentPlaceHolder_wizardPanel_editControl_contributionList
-span.helper {
+label.input-control.checkbox:has(input[type="checkbox"]:focus-visible) {
+    border-color:
+        var(--star-navy-light, #4faec3) !important;
+
+    outline:
+        3px solid rgba(79, 174, 195, 0.20) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   CHECKBOX LABEL TEXT
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+label.input-control.checkbox
+> span.helper {
+    position: static !important;
+    inset: auto !important;
+
     display: inline !important;
+    flex: 1 1 auto !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
+    border: 0 !important;
+    background: transparent !important;
     color: inherit !important;
+
     font: inherit !important;
     line-height: inherit !important;
+
+    opacity: 1 !important;
+
+    pointer-events: none !important;
+
+    transform: none !important;
+}
+
+
+/*
+ * Disable RAMCO's second custom checkbox graphic.
+ * The real input above is now the only visible checkbox.
+ */
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+label.input-control.checkbox
+> span.helper::before,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+label.input-control.checkbox
+> span.helper::after {
+    display: none !important;
+
+    width: 0 !important;
+    height: 0 !important;
+
+    border: 0 !important;
+    background: none !important;
+
+    content: none !important;
+}
+
+
+/* Remove the hard-coded spaces at the start of the label. */
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+label.input-control.checkbox
+> span.helper {
+    white-space: normal !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+
+    body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+    #FormContentPlaceHolder_wizardPanel_editControl_contributionList
+    label.input-control.checkbox {
+        width: 100% !important;
+
+        padding: 12px 13px !important;
+    }
 }
 
 /* Keep the action row and Update Order button inside the card. */
