@@ -21240,57 +21240,198 @@ body:has(#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGri
 
 
 /* =========================================================
-   RADIO GROUPS
+   RADIO CHOICE BUTTONS
+   INDIVIDUAL / CORPORATE / SAME AS
    ========================================================= */
 
 #FormContentPlaceHolder_wizardPanel_PickContributionTypeli,
 #FormContentPlaceHolder_wizardPanel_CCInfo_addressControl_SameAsDropDownli {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
     padding: 14px !important;
+
     border: 1px solid var(--star-border, #e4e9ec) !important;
     border-radius: 12px !important;
+
     background: var(--star-surface-soft, #f7f9fa) !important;
+
+    box-sizing: border-box !important;
 }
 
 #FormContentPlaceHolder_wizardPanel_PickContributionType,
 #FormContentPlaceHolder_wizardPanel_CCInfo_addressControl_SameAsDropDown {
     display: flex !important;
     flex-wrap: wrap !important;
+    align-items: stretch !important;
     gap: 10px !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 }
 
 #FormContentPlaceHolder_wizardPanel_PickContributionType > br {
     display: none !important;
 }
 
+/*
+ * The entire label acts as the visible choice button.
+ * RAMCO's native radio and helper circle are visually hidden
+ * so they cannot overlap the option text.
+ */
 #FormContentPlaceHolder_wizardPanel label.input-control.radio {
+    position: relative !important;
+
     display: inline-flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    justify-content: center !important;
+
+    min-width: 0 !important;
     min-height: 42px !important;
+
     margin: 0 !important;
-    padding: 9px 12px !important;
-    border: 1px solid #d7e0e5 !important;
+    padding: 10px 15px !important;
+
+    border: 1px solid #ccd9df !important;
     border-radius: 9px !important;
+
     background: #ffffff !important;
-    color: var(--star-text, #25333d) !important;
+    color: var(--star-navy, #21465f) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
     font-size: 13px !important;
     font-weight: 600 !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+
+    cursor: pointer !important;
+
+    box-shadow:
+        0 1px 2px rgba(23, 53, 72, 0.04) !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.12s ease !important;
 }
 
-#FormContentPlaceHolder_wizardPanel label.input-control.radio input[type='radio'] {
-    flex: 0 0 auto !important;
-    width: 18px !important;
-    height: 18px !important;
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio
+> input[type='radio'] {
+    position: absolute !important;
+
+    width: 1px !important;
+    height: 1px !important;
+    min-width: 0 !important;
     min-height: 0 !important;
+
     margin: 0 !important;
     padding: 0 !important;
-    accent-color: var(--star-navy, #21465f) !important;
+
+    opacity: 0 !important;
+    pointer-events: none !important;
+
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    overflow: hidden !important;
 }
 
-#FormContentPlaceHolder_wizardPanel label.input-control.radio > span.helper {
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio
+> span.helper {
     display: none !important;
 }
 
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio
+> span:last-child {
+    position: relative !important;
+    z-index: 1 !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: inherit !important;
+    font: inherit !important;
+    line-height: inherit !important;
+
+    pointer-events: none !important;
+}
+
+/* Hover is limited to options that can actually be selected. */
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio:not(:has(> input:disabled)):hover {
+    border-color: var(--star-navy-light, #4faec3) !important;
+
+    background: #eef8fa !important;
+    color: var(--star-navy-dark, #173548) !important;
+
+    transform: translateY(-1px) !important;
+
+    box-shadow:
+        0 6px 14px rgba(33, 70, 95, 0.12) !important;
+}
+
+/*
+ * Selected Individual, Corporate, or Same As option.
+ * This also works when a selected Same As option is disabled.
+ */
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio:has(> input[type='radio']:checked) {
+    border-color: var(--star-navy, #21465f) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.24) !important;
+}
+
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio:has(> input[type='radio']:checked):hover {
+    border-color: var(--star-navy-dark, #173548) !important;
+    background: var(--star-navy-dark, #173548) !important;
+    color: #ffffff !important;
+}
+
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio:has(> input[type='radio']:focus-visible) {
+    outline: 3px solid rgba(79, 174, 195, 0.28) !important;
+    outline-offset: 2px !important;
+}
+
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio:has(> input:disabled) {
+    cursor: default !important;
+}
+
+#FormContentPlaceHolder_wizardPanel
+label.input-control.radio:has(> input:disabled:not(:checked)) {
+    background: #f6f8f9 !important;
+    color: #77858e !important;
+    opacity: 0.82 !important;
+    box-shadow: none !important;
+}
 
 /* =========================================================
    MEMBER TYPE AND TERM SUMMARY
@@ -21403,10 +21544,37 @@ body:has(#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGri
     overflow-wrap: anywhere !important;
 }
 
-#FormContentPlaceHolder_wizardPanel_orderSummaryLinedControl_aboveLineDetailGrid tr.RowStyle:hover td,
-#FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles tr.RowStyle:hover td,
-#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGrid tr.RowStyle:hover td {
-    background: rgba(79, 174, 195, 0.08) !important;
+#FormContentPlaceHolder_wizardPanel_orderSummaryLinedControl_aboveLineDetailGrid tr.RowStyle,
+#FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles tr.RowStyle,
+#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGrid tr.RowStyle {
+    transition:
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+#FormContentPlaceHolder_wizardPanel_orderSummaryLinedControl_aboveLineDetailGrid tr.RowStyle:hover > td,
+#FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles tr.RowStyle:hover > td,
+#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGrid tr.RowStyle:hover > td {
+    background: #eef8fa !important;
+}
+
+/* Keep the currently selected saved card visibly highlighted. */
+#FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles
+tr.RowStyle:has(input[type='radio']:checked)
+> td {
+    background: #e8f5f8 !important;
+}
+
+#FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles
+tr.RowStyle:has(input[type='radio']:checked)
+> td:first-child {
+    box-shadow:
+        inset 4px 0 0 var(--star-navy-light, #4faec3) !important;
+}
+
+#FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles
+tr.RowStyle:hover {
+    cursor: pointer !important;
 }
 
 
@@ -21596,10 +21764,15 @@ body:has(#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGri
     #FormContentPlaceHolder_wizardPanel_CCInfo_addressControl_SameAsDropDown {
         display: grid !important;
         grid-template-columns: minmax(0, 1fr) !important;
+        gap: 9px !important;
     }
 
     #FormContentPlaceHolder_wizardPanel label.input-control.radio {
         width: 100% !important;
+        min-height: 46px !important;
+        justify-content: flex-start !important;
+        padding: 11px 14px !important;
+        text-align: left !important;
     }
 
     #FormContentPlaceHolder_wizardPanel_CCInfo_expirationDateDatePickerli {
@@ -21726,18 +21899,55 @@ body:has(#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGri
     /* Saved-card rows also become cards instead of a wide table. */
     #FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles tr.RowStyle {
         position: relative !important;
+
         display: grid !important;
         grid-template-columns: 34px minmax(0, 1fr) !important;
         gap: 8px 10px !important;
+
         width: 100% !important;
         min-width: 0 !important;
         max-width: 100% !important;
+
         margin: 0 0 12px !important;
         padding: 16px !important;
+
         border: 1px solid var(--star-border, #e4e9ec) !important;
         border-radius: 13px !important;
+
         background: #ffffff !important;
-        box-shadow: 0 5px 14px rgba(23, 53, 72, 0.06) !important;
+
+        box-shadow:
+            0 5px 14px rgba(23, 53, 72, 0.06) !important;
+
+        cursor: pointer !important;
+
+        transition:
+            background-color 0.15s ease,
+            border-color 0.15s ease,
+            box-shadow 0.15s ease,
+            transform 0.12s ease !important;
+    }
+
+    #FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles
+    tr.RowStyle:hover {
+        border-color: var(--star-navy-light, #4faec3) !important;
+        background: #eef8fa !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 8px 18px rgba(33, 70, 95, 0.12) !important;
+    }
+
+    #FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles
+    tr.RowStyle:has(input[type='radio']:checked) {
+        border-color: var(--star-navy-light, #4faec3) !important;
+        background: #e8f5f8 !important;
+        box-shadow:
+            inset 4px 0 0 var(--star-navy-light, #4faec3),
+            0 7px 17px rgba(33, 70, 95, 0.11) !important;
+    }
+
+    #FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles
+    tr.RowStyle:has(input[type='radio']:checked):hover {
+        background: #dff1f5 !important;
     }
 
     #FormContentPlaceHolder_wizardPanel_CCInfo_creditCardProfiles tr.RowStyle td {
