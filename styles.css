@@ -21822,17 +21822,24 @@ h3 {
 
 
 /* =========================================================
-   BACK, PAY NOW AND PRINT BUTTONS
+   NAVIGATION BUTTONS
    ========================================================= */
 
 #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli {
+    display: block !important;
+
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
     margin: 2px 0 0 !important;
     padding: 22px 0 0 !important;
 
     border-top:
         1px solid var(--star-border, #e4e9ec) !important;
+
+    float: none !important;
+    clear: both !important;
 
     box-sizing: border-box !important;
 }
@@ -21846,6 +21853,8 @@ h3 {
     gap: 10px !important;
 
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -21868,12 +21877,9 @@ input.button {
     margin: 0 !important;
     padding: 10px 19px !important;
 
-    border: 1px solid var(--star-border, #e4e9ec) !important;
-    border-radius: 9px !important;
+    border-radius: 6px !important;
 
-    background:
-        var(--star-surface-soft, #f7f9fa) !important;
-    color: var(--star-navy, #21465f) !important;
+    color: #ffffff !important;
 
     font-family:
         "Poppins",
@@ -21888,75 +21894,90 @@ input.button {
 
     cursor: pointer !important;
 
-    box-shadow: none !important;
-
     box-sizing: border-box !important;
 
     transition:
         transform 0.12s ease,
-        border-color 0.15s ease,
         background-color 0.15s ease,
+        border-color 0.15s ease,
         box-shadow 0.15s ease !important;
 }
 
 
-/* Back and Print. */
+/* =========================================================
+   BACK AND PRINT — ORIGINAL GRAY STYLE
+   ========================================================= */
 
 #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardBackButton,
 #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardPrintButton {
-    border-color:
-        rgba(33, 70, 95, 0.20) !important;
+    border: 1px solid #8b8b8b !important;
 
-    background: #ffffff !important;
-    color: var(--star-navy, #21465f) !important;
-}
-
-
-/* Pay Now. */
-
-#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton {
-    min-width: 130px !important;
-
-    border-color:
-        var(--star-navy, #21465f) !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--star-navy, #21465f),
-            var(--star-navy-dark, #173548)
-        ) !important;
-
+    background: #909090 !important;
     color: #ffffff !important;
 
-    box-shadow:
-        0 7px 16px rgba(33, 70, 95, 0.24) !important;
+    box-shadow: none !important;
 }
 
-#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli
-input.button:hover,
-#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli
-input.button:focus {
-    border-color:
-        var(--star-navy-light, #4faec3) !important;
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardBackButton:hover,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardBackButton:focus,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardPrintButton:hover,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardPrintButton:focus {
+    border-color: #737373 !important;
+
+    background: #777777 !important;
+    color: #ffffff !important;
 
     transform: translateY(-1px) !important;
 
     outline:
-        3px solid rgba(79, 174, 195, 0.17) !important;
+        3px solid rgba(144, 144, 144, 0.18) !important;
     outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   PAY NOW — ORIGINAL BLUE STYLE
+   ========================================================= */
+
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton {
+    min-width: 130px !important;
+
+    border: 1px solid #1495d1 !important;
+
+    background: #169fe6 !important;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 6px 14px rgba(22, 159, 230, 0.24) !important;
 }
 
 #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton:hover,
 #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton:focus {
-    border-color:
-        var(--star-navy-dark, #173548) !important;
+    border-color: #0f80b8 !important;
 
-    background:
-        var(--star-navy-dark, #173548) !important;
+    background: #1188c5 !important;
+    color: #ffffff !important;
+
+    transform: translateY(-1px) !important;
 
     box-shadow:
-        0 9px 19px rgba(33, 70, 95, 0.29) !important;
+        0 8px 17px rgba(22, 159, 230, 0.30) !important;
+
+    outline:
+        3px solid rgba(22, 159, 230, 0.18) !important;
+    outline-offset: 2px !important;
+}
+
+
+/* =========================================================
+   PRESSED STATE
+   ========================================================= */
+
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli
+input.button:active {
+    transform: translateY(0) !important;
+
+    box-shadow: none !important;
 }
 
 
