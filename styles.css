@@ -21654,72 +21654,182 @@ body:has(#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGri
 
 
 /* =========================================================
-   ACTION BUTTONS - STAR NAVY
+   ACTION BUTTONS — STAR NAVY
+   COMPLETE REPLACEMENT
    ========================================================= */
 
 #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli,
 #FormContentPlaceHolder_panel_panel_WizardNavigationli {
     display: block !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin: 2px 0 0 !important;
     padding: 22px 0 0 !important;
-    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+
+    border-top:
+        1px solid var(--star-border, #e4e9ec) !important;
+
     float: none !important;
     clear: both !important;
+
+    box-sizing: border-box !important;
 }
 
-#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli .button-set,
-#FormContentPlaceHolder_panel_panel_WizardNavigationli .button-set {
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli
+.button-set,
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+.button-set {
     display: flex !important;
     flex-wrap: wrap !important;
     align-items: center !important;
     justify-content: flex-end !important;
     gap: 10px !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
+
+    box-sizing: border-box !important;
 }
 
-#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli input.button,
-#FormContentPlaceHolder_panel_panel_WizardNavigationli input.button {
+
+/* All payment-flow action buttons. */
+
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardBackButton,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardCancelButton,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardContinueButton,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardPrintButton,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardBackButton,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardCancelButton,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+
     width: auto !important;
     min-width: 110px !important;
     min-height: 44px !important;
+
     margin: 0 !important;
     padding: 10px 19px !important;
-    border: 1px solid var(--star-navy, #21465f) !important;
+
+    border:
+        1px solid var(--star-navy, #21465f) !important;
     border-radius: 9px !important;
-    background: linear-gradient(135deg, var(--star-navy, #21465f), var(--star-navy-dark, #173548)) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    background-color:
+        var(--star-navy, #21465f) !important;
+
     color: #ffffff !important;
-    font-family: 'Poppins', 'Open Sans', Verdana, Arial, sans-serif !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
     font-size: 13px !important;
     font-weight: 700 !important;
     line-height: 1.3 !important;
     text-align: center !important;
     text-shadow: none !important;
+
     cursor: pointer !important;
-    box-shadow: 0 7px 16px rgba(33, 70, 95, 0.24) !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.24) !important;
+
+    box-sizing: border-box !important;
+
+    transition:
+        transform 0.12s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
 }
 
-#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli input.button:hover,
-#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli input.button:focus,
-#FormContentPlaceHolder_panel_panel_WizardNavigationli input.button:hover,
-#FormContentPlaceHolder_panel_panel_WizardNavigationli input.button:focus {
-    border-color: var(--star-navy-dark, #173548) !important;
-    background: var(--star-navy-dark, #173548) !important;
+
+/* Primary actions can be slightly wider. */
+
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardContinueButton,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton {
+    min-width: 130px !important;
+}
+
+
+/* Hover and keyboard focus. */
+
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardBackButton:hover,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardBackButton:focus,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardCancelButton:hover,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardCancelButton:focus,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardContinueButton:hover,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardContinueButton:focus,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton:hover,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardSaveButton:focus,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardPrintButton:hover,
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardPrintButton:focus,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardBackButton:hover,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardBackButton:focus,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardCancelButton:hover,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardCancelButton:focus,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton:hover,
+#FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton:focus {
+    border-color:
+        var(--star-navy-dark, #173548) !important;
+
+    background:
+        var(--star-navy-dark, #173548) !important;
+
+    background-color:
+        var(--star-navy-dark, #173548) !important;
+
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
     transform: translateY(-1px) !important;
-    box-shadow: 0 9px 20px rgba(33, 70, 95, 0.30) !important;
-    outline: 3px solid rgba(79, 174, 195, 0.20) !important;
+
+    box-shadow:
+        0 9px 20px rgba(33, 70, 95, 0.30) !important;
+
+    outline:
+        3px solid rgba(79, 174, 195, 0.20) !important;
     outline-offset: 2px !important;
+}
+
+
+/* Pressed state. */
+
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli
+input.button:active,
+#FormContentPlaceHolder_panel_panel_WizardNavigationli
+input.button:active {
+    transform: translateY(0) !important;
+
+    box-shadow:
+        0 4px 10px rgba(33, 70, 95, 0.22) !important;
 }
 
 
