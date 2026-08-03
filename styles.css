@@ -21654,12 +21654,272 @@ body:has(#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGri
 
 
 /* =========================================================
+   CONTRIBUTION EDIT PAGE — RESPONSIVE CONTAINMENT
+   ========================================================= */
+
+/*
+ * This step uses the same wizardPanel IDs as the payment flow,
+ * but it contains only an amount, an opt-out checkbox, and the
+ * Update Order button. Scope these corrections to the amount
+ * field so other payment steps retain their existing layout.
+ */
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#content,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#content > .container.floated,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#content .grid,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#content .grid > .row,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#updatePanel,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#formPanel,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#SingleColumnLayout,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#SingleColumnLayout > .sixteen.floated,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanelDiv {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    float: none !important;
+    clear: both !important;
+
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#SingleColumnLayout {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 960px !important;
+
+    margin: 24px auto 40px !important;
+
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel > .editForm,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel > .editForm > .row,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel > .editForm > .row > .span5,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel > .editForm > .row > .span10 {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Keep the amount field readable without stretching excessively. */
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel
+> .editForm
+> .row:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount) {
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr) !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_Amountli,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_Amount {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Opt-out choice. */
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionListli,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList td {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+label.input-control.checkbox {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 11px 13px !important;
+
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 10px !important;
+
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-text, #25333d) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.45 !important;
+
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+label.input-control.checkbox:hover {
+    border-color: var(--star-navy-light, #4faec3) !important;
+    background: #eef8fa !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+input[type='checkbox'] {
+    flex: 0 0 auto !important;
+
+    width: 19px !important;
+    height: 19px !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    accent-color: var(--star-navy, #21465f) !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_editControl_contributionList
+span.helper {
+    display: inline !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: inherit !important;
+    font: inherit !important;
+    line-height: inherit !important;
+}
+
+/* Keep the action row and Update Order button inside the card. */
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli,
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli
+.button-set {
+    position: static !important;
+    inset: auto !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    float: none !important;
+
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli
+.button-set {
+    justify-content: flex-end !important;
+}
+
+body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+#FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardContinueButton {
+    position: static !important;
+    inset: auto !important;
+
+    flex: 0 0 auto !important;
+    float: none !important;
+
+    width: auto !important;
+    min-width: 150px !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    transform: none !important;
+}
+
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+    body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+    #SingleColumnLayout {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+    #FormContentPlaceHolder_wizardPanel {
+        max-width: 100% !important;
+        margin: 14px auto 28px !important;
+    }
+
+    body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+    #FormContentPlaceHolder_wizardPanel
+    > .editForm
+    > .row:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount) {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+    #FormContentPlaceHolder_wizardPanel_editControl_contributionList
+    label.input-control.checkbox,
+    body:has(#FormContentPlaceHolder_wizardPanel_editControl_Amount)
+    #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigation__WizardContinueButton {
+        width: 100% !important;
+    }
+}
+
+
+/* =========================================================
    ACTION BUTTONS — STAR NAVY
    COMPLETE REPLACEMENT
    ========================================================= */
 
 #FormContentPlaceHolder_wizardPanel_wizardPanel_WizardNavigationli,
 #FormContentPlaceHolder_panel_panel_WizardNavigationli {
+    position: static !important;
+    inset: auto !important;
+
     display: block !important;
 
     width: 100% !important;
@@ -21711,6 +21971,9 @@ body:has(#FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGri
 #FormContentPlaceHolder_panel_panel_WizardNavigation__WizardBackButton,
 #FormContentPlaceHolder_panel_panel_WizardNavigation__WizardCancelButton,
 #FormContentPlaceHolder_panel_panel_WizardNavigation__WizardContinueButton {
+    position: static !important;
+    inset: auto !important;
+
     appearance: none !important;
     -webkit-appearance: none !important;
 
