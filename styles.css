@@ -139,973 +139,6 @@ td.my-cell font {
 }
 
 
-/* =========================================================
-   PRIMARY PORTAL NAVIGATION
-   ========================================================= */
-
-nav#navigation {
-    position: relative !important;
-    z-index: 100 !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    margin-top: 15px !important;
-    padding: 0 !important;
-
-    border: 0 !important;
-    border-radius: 12px !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--star-navy, #21465f),
-            var(--star-navy-dark, #173548)
-        ) !important;
-
-    box-shadow:
-        0 9px 22px rgba(23, 53, 72, 0.18) !important;
-
-    overflow: visible !important;
-    box-sizing: border-box !important;
-}
-
-/* Remove the old Nevia corner decorations. */
-nav#navigation > .left-corner,
-nav#navigation > .right-corner {
-    display: none !important;
-}
-
-/* Remove the previous CSS-generated mobile heading. */
-nav#navigation::before {
-    display: none !important;
-    content: none !important;
-}
-
-
-/* =========================================================
-   TOP-LEVEL MENU
-   ========================================================= */
-
-nav#navigation ul#TabMenu {
-    position: relative !important;
-
-    display: flex !important;
-    align-items: stretch !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    list-style: none !important;
-
-    background: transparent !important;
-
-    overflow: visible !important;
-    box-sizing: border-box !important;
-}
-
-nav#navigation ul#TabMenu > li {
-    position: relative !important;
-
-    flex: 1 1 auto !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border: 0 !important;
-
-    list-style: none !important;
-
-    background: transparent !important;
-}
-
-
-/* =========================================================
-   TOP-LEVEL LINKS
-   ========================================================= */
-
-nav#navigation ul#TabMenu > li > a {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 7px !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 50px !important;
-
-    margin: 0 !important;
-    padding: 10px 12px !important;
-
-    border: 0 !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.13) !important;
-    border-radius: 0 !important;
-
-    background: transparent !important;
-    color: #ffffff !important;
-
-    font-family:
-        "Poppins",
-        "Open Sans",
-        Verdana,
-        Arial,
-        sans-serif !important;
-
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-    white-space: nowrap !important;
-
-    box-shadow: none !important;
-
-    box-sizing: border-box !important;
-
-    transition:
-        background-color 0.15s ease,
-        color 0.15s ease,
-        box-shadow 0.15s ease !important;
-}
-
-nav#navigation ul#TabMenu > li:first-child > a {
-    border-radius: 12px 0 0 12px !important;
-}
-
-nav#navigation ul#TabMenu > li:last-child > a {
-    border-right: 0 !important;
-    border-radius: 0 12px 12px 0 !important;
-}
-
-nav#navigation ul#TabMenu > li > a i {
-    flex: 0 0 auto !important;
-}
-
-
-/* =========================================================
-   ACTIVE, HOVER AND KEYBOARD STATES
-   ========================================================= */
-
-nav#navigation ul#TabMenu > li.active > a {
-    background:
-        linear-gradient(
-            135deg,
-            var(--star-coral, #f56d73),
-            #f77f84
-        ) !important;
-
-    color: #ffffff !important;
-
-    box-shadow:
-        inset 0 -3px 0 rgba(220, 89, 97, 0.55) !important;
-}
-
-nav#navigation ul#TabMenu > li:not(.active):hover > a,
-nav#navigation ul#TabMenu > li:not(.active):focus-within > a {
-    background: rgba(255, 255, 255, 0.10) !important;
-    color: #ffffff !important;
-}
-
-nav#navigation ul#TabMenu > li > a:focus-visible {
-    position: relative !important;
-    z-index: 2 !important;
-
-    outline: 3px solid rgba(79, 174, 195, 0.40) !important;
-    outline-offset: -3px !important;
-}
-
-
-/* =========================================================
-   DESKTOP DROPDOWNS
-   ========================================================= */
-
-/*
- * Keep every submenu collapsed by default.
- * Visibility is used instead of display so transitions work.
- */
-nav#navigation ul#TabMenu > li > ul {
-    position: absolute !important;
-    top: calc(100% + 8px) !important;
-    left: 0 !important;
-    z-index: 1000 !important;
-
-    display: block !important;
-
-    width: max-content !important;
-    min-width: 220px !important;
-    max-width: 310px !important;
-
-    margin: 0 !important;
-    padding: 8px !important;
-
-    border: 1px solid var(--star-border, #e4e9ec) !important;
-    border-radius: 11px !important;
-
-    background: #ffffff !important;
-
-    box-shadow:
-        0 14px 34px rgba(23, 53, 72, 0.18) !important;
-
-    list-style: none !important;
-
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-
-    transform: translateY(-7px) !important;
-
-    box-sizing: border-box !important;
-
-    transition:
-        opacity 0.15s ease,
-        visibility 0.15s ease,
-        transform 0.15s ease !important;
-}
-
-/* Prevent menus near the right edge from extending offscreen. */
-nav#navigation ul#TabMenu > li:nth-last-child(-n + 2) > ul {
-    right: 0 !important;
-    left: auto !important;
-}
-
-/* Open only the submenu belonging to the hovered/focused item. */
-nav#navigation ul#TabMenu > li:hover > ul,
-nav#navigation ul#TabMenu > li:focus-within > ul {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-
-    transform: translateY(0) !important;
-}
-
-nav#navigation ul#TabMenu > li > ul > li {
-    display: block !important;
-
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    border: 0 !important;
-
-    list-style: none !important;
-}
-
-nav#navigation ul#TabMenu > li > ul > li > a {
-    display: block !important;
-
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 11px 12px !important;
-
-    border: 0 !important;
-    border-radius: 7px !important;
-
-    background: transparent !important;
-    color: var(--star-navy, #21465f) !important;
-
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    line-height: 1.4 !important;
-    text-align: left !important;
-    text-decoration: none !important;
-    white-space: normal !important;
-
-    box-sizing: border-box !important;
-}
-
-nav#navigation ul#TabMenu > li > ul > li > a:hover,
-nav#navigation ul#TabMenu > li > ul > li > a:focus {
-    background: var(--star-coral-light, #fff1f2) !important;
-    color: var(--star-navy-dark, #173548) !important;
-
-    outline: none !important;
-}
-
-
-/* =========================================================
-   HIDE LEGACY SELECTNAV OUTPUT
-   ========================================================= */
-
-/*
- * The CSS menu below is the responsive fallback.
- * Hide any duplicate selectnav field generated by the theme.
- */
-nav#navigation .selectnav,
-nav#navigation select[id^="selectnav"] {
-    display: none !important;
-}
-
-
-/* =========================================================
-   MOBILE PORTAL NAVIGATION — COLLAPSIBLE
-   767PX AND BELOW
-   ========================================================= */
-
-@media screen and (max-width: 767px),
-screen and (max-device-width: 767px) {
-
-    nav#navigation {
-        position: relative !important;
-        z-index: 100 !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        margin-top: 10px !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-        border-radius: 10px !important;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-navy, #21465f),
-                var(--star-navy-dark, #173548)
-            ) !important;
-
-        box-shadow:
-            0 8px 22px rgba(23, 53, 72, 0.18) !important;
-
-        overflow: visible !important;
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation > .left-corner,
-    nav#navigation > .right-corner {
-        display: none !important;
-    }
-
-    /* Remove any older generated Menu heading. */
-    nav#navigation::before {
-        display: none !important;
-        content: none !important;
-    }
-
-
-    /* =====================================================
-       MOBILE MENU BUTTON
-       ===================================================== */
-
-    nav#navigation .portal-menu-toggle {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 12px !important;
-
-        width: 100% !important;
-        min-height: 50px !important;
-
-        margin: 0 !important;
-        padding: 13px 15px !important;
-
-        border: 0 !important;
-        border-radius: 10px !important;
-
-        background: transparent !important;
-        color: #ffffff !important;
-
-        font-family:
-            "Poppins",
-            "Open Sans",
-            Verdana,
-            Arial,
-            sans-serif !important;
-
-        font-size: 14px !important;
-        font-weight: 700 !important;
-        line-height: 1.3 !important;
-        text-align: left !important;
-
-        cursor: pointer !important;
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation .portal-menu-toggle::before {
-        content: "☰" !important;
-
-        font-size: 18px !important;
-        font-weight: 400 !important;
-        line-height: 1 !important;
-    }
-
-    nav#navigation .portal-menu-toggle::after {
-        content: "▾" !important;
-
-        margin-left: auto !important;
-
-        font-size: 14px !important;
-        line-height: 1 !important;
-
-        transition: transform 0.18s ease !important;
-    }
-
-    nav#navigation.mobile-menu-open
-    .portal-menu-toggle {
-        border-radius: 10px 10px 0 0 !important;
-
-        background: rgba(0, 0, 0, 0.10) !important;
-    }
-
-    nav#navigation.mobile-menu-open
-    .portal-menu-toggle::after {
-        transform: rotate(180deg) !important;
-    }
-
-    nav#navigation .portal-menu-toggle:focus-visible {
-        outline: 3px solid rgba(79, 174, 195, 0.38) !important;
-        outline-offset: -3px !important;
-    }
-
-
-    /* =====================================================
-       COLLAPSED TOP-LEVEL MENU
-       ===================================================== */
-
-    nav#navigation ul#TabMenu {
-        position: static !important;
-
-        display: none !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        margin: 0 !important;
-        padding: 8px !important;
-
-        border: 0 !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
-        border-radius: 0 0 10px 10px !important;
-
-        background: var(--star-navy-dark, #173548) !important;
-
-        list-style: none !important;
-
-        overflow: hidden !important;
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation.mobile-menu-open
-    ul#TabMenu {
-        display: block !important;
-    }
-
-
-    /* =====================================================
-       TOP-LEVEL ITEMS
-       ===================================================== */
-
-    nav#navigation ul#TabMenu > li {
-        position: relative !important;
-
-        display: block !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        margin: 0 0 5px !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-
-        background: transparent !important;
-
-        list-style: none !important;
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 9px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        min-height: 46px !important;
-
-        margin: 0 !important;
-        padding: 11px 42px 11px 13px !important;
-
-        border: 1px solid rgba(255, 255, 255, 0.10) !important;
-        border-radius: 8px !important;
-
-        background: rgba(255, 255, 255, 0.04) !important;
-        color: #ffffff !important;
-
-        font-size: 11.5px !important;
-        font-weight: 600 !important;
-        line-height: 1.35 !important;
-        text-align: left !important;
-        text-decoration: none !important;
-        white-space: normal !important;
-
-        box-shadow: none !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a > i {
-        flex: 0 0 auto !important;
-
-        margin: 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li.active > a {
-        border-color: var(--star-coral, #f56d73) !important;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-coral, #f56d73),
-                #f77f84
-            ) !important;
-
-        color: #ffffff !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a:hover,
-    nav#navigation ul#TabMenu > li > a:focus {
-        background: rgba(255, 255, 255, 0.11) !important;
-        color: #ffffff !important;
-
-        outline: none !important;
-    }
-
-
-    /* =====================================================
-       SUBMENU ARROW
-       ===================================================== */
-
-    nav#navigation ul#TabMenu
-    > li.has-portal-submenu
-    > a::after {
-        position: absolute !important;
-        top: 50% !important;
-        right: 15px !important;
-
-        content: "▾" !important;
-
-        color: rgba(255, 255, 255, 0.86) !important;
-
-        font-size: 13px !important;
-        line-height: 1 !important;
-
-        transform: translateY(-50%) !important;
-
-        transition: transform 0.18s ease !important;
-    }
-
-    nav#navigation ul#TabMenu
-    > li.has-portal-submenu.submenu-open
-    > a::after {
-        transform:
-            translateY(-50%)
-            rotate(180deg) !important;
-    }
-
-
-    /* =====================================================
-       COLLAPSIBLE SUBMENUS
-       ===================================================== */
-
-    nav#navigation ul#TabMenu > li > ul {
-        position: static !important;
-
-        display: none !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        margin: 5px 0 2px !important;
-        padding: 6px !important;
-
-        border: 1px solid rgba(255, 255, 255, 0.10) !important;
-        border-radius: 8px !important;
-
-        background: #ffffff !important;
-
-        box-shadow: none !important;
-
-        list-style: none !important;
-
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-
-        transform: none !important;
-
-        overflow: hidden !important;
-        box-sizing: border-box !important;
-    }
-
-    /*
-     * Open only when JavaScript applies .submenu-open.
-     * Hover and focus no longer control mobile submenus.
-     */
-    nav#navigation ul#TabMenu
-    > li.submenu-open
-    > ul {
-        display: block !important;
-    }
-
-    nav#navigation ul#TabMenu
-    > li:hover
-    > ul,
-    nav#navigation ul#TabMenu
-    > li:focus-within
-    > ul {
-        display: none !important;
-    }
-
-    nav#navigation ul#TabMenu
-    > li.submenu-open:hover
-    > ul,
-    nav#navigation ul#TabMenu
-    > li.submenu-open:focus-within
-    > ul {
-        display: block !important;
-    }
-
-    nav#navigation ul#TabMenu > li > ul > li {
-        display: block !important;
-
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-
-        list-style: none !important;
-    }
-
-    nav#navigation ul#TabMenu
-    > li
-    > ul
-    > li
-    > a {
-        display: block !important;
-
-        width: 100% !important;
-        min-height: 40px !important;
-
-        margin: 0 !important;
-        padding: 10px 11px !important;
-
-        border: 0 !important;
-        border-radius: 6px !important;
-
-        background: transparent !important;
-        color: var(--star-navy, #21465f) !important;
-
-        font-size: 11px !important;
-        font-weight: 600 !important;
-        line-height: 1.4 !important;
-        text-align: left !important;
-        text-decoration: none !important;
-    }
-
-    nav#navigation ul#TabMenu
-    > li
-    > ul
-    > li
-    > a:hover,
-    nav#navigation ul#TabMenu
-    > li
-    > ul
-    > li
-    > a:focus {
-        background: var(--star-coral-light, #fff1f2) !important;
-        color: var(--star-navy-dark, #173548) !important;
-
-        outline: none !important;
-    }
-
-
-    /* Hide duplicate selectnav output. */
-    nav#navigation .selectnav,
-    nav#navigation select[id^="selectnav"] {
-        display: none !important;
-    }
-}
-
-/* =========================================================
-   TABLET NAVIGATION — 768PX TO 959PX
-   ========================================================= */
-
-@media screen and (min-width: 768px) and (max-width: 959px) {
-
-    nav#navigation {
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        margin-top: 12px !important;
-        padding: 0 !important;
-
-        border-radius: 11px !important;
-
-        overflow: visible !important;
-        box-sizing: border-box !important;
-    }
-
-    /*
-     * Display the eight navigation items as two rows
-     * of four items instead of squeezing them into one row.
-     */
-    nav#navigation ul#TabMenu {
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        align-items: stretch !important;
-        gap: 0 !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        overflow: visible !important;
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li {
-        position: static !important;
-
-        display: block !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 5px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        min-height: 48px !important;
-
-        margin: 0 !important;
-        padding: 8px 7px !important;
-
-        border: 0 !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.13) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.13) !important;
-        border-radius: 0 !important;
-
-        background: transparent !important;
-        color: #ffffff !important;
-
-        font-size: 10.5px !important;
-        font-weight: 600 !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-        white-space: normal !important;
-
-        box-sizing: border-box !important;
-    }
-
-    /*
-     * Keep the navigation icons small enough that they
-     * do not compete with the wording.
-     */
-    nav#navigation ul#TabMenu > li > a > i {
-        flex: 0 0 auto !important;
-
-        margin: 0 !important;
-
-        transform: scale(0.88) !important;
-        transform-origin: center !important;
-    }
-
-    /* Remove the right border from items 4 and 8. */
-    nav#navigation ul#TabMenu > li:nth-child(4n) > a {
-        border-right: 0 !important;
-    }
-
-    /* Remove the bottom border from the second row. */
-    nav#navigation ul#TabMenu > li:nth-child(n + 5) > a {
-        border-bottom: 0 !important;
-    }
-
-    /* Correct tablet corner rounding. */
-    nav#navigation ul#TabMenu > li:nth-child(1) > a {
-        border-radius: 11px 0 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(4) > a {
-        border-radius: 0 11px 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(5) > a {
-        border-radius: 0 0 0 11px !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(8) > a {
-        border-radius: 0 0 11px 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li.active > a {
-        border-color: rgba(255, 255, 255, 0.15) !important;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-coral, #f56d73),
-                #f77f84
-            ) !important;
-
-        color: #ffffff !important;
-
-        box-shadow:
-            inset 0 -3px 0 rgba(220, 89, 97, 0.48) !important;
-    }
-
-    nav#navigation ul#TabMenu > li:not(.active):hover > a,
-    nav#navigation ul#TabMenu > li:not(.active):focus-within > a {
-        background: rgba(255, 255, 255, 0.10) !important;
-        color: #ffffff !important;
-    }
-
-
-    /* =====================================================
-       TABLET DROPDOWNS
-       ===================================================== */
-
-    /*
-     * Because the navigation now has two rows, place opened
-     * dropdowns beneath the entire navigation instead of
-     * overlapping the second row.
-     */
-    nav#navigation ul#TabMenu > li > ul {
-        position: absolute !important;
-        top: calc(100% + 8px) !important;
-        right: 0 !important;
-        left: 0 !important;
-        z-index: 1000 !important;
-
-        display: grid !important;
-        grid-template-columns:
-            repeat(auto-fit, minmax(150px, 1fr)) !important;
-        gap: 5px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-
-        margin: 0 !important;
-        padding: 9px !important;
-
-        border: 1px solid var(--star-border, #e4e9ec) !important;
-        border-radius: 11px !important;
-
-        background: #ffffff !important;
-
-        box-shadow:
-            0 14px 34px rgba(23, 53, 72, 0.20) !important;
-
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-
-        transform: translateY(-6px) !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li:hover > ul,
-    nav#navigation ul#TabMenu > li:focus-within > ul {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-
-        transform: translateY(0) !important;
-    }
-
-    nav#navigation ul#TabMenu > li > ul > li {
-        display: block !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li > ul > li > a {
-        display: flex !important;
-        align-items: center !important;
-
-        width: 100% !important;
-        min-height: 42px !important;
-
-        margin: 0 !important;
-        padding: 10px 12px !important;
-
-        border-radius: 7px !important;
-
-        color: var(--star-navy, #21465f) !important;
-
-        font-size: 11px !important;
-        font-weight: 600 !important;
-        line-height: 1.4 !important;
-        white-space: normal !important;
-
-        box-sizing: border-box !important;
-    }
-}
-
-/* =========================================================
-   VERY SMALL MOBILE
-   ========================================================= */
-
-@media screen and (max-width: 420px),
-screen and (max-device-width: 420px) {
-
-    nav#navigation {
-        padding: 6px !important;
-    }
-
-    nav#navigation ul#TabMenu {
-        gap: 5px !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a {
-        min-height: 50px !important;
-
-        padding: 9px !important;
-
-        font-size: 10.5px !important;
-    }
-}
 
 /* =========================================================
    ORDERS PAGE — MODERN TABLE LAYOUT (TABLET + DESKTOP)
@@ -2852,1465 +1885,6 @@ screen and (max-device-width: 420px) {
     }
 }
 
-
-/* =========================================================
-   HOME PAGE - DYNAMIC-SAFE MEMBER DASHBOARD
-
-   This module is designed for the RAMCO Home page markup,
-   including cards and notices inserted after page load.
-
-   Key behavior:
-   - CSS automatically applies to elements added later by JS.
-   - #topRow stays visible when alerts or notices are present.
-   - Script-only validation wrappers do not create blank space.
-   - Event styles apply only to cards containing recent-blog.
-   - JS-created sponsorship/history cards receive their own style.
-   - Inline padding, floats, margins, and widths are overridden.
-   ========================================================= */
-
-/* ---------- Page title ---------- */
-
-body:has(#TwoColumnHomePageLayout) #introDiv {
-    margin-bottom: 0 !important;
-}
-
-body:has(#TwoColumnHomePageLayout) #introDiv .page-title {
-    padding-bottom: 16px !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-}
-
-body:has(#TwoColumnHomePageLayout) #pageTitleDiv {
-    margin: 0 !important;
-    color: var(--star-navy, #21465f) !important;
-    font-family: inherit !important;
-    font-size: clamp(24px, 3vw, 30px) !important;
-    font-weight: 700 !important;
-    line-height: 1.2 !important;
-    letter-spacing: -0.025em !important;
-}
-
-/* ---------- Main dashboard layout ---------- */
-
-#TwoColumnHomePageLayout {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 22px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 0 30px !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #topRow {
-    display: block !important;
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    box-sizing: border-box !important;
-}
-
-/* Hide the row only when it truly contains no elements. */
-#TwoColumnHomePageLayout #topRow:not(:has(*)) {
-    display: none !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent,
-#TwoColumnHomePageLayout #rightMiddleContent {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    align-content: start !important;
-    gap: 22px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    box-sizing: border-box !important;
-}
-
-/* =========================================================
-   TOP-ROW ALERTS AND JS-GENERATED VALIDATION CONTENT
-   ========================================================= */
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection ul,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection li {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection > ul {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 12px !important;
-    width: 100% !important;
-}
-
-/* A script is stored inside the first validation item. Keep it in the
-   document, but remove list spacing around its nonvisual wrappers. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script) {
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    line-height: 0 !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script)
-span,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script)
-ul,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has(script)
-li {
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    line-height: 0 !important;
-}
-
-/* Business Journal/member-benefit notice. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul > li:has([data-teams]) {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams],
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams] span,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams] center {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    color: inherit !important;
-    font-family: inherit !important;
-    font-size: inherit !important;
-    white-space: normal !important;
-    text-align: left !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-[data-teams] p {
-    margin: 0 !important;
-    padding: 0 !important;
-    color: var(--star-text, #25333d) !important;
-    font-family: inherit !important;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-    white-space: normal !important;
-}
-
-/* Premier Strategic Partner banner. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.premier-member-banner {
-    position: relative !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    gap: 6px 12px !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 17px 20px !important;
-    border: 1px solid rgba(245, 109, 115, 0.3) !important;
-    border-left: 5px solid var(--star-coral, #f56d73) !important;
-    border-radius: 14px !important;
-    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%) !important;
-    color: var(--star-text, #25333d) !important;
-    box-shadow: 0 8px 22px rgba(23, 53, 72, 0.07) !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.premier-member-banner strong {
-    color: var(--star-coral-dark, #dc5961) !important;
-    font-size: 14px !important;
-    font-weight: 800 !important;
-    line-height: 1.4 !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-.premier-member-banner span {
-    color: var(--star-text-muted, #64727c) !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-}
-/* =========================================================
-   ALERT PADDING AND ROUNDED CORNERS
-   ========================================================= */
-
-/* Ensure all RAMCO alert wrappers preserve the rounded shape. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul
-> li
-> span.successSummary,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-> ul
-> li
-> span.errorSummary {
-    display: block !important;
-    width: 100% !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
-
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-span.successSummary > ul,
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-span.errorSummary > ul {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border-radius: inherit !important;
-    overflow: hidden !important;
-    list-style: none !important;
-    box-sizing: border-box !important;
-}
-
-/* Apply the visible shape directly to the alert box. */
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-span.successSummary > ul > li.success:not(:has(script)),
-#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-span.errorSummary > ul > li.error:not(:has(script)) {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 16px 18px !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    background-clip: padding-box !important;
-    box-sizing: border-box !important;
-    overflow-wrap: anywhere !important;
-}
-
-@media screen and (max-width: 639px) {
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    > ul
-    > li
-    > span.successSummary,
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    > ul
-    > li
-    > span.errorSummary,
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    span.successSummary > ul > li.success:not(:has(script)),
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    span.errorSummary > ul > li.error:not(:has(script)) {
-        border-radius: 10px !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    span.successSummary > ul > li.success:not(:has(script)),
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    span.errorSummary > ul > li.error:not(:has(script)) {
-        padding: 14px 15px !important;
-    }
-}
-/* =========================================================
-   SHARED HOME-PAGE CARD SURFACE
-   ========================================================= */
-
-#TwoColumnHomePageLayout #leftMiddleContent > .large-notice,
-#TwoColumnHomePageLayout #rightMiddleContent > .large-notice {
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    min-height: 0 !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 24px !important;
-    border: 1px solid var(--star-border, #e4e9ec) !important;
-    border-radius: 18px !important;
-    background: linear-gradient(180deg, #ffffff 0%, #ffffff 78%, #fbfcfd 100%) !important;
-    color: var(--star-text, #25333d) !important;
-    box-shadow: var(
-        --star-card-shadow,
-        0 12px 30px rgba(23, 53, 72, 0.09),
-        0 3px 8px rgba(23, 53, 72, 0.06)
-    ) !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout .large-notice h2 {
-    color: var(--star-navy, #21465f) !important;
-    font-family: inherit !important;
-    font-weight: 700 !important;
-    line-height: 1.25 !important;
-    letter-spacing: -0.015em !important;
-}
-
-#TwoColumnHomePageLayout .large-notice p,
-#TwoColumnHomePageLayout .large-notice li,
-#TwoColumnHomePageLayout .large-notice h5 {
-    color: var(--star-text-muted, #64727c) !important;
-    font-family: inherit !important;
-}
-
-/* Every card gets a top accent. More specific rules below choose color. */
-#TwoColumnHomePageLayout #leftMiddleContent > .large-notice::before,
-#TwoColumnHomePageLayout #rightMiddleContent > .large-notice::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 5px !important;
-    background: linear-gradient(
-        90deg,
-        var(--star-navy, #21465f),
-        var(--star-navy-light, #4faec3)
-    ) !important;
-}
-
-/* =========================================================
-   PROFILE CARD
-   ========================================================= */
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"]) {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 104px !important;
-    grid-template-areas: "profile-content profile-photo" !important;
-    align-items: start !important;
-    gap: 22px !important;
-    padding-top: 28px !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-> div:has(> img) {
-    grid-area: profile-photo !important;
-    width: 104px !important;
-    margin: 0 !important;
-    float: none !important;
-    justify-self: end !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-> div:has(> img) > img {
-    display: block !important;
-    width: 104px !important;
-    height: 104px !important;
-    max-width: none !important;
-    object-fit: cover !important;
-    border: 4px solid #ffffff !important;
-    border-radius: 18px !important;
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    box-shadow:
-        0 10px 25px rgba(23, 53, 72, 0.16),
-        0 0 0 1px rgba(33, 70, 95, 0.08) !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-> div:has(> h2) {
-    grid-area: profile-content !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    float: none !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-h2 {
-    margin: 0 0 8px !important;
-    font-size: 22px !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-ul.memberlinks {
-    margin: 0 0 18px !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-ul.memberlinks li {
-    margin: 0 !important;
-    padding: 1px 0 !important;
-    font-size: 14px !important;
-    line-height: 1.45 !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-ul.memberlinks li:first-child {
-    color: var(--star-text, #25333d) !important;
-    font-weight: 600 !important;
-}
-
-/* Correct and reinforce the page's inline COE-hiding rule. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-ul.memberlinks li:nth-child(n + 3) {
-    display: none !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-ul.plus-list {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-a.button.small.color {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 42px !important;
-    margin: 0 !important;
-    padding: 10px 16px !important;
-    border: 1px solid var(--star-navy, #21465f) !important;
-    border-radius: 9px !important;
-    background: linear-gradient(
-        135deg,
-        var(--star-navy, #21465f),
-        var(--star-navy-dark, #173548)
-    ) !important;
-    color: #ffffff !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 20px !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-    box-shadow: 0 7px 16px rgba(33, 70, 95, 0.2) !important;
-    box-sizing: border-box !important;
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.16s ease,
-        background-color 0.16s ease !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-a.button.small.color:hover,
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-a.button.small.color:focus {
-    border-color: var(--star-navy-dark, #173548) !important;
-    background: var(--star-navy-dark, #173548) !important;
-    color: #ffffff !important;
-    box-shadow: 0 9px 20px rgba(33, 70, 95, 0.27) !important;
-    transform: translateY(-1px) !important;
-    outline: 3px solid rgba(79, 174, 195, 0.22) !important;
-    outline-offset: 2px !important;
-}
-
-/* =========================================================
-   ACCOUNT BALANCE CARD
-   ========================================================= */
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"]) {
-    padding-top: 28px !important;
-    border-color: rgba(245, 109, 115, 0.24) !important;
-    background: linear-gradient(
-        145deg,
-        #ffffff 0%,
-        #fff9f9 100%
-    ) !important;
-}
-
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])::before {
-    background: linear-gradient(
-        90deg,
-        var(--star-coral, #f56d73),
-        #ff9a9f
-    ) !important;
-}
-
-/* Account balance content layout. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-> div {
-    display: grid !important;
-    grid-template-columns: 58px minmax(0, 1fr) !important;
-    grid-template-areas:
-        "balance-icon balance-title"
-        "balance-icon balance-copy"
-        "balance-icon balance-action" !important;
-    align-items: start !important;
-    column-gap: 16px !important;
-    row-gap: 5px !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-
-    float: none !important;
-    box-sizing: border-box !important;
-}
-
-/* Account balance icon. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-.large-notice-icon {
-    grid-area: balance-icon !important;
-
-    display: block !important;
-
-    width: 54px !important;
-    height: 54px !important;
-
-    margin: 0 !important;
-    padding: 10px !important;
-
-    float: none !important;
-
-    border-radius: 15px !important;
-    background: var(--star-coral-light, #fff1f2) !important;
-
-    object-fit: contain !important;
-    box-sizing: border-box !important;
-}
-
-/* Account balance heading. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-h2 {
-    grid-area: balance-title !important;
-
-    margin: 0 !important;
-
-    font-size: 20px !important;
-    line-height: 1.3 !important;
-}
-
-/* Account balance description. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-p {
-    grid-area: balance-copy !important;
-
-    margin: 0 !important;
-    padding: 0 0 8px !important;
-
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-}
-
-/* Payment action container. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-> div
-> div:has(> a[href*="/Sales/Orders.aspx"]) {
-    grid-area: balance-action !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Payment button. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-a.button.small.color {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    min-height: 44px !important;
-
-    margin: 0 !important;
-    padding: 11px 17px !important;
-
-    border: 1px solid var(--star-navy, #21465f) !important;
-    border-radius: 9px !important;
-
-    background: linear-gradient(
-        135deg,
-        var(--star-navy, #21465f),
-        var(--star-navy-dark, #173548)
-    ) !important;
-
-    color: #ffffff !important;
-
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 20px !important;
-
-    text-align: center !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-
-    box-shadow:
-        0 8px 18px rgba(33, 70, 95, 0.25) !important;
-
-    box-sizing: border-box !important;
-
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.16s ease,
-        filter 0.16s ease !important;
-}
-
-/* Payment button hover and keyboard focus. */
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-a.button.small.color:hover,
-#TwoColumnHomePageLayout #leftMiddleContent
-> .large-notice:has(a[href*="/Sales/Orders.aspx"])
-a.button.small.color:focus {
-    border-color: var(--star-navy-dark, #173548) !important;
-
-    background: var(--star-navy-dark, #173548) !important;
-    color: #ffffff !important;
-
-    box-shadow:
-        0 10px 22px rgba(33, 70, 95, 0.34) !important;
-
-    transform: translateY(-1px) !important;
-
-    outline: 3px solid rgba(79, 174, 195, 0.24) !important;
-    outline-offset: 2px !important;
-}
-
-/* =========================================================
-   JS-CREATED SPONSORSHIP / HISTORY ACTION CARDS
-   ========================================================= */
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color) {
-    display: block !important;
-    min-height: 0 !important;
-    height: auto !important;
-    padding: 28px !important;
-    border-color: rgba(245, 109, 115, 0.24) !important;
-    background: linear-gradient(145deg, #ffffff 0%, #fff8f8 100%) !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)::before {
-    background: linear-gradient(
-        90deg,
-        var(--star-coral, #f56d73),
-        #ff9a9f
-    ) !important;
-}
-
-/* Overrides JS inline float, margin-left, and the 65.5px padding. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-> div {
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-h2 {
-    margin: 0 0 9px !important;
-    color: var(--star-navy, #21465f) !important;
-    font-size: 21px !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-p {
-    margin: 12px 0 0 !important;
-    padding: 0 !important;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-}
-
-/* The JS currently creates a button containing an anchor. These rules
-   make the nested structure render as one consistent action control. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-button.button.small.color {
-    display: inline-flex !important;
-    align-items: stretch !important;
-    justify-content: stretch !important;
-    min-height: 44px !important;
-    margin: 14px 10px 0 0 !important;
-    padding: 0 !important;
-    border: 1px solid var(--star-coral, #f56d73) !important;
-    border-radius: 9px !important;
-    background: linear-gradient(
-        135deg,
-        var(--star-coral, #f56d73),
-        #f77f84
-    ) !important;
-    color: #ffffff !important;
-    box-shadow: 0 8px 18px rgba(245, 109, 115, 0.25) !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-    cursor: pointer !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-button.button.small.color > a {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 42px !important;
-    padding: 10px 16px !important;
-    color: #ffffff !important;
-    font-family: inherit !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 20px !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    white-space: normal !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-button.button.small.color > br {
-    display: none !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-button.button.small.color:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(button.button.small.color)
-button.button.small.color:focus-within {
-    border-color: var(--star-coral-dark, #dc5961) !important;
-    background: var(--star-coral-dark, #dc5961) !important;
-    box-shadow: 0 10px 22px rgba(245, 109, 115, 0.34) !important;
-    transform: translateY(-1px) !important;
-    outline: 3px solid rgba(245, 109, 115, 0.22) !important;
-    outline-offset: 2px !important;
-}
-/* =========================================================
-   OFFICE / ORGANIZATION CARDS
-   ========================================================= */
-
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content) {
-    padding-top: 28px !important;
-}
-
-/* Reset the RAMCO list wrapping the organization cards. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-> ul {
-    width: 100% !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    float: none !important;
-
-    list-style: none !important;
-    box-sizing: border-box !important;
-}
-
-/* Shared organization-card layout. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content {
-    width: 100% !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-
-    box-sizing: border-box !important;
-}
-
-/* The first card does not need additional spacing. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content:first-child {
-    padding: 0 !important;
-}
-
-/* Separate every additional organization card. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content + .tile-content {
-    margin: 22px 0 0 !important;
-    padding: 22px 0 0 !important;
-
-    border-top: 1px solid
-        var(--star-border, #e4e9ec) !important;
-}
-
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content > h2 {
-    margin: 0 0 10px !important;
-
-    font-size: 20px !important;
-    line-height: 1.3 !important;
-}
-
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content > p {
-    margin: 0 0 7px !important;
-    padding: 0 !important;
-
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-}
-
-/* Organization action buttons. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content > ul.plus-list {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 9px !important;
-
-    margin: 16px 0 0 !important;
-    padding: 0 !important;
-
-    list-style: none !important;
-}
-
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content > ul.plus-list > li {
-    margin: 0 !important;
-    padding: 0 !important;
-
-    list-style: none !important;
-}
-
-/* Hide empty placeholder links generated by RAMCO. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content
-> ul.plus-list
-> li:has(> a[href="#"]:empty) {
-    display: none !important;
-}
-
-/* Office and membership action links. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content
-> ul.plus-list
-> li
-> a:not(:empty) {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    min-height: 38px !important;
-
-    padding: 8px 13px !important;
-
-    border: 1px solid rgba(33, 70, 95, 0.18) !important;
-    border-radius: 8px !important;
-
-    background:
-        var(--star-surface-soft, #f7f9fa) !important;
-
-    color: var(--star-navy, #21465f) !important;
-
-    font-size: 12.5px !important;
-    font-weight: 700 !important;
-    line-height: 1.3 !important;
-
-    text-align: center !important;
-    text-decoration: none !important;
-
-    box-sizing: border-box !important;
-}
-
-/* Office and membership action link interaction. */
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content
-> ul.plus-list
-> li
-> a:not(:empty):hover,
-#TwoColumnHomePageLayout
-.large-notice:has(.tile-content)
-.tile-content
-> ul.plus-list
-> li
-> a:not(:empty):focus {
-    border-color:
-        var(--star-navy-light, #4faec3) !important;
-
-    background: #ffffff !important;
-    color: var(--star-navy-dark, #173548) !important;
-
-    outline:
-        3px solid rgba(79, 174, 195, 0.18) !important;
-    outline-offset: 2px !important;
-}
-/* =========================================================
-   UPCOMING EVENTS CARD
-   ========================================================= */
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(article.recent-blog) {
-    display: grid !important;
-    grid-template-columns: 58px minmax(0, 1fr) !important;
-    grid-template-areas:
-        "events-icon events-title"
-        "events-list events-list" !important;
-    align-content: start !important;
-    column-gap: 16px !important;
-    row-gap: 4px !important;
-    min-height: 0 !important;
-    height: auto !important;
-    padding-top: 28px !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(article.recent-blog)::before {
-    background: linear-gradient(
-        90deg,
-        var(--star-navy-light, #4faec3),
-        var(--star-navy, #21465f)
-    ) !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(article.recent-blog)
-> .large-notice-icon {
-    grid-area: events-icon !important;
-    display: block !important;
-    width: 54px !important;
-    height: 54px !important;
-    margin: 0 !important;
-    padding: 9px !important;
-    float: none !important;
-    border-radius: 15px !important;
-    background: rgba(79, 174, 195, 0.12) !important;
-    object-fit: contain !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(article.recent-blog)
-> h2 {
-    grid-area: events-title !important;
-    align-self: center !important;
-    margin: 0 !important;
-    font-size: 22px !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(article.recent-blog)
-> ul {
-    grid-area: events-list !important;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 12px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 18px 0 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(article.recent-blog)
-> ul > li {
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog {
-    position: relative !important;
-    display: grid !important;
-    grid-template-columns: 56px minmax(0, 1fr) !important;
-    align-items: start !important;
-    gap: 15px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 14px 15px !important;
-    border: 1px solid var(--star-border, #e4e9ec) !important;
-    border-radius: 13px !important;
-    background: #ffffff !important;
-    box-shadow: 0 3px 10px rgba(23, 53, 72, 0.045) !important;
-    box-sizing: border-box !important;
-    transition:
-        transform 0.14s ease,
-        border-color 0.16s ease,
-        box-shadow 0.16s ease !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog:hover {
-    border-color: rgba(79, 174, 195, 0.42) !important;
-    box-shadow: 0 8px 18px rgba(23, 53, 72, 0.09) !important;
-    transform: translateY(-1px) !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog > section.date {
-    position: static !important;
-    display: grid !important;
-    grid-template-rows: auto auto !important;
-    width: 56px !important;
-    min-width: 56px !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    border: 1px solid rgba(33, 70, 95, 0.12) !important;
-    border-radius: 12px !important;
-    background: #ffffff !important;
-    box-shadow: none !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog > section.date .day,
-#TwoColumnHomePageLayout article.recent-blog > section.date .month {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-    border: 0 !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog > section.date .day {
-    padding: 8px 5px 5px !important;
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    color: var(--star-navy, #21465f) !important;
-    font-size: 17px !important;
-    font-weight: 700 !important;
-    line-height: 1.1 !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog > section.date .month {
-    padding: 5px !important;
-    background: var(--star-coral, #f56d73) !important;
-    color: #ffffff !important;
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    line-height: 1.1 !important;
-    letter-spacing: 0.06em !important;
-    text-transform: uppercase !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog > a {
-    display: block !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    color: inherit !important;
-    text-decoration: none !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog > a > div {
-    min-width: 0 !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog h4 {
-    display: block !important;
-    margin: 1px 0 6px !important;
-    color: var(--star-navy, #21465f) !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    line-height: 1.4 !important;
-    overflow-wrap: anywhere !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog h5 {
-    display: block !important;
-    margin: 0 !important;
-    color: var(--star-text-muted, #64727c) !important;
-    font-size: 12.5px !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
-    overflow-wrap: anywhere !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog p:empty {
-    display: none !important;
-}
-
-#TwoColumnHomePageLayout article.recent-blog a:hover h4,
-#TwoColumnHomePageLayout article.recent-blog a:focus h4 {
-    color: var(--star-coral-dark, #dc5961) !important;
-    text-decoration: underline !important;
-    text-underline-offset: 3px !important;
-}
-
-/* =========================================================
-   DESKTOP
-   ========================================================= */
-
-@media screen and (min-width: 960px) {
-    #TwoColumnHomePageLayout {
-        grid-template-columns:
-            minmax(300px, 0.9fr)
-            minmax(0, 1.25fr) !important;
-        align-items: start !important;
-        gap: 24px !important;
-
-        /*
-         * Restore an outside gutter around the dashboard.
-         * Width must be auto so the margins do not create
-         * horizontal overflow.
-         */
-        width: auto !important;
-        margin-left: 16px !important;
-        margin-right: 16px !important;
-    }
-
-    #TwoColumnHomePageLayout #topRow {
-        grid-column: 1 / -1 !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent,
-    #TwoColumnHomePageLayout #rightMiddleContent,
-    #TwoColumnHomePageLayout #rightMiddleContent > .large-notice {
-        min-height: 0 !important;
-        height: auto !important;
-    }
-}
-
-@media screen and (min-width: 1180px) {
-    #TwoColumnHomePageLayout {
-        grid-template-columns:
-            minmax(330px, 0.82fr)
-            minmax(0, 1.38fr) !important;
-        gap: 28px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent > .large-notice,
-    #TwoColumnHomePageLayout #rightMiddleContent > .large-notice {
-        padding: 28px !important;
-    }
-}
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media screen and (min-width: 640px) and (max-width: 959px) {
-    #TwoColumnHomePageLayout #leftMiddleContent {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        align-items: stretch !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(.tile-content) {
-        grid-column: 1 / -1 !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"]) {
-        grid-template-columns: minmax(0, 1fr) 82px !important;
-        gap: 16px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    > div:has(> img) {
-        width: 82px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    > div:has(> img) > img {
-        width: 82px !important;
-        height: 82px !important;
-        border-radius: 15px !important;
-    }
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media screen and (max-width: 639px) {
-    #TwoColumnHomePageLayout {
-        gap: 16px !important;
-        padding-bottom: 22px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent,
-    #TwoColumnHomePageLayout #rightMiddleContent {
-        gap: 16px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent > .large-notice,
-    #TwoColumnHomePageLayout #rightMiddleContent > .large-notice {
-        padding: 19px !important;
-        border-radius: 15px !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    > ul
-    > li:has([data-teams]) {
-        padding: 0 !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner {
-        display: block !important;
-        padding: 15px 16px !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner strong,
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner span {
-        display: block !important;
-    }
-
-    #topMiddleContentPlaceHolder_ctl00_ValidationSummarySection
-    .premier-member-banner strong {
-        margin-bottom: 4px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"]) {
-        grid-template-columns: 76px minmax(0, 1fr) !important;
-        grid-template-areas: "profile-photo profile-content" !important;
-        gap: 16px !important;
-        padding-top: 23px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    > div:has(> img) {
-        width: 76px !important;
-        justify-self: start !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    > div:has(> img) > img {
-        width: 76px !important;
-        height: 76px !important;
-        border-width: 3px !important;
-        border-radius: 14px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    h2 {
-        font-size: 19px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    ul.memberlinks li {
-        font-size: 13px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    a.button.small.color,
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Sales/Orders.aspx"])
-    a.button.small.color,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(button.button.small.color)
-    button.button.small.color {
-        width: 100% !important;
-    }
-
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(button.button.small.color)
-    button.button.small.color {
-        margin-right: 0 !important;
-    }
-
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(button.button.small.color)
-    button.button.small.color > a {
-        width: 100% !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Sales/Orders.aspx"])
-    > div {
-        grid-template-columns: 50px minmax(0, 1fr) !important;
-        column-gap: 13px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Sales/Orders.aspx"])
-    .large-notice-icon {
-        width: 48px !important;
-        height: 48px !important;
-        padding: 8px !important;
-        border-radius: 13px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Sales/Orders.aspx"])
-    h2,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(article.recent-blog)
-    > h2 {
-        font-size: 19px !important;
-    }
-
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(article.recent-blog) {
-        grid-template-columns: 50px minmax(0, 1fr) !important;
-        column-gap: 13px !important;
-        padding-top: 23px !important;
-    }
-
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(article.recent-blog)
-    > .large-notice-icon {
-        width: 48px !important;
-        height: 48px !important;
-        padding: 8px !important;
-        border-radius: 13px !important;
-    }
-
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(article.recent-blog)
-    > ul {
-        margin-top: 14px !important;
-        gap: 10px !important;
-    }
-
-    #TwoColumnHomePageLayout article.recent-blog {
-        grid-template-columns: 50px minmax(0, 1fr) !important;
-        gap: 12px !important;
-        padding: 12px !important;
-        border-radius: 11px !important;
-    }
-
-    #TwoColumnHomePageLayout article.recent-blog > section.date {
-        width: 50px !important;
-        min-width: 50px !important;
-        border-radius: 10px !important;
-    }
-
-    #TwoColumnHomePageLayout article.recent-blog h4 {
-        font-size: 14px !important;
-    }
-
-    #TwoColumnHomePageLayout article.recent-blog h5 {
-        font-size: 12px !important;
-    }
-
-    #TwoColumnHomePageLayout .large-notice:has(.tile-content)
-    ul.plus-list {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) !important;
-    }
-
-    #TwoColumnHomePageLayout .large-notice:has(.tile-content)
-    ul.plus-list a:not(:empty) {
-        width: 100% !important;
-    }
-}
-
-/* =========================================================
-   VERY NARROW PHONES
-   ========================================================= */
-
-@media screen and (max-width: 390px) {
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"]) {
-        grid-template-columns: 1fr !important;
-        grid-template-areas:
-            "profile-photo"
-            "profile-content" !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    > div:has(> img) {
-        width: 84px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Profile/Update/Form.aspx"])
-    > div:has(> img) > img {
-        width: 84px !important;
-        height: 84px !important;
-    }
-
-    #TwoColumnHomePageLayout #leftMiddleContent
-    > .large-notice:has(a[href*="/Sales/Orders.aspx"])
-    > div {
-        grid-template-columns: 1fr !important;
-        grid-template-areas:
-            "balance-icon"
-            "balance-title"
-            "balance-copy"
-            "balance-action" !important;
-    }
-
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(article.recent-blog) {
-        grid-template-columns: 1fr !important;
-        grid-template-areas:
-            "events-icon"
-            "events-title"
-            "events-list" !important;
-    }
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-    #TwoColumnHomePageLayout .button.small.color,
-    #TwoColumnHomePageLayout button.button.small.color,
-    #TwoColumnHomePageLayout article.recent-blog {
-        transition: none !important;
-    }
-}
-
 /* =========================================================
    STAR PORTAL — PAGINATION CORRECTION
 
@@ -4613,637 +2187,6 @@ button.button.small.color:focus-within {
     }
 }
 
-
-/* =========================================================
-   HOME PAGE — JAVASCRIPT-GENERATED ACTION CARDS
-
-   Append this module after the existing Home-page styles.
-   CSS automatically applies when JavaScript inserts matching
-   elements later. The legacy selectors also support the old
-   script until it is replaced.
-   ========================================================= */
-
-/* Shared surface: new class-based markup plus the legacy markup. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice.star-generated-card,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"]),
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"]),
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"]) {
-    position: relative !important;
-    display: block !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    min-height: 0 !important;
-    height: auto !important;
-
-    margin: 0 !important;
-    padding: 28px !important;
-
-    border: 1px solid rgba(245, 109, 115, 0.24) !important;
-    border-radius: 18px !important;
-
-    background: linear-gradient(
-        145deg,
-        #ffffff 0%,
-        #fff8f8 100%
-    ) !important;
-
-    color: var(--star-text, #25333d) !important;
-
-    box-shadow: var(
-        --star-card-shadow,
-        0 12px 30px rgba(23, 53, 72, 0.09),
-        0 3px 8px rgba(23, 53, 72, 0.06)
-    ) !important;
-
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
-
-/* Coral top accent. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice.star-generated-card::before,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"])::before,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])::before,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 5px !important;
-    background: linear-gradient(
-        90deg,
-        var(--star-coral, #f56d73),
-        #ff9a9f
-    ) !important;
-}
-
-/* Use a navy/blue accent for the history card. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice.star-history-card::before {
-    background: linear-gradient(
-        90deg,
-        var(--star-navy, #21465f),
-        var(--star-navy-light, #4faec3)
-    ) !important;
-}
-
-/* Override the inline float, margin, and padding from the old script. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice.star-generated-card > .star-card-content,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice.star-generated-card > div,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"]) > div,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"]) > div,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"]) > div {
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout .star-generated-card .star-card-title,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"]) h2,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"]) h2,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"]) h2 {
-    margin: 0 0 10px !important;
-    color: var(--star-navy, #21465f) !important;
-    font-family: inherit !important;
-    font-size: 21px !important;
-    font-weight: 700 !important;
-    line-height: 1.25 !important;
-    letter-spacing: -0.015em !important;
-}
-
-#TwoColumnHomePageLayout .star-generated-card .star-card-copy,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"]) p,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"]) p,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"]) p {
-    margin: 0 0 14px !important;
-    padding: 0 !important;
-    color: var(--star-text-muted, #64727c) !important;
-    font-family: inherit !important;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-}
-
-#TwoColumnHomePageLayout .star-generated-card .star-card-actions {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: stretch !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin: 16px 0 0 !important;
-    padding: 0 !important;
-}
-
-#TwoColumnHomePageLayout .star-generated-card .star-card-action-group {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    align-content: start !important;
-    gap: 8px !important;
-    flex: 1 1 220px !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-#TwoColumnHomePageLayout .star-generated-card
-.star-card-action-group .star-card-copy {
-    margin: 0 !important;
-}
-
-/* New markup: the anchor itself is the button. */
-#TwoColumnHomePageLayout .star-generated-card a.star-card-action {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    min-height: 46px !important;
-    padding: 11px 17px !important;
-
-    border: 1px solid var(--star-coral, #f56d73) !important;
-    border-radius: 9px !important;
-
-    background: linear-gradient(
-        135deg,
-        var(--star-coral, #f56d73),
-        #f77f84
-    ) !important;
-
-    color: #ffffff !important;
-    font-family: inherit !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 20px !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-    white-space: normal !important;
-
-    box-shadow: 0 8px 18px rgba(245, 109, 115, 0.25) !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.16s ease,
-        background-color 0.16s ease !important;
-}
-
-#TwoColumnHomePageLayout .star-generated-card
-a.star-card-action:hover,
-#TwoColumnHomePageLayout .star-generated-card
-a.star-card-action:focus {
-    border-color: var(--star-coral-dark, #dc5961) !important;
-    background: var(--star-coral-dark, #dc5961) !important;
-    color: #ffffff !important;
-    box-shadow: 0 10px 22px rgba(245, 109, 115, 0.34) !important;
-    transform: translateY(-1px) !important;
-    outline: 3px solid rgba(245, 109, 115, 0.22) !important;
-    outline-offset: 2px !important;
-}
-
-#TwoColumnHomePageLayout .star-generated-card
-a.star-card-action:active {
-    transform: translateY(1px) !important;
-}
-
-/* Legacy markup: button containing an anchor. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"])
-button.button.small.color,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])
-button.button.small.color,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])
-button.button.small.color {
-    display: inline-flex !important;
-    align-items: stretch !important;
-    justify-content: stretch !important;
-
-    min-height: 46px !important;
-    margin: 14px 10px 0 0 !important;
-    padding: 0 !important;
-
-    border: 1px solid var(--star-coral, #f56d73) !important;
-    border-radius: 9px !important;
-
-    background: linear-gradient(
-        135deg,
-        var(--star-coral, #f56d73),
-        #f77f84
-    ) !important;
-
-    color: #ffffff !important;
-    box-shadow: 0 8px 18px rgba(245, 109, 115, 0.25) !important;
-    overflow: hidden !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"])
-button.button.small.color > a,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])
-button.button.small.color > a,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])
-button.button.small.color > a {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    min-height: 44px !important;
-    padding: 11px 17px !important;
-
-    color: #ffffff !important;
-    font-family: inherit !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 20px !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    white-space: normal !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"])
-button.button.small.color > br,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])
-button.button.small.color > br,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])
-button.button.small.color > br {
-    display: none !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"])
-button.button.small.color:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="Sponsorship+Opportunity"])
-button.button.small.color:focus-within,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])
-button.button.small.color:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])
-button.button.small.color:focus-within,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])
-button.button.small.color:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])
-button.button.small.color:focus-within {
-    border-color: var(--star-coral-dark, #dc5961) !important;
-    background: var(--star-coral-dark, #dc5961) !important;
-    box-shadow: 0 10px 22px rgba(245, 109, 115, 0.34) !important;
-    transform: translateY(-1px) !important;
-    outline: 3px solid rgba(245, 109, 115, 0.22) !important;
-    outline-offset: 2px !important;
-}
-
-@media screen and (max-width: 639px) {
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice.star-generated-card,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="Sponsorship+Opportunity"]),
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="/Education/History/MyClasses.aspx"]),
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"]) {
-        padding: 20px !important;
-        border-radius: 15px !important;
-    }
-
-    #TwoColumnHomePageLayout .star-generated-card
-    .star-card-actions,
-    #TwoColumnHomePageLayout .star-generated-card
-    .star-card-action-group {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) !important;
-        width: 100% !important;
-    }
-
-    #TwoColumnHomePageLayout .star-generated-card
-a.star-card-action,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="Sponsorship+Opportunity"])
-    button.button.small.color,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])
-    button.button.small.color,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])
-    button.button.small.color {
-        width: 100% !important;
-        margin-right: 0 !important;
-    }
-
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="Sponsorship+Opportunity"])
-    button.button.small.color > a,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="/Education/History/MyClasses.aspx"])
-    button.button.small.color > a,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(a[href*="/Meetings/MyMeetings.aspx"])
-    button.button.small.color > a {
-        width: 100% !important;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    #TwoColumnHomePageLayout .star-generated-card a.star-card-action,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice:has(button.button.small.color)
-    button.button.small.color {
-        transition: none !important;
-    }
-}
-
-
-/* =========================================================
-   HOME PAGE — DYNAMIC ACTION BUTTON CORRECTION
-
-   Keeps the following buttons visually identical to
-   "Update Your Profile":
-   - Sponsorship Opportunity Calendar
-   - Class Sponsorship History
-   - Event Sponsorship History
-
-   Supports both the current anchor-based markup and the
-   original nested <button><a> JavaScript markup.
-   ========================================================= */
-
-/* Keep the generated history actions compact and vertically grouped. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card .star-card-actions {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    gap: 14px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card .star-card-action-group {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card .star-card-copy {
-    margin: 0 0 8px !important;
-    padding: 0 !important;
-    color: var(--star-text-muted, #64727c) !important;
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-}
-
-/* Current markup: the anchor itself is the action button. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-action-link.button.small.color,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-card-action {
-    position: relative !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: auto !important;
-    min-width: 215px !important;
-    max-width: 100% !important;
-    min-height: 42px !important;
-
-    margin: 0 !important;
-    padding: 10px 16px !important;
-    float: none !important;
-
-    border: 1px solid var(--star-navy, #21465f) !important;
-    border-radius: 9px !important;
-
-    background: linear-gradient(
-        135deg,
-        var(--star-navy, #21465f),
-        var(--star-navy-dark, #173548)
-    ) !important;
-
-    color: #ffffff !important;
-    font-family: inherit !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 20px !important;
-    letter-spacing: 0 !important;
-
-    text-align: center !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-    white-space: normal !important;
-
-    box-shadow: 0 7px 16px rgba(33, 70, 95, 0.2) !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.16s ease,
-        background-color 0.16s ease !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-action-link.button.small.color:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-action-link.button.small.color:focus,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-card-action:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-card-action:focus {
-    border-color: var(--star-navy-dark, #173548) !important;
-    background: var(--star-navy-dark, #173548) !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    box-shadow: 0 9px 20px rgba(33, 70, 95, 0.27) !important;
-    transform: translateY(-1px) !important;
-    outline: 3px solid rgba(79, 174, 195, 0.22) !important;
-    outline-offset: 2px !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-action-link.button.small.color:active,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .star-action-card a.star-card-action:active {
-    box-shadow: 0 4px 10px rgba(33, 70, 95, 0.2) !important;
-    transform: translateY(1px) !important;
-}
-
-/* Legacy markup: make the outer button invisible and style its anchor. */
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color:has(> a[href*="Sponsorship"]),
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color:has(> a[href*="/Education/History/MyClasses.aspx"]),
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color:has(> a[href*="/Meetings/MyMeetings.aspx"]) {
-    display: inline-block !important;
-    width: auto !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    overflow: visible !important;
-    transform: none !important;
-    outline: 0 !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="Sponsorship"],
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"],
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"] {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: auto !important;
-    min-width: 215px !important;
-    max-width: 100% !important;
-    min-height: 42px !important;
-
-    padding: 10px 16px !important;
-
-    border: 1px solid var(--star-navy, #21465f) !important;
-    border-radius: 9px !important;
-
-    background: linear-gradient(
-        135deg,
-        var(--star-navy, #21465f),
-        var(--star-navy-dark, #173548)
-    ) !important;
-
-    color: #ffffff !important;
-    font-family: inherit !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 20px !important;
-
-    text-align: center !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-    white-space: normal !important;
-
-    box-shadow: 0 7px 16px rgba(33, 70, 95, 0.2) !important;
-    box-sizing: border-box !important;
-
-    transition:
-        transform 0.12s ease,
-        box-shadow 0.16s ease,
-        background-color 0.16s ease !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="Sponsorship"]:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="Sponsorship"]:focus,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"]:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"]:focus,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"]:hover,
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"]:focus {
-    border-color: var(--star-navy-dark, #173548) !important;
-    background: var(--star-navy-dark, #173548) !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    box-shadow: 0 9px 20px rgba(33, 70, 95, 0.27) !important;
-    transform: translateY(-1px) !important;
-    outline: 3px solid rgba(79, 174, 195, 0.22) !important;
-    outline-offset: 2px !important;
-}
-
-#TwoColumnHomePageLayout #rightMiddleContent
-> .large-notice button.button.small.color > br {
-    display: none !important;
-}
-
-@media screen and (max-width: 600px) {
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .star-action-card a.star-action-link.button.small.color,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .star-action-card a.star-card-action,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice button.button.small.color > a[href*="Sponsorship"],
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"],
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"] {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .star-action-card a.star-action-link,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .star-action-card a.star-card-action,
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice button.button.small.color > a[href*="Sponsorship"],
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice button.button.small.color > a[href*="/Education/History/MyClasses.aspx"],
-    #TwoColumnHomePageLayout #rightMiddleContent
-    > .large-notice button.button.small.color > a[href*="/Meetings/MyMeetings.aspx"] {
-        transition: none !important;
-    }
-}
-
-#FormContentPlaceHolder_EditForm_EventsCalendar_EventCalendar {
-    --star-calendar-active: 1;
-}
 
 /* =========================================================
    EVENT CALENDAR — DESKTOP FORM WIDTH
@@ -19908,913 +16851,7 @@ body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
         grid-column: auto !important;
     }
 }
-/* =========================================================
-   PORTAL NAVIGATION TOGGLE VISIBILITY FIX
-   ========================================================= */
 
-/* Hide the JavaScript-generated toggle by default. */
-nav#navigation .portal-menu-toggle {
-    display: none !important;
-}
-
-/* Show it only on mobile. */
-@media screen and (max-width: 767px),
-screen and (max-device-width: 767px) {
-    nav#navigation .portal-menu-toggle {
-        display: flex !important;
-    }
-}
-/* =========================================================
-   PORTAL NAVIGATION — TABLET HEIGHT AND VISIBILITY FIX
-   768PX TO 959PX
-   ========================================================= */
-
-/* Keep the JavaScript toggle mobile-only. */
-@media screen and (min-width: 768px) {
-    nav#navigation .portal-menu-toggle {
-        display: none !important;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 959px) {
-
-    /*
-     * Reset the fixed height inherited from the legacy theme.
-     * The navigation must grow to contain both rows.
-     */
-    nav#navigation,
-    nav#navigation.style-1 {
-        display: block !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-        min-height: 96px !important;
-        max-height: none !important;
-
-        margin-top: 12px !important;
-        margin-bottom: 0 !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-        border-radius: 11px !important;
-
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-navy, #21465f),
-                var(--star-navy-dark, #173548)
-            ) !important;
-
-        overflow: visible !important;
-        float: none !important;
-        clear: both !important;
-
-        box-sizing: border-box !important;
-    }
-
-    /*
-     * Force all eight links into a contained two-row grid.
-     */
-    nav#navigation ul#TabMenu {
-        position: relative !important;
-
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        grid-template-rows: repeat(2, minmax(48px, auto)) !important;
-        grid-auto-flow: row !important;
-        align-items: stretch !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-        min-height: 96px !important;
-        max-height: none !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-        border-radius: 11px !important;
-
-        background: transparent !important;
-
-        list-style: none !important;
-
-        overflow: visible !important;
-        float: none !important;
-        clear: both !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li {
-        position: static !important;
-
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-        min-height: 48px !important;
-        max-height: none !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-
-        background: transparent !important;
-
-        float: none !important;
-        clear: none !important;
-
-        box-sizing: border-box !important;
-    }
-
-    /*
-     * Explicitly restore the second row in case an older
-     * responsive rule hides later navigation items.
-     */
-    nav#navigation ul#TabMenu > li:nth-child(n + 5) {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 6px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 100% !important;
-        min-height: 48px !important;
-
-        margin: 0 !important;
-        padding: 8px 7px !important;
-
-        border: 0 !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.13) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.13) !important;
-        border-radius: 0 !important;
-
-        background: transparent !important;
-        color: #ffffff !important;
-
-        font-size: 10.5px !important;
-        font-weight: 600 !important;
-        line-height: 1.3 !important;
-        text-align: center !important;
-        text-decoration: none !important;
-        text-shadow: none !important;
-        white-space: normal !important;
-
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a > i {
-        flex: 0 0 auto !important;
-
-        margin: 0 !important;
-
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        transform: scale(0.88) !important;
-        transform-origin: center !important;
-    }
-
-    /* Remove right borders from items 4 and 8. */
-    nav#navigation ul#TabMenu > li:nth-child(4n) > a {
-        border-right: 0 !important;
-    }
-
-    /* Remove bottom borders from the second row. */
-    nav#navigation ul#TabMenu > li:nth-child(n + 5) > a {
-        border-bottom: 0 !important;
-    }
-
-    /* Tablet corner rounding. */
-    nav#navigation ul#TabMenu > li:nth-child(1) > a {
-        border-radius: 11px 0 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(4) > a {
-        border-radius: 0 11px 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(5) > a {
-        border-radius: 0 0 0 11px !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(8) > a {
-        border-radius: 0 0 11px 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li.active > a {
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-coral, #f56d73),
-                #f77f84
-            ) !important;
-
-        color: #ffffff !important;
-
-        box-shadow:
-            inset 0 -3px 0 rgba(220, 89, 97, 0.48) !important;
-    }
-
-
-    /* =====================================================
-       TABLET DROPDOWNS
-       ===================================================== */
-
-    nav#navigation ul#TabMenu > li > ul {
-        position: absolute !important;
-        top: calc(100% + 8px) !important;
-        right: 0 !important;
-        left: 0 !important;
-        z-index: 1000 !important;
-
-        display: grid !important;
-        grid-template-columns:
-            repeat(auto-fit, minmax(150px, 1fr)) !important;
-        gap: 5px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
-
-        margin: 0 !important;
-        padding: 9px !important;
-
-        border: 1px solid var(--star-border, #e4e9ec) !important;
-        border-radius: 11px !important;
-
-        background: #ffffff !important;
-
-        box-shadow:
-            0 14px 34px rgba(23, 53, 72, 0.20) !important;
-
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-
-        transform: translateY(-6px) !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li:hover > ul,
-    nav#navigation ul#TabMenu > li:focus-within > ul {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-
-        transform: translateY(0) !important;
-    }
-}
-/* =========================================================
-   TABLET NAVIGATION — TWO-ROW CONTAINMENT FIX
-   768PX THROUGH 959PX
-   ========================================================= */
-
-@media screen and (min-width: 768px) and (max-width: 959px) {
-
-    /*
-     * Allow the navigation background to contain both rows.
-     */
-    nav#navigation,
-    nav#navigation.style-1 {
-        display: block !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-        min-height: 96px !important;
-        max-height: none !important;
-
-        margin-top: 12px !important;
-        padding: 0 !important;
-
-        border-radius: 11px !important;
-
-        overflow: visible !important;
-
-        float: none !important;
-        clear: both !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu {
-        position: relative !important;
-
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        grid-template-rows: repeat(2, 48px) !important;
-        grid-auto-flow: row !important;
-        align-items: stretch !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 96px !important;
-        min-height: 96px !important;
-        max-height: none !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        border-radius: 11px !important;
-
-        overflow: visible !important;
-
-        float: none !important;
-        clear: both !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li {
-        position: relative !important;
-
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 48px !important;
-        min-height: 48px !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        float: none !important;
-        clear: none !important;
-
-        box-sizing: border-box !important;
-    }
-
-    /*
-     * Explicitly restore items five through eight in case
-     * legacy responsive rules attempt to hide them.
-     */
-    nav#navigation ul#TabMenu > li:nth-child(n + 5) {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 6px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 48px !important;
-        min-height: 48px !important;
-
-        margin: 0 !important;
-        padding: 8px 7px !important;
-
-        border: 0 !important;
-        border-right:
-            1px solid rgba(255, 255, 255, 0.13) !important;
-        border-bottom:
-            1px solid rgba(255, 255, 255, 0.13) !important;
-        border-radius: 0 !important;
-
-        background: transparent !important;
-        color: #ffffff !important;
-
-        font-size: 10.5px !important;
-        font-weight: 600 !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-        text-decoration: none !important;
-        white-space: normal !important;
-
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a > i {
-        flex: 0 0 auto !important;
-
-        margin: 0 !important;
-
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        transform: scale(0.88) !important;
-        transform-origin: center !important;
-    }
-
-    /* Remove the right border from items four and eight. */
-    nav#navigation ul#TabMenu > li:nth-child(4n) > a {
-        border-right: 0 !important;
-    }
-
-    /* Remove the bottom border from the second row. */
-    nav#navigation ul#TabMenu > li:nth-child(n + 5) > a {
-        border-bottom: 0 !important;
-    }
-
-    /* Correct the outside corners. */
-    nav#navigation ul#TabMenu > li:nth-child(1) > a {
-        border-radius: 11px 0 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(4) > a {
-        border-radius: 0 11px 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(5) > a {
-        border-radius: 0 0 0 11px !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(8) > a {
-        border-radius: 0 0 11px 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li.active > a {
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-coral, #f56d73),
-                #f77f84
-            ) !important;
-
-        color: #ffffff !important;
-
-        box-shadow:
-            inset 0 -3px 0 rgba(220, 89, 97, 0.48) !important;
-    }
-
-
-    /* =====================================================
-       TABLET DROPDOWNS
-       ===================================================== */
-
-    nav#navigation ul#TabMenu > li > ul {
-        position: absolute !important;
-        top: calc(100% + 8px) !important;
-        right: 0 !important;
-        left: 0 !important;
-        z-index: 1000 !important;
-
-        display: grid !important;
-        grid-template-columns:
-            repeat(auto-fit, minmax(150px, 1fr)) !important;
-        gap: 5px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-        min-height: 0 !important;
-
-        margin: 0 !important;
-        padding: 9px !important;
-
-        border: 1px solid var(--star-border, #e4e9ec) !important;
-        border-radius: 11px !important;
-
-        background: #ffffff !important;
-
-        box-shadow:
-            0 14px 34px rgba(23, 53, 72, 0.20) !important;
-
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-
-        transform: translateY(-6px) !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li:hover > ul,
-    nav#navigation ul#TabMenu > li:focus-within > ul {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-
-        transform: translateY(0) !important;
-    }
-}
-/* =========================================================
-   FINAL TABLET NAVIGATION FIX
-   768PX THROUGH 959PX
-   ========================================================= */
-
-@media screen and (min-width: 768px) and (max-width: 959px) {
-
-    /*
-     * Keep the legacy navigation at one physical row,
-     * then reserve another 48px for the overflowing grid row.
-     * This prevents the page content from overlapping row two.
-     */
-    nav#navigation,
-    nav#navigation.style-1 {
-        position: relative !important;
-        z-index: 100 !important;
-
-        display: block !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 48px !important;
-        min-height: 48px !important;
-        max-height: 48px !important;
-
-        margin-top: 12px !important;
-        margin-bottom: 48px !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-        border-radius: 11px !important;
-
-        background: transparent !important;
-
-        overflow: visible !important;
-
-        float: none !important;
-        clear: both !important;
-
-        box-sizing: border-box !important;
-    }
-
-    /* Keep the JavaScript toggle mobile-only. */
-    nav#navigation .portal-menu-toggle {
-        display: none !important;
-    }
-
-
-    /* =====================================================
-       TWO-ROW TABLET GRID
-       ===================================================== */
-
-    nav#navigation ul#TabMenu {
-        position: relative !important;
-        z-index: 1 !important;
-
-        display: grid !important;
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-        grid-template-rows: repeat(2, 48px) !important;
-        grid-auto-flow: row !important;
-        align-items: stretch !important;
-        gap: 0 !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 96px !important;
-        min-height: 96px !important;
-        max-height: 96px !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-        border-radius: 11px !important;
-
-        background: transparent !important;
-
-        list-style: none !important;
-
-        overflow: visible !important;
-
-        float: none !important;
-        clear: both !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li {
-        position: static !important;
-
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 48px !important;
-        min-height: 48px !important;
-        max-height: 48px !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        border: 0 !important;
-
-        background: transparent !important;
-
-        float: none !important;
-        clear: none !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(n + 5) {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-
-    /* =====================================================
-       TABLET LINKS
-       ===================================================== */
-
-    nav#navigation ul#TabMenu > li > a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 6px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: 48px !important;
-        min-height: 48px !important;
-        max-height: 48px !important;
-
-        margin: 0 !important;
-        padding: 8px 7px !important;
-
-        border: 0 !important;
-        border-right:
-            1px solid rgba(255, 255, 255, 0.13) !important;
-        border-bottom:
-            1px solid rgba(255, 255, 255, 0.13) !important;
-        border-radius: 0 !important;
-
-        /*
-         * Give every link its own background.
-         * Do not rely on the height of the nav container.
-         */
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-navy, #21465f),
-                var(--star-navy-dark, #173548)
-            ) !important;
-
-        color: #ffffff !important;
-
-        font-size: 10.5px !important;
-        font-weight: 600 !important;
-        line-height: 1.25 !important;
-        text-align: center !important;
-        text-decoration: none !important;
-        text-shadow: none !important;
-        white-space: normal !important;
-
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        box-shadow: none !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li > a > i {
-        flex: 0 0 auto !important;
-
-        margin: 0 !important;
-
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        transform: scale(0.88) !important;
-        transform-origin: center !important;
-    }
-
-    nav#navigation ul#TabMenu > li:not(.active) > a:hover,
-    nav#navigation ul#TabMenu > li:not(.active) > a:focus {
-        background: var(--star-navy, #21465f) !important;
-        color: #ffffff !important;
-    }
-
-    nav#navigation ul#TabMenu > li.active > a {
-        background:
-            linear-gradient(
-                135deg,
-                var(--star-coral, #f56d73),
-                #f77f84
-            ) !important;
-
-        color: #ffffff !important;
-
-        box-shadow:
-            inset 0 -3px 0 rgba(220, 89, 97, 0.48) !important;
-    }
-
-
-    /* =====================================================
-       TABLET BORDERS AND CORNERS
-       ===================================================== */
-
-    nav#navigation ul#TabMenu > li:nth-child(4n) > a {
-        border-right: 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(n + 5) > a {
-        border-bottom: 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(1) > a {
-        border-radius: 11px 0 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(4) > a {
-        border-radius: 0 11px 0 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(5) > a {
-        border-radius: 0 0 0 11px !important;
-    }
-
-    nav#navigation ul#TabMenu > li:nth-child(8) > a {
-        border-radius: 0 0 11px 0 !important;
-    }
-
-
-    /* =====================================================
-       TABLET DROPDOWNS
-       ===================================================== */
-
-    /*
-     * Top-level list items are position: static, so these
-     * dropdowns are positioned relative to the navigation.
-     */
-    nav#navigation ul#TabMenu > li > ul {
-        position: absolute !important;
-        top: 104px !important;
-        right: 0 !important;
-        left: 0 !important;
-        z-index: 1000 !important;
-
-        display: grid !important;
-        grid-template-columns:
-            repeat(auto-fit, minmax(150px, 1fr)) !important;
-        gap: 5px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
-
-        margin: 0 !important;
-        padding: 9px !important;
-
-        border:
-            1px solid var(--star-border, #e4e9ec) !important;
-        border-radius: 11px !important;
-
-        background: #ffffff !important;
-
-        box-shadow:
-            0 14px 34px rgba(23, 53, 72, 0.20) !important;
-
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-
-        transform: translateY(-6px) !important;
-
-        box-sizing: border-box !important;
-    }
-
-    nav#navigation ul#TabMenu > li:hover > ul,
-    nav#navigation ul#TabMenu > li:focus-within > ul {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-
-        transform: translateY(0) !important;
-    }
-
-    nav#navigation ul#TabMenu > li > ul > li {
-        display: block !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    nav#navigation ul#TabMenu > li > ul > li > a {
-        display: flex !important;
-        align-items: center !important;
-
-        width: 100% !important;
-        min-height: 42px !important;
-
-        margin: 0 !important;
-        padding: 10px 12px !important;
-
-        border: 0 !important;
-        border-radius: 7px !important;
-
-        background: transparent !important;
-        color: var(--star-navy, #21465f) !important;
-
-        font-size: 11px !important;
-        font-weight: 600 !important;
-        line-height: 1.4 !important;
-        text-align: left !important;
-        white-space: normal !important;
-
-        box-sizing: border-box !important;
-    }
-}
-/* =========================================================
-   DESKTOP NAVIGATION — DROPDOWN HOVER BRIDGE
-   ========================================================= */
-
-@media screen and (min-width: 960px) {
-
-    /*
-     * Preserve the visual spacing while creating an
-     * invisible hoverable bridge between the parent item
-     * and its submenu.
-     */
-    nav#navigation ul#TabMenu > li > ul::before {
-        content: "" !important;
-
-        position: absolute !important;
-        top: -10px !important;
-        right: 0 !important;
-        left: 0 !important;
-
-        display: block !important;
-
-        width: 100% !important;
-        height: 10px !important;
-
-        background: transparent !important;
-
-        pointer-events: auto !important;
-    }
-
-    /*
-     * Keep the parent item highlighted while the pointer
-     * is over the dropdown.
-     */
-    nav#navigation ul#TabMenu > li:hover > a,
-    nav#navigation ul#TabMenu > li:focus-within > a {
-        background: rgba(255, 255, 255, 0.10) !important;
-        color: #ffffff !important;
-    }
-}
 /* =========================================================
    LOGIN PAGE — SPACING AND PLACEHOLDER ALIGNMENT FIX
    ========================================================= */
@@ -22667,5 +18704,1371 @@ input.button:active {
     #FormContentPlaceHolder_wizardPanel_orderSummaryLinedControl_aboveLineDetailGrid tr.RowStyle td:last-child,
     #FormContentPlaceHolder_panel_FeeSummaryLinedControl_aboveLineDetailGrid tr.RowStyle td:last-child {
         border-bottom: 0 !important;
+    }
+}
+/* =========================================================
+   STAR PORTAL NAVIGATION
+   Complete replacement for the existing navigation modules.
+   ========================================================= */
+
+nav#navigation.style-1.star-portal-navigation {
+    position: relative !important;
+    z-index: 200 !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 14px 0 0 !important;
+    padding: 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+    background: linear-gradient(
+        135deg,
+        var(--star-navy, #21465f),
+        var(--star-navy-dark, #173548)
+    ) !important;
+    box-shadow: 0 10px 24px rgba(23, 53, 72, 0.18) !important;
+    overflow: visible !important;
+    float: none !important;
+    clear: both !important;
+    box-sizing: border-box !important;
+}
+
+nav#navigation.style-1.star-portal-navigation > .left-corner,
+nav#navigation.style-1.star-portal-navigation > .right-corner,
+nav#navigation.style-1.star-portal-navigation::before,
+nav#navigation.style-1.star-portal-navigation .selectnav,
+nav#navigation.style-1.star-portal-navigation select[id^="selectnav"] {
+    display: none !important;
+    content: none !important;
+}
+
+nav#navigation.style-1.star-portal-navigation .portal-menu-toggle {
+    display: none !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu {
+    position: relative !important;
+    z-index: 1 !important;
+    display: flex !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: inherit !important;
+    background: transparent !important;
+    list-style: none !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li {
+    position: relative !important;
+    display: block !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    list-style: none !important;
+    box-sizing: border-box !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > a {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 10px 11px !important;
+    border: 0 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    white-space: nowrap !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:first-child > a {
+    border-radius: 13px 0 0 13px !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:last-child > a {
+    border-right: 0 !important;
+    border-radius: 0 13px 13px 0 !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > a > i {
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.active > a {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background: linear-gradient(
+        135deg,
+        var(--star-coral, #f56d73),
+        #f77f84
+    ) !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 -3px 0 rgba(220, 89, 97, 0.50) !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:not(.active):hover > a,
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:not(.active):focus-within > a {
+    background: rgba(255, 255, 255, 0.10) !important;
+    color: #ffffff !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > a:focus-visible {
+    z-index: 3 !important;
+    outline: 3px solid rgba(79, 174, 195, 0.46) !important;
+    outline-offset: -3px !important;
+}
+
+/* Desktop submenu and hover bridge. */
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul {
+    position: absolute !important;
+    top: calc(100% + 7px) !important;
+    left: 0 !important;
+    z-index: 1000 !important;
+    display: block !important;
+    width: max-content !important;
+    min-width: 220px !important;
+    max-width: 310px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    box-shadow: 0 16px 38px rgba(23, 53, 72, 0.20) !important;
+    list-style: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-6px) !important;
+    box-sizing: border-box !important;
+    transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease,
+        transform 0.15s ease !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul::before {
+    position: absolute !important;
+    top: -9px !important;
+    right: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 9px !important;
+    background: transparent !important;
+    content: "" !important;
+    pointer-events: auto !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:nth-last-child(-n + 2) > ul {
+    right: 0 !important;
+    left: auto !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:hover > ul,
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:focus-within > ul {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul > li {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    list-style: none !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul > li > a {
+    display: block !important;
+    width: 100% !important;
+    min-height: 40px !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    color: var(--star-navy, #21465f) !important;
+    font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+}
+
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul > li > a:hover,
+nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul > li > a:focus {
+    background: var(--star-coral-light, #fff1f2) !important;
+    color: var(--star-navy-dark, #173548) !important;
+    outline: none !important;
+}
+
+/* Tablet: two rows of four. */
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    nav#navigation.style-1.star-portal-navigation {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 12px 0 0 !important;
+        margin-bottom: 0 !important;
+        border-radius: 12px !important;
+        background: linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation .portal-menu-toggle {
+        display: none !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        height: auto !important;
+        min-height: 96px !important;
+        max-height: none !important;
+        border-radius: inherit !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li {
+        position: static !important;
+        width: 100% !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > a {
+        height: 48px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
+        padding: 8px 7px !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.13) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13) !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        font-size: 10.5px !important;
+        white-space: normal !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.active > a {
+        background: linear-gradient(
+            135deg,
+            var(--star-coral, #f56d73),
+            #f77f84
+        ) !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:nth-child(4n) > a {
+        border-right: 0 !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:nth-child(n + 5) > a {
+        border-bottom: 0 !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:nth-child(1) > a {
+        border-radius: 11px 0 0 0 !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:nth-child(4) > a {
+        border-radius: 0 11px 0 0 !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:nth-child(5) > a {
+        border-radius: 0 0 0 11px !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:nth-child(8) > a {
+        border-radius: 0 0 11px 0 !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul {
+        top: calc(100% + 7px) !important;
+        right: 0 !important;
+        left: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+        gap: 5px !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Mobile: one collapsible menu. */
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+    nav#navigation.style-1.star-portal-navigation {
+        margin: 10px 0 0 !important;
+        border-radius: 12px !important;
+        background: linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+        overflow: visible !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation .portal-menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 12px !important;
+        width: 100% !important;
+        min-height: 50px !important;
+        margin: 0 !important;
+        padding: 13px 15px !important;
+        border: 0 !important;
+        border-radius: 11px !important;
+        background: transparent !important;
+        color: #ffffff !important;
+        font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation .portal-menu-toggle::before {
+        display: block !important;
+        flex: 0 0 18px !important;
+        width: 18px !important;
+        height: 12px !important;
+        border-top: 2px solid currentColor !important;
+        border-bottom: 2px solid currentColor !important;
+        background: linear-gradient(
+            to bottom,
+            transparent 4px,
+            currentColor 4px,
+            currentColor 6px,
+            transparent 6px
+        ) !important;
+        content: "" !important;
+        box-sizing: border-box !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation .portal-menu-toggle::after {
+        margin-left: auto !important;
+        content: "+" !important;
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+        transition: transform 0.18s ease !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation.mobile-menu-open .portal-menu-toggle {
+        border-radius: 11px 11px 0 0 !important;
+        background: rgba(0, 0, 0, 0.10) !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation.mobile-menu-open .portal-menu-toggle::after {
+        transform: rotate(45deg) !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu {
+        position: static !important;
+        display: none !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 8px !important;
+        border: 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+        border-radius: 0 0 11px 11px !important;
+        background: var(--star-navy-dark, #173548) !important;
+        overflow: hidden !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation.mobile-menu-open ul#TabMenu {
+        display: block !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 5px !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 9px !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        margin: 0 !important;
+        padding: 11px 42px 11px 13px !important;
+        border: 1px solid rgba(255, 255, 255, 0.10) !important;
+        border-radius: 9px !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        color: #ffffff !important;
+        font-size: 11.5px !important;
+        text-align: left !important;
+        white-space: normal !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.active > a {
+        border-color: var(--star-coral, #f56d73) !important;
+        background: linear-gradient(
+            135deg,
+            var(--star-coral, #f56d73),
+            #f77f84
+        ) !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.has-portal-submenu > a::after {
+        position: absolute !important;
+        top: 50% !important;
+        right: 15px !important;
+        color: rgba(255, 255, 255, 0.88) !important;
+        content: "+" !important;
+        font-size: 17px !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+        transform: translateY(-50%) !important;
+        transition: transform 0.18s ease !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.has-portal-submenu.submenu-open > a::after {
+        transform: translateY(-50%) rotate(45deg) !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul,
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:hover > ul,
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li:focus-within > ul {
+        position: static !important;
+        display: none !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 5px 0 2px !important;
+        padding: 6px !important;
+        border: 1px solid rgba(255, 255, 255, 0.10) !important;
+        border-radius: 9px !important;
+        background: #ffffff !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
+        overflow: hidden !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.submenu-open > ul,
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.submenu-open:hover > ul,
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li.submenu-open:focus-within > ul {
+        display: block !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    nav#navigation.style-1.star-portal-navigation ul#TabMenu > li > ul > li > a {
+        min-height: 40px !important;
+        padding: 10px 11px !important;
+        border-radius: 7px !important;
+        font-size: 11px !important;
+    }
+}
+
+
+/* =========================================================
+   STAR HOME PAGE DASHBOARD
+   JavaScript moves the existing RAMCO cards into this layout.
+   ========================================================= */
+
+html.star-home-preparing #TwoColumnHomePageLayout {
+    visibility: hidden !important;
+}
+
+html.star-home-ready #TwoColumnHomePageLayout {
+    visibility: visible !important;
+}
+
+html.star-home-ready body #introDiv {
+    margin-bottom: 0 !important;
+}
+
+html.star-home-ready body #introDiv .page-title {
+    padding: 18px 26px 16px !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+}
+
+html.star-home-ready body #pageTitleDiv {
+    margin: 0 !important;
+    color: var(--star-navy, #21465f) !important;
+    font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+    font-size: clamp(24px, 3vw, 32px) !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.025em !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced {
+    display: block !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 1220px !important;
+    margin: 0 auto !important;
+    padding: 0 24px 42px !important;
+    float: none !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced > #leftMiddleContent,
+#TwoColumnHomePageLayout.star-home-layout-enhanced > #rightMiddleContent {
+    display: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-dashboard {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Announcement area. */
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-announcements {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+}
+
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection ul,
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection li.success,
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection li.error {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 16px 18px !important;
+    border: 1px solid rgba(79, 174, 195, 0.30) !important;
+    border-radius: 14px !important;
+    background: #eef8fa !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection li.error {
+    border-color: rgba(245, 109, 115, 0.38) !important;
+    background: var(--star-coral-light, #fff1f2) !important;
+    color: var(--star-coral-dark, #dc5961) !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection center,
+#TwoColumnHomePageLayout.star-home-layout-enhanced
+#topMiddleContentPlaceHolder_ctl00_ValidationSummarySection p {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
+    font: inherit !important;
+    text-align: left !important;
+}
+
+/* Profile hero. */
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.55fr) minmax(290px, 0.75fr) !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 26px !important;
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top: 4px solid var(--star-navy-light, #4faec3) !important;
+    border-radius: 20px !important;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fbfc 100%) !important;
+    box-shadow: var(--star-card-shadow, 0 12px 30px rgba(23, 53, 72, 0.09)) !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-identity {
+    display: grid !important;
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 22px !important;
+    min-width: 0 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-avatar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 112px !important;
+    height: 112px !important;
+    border: 6px solid #ffffff !important;
+    border-radius: 50% !important;
+    background: linear-gradient(
+        145deg,
+        var(--star-navy-light, #4faec3),
+        var(--star-navy, #21465f)
+    ) !important;
+    color: #ffffff !important;
+    font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.03em !important;
+    box-shadow: 0 10px 24px rgba(33, 70, 95, 0.22) !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card::before {
+    display: none !important;
+    content: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card > div {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card h2 {
+    margin: 0 0 7px !important;
+    color: var(--star-navy, #21465f) !important;
+    font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+    font-size: clamp(24px, 3vw, 34px) !important;
+    font-weight: 700 !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.035em !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card ul.memberlinks {
+    margin: 0 0 18px !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card ul.memberlinks li {
+    display: block !important;
+    margin: 0 !important;
+    padding: 2px 0 !important;
+    color: var(--star-text-muted, #64727c) !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card ul.memberlinks li:first-child {
+    color: var(--star-text, #25333d) !important;
+    font-weight: 600 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card ul.memberlinks li:nth-child(n + 3) {
+    display: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card .plus-list {
+    display: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card a.button.small.color,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card a.button.small.color {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 42px !important;
+    margin: 0 !important;
+    padding: 10px 16px !important;
+    border: 1px solid var(--star-navy, #21465f) !important;
+    border-radius: 9px !important;
+    background: linear-gradient(
+        135deg,
+        var(--star-navy, #21465f),
+        var(--star-navy-dark, #173548)
+    ) !important;
+    color: #ffffff !important;
+    font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    box-shadow: 0 7px 16px rgba(33, 70, 95, 0.22) !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card a.button.small.color:hover,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card a.button.small.color:focus,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card a.button.small.color:hover,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card a.button.small.color:focus {
+    border-color: var(--star-navy-dark, #173548) !important;
+    background: var(--star-navy-dark, #173548) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px) !important;
+    outline: 3px solid rgba(79, 174, 195, 0.18) !important;
+    outline-offset: 2px !important;
+}
+
+/* Account balance panel inside the hero. */
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    border: 1px solid rgba(245, 109, 115, 0.30) !important;
+    border-radius: 16px !important;
+    background: linear-gradient(145deg, #ffffff 0%, #fff7f8 100%) !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card::before {
+    display: none !important;
+    content: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card > div {
+    display: grid !important;
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+    grid-template-areas:
+        "balance-icon balance-title"
+        "balance-icon balance-copy"
+        "balance-action balance-action" !important;
+    align-items: start !important;
+    gap: 5px 13px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card .large-notice-icon {
+    grid-area: balance-icon !important;
+    display: block !important;
+    width: 46px !important;
+    height: 46px !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    float: none !important;
+    border-radius: 13px !important;
+    background: var(--star-coral-light, #fff1f2) !important;
+    object-fit: contain !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card h2 {
+    grid-area: balance-title !important;
+    margin: 0 !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 19px !important;
+    line-height: 1.25 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card p {
+    grid-area: balance-copy !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--star-text-muted, #64727c) !important;
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card > div > div:last-child {
+    grid-area: balance-action !important;
+    margin-top: 12px !important;
+}
+
+/* Main dashboard content. */
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-content {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.75fr) !important;
+    align-items: start !important;
+    gap: 24px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-main,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-sidebar {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-content: start !important;
+    gap: 24px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-actions {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 18px !important;
+    background: #ffffff !important;
+    color: var(--star-text, #25333d) !important;
+    box-shadow: var(--star-card-shadow, 0 12px 30px rgba(23, 53, 72, 0.09)) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card::before,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card::before,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-actions::before {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(
+        90deg,
+        var(--star-navy-light, #4faec3),
+        var(--star-navy, #21465f)
+    ) !important;
+    content: "" !important;
+}
+
+/* Upcoming events. */
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card {
+    display: grid !important;
+    grid-template-columns: 52px minmax(0, 1fr) !important;
+    grid-template-areas:
+        "events-icon events-title"
+        "events-list events-list"
+        "events-toggle events-toggle" !important;
+    align-content: start !important;
+    gap: 4px 14px !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card > .large-notice-icon {
+    grid-area: events-icon !important;
+    display: block !important;
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    float: none !important;
+    border-radius: 14px !important;
+    background: rgba(79, 174, 195, 0.12) !important;
+    object-fit: contain !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card > h2 {
+    grid-area: events-title !important;
+    align-self: center !important;
+    margin: 0 !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card > ul {
+    grid-area: events-list !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 11px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 18px 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card > ul > li {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card > ul > li.star-home-event-overflow {
+    display: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card.star-home-events-expanded > ul > li.star-home-event-overflow {
+    display: block !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog {
+    display: grid !important;
+    grid-template-columns: 52px minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 13px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 13px !important;
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    box-shadow: 0 3px 10px rgba(23, 53, 72, 0.04) !important;
+    box-sizing: border-box !important;
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        transform 0.15s ease !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog:hover {
+    border-color: rgba(79, 174, 195, 0.46) !important;
+    background: #f8fcfd !important;
+    transform: translateY(-1px) !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog > section.date {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 50px !important;
+    min-width: 50px !important;
+    margin: 0 !important;
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 11px !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog .day {
+    padding: 7px 5px 4px !important;
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog .month {
+    padding: 5px !important;
+    background: var(--star-coral, #f56d73) !important;
+    color: #ffffff !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.06em !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog > a {
+    display: block !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog h4 {
+    display: block !important;
+    margin: 0 0 5px !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    overflow-wrap: anywhere !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog h5 {
+    display: block !important;
+    margin: 0 !important;
+    color: var(--star-text-muted, #64727c) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    overflow-wrap: anywhere !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog p:empty {
+    display: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-toggle {
+    grid-area: events-toggle !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    justify-self: start !important;
+    min-height: 42px !important;
+    margin: 16px 0 0 !important;
+    padding: 9px 15px !important;
+    border: 1px solid rgba(33, 70, 95, 0.20) !important;
+    border-radius: 9px !important;
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+    font-family: "Poppins", "Open Sans", Verdana, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    cursor: pointer !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-toggle:hover,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-toggle:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+    background: #ffffff !important;
+    color: var(--star-navy-dark, #173548) !important;
+    outline: 3px solid rgba(79, 174, 195, 0.16) !important;
+    outline-offset: 2px !important;
+}
+
+/* Membership overview and quick actions. */
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-card-heading {
+    display: block !important;
+    margin: 0 0 18px !important;
+    padding: 0 0 14px !important;
+    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-eyebrow {
+    display: block !important;
+    margin: 0 0 5px !important;
+    color: var(--star-navy-light, #4faec3) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-card-title {
+    margin: 0 !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card > div:not(.star-home-card-heading) {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card .tile-content {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card .tile-content + .tile-content {
+    margin-top: 18px !important;
+    padding-top: 18px !important;
+    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card .tile-content h2 {
+    margin: 0 0 8px !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card .tile-content p {
+    margin: 0 0 5px !important;
+    padding: 0 !important;
+    color: var(--star-text-muted, #64727c) !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card .tile-content br,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card .tile-content ul.plus-list {
+    display: none !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-actions-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-action {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 48px !important;
+    padding: 11px 13px !important;
+    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border-radius: 10px !important;
+    background: var(--star-surface-soft, #f7f9fa) !important;
+    color: var(--star-navy, #21465f) !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-action::after {
+    flex: 0 0 auto !important;
+    margin-left: 9px !important;
+    color: var(--star-navy-light, #4faec3) !important;
+    content: ">" !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+}
+
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-action:hover,
+#TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-action:focus {
+    border-color: var(--star-navy-light, #4faec3) !important;
+    background: #ffffff !important;
+    color: var(--star-navy-dark, #173548) !important;
+    transform: translateY(-1px) !important;
+    outline: 3px solid rgba(79, 174, 195, 0.14) !important;
+    outline-offset: 2px !important;
+}
+
+/* Tablet dashboard. */
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    #TwoColumnHomePageLayout.star-home-layout-enhanced {
+        padding-right: 18px !important;
+        padding-left: 18px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-hero {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-content {
+        grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr) !important;
+        gap: 18px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-actions-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+/* Mobile dashboard. */
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+    html.star-home-ready body #introDiv .page-title {
+        padding: 16px 18px 14px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced {
+        padding: 0 14px 28px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-dashboard {
+        gap: 16px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-hero,
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-content {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-hero {
+        padding: 20px !important;
+        border-radius: 16px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-identity {
+        grid-template-columns: 78px minmax(0, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-avatar {
+        width: 78px !important;
+        height: 78px !important;
+        border-width: 4px !important;
+        font-size: 22px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card h2 {
+        font-size: 23px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-profile-card a.button.small.color,
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card a.button.small.color {
+        width: 100% !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card,
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-memberships-card,
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-actions {
+        padding: 20px !important;
+        border-radius: 15px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card {
+        grid-template-columns: 46px minmax(0, 1fr) !important;
+        gap: 4px 12px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card > .large-notice-icon {
+        width: 44px !important;
+        height: 44px !important;
+        padding: 7px !important;
+        border-radius: 12px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card > h2 {
+        font-size: 19px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog {
+        grid-template-columns: 48px minmax(0, 1fr) !important;
+        gap: 11px !important;
+        padding: 11px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-card article.recent-blog > section.date {
+        width: 46px !important;
+        min-width: 46px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-quick-actions-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-events-toggle {
+        width: 100% !important;
+        justify-self: stretch !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-identity {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-avatar {
+        width: 72px !important;
+        height: 72px !important;
+    }
+
+    #TwoColumnHomePageLayout.star-home-layout-enhanced .star-home-balance-card > div {
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-areas:
+            "balance-icon"
+            "balance-title"
+            "balance-copy"
+            "balance-action" !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    nav#navigation.style-1.star-portal-navigation *,
+    #TwoColumnHomePageLayout.star-home-layout-enhanced * {
+        transition: none !important;
+        animation: none !important;
     }
 }
