@@ -18359,747 +18359,1279 @@ body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
    MEMBER DETAILS
    COMPLETE REPLACEMENT MODULE
 
-   RAMCO structure used by this module:
-   - Member row: one .span5 for profile + one .span5 for contact
-   - Biography: separate .row/.span10
-   - Back button: separate .row/.span10
+   IMPORTANT:
+   RAMCO does not always place the email div in the same column.
+   Some records render email in the profile .span5 while others
+   render email in the contact .span5.
 
-   This version intentionally does NOT depend on .row:first-child.
-   It finds the correct RAMCO row by the unique member-details IDs.
+   This module therefore:
+   - identifies the profile column by memberNameLiteralli
+   - identifies the contact column by its position (second .span5)
+   - NEVER uses emailLiteralli to decide which column is which
+   - styles email correctly in either location
+   - supports missing images and missing contact fields
    ========================================================= */
+
 
 /* =========================================================
    PAGE / LEGACY LAYOUT RESET
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#SingleColumnLayout,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#SingleColumnLayout > .sixteen.floated,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_PanelDiv,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel > .editForm {
+#FormContentPlaceHolder_PanelDiv:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+),
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+),
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) > .editForm {
     display: block !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin-left: 0 !important;
     margin-right: 0 !important;
+
     float: none !important;
+
     box-sizing: border-box !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#SingleColumnLayout > .sixteen.floated {
-    padding: 0 !important;
-}
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_PanelDiv,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel {
-    padding: 0 !important;
-}
-
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel {
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) {
     margin-top: 22px !important;
     margin-bottom: 38px !important;
+
+    padding: 0 !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel > .editForm {
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) > .editForm {
     padding: 24px !important;
+
     border: 1px solid var(--star-border, #e4e9ec) !important;
     border-top: 4px solid var(--star-navy-light, #4faec3) !important;
     border-radius: 18px !important;
+
     background: var(--star-surface, #ffffff) !important;
-    box-shadow: 0 12px 30px rgba(23, 53, 72, 0.08) !important;
+
+    box-shadow:
+        0 12px 30px rgba(23, 53, 72, 0.08) !important;
 }
 
-/* Normalize only the rows belonging to Member Details. */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel > .editForm > .row {
+
+/* Normalize only Member Details rows. */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) > .editForm > .row {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin-left: 0 !important;
     margin-right: 0 !important;
+
     padding-left: 0 !important;
     padding-right: 0 !important;
+
     float: none !important;
     clear: both !important;
+
     box-sizing: border-box !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel > .editForm > .row::before,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel > .editForm > .row::after {
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) > .editForm > .row::before,
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) > .editForm > .row::after {
     display: none !important;
     content: none !important;
 }
 
+
 /* =========================================================
    PRIMARY MEMBER ROW
-   Find the row by its unique member-image element instead of
-   assuming RAMCO always makes it the first .row.
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+/*
+ * Locate the actual member row using the member-name ID.
+ * Do not rely on .row:first-child.
+ */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) {
     display: grid !important;
-    grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.85fr) !important;
-    align-items: start !important;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(300px, 0.85fr) !important;
+
+    align-items: stretch !important;
+
     gap: 18px !important;
+
     margin: 0 0 18px !important;
 }
 
-/* Reset the two legacy RAMCO span columns. */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+/* Reset RAMCO's two legacy .span5 columns. */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .span5 {
     position: relative !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     height: auto !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
     clear: none !important;
+
     box-sizing: border-box !important;
 }
 
-/* Force each RAMCO column into the intended grid position. */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+/*
+ * Profile is identified by the member-name element.
+ * Contact is simply the second RAMCO .span5.
+ *
+ * This is the critical fix: email location is NOT used here.
+ */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) {
     grid-column: 1 !important;
     grid-row: 1 !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli) {
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2) {
     grid-column: 2 !important;
     grid-row: 1 !important;
 }
+
 
 /* =========================================================
    LEFT — MEMBER PROFILE CARD
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+) {
     display: grid !important;
-    grid-template-columns: 116px minmax(0, 1fr) !important;
-    grid-template-areas:
-        "member-photo member-name"
-        "member-photo member-association"
-        "member-photo member-address" !important;
+
+    grid-template-columns:
+        116px
+        minmax(0, 1fr) !important;
+
     align-content: start !important;
     align-items: start !important;
+
     column-gap: 20px !important;
     row-gap: 11px !important;
+
     padding: 20px !important;
+
     border: 1px solid var(--star-border, #e4e9ec) !important;
     border-radius: 14px !important;
-    background: linear-gradient(145deg, #ffffff 0%, #f8fbfc 100%) !important;
-    box-shadow: 0 6px 18px rgba(23, 53, 72, 0.05) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fbfc 100%
+        ) !important;
+
+    box-shadow:
+        0 6px 18px rgba(23, 53, 72, 0.05) !important;
+
     overflow: hidden !important;
 }
 
-/* Member photo / placeholder */
+
+/* =========================================================
+   MEMBER PHOTO
+   ========================================================= */
+
 #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli {
-    grid-area: member-photo !important;
+    grid-column: 1 !important;
+    grid-row: 1 / span 4 !important;
+
     align-self: start !important;
     justify-self: start !important;
+
     display: block !important;
+
     width: 116px !important;
     min-width: 116px !important;
     max-width: 116px !important;
+
     height: 146px !important;
     min-height: 146px !important;
     max-height: 146px !important;
+
     margin: 0 !important;
     padding: 4px !important;
-    border: 1px solid rgba(79, 174, 195, 0.34) !important;
+
+    border:
+        1px solid rgba(79, 174, 195, 0.34) !important;
+
     border-radius: 12px !important;
-    background: linear-gradient(145deg, #ffffff, #edf6f8) !important;
-    box-shadow: 0 6px 16px rgba(23, 53, 72, 0.08) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #edf6f8
+        ) !important;
+
+    box-shadow:
+        0 6px 16px rgba(23, 53, 72, 0.08) !important;
+
     font-size: 0 !important;
     line-height: 0 !important;
+
     overflow: hidden !important;
+
     box-sizing: border-box !important;
 }
+
 
 #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli > img {
     position: static !important;
+
     display: block !important;
+
     visibility: visible !important;
     opacity: 1 !important;
+
     width: 100% !important;
     min-width: 100% !important;
     max-width: 100% !important;
+
     height: 100% !important;
     min-height: 100% !important;
     max-height: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     border: 0 !important;
     border-radius: 8px !important;
+
     object-fit: cover !important;
     object-position: center top !important;
+
     transform: none !important;
+
     box-sizing: border-box !important;
 }
 
-/* Hide the decorative empty photo box when RAMCO has no image. */
+
+/* RAMCO frequently renders an empty photo div. */
 #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli:empty {
     display: none !important;
 }
 
-/* When there is no image, let profile details use the full card width. */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli:empty)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-template-areas:
-        "member-name"
-        "member-association"
-        "member-address" !important;
-}
 
-/* Member name and license */
-#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli {
-    grid-area: member-name !important;
+/* =========================================================
+   PROFILE CONTENT
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli,
+#FormContentPlaceHolder_Panel_memberDetails_primaryAssociationLabelli,
+#FormContentPlaceHolder_Panel_memberDetails_addressLiteralli {
+    grid-column: 2 !important;
+
     width: 100% !important;
     min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+
+/* Member name / license */
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli {
     margin: 0 !important;
     padding: 0 0 12px !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-    color: var(--star-navy, #21465f) !important;
+
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    color:
+        var(--star-navy, #21465f) !important;
+
     line-height: 1.4 !important;
+
     overflow-wrap: break-word !important;
 }
 
-#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli b:first-of-type {
+
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+b:first-of-type {
     display: block !important;
+
     margin: 0 0 9px !important;
-    color: var(--star-navy, #21465f) !important;
+
+    color:
+        var(--star-navy, #21465f) !important;
+
     font-size: 20px !important;
     font-weight: 700 !important;
     line-height: 1.3 !important;
 }
 
-#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli b:last-of-type {
+
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+b:last-of-type {
     display: inline-flex !important;
     align-items: center !important;
+
     width: auto !important;
+
     margin: 0 !important;
     padding: 5px 8px !important;
+
     border-radius: 999px !important;
-    background: rgba(79, 174, 195, 0.10) !important;
-    color: var(--star-navy, #21465f) !important;
+
+    background:
+        rgba(79, 174, 195, 0.10) !important;
+
+    color:
+        var(--star-navy, #21465f) !important;
+
     font-size: 10px !important;
     font-weight: 700 !important;
     line-height: 1.2 !important;
 }
 
-#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli > br {
+
+#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+> br {
     display: none !important;
 }
 
+
 /* Primary association */
 #FormContentPlaceHolder_Panel_memberDetails_primaryAssociationLabelli {
-    grid-area: member-association !important;
-    width: 100% !important;
-    min-width: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
 }
+
 
 #FormContentPlaceHolder_Panel_memberDetails_primaryAssociationLabel {
     display: block !important;
+
     width: auto !important;
     max-width: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
-    color: var(--star-navy, #21465f) !important;
+
+    color:
+        var(--star-navy, #21465f) !important;
+
     font-size: 10.5px !important;
     font-weight: 700 !important;
     line-height: 1.5 !important;
+
     white-space: normal !important;
+
     overflow-wrap: break-word !important;
 }
+
 
 /* Brokerage / office address */
 #FormContentPlaceHolder_Panel_memberDetails_addressLiteralli {
-    grid-area: member-address !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
     margin: 0 !important;
     padding: 12px 13px !important;
-    border-left: 3px solid var(--star-navy-light, #4faec3) !important;
+
+    border-left:
+        3px solid var(--star-navy-light, #4faec3) !important;
+
     border-radius: 0 8px 8px 0 !important;
-    background: rgba(79, 174, 195, 0.08) !important;
-    color: var(--star-text, #25333d) !important;
+
+    background:
+        rgba(79, 174, 195, 0.08) !important;
+
+    color:
+        var(--star-text, #25333d) !important;
+
     font-size: 12px !important;
     line-height: 1.6 !important;
+
     white-space: normal !important;
+
     overflow-wrap: break-word !important;
     word-break: normal !important;
+
     box-sizing: border-box !important;
 }
 
+
 #FormContentPlaceHolder_Panel_memberDetails_addressLiteralli a {
     color: #0070c9 !important;
+
     font-weight: 700 !important;
+
     text-decoration: none !important;
+
     white-space: normal !important;
+
     overflow-wrap: break-word !important;
 }
 
+
 #FormContentPlaceHolder_Panel_memberDetails_addressLiteralli a:hover,
 #FormContentPlaceHolder_Panel_memberDetails_addressLiteralli a:focus {
-    color: var(--star-navy, #21465f) !important;
+    color:
+        var(--star-navy, #21465f) !important;
+
     text-decoration: underline !important;
     text-underline-offset: 3px !important;
+
     outline: none !important;
 }
 
+
 /* =========================================================
-   RIGHT — CONTACT INFORMATION PANEL
-   Use RAMCO's native h3 + value pairing instead of turning
-   each value into an independent card.
+   EMAIL WHEN RAMCO PUTS IT IN THE PROFILE COLUMN
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+/*
+ * Some member records render email inside the LEFT .span5.
+ * Style it as a normal profile row instead of using it to
+ * identify the Contact Information column.
+ */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli) {
-    display: grid !important;
-    grid-template-columns: 88px minmax(0, 1fr) !important;
-    grid-auto-flow: row !important;
-    grid-auto-rows: min-content !important;
-    align-content: start !important;
-    align-items: stretch !important;
-    gap: 0 !important;
-    padding: 20px !important;
-    border: 1px solid var(--star-border, #e4e9ec) !important;
-    border-radius: 14px !important;
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    box-shadow: 0 6px 18px rgba(23, 53, 72, 0.05) !important;
-    overflow: hidden !important;
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+    grid-column: 2 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 10px 12px !important;
+
+    border:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    border-radius: 8px !important;
+
+    background:
+        var(--star-surface, #ffffff) !important;
+
+    box-sizing: border-box !important;
 }
 
-/* Contact panel heading */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)::before {
-    content: "Contact Information" !important;
-    grid-column: 1 / -1 !important;
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli::before {
+    content: "Email" !important;
+
     display: block !important;
+
+    margin: 0 0 5px !important;
+
+    color:
+        var(--star-text-muted, #64727c) !important;
+
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+}
+
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli
+> a[href^="mailto:"] {
+    display: block !important;
+
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    color: #0070c9 !important;
+
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+
+    text-decoration: none !important;
+
+    white-space: normal !important;
+
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+}
+
+
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli > br {
+    display: none !important;
+}
+
+
+/* Hide any empty email div regardless of which column contains it. */
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli:not(
+    :has(> a[href^="mailto:"])
+) {
+    display: none !important;
+}
+
+
+/* =========================================================
+   NO-PHOTO PROFILE
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli:empty
+) {
+    grid-template-columns:
+        minmax(0, 1fr) !important;
+}
+
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli:empty
+)
+> #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli,
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli:empty
+)
+> #FormContentPlaceHolder_Panel_memberDetails_primaryAssociationLabelli,
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli:empty
+)
+> #FormContentPlaceHolder_Panel_memberDetails_addressLiteralli,
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli:empty
+)
+> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+    grid-column: 1 !important;
+}
+
+
+/* =========================================================
+   RIGHT — CONTACT INFORMATION PANEL
+   ========================================================= */
+
+/*
+ * IMPORTANT:
+ * Always style the SECOND .span5 as Contact Information.
+ * Do not require emailLiteralli to exist inside this column.
+ */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2) {
+    display: grid !important;
+
+    grid-template-columns:
+        88px
+        minmax(0, 1fr) !important;
+
+    grid-auto-flow: row !important;
+    grid-auto-rows: min-content !important;
+
+    align-content: start !important;
+    align-items: stretch !important;
+
+    gap: 0 !important;
+
+    padding: 20px !important;
+
+    border:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    border-radius: 14px !important;
+
+    background:
+        var(--star-surface-soft, #f7f9fa) !important;
+
+    box-shadow:
+        0 6px 18px rgba(23, 53, 72, 0.05) !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Contact panel title */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)::before {
+    content: "Contact Information" !important;
+
+    grid-column: 1 / -1 !important;
+
+    display: block !important;
+
     margin: 0 0 5px !important;
     padding: 0 0 13px !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-    color: var(--star-navy, #21465f) !important;
+
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    color:
+        var(--star-navy, #21465f) !important;
+
     font-size: 16px !important;
     font-weight: 700 !important;
     line-height: 1.35 !important;
 }
 
-/* Native RAMCO field headings: Contact, Office, Fax, Designations, etc. */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> h3.desc {
-    grid-column: 1 !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 12px 10px 12px 0 !important;
-    border: 0 !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-    background: transparent !important;
-    color: var(--star-text-muted, #64727c) !important;
-    font-size: 9.5px !important;
-    font-weight: 700 !important;
-    line-height: 1.4 !important;
-    letter-spacing: 0.06em !important;
-    text-transform: uppercase !important;
-    box-sizing: border-box !important;
-}
-
-/* Value immediately following each native h3. */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> h3.desc + div {
-    grid-column: 2 !important;
-    display: block !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 12px 0 12px 10px !important;
-    border: 0 !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    color: var(--star-navy, #21465f) !important;
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    line-height: 1.5 !important;
-    white-space: normal !important;
-    word-break: normal !important;
-    overflow-wrap: anywhere !important;
-    box-sizing: border-box !important;
-}
-
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-.labeldesc {
-    display: block !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    color: inherit !important;
-    white-space: normal !important;
-    word-break: normal !important;
-    overflow-wrap: anywhere !important;
-}
 
 /* =========================================================
-   EMAIL
-   RAMCO renders email before the h3/value pairs and may leave
-   the div empty, so treat it as its own full-width grid row.
+   EMAIL WHEN RAMCO PUTS IT IN THE CONTACT COLUMN
    ========================================================= */
 
-#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
     grid-column: 1 / -1 !important;
+
     display: grid !important;
-    grid-template-columns: 88px minmax(0, 1fr) !important;
+
+    grid-template-columns:
+        88px
+        minmax(0, 1fr) !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    min-height: 0 !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     border: 0 !important;
     border-radius: 0 !important;
+
     background: transparent !important;
+
     box-shadow: none !important;
+
     overflow: visible !important;
+
     box-sizing: border-box !important;
 }
 
-#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli::before {
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli::before {
     content: "Email" !important;
+
     display: block !important;
+
     margin: 0 !important;
     padding: 12px 10px 12px 0 !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-    color: var(--star-text-muted, #64727c) !important;
+
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    color:
+        var(--star-text-muted, #64727c) !important;
+
     font-size: 9.5px !important;
     font-weight: 700 !important;
     line-height: 1.4 !important;
+
     letter-spacing: 0.06em !important;
     text-transform: uppercase !important;
+
     box-sizing: border-box !important;
 }
 
-#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli > a[href^="mailto:"] {
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli
+> a[href^="mailto:"] {
     display: block !important;
+
     width: auto !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin: 0 !important;
     padding: 12px 0 12px 10px !important;
+
     border: 0 !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+
     border-radius: 0 !important;
+
     background: transparent !important;
+
     box-shadow: none !important;
+
     color: #0070c9 !important;
+
     font-size: 12px !important;
     font-weight: 600 !important;
     line-height: 1.5 !important;
+
     text-decoration: none !important;
+
     white-space: normal !important;
+
     word-break: normal !important;
     overflow-wrap: anywhere !important;
+
     box-sizing: border-box !important;
 }
 
-#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli > a[href^="mailto:"]:hover,
-#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli > a[href^="mailto:"]:focus {
-    color: var(--star-navy, #21465f) !important;
+
+/* =========================================================
+   NATIVE RAMCO CONTACT FIELDS
+   Designations, Contact, Office, Fax, Webpage, etc.
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> h3.desc {
+    grid-column: 1 !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 12px 10px 12px 0 !important;
+
+    border: 0 !important;
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    background: transparent !important;
+
+    color:
+        var(--star-text-muted, #64727c) !important;
+
+    font-size: 9.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Value immediately after each h3. */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> h3.desc
++ div {
+    grid-column: 2 !important;
+
+    display: block !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 12px 0 12px 10px !important;
+
+    border: 0 !important;
+    border-bottom:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    color:
+        var(--star-navy, #21465f) !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+
+    white-space: normal !important;
+
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+
+    box-sizing: border-box !important;
+}
+
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+.labeldesc {
+    display: block !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    color: inherit !important;
+
+    white-space: normal !important;
+
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+}
+
+
+/* Links inside Webpage and other RAMCO contact values. */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> h3.desc
++ div
+a {
+    color: #0070c9 !important;
+
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
+
+    white-space: normal !important;
+
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+}
+
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+a:hover,
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .editForm
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+a:focus {
+    color:
+        var(--star-navy, #21465f) !important;
+
     text-decoration: underline !important;
     text-underline-offset: 3px !important;
+
     outline: none !important;
 }
 
-/* Completely remove the email row when RAMCO provides no email link. */
-#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli:not(:has(> a[href^="mailto:"])) {
-    display: none !important;
-}
-
-/* =========================================================
-   OPTIONAL WEBSITE / DIRECT WEB LINK
-   Some records include an extra div containing an http(s) link.
-   ========================================================= */
-
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> div:has(> a[href^="http://"]),
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> div:has(> a[href^="https://"]) {
-    grid-column: 1 / -1 !important;
-    display: grid !important;
-    grid-template-columns: 88px minmax(0, 1fr) !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    overflow: visible !important;
-}
-
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> div:has(> a[href^="http://"])::before,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> div:has(> a[href^="https://"])::before {
-    content: "Website" !important;
-    display: block !important;
-    padding: 12px 10px 12px 0 !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-    color: var(--star-text-muted, #64727c) !important;
-    font-size: 9.5px !important;
-    font-weight: 700 !important;
-    line-height: 1.4 !important;
-    letter-spacing: 0.06em !important;
-    text-transform: uppercase !important;
-    box-sizing: border-box !important;
-}
-
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> div:has(> a[href^="http://"]) > a,
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
-> .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> div:has(> a[href^="https://"]) > a {
-    display: block !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    padding: 12px 0 12px 10px !important;
-    border-bottom: 1px solid var(--star-border, #e4e9ec) !important;
-    color: #0070c9 !important;
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    line-height: 1.5 !important;
-    text-decoration: none !important;
-    white-space: normal !important;
-    word-break: normal !important;
-    overflow-wrap: anywhere !important;
-    box-sizing: border-box !important;
-}
 
 /* =========================================================
    EMPTY CONTACT FIELDS
-   Remove both the h3 and its value when RAMCO returns no data.
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+/* Empty div. */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
 > h3.desc:has(+ div:empty),
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> h3.desc + div:empty {
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> h3.desc
++ div:empty {
     display: none !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+/* Empty span inside value div. */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
 > h3.desc:has(+ div > span:empty),
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-> .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-> h3.desc + div:has(> span:empty) {
+> .row:has(
+    > .span5
+    > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
+> .span5:nth-child(2)
+> h3.desc
++ div:has(> span:empty) {
     display: none !important;
 }
+
 
 /* =========================================================
    BIOGRAPHY ROW
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(#FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli) {
+> .row:has(
+    #FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli
+) {
     display: block !important;
+
     margin: 0 0 18px !important;
     padding: 0 !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(#FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli)
+> .row:has(
+    #FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli
+)
 > .span10 {
     display: block !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
+
     box-sizing: border-box !important;
 }
 
-/* Hide the biography row when RAMCO returns no content. */
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+/* Hide biography row when RAMCO returns no biography. */
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(#FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli:empty) {
+> .row:has(
+    #FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli:empty
+) {
     display: none !important;
 }
 
+
 #FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli:not(:empty) {
     position: relative !important;
+
     width: 100% !important;
+
     margin: 0 !important;
     padding: 48px 18px 18px !important;
-    border: 1px solid var(--star-border, #e4e9ec) !important;
+
+    border:
+        1px solid var(--star-border, #e4e9ec) !important;
+
     border-radius: 12px !important;
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    color: var(--star-text, #25333d) !important;
+
+    background:
+        var(--star-surface-soft, #f7f9fa) !important;
+
+    color:
+        var(--star-text, #25333d) !important;
+
     font-size: 12.5px !important;
     line-height: 1.7 !important;
+
     box-sizing: border-box !important;
 }
 
+
 #FormContentPlaceHolder_Panel_memberDetails_biographyLiteralli:not(:empty)::before {
     content: "Biography" !important;
+
     position: absolute !important;
     top: 16px !important;
     left: 18px !important;
-    color: var(--star-navy, #21465f) !important;
+
+    color:
+        var(--star-navy, #21465f) !important;
+
     font-size: 15px !important;
     font-weight: 700 !important;
     line-height: 1.3 !important;
 }
 
+
 /* =========================================================
-   BACK BUTTON ROW
+   BACK BUTTON
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(#FormContentPlaceHolder_Panel_Panel_WizardNavigationli) {
+> .row:has(
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+) {
     display: block !important;
+
     width: 100% !important;
+
     margin: 0 !important;
     padding: 16px 0 0 !important;
-    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+
+    border-top:
+        1px solid var(--star-border, #e4e9ec) !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-#FormContentPlaceHolder_Panel
+
+#FormContentPlaceHolder_Panel:has(
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+)
 > .editForm
-> .row:has(#FormContentPlaceHolder_Panel_Panel_WizardNavigationli)
+> .row:has(
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+)
 > .span10 {
     display: block !important;
+
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
+
     box-sizing: border-box !important;
 }
 
+
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli {
     width: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     border: 0 !important;
+
     float: none !important;
+
     box-sizing: border-box !important;
 }
+
 
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli::before,
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli::after {
@@ -19107,308 +19639,458 @@ body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
     content: none !important;
 }
 
-#FormContentPlaceHolder_Panel_Panel_WizardNavigationli .button-set {
+
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+.button-set {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-end !important;
+
     width: 100% !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     float: none !important;
+
     box-sizing: border-box !important;
 }
+
 
 #FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton {
     appearance: none !important;
     -webkit-appearance: none !important;
+
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+
     float: none !important;
+
     width: auto !important;
     min-width: 115px !important;
     min-height: 44px !important;
+
     margin: 0 !important;
     padding: 10px 20px !important;
-    border: 1px solid var(--star-navy-dark, #173548) !important;
+
+    border:
+        1px solid var(--star-navy-dark, #173548) !important;
+
     border-radius: 9px !important;
-    background: linear-gradient(135deg, var(--star-navy, #21465f), var(--star-navy-dark, #173548)) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+
     font-weight: 700 !important;
+
     text-align: center !important;
+
     cursor: pointer !important;
-    box-shadow: 0 6px 15px rgba(23, 53, 72, 0.22) !important;
+
+    box-shadow:
+        0 6px 15px rgba(23, 53, 72, 0.22) !important;
+
     box-sizing: border-box !important;
 }
 
+
 #FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton:hover,
 #FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton:focus {
-    border-color: var(--star-navy-dark, #173548) !important;
-    background: var(--star-navy-dark, #173548) !important;
+    border-color:
+        var(--star-navy-dark, #173548) !important;
+
+    background:
+        var(--star-navy-dark, #173548) !important;
+
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    box-shadow: 0 9px 20px rgba(33, 70, 95, 0.30) !important;
-    outline: 3px solid rgba(79, 174, 195, 0.17) !important;
+
+    box-shadow:
+        0 9px 20px rgba(33, 70, 95, 0.30) !important;
+
+    outline:
+        3px solid rgba(79, 174, 195, 0.17) !important;
+
     outline-offset: 2px !important;
 }
 
+
 /* =========================================================
-   TABLET
-   Keep the two-column profile/contact layout until mobile.
+   TABLET — 768PX TO 959PX
    ========================================================= */
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel > .editForm {
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ) > .editForm {
         padding: 20px !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
-        grid-template-columns: minmax(0, 1.25fr) minmax(270px, 0.85fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ) {
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(270px, 0.85fr) !important;
+
         gap: 14px !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
-        grid-template-columns: 96px minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:has(
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ) {
+        grid-template-columns:
+            96px
+            minmax(0, 1fr) !important;
+
         column-gap: 14px !important;
+
         padding: 16px !important;
     }
+
 
     #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli {
         width: 96px !important;
         min-width: 96px !important;
         max-width: 96px !important;
+
         height: 122px !important;
         min-height: 122px !important;
         max-height: 122px !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli) {
-        grid-template-columns: 74px minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2) {
+        grid-template-columns:
+            74px
+            minmax(0, 1fr) !important;
+
         padding: 16px !important;
     }
 
-    #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli,
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="http://"]),
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
-    > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="https://"]) {
-        grid-template-columns: 74px minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
+    > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+        grid-template-columns:
+            74px
+            minmax(0, 1fr) !important;
     }
 }
 
+
 /* =========================================================
-   MOBILE
+   MOBILE — 767PX AND BELOW
    ========================================================= */
 
 @media screen and (max-width: 767px),
        screen and (max-device-width: 767px) {
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel {
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ) {
         margin-top: 14px !important;
         margin-bottom: 28px !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel > .editForm {
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ) > .editForm {
         padding: 15px !important;
+
         border-radius: 14px !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
-        grid-template-columns: minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ) {
+        grid-template-columns:
+            minmax(0, 1fr) !important;
+
         gap: 14px !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli),
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:has(
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ),
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli) {
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2) {
         grid-column: 1 !important;
         grid-row: auto !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli) {
-        grid-template-columns: 82px minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:has(
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    ) {
+        grid-template-columns:
+            82px
+            minmax(0, 1fr) !important;
+
         column-gap: 13px !important;
+
         padding: 14px !important;
     }
+
 
     #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli {
         width: 82px !important;
         min-width: 82px !important;
         max-width: 82px !important;
+
         height: 104px !important;
         min-height: 104px !important;
         max-height: 104px !important;
     }
 
-    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli b:first-of-type {
+
+    #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    b:first-of-type {
         font-size: 17px !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli) {
-        grid-template-columns: 76px minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2) {
+        grid-template-columns:
+            76px
+            minmax(0, 1fr) !important;
+
         padding: 14px !important;
     }
 
-    #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli,
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="http://"]),
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
-    > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="https://"]) {
-        grid-template-columns: 76px minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
+    > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+        grid-template-columns:
+            76px
+            minmax(0, 1fr) !important;
     }
 
-    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli .button-set {
+
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+    .button-set {
         justify-content: stretch !important;
     }
+
 
     #FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton {
         width: 100% !important;
     }
 }
 
-/* Very small phones: stack label over value inside Contact Information. */
+
+/* =========================================================
+   VERY SMALL MOBILE — 420PX AND BELOW
+   ========================================================= */
+
 @media screen and (max-width: 420px),
        screen and (max-device-width: 420px) {
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    /*
+     * Stack each Contact Information label above its value
+     * instead of squeezing a label/value pair into two columns.
+     */
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli) {
-        grid-template-columns: minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2) {
+        grid-template-columns:
+            minmax(0, 1fr) !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
     > h3.desc,
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > h3.desc + div {
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
+    > h3.desc
+    + div {
         grid-column: 1 !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
     > h3.desc {
         padding: 11px 0 3px !important;
+
         border-bottom: 0 !important;
     }
 
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > h3.desc + div {
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
+    > h3.desc
+    + div {
         padding: 0 0 11px !important;
     }
 
-    #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli,
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="http://"]),
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
-    > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="https://"]) {
-        grid-template-columns: minmax(0, 1fr) !important;
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
+    > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+        grid-template-columns:
+            minmax(0, 1fr) !important;
     }
 
-    #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli::before,
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="http://"])::before,
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
-    > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="https://"])::before {
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
+    > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli::before {
         padding: 11px 0 3px !important;
+
         border-bottom: 0 !important;
     }
 
-    #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli > a[href^="mailto:"],
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
+
+    #FormContentPlaceHolder_Panel:has(
+        #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
     > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="http://"]) > a,
-    body:has(#FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    #FormContentPlaceHolder_Panel
-    > .editForm
-    > .row:has(> .span5 > #FormContentPlaceHolder_Panel_memberDetails_memberImageLiteralli)
-    > .span5:has(> #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli)
-    > div:has(> a[href^="https://"]) > a {
+    > .row:has(
+        > .span5
+        > #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
+    )
+    > .span5:nth-child(2)
+    > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli
+    > a[href^="mailto:"] {
         padding: 0 0 11px !important;
     }
 }
-
 
 /* =========================================================
    PORTAL NAVIGATION TOGGLE VISIBILITY FIX
