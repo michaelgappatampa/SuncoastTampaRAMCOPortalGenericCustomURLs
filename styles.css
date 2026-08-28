@@ -18377,6 +18377,77 @@ body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
    PAGE / LEGACY LAYOUT RESET
    ========================================================= */
 
+/*
+ * RAMCO's desktop theme keeps several legacy floated/fixed-width
+ * wrappers above Member Details. The site's existing tablet
+ * normalization corrects them below 960px, which is why this page
+ * previously looked correct only at tablet widths.
+ *
+ * Normalize the complete Member Details ancestry at ALL widths.
+ * This is scoped to this page so it does not change other portal pages.
+ */
+
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#content,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#content > .container,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#content > .container.floated,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#content .grid,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#content .grid > .row,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#updatePanel,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#formPanel,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#SingleColumnLayout,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#SingleColumnLayout > .sixteen,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#SingleColumnLayout > .sixteen.floated {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/*
+ * Do not let any legacy floated wrapper establish a wider formatting
+ * area than the visible content column.
+ */
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#updatePanel,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#formPanel,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#SingleColumnLayout,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#SingleColumnLayout > .sixteen.floated {
+    overflow-x: visible !important;
+}
+
+
+/*
+ * The final usable width comes from the content container.
+ * Padding remains inside that width rather than increasing it.
+ */
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#content > .container,
+body:has(#FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli)
+#content > .container.floated {
+    box-sizing: border-box !important;
+}
+
+
 #FormContentPlaceHolder_PanelDiv:has(
     #FormContentPlaceHolder_Panel_memberDetails_memberNameLiteralli
 ),
@@ -18479,13 +18550,19 @@ body:has(#FormContentPlaceHolder_Panel_officeDetails_resultsGrid)
 
     grid-template-columns:
         minmax(0, 1.55fr)
-        minmax(300px, 0.85fr) !important;
+        minmax(260px, 0.85fr) !important;
 
     align-items: stretch !important;
 
     gap: 18px !important;
 
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
     margin: 0 0 18px !important;
+
+    box-sizing: border-box !important;
 }
 
 
@@ -19079,6 +19156,10 @@ b:last-of-type {
 
     box-shadow:
         0 6px 18px rgba(23, 53, 72, 0.05) !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
     overflow: hidden !important;
 
@@ -20091,6 +20172,7 @@ a:focus {
         padding: 0 0 11px !important;
     }
 }
+
 
 /* =========================================================
    PORTAL NAVIGATION TOGGLE VISIBILITY FIX
