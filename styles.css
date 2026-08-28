@@ -22669,3 +22669,289 @@ input.button:active {
         border-bottom: 0 !important;
     }
 }
+/* =========================================================
+   MEMBER DETAILS — CONTACT INFORMATION
+   ========================================================= */
+
+/*
+ * RAMCO structure:
+ *
+ * .span5
+ *   email div
+ *   h3 Designations
+ *   designations div
+ *   h3 Contact
+ *   contact div
+ *   h3 Office
+ *   office div
+ *
+ * Convert that fixed RAMCO markup into a clean responsive
+ * contact-information grid.
+ */
+
+#FormContentPlaceHolder_Panel
+.span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli
+) {
+    display: grid !important;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr) !important;
+
+    gap: 12px !important;
+
+    align-content: start !important;
+    align-items: stretch !important;
+
+    min-width: 0 !important;
+
+    padding-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   REMOVE RAMCO'S SEPARATE FIELD HEADINGS
+   ========================================================= */
+
+/*
+ * The h3 headings become separate grid items otherwise.
+ * We replace them with labels directly inside each field
+ * using ::before below.
+ */
+
+#FormContentPlaceHolder_Panel
+.span5:has(
+    > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli
+)
+> h3.desc {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CONTACT FIELD CARDS
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli,
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli,
+#FormContentPlaceHolder_Panel_memberDetails_contactLabelli,
+#FormContentPlaceHolder_Panel_memberDetails_officeLabelli {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+
+    gap: 5px !important;
+
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 13px 14px !important;
+
+    border:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    border-radius: 10px !important;
+
+    background:
+        var(--star-surface, #ffffff) !important;
+
+    box-shadow:
+        0 4px 12px rgba(23, 53, 72, 0.05) !important;
+
+    color:
+        var(--star-text, #25333d) !important;
+
+    line-height: 1.45 !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+}
+
+
+/* =========================================================
+   FIELD LABELS
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli::before,
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli::before,
+#FormContentPlaceHolder_Panel_memberDetails_contactLabelli::before,
+#FormContentPlaceHolder_Panel_memberDetails_officeLabelli::before {
+    display: block !important;
+
+    margin: 0 0 3px !important;
+
+    color:
+        var(--star-text-muted, #64727c) !important;
+
+    font-family:
+        "Poppins",
+        "Open Sans",
+        Verdana,
+        Arial,
+        sans-serif !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+
+    letter-spacing: 0.07em !important;
+    text-transform: uppercase !important;
+}
+
+
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli::before {
+    content: "Email" !important;
+}
+
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli::before {
+    content: "Designations" !important;
+}
+
+#FormContentPlaceHolder_Panel_memberDetails_contactLabelli::before {
+    content: "Contact" !important;
+}
+
+#FormContentPlaceHolder_Panel_memberDetails_officeLabelli::before {
+    content: "Office" !important;
+}
+
+
+/* =========================================================
+   GRID PLACEMENT
+   ========================================================= */
+
+/*
+ * Email can be long, so give it the entire row.
+ */
+
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli {
+    grid-column: 1 / -1 !important;
+}
+
+
+/*
+ * Designations can also contain multiple values.
+ */
+
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli {
+    grid-column: 1 / -1 !important;
+}
+
+
+/*
+ * Contact + Office sit side-by-side.
+ */
+
+#FormContentPlaceHolder_Panel_memberDetails_contactLabelli {
+    grid-column: 1 !important;
+}
+
+#FormContentPlaceHolder_Panel_memberDetails_officeLabelli {
+    grid-column: 2 !important;
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli a {
+    display: block !important;
+
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    color: #006fbd !important;
+
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
+
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+}
+
+
+#FormContentPlaceHolder_Panel_memberDetails_emailLiteralli a:hover {
+    text-decoration: underline !important;
+}
+
+
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabel {
+    display: block !important;
+
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    white-space: normal !important;
+
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+
+#FormContentPlaceHolder_Panel_memberDetails_contactLabel,
+#FormContentPlaceHolder_Panel_memberDetails_officeLabel {
+    display: block !important;
+
+    min-width: 0 !important;
+
+    white-space: nowrap !important;
+
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* Remove legacy label sizing */
+#FormContentPlaceHolder_Panel_memberDetails_designationsLabelli .labeldesc,
+#FormContentPlaceHolder_Panel_memberDetails_contactLabelli .labeldesc,
+#FormContentPlaceHolder_Panel_memberDetails_officeLabelli .labeldesc {
+    width: auto !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    float: none !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    #FormContentPlaceHolder_Panel
+    .span5:has(
+        > #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli
+    ) {
+        grid-template-columns:
+            minmax(0, 1fr) !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        float: none !important;
+
+        padding-right: 0 !important;
+    }
+
+
+    #FormContentPlaceHolder_Panel_memberDetails_emailLiteralli,
+    #FormContentPlaceHolder_Panel_memberDetails_designationsLabelli,
+    #FormContentPlaceHolder_Panel_memberDetails_contactLabelli,
+    #FormContentPlaceHolder_Panel_memberDetails_officeLabelli {
+        grid-column: 1 !important;
+    }
+}
