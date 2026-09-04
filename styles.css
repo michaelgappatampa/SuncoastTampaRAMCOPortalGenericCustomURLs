@@ -14361,40 +14361,68 @@ h3.Summary {
     line-height: 1.75 !important;
 }
 
-
 /* =========================================================
    BACK, CANCEL AND SUBMIT PAYMENT BUTTONS
+   COMPLETE REPLACEMENT
+   ========================================================= */
+
+
+/* =========================================================
+   WIZARD NAVIGATION CONTAINER
    ========================================================= */
 
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli {
+    position: static !important;
+    inset: auto !important;
+
+    display: block !important;
+
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
     margin: 2px 0 0 !important;
     padding: 22px 0 0 !important;
 
-    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    float: none !important;
+    clear: both !important;
 
     box-sizing: border-box !important;
 }
 
+
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli::before,
+
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli::after {
     display: none !important;
     content: none !important;
 }
 
+
+/* =========================================================
+   BUTTON ROW
+   ========================================================= */
+
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
 .button-set {
     display: flex !important;
+    flex-wrap: wrap !important;
+
     align-items: center !important;
     justify-content: flex-end !important;
+
     gap: 10px !important;
 
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -14404,25 +14432,53 @@ body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
     box-sizing: border-box !important;
 }
 
+
+/* =========================================================
+   BACK / CANCEL / SUBMIT PAYMENT
+   ========================================================= */
+
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
 input.button {
+    position: static !important;
+    inset: auto !important;
+
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
     display: inline-flex !important;
+
     align-items: center !important;
     justify-content: center !important;
 
+    float: none !important;
+
     width: auto !important;
     min-width: 110px !important;
+    max-width: 100% !important;
+
     min-height: 44px !important;
 
     margin: 0 !important;
     padding: 10px 19px !important;
 
-    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border:
+        1px solid var(--star-navy, #21465f) !important;
+
     border-radius: 9px !important;
 
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    color: var(--star-navy, #21465f) !important;
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    background-color:
+        var(--star-navy, #21465f) !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
     font-family:
         "Poppins",
@@ -14435,31 +14491,37 @@ input.button {
     font-weight: 700 !important;
     line-height: 1.3 !important;
 
+    text-align: center !important;
+    text-shadow: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    filter: none !important;
+    -webkit-filter: none !important;
+
     cursor: pointer !important;
+
+    box-shadow:
+        0 7px 16px rgba(33, 70, 95, 0.24) !important;
 
     box-sizing: border-box !important;
 
     transition:
         transform 0.12s ease,
+        background-color 0.15s ease,
         border-color 0.15s ease,
         box-shadow 0.15s ease !important;
 }
 
-/* Cancel button. */
-body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
-#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardCancelButton {
-    border-color: rgba(245, 109, 115, 0.30) !important;
 
-    background: var(--star-coral-light, #fff1f2) !important;
-    color: var(--star-coral-dark, #dc5961) !important;
-}
-
-/* Submit Payment button. */
+/* Submit Payment slightly wider */
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardContinueButton {
     min-width: 155px !important;
 
-    border-color: var(--star-navy, #21465f) !important;
+    border-color:
+        var(--star-navy, #21465f) !important;
 
     background:
         linear-gradient(
@@ -14468,27 +14530,126 @@ body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
             var(--star-navy-dark, #173548)
         ) !important;
 
-    color: #ffffff !important;
+    background-color:
+        var(--star-navy, #21465f) !important;
 
-    box-shadow:
-        0 7px 16px rgba(33, 70, 95, 0.24) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
+
+/* =========================================================
+   HOVER / FOCUS
+   ========================================================= */
+
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
-input.button:hover,
+input.button:not(:disabled):hover,
+
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
-input.button:focus {
-    border-color: var(--star-navy-light, #4faec3) !important;
+input.button:not(:disabled):focus {
+    border-color:
+        var(--star-navy-dark, #173548) !important;
+
+    background:
+        var(--star-navy-dark, #173548) !important;
+
+    background-color:
+        var(--star-navy-dark, #173548) !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
 
     transform: translateY(-1px) !important;
 
-    outline: 3px solid rgba(79, 174, 195, 0.17) !important;
+    box-shadow:
+        0 9px 20px rgba(33, 70, 95, 0.30) !important;
+
+    outline:
+        3px solid rgba(79, 174, 195, 0.20) !important;
+
     outline-offset: 2px !important;
 }
 
 
+/* =========================================================
+   PRESSED
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button:not(:disabled):active {
+    transform: translateY(0) !important;
+
+    box-shadow:
+        0 4px 10px rgba(33, 70, 95, 0.22) !important;
+}
+
+
+/* =========================================================
+   DISABLED
+   ========================================================= */
+
+body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button:disabled,
+
+body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button.aspNetDisabled {
+    border-color: #8998a1 !important;
+
+    background: #8998a1 !important;
+    background-color: #8998a1 !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
+
+    filter: none !important;
+
+    cursor: not-allowed !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 767px),
+       screen and (max-device-width: 767px) {
+
+    body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+    .button-set {
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+
+        gap: 10px !important;
+    }
+
+
+    body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+    input.button {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        min-height: 46px !important;
+    }
+}
 /* Hide the unused cancel-confirmation lightbox row. */
 body:has(#FormContentPlaceHolder_Panel_Orders_salesOrderGrid)
 #FormContentPlaceHolder_Panel
