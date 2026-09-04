@@ -13286,38 +13286,59 @@ p.error {
 
 
 /* =========================================================
+   PAYMENT / ADDRESS WIZARD
    BACK, CANCEL AND CONTINUE BUTTONS
    ========================================================= */
 
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+/*
+ * RAMCO can render the payment wizard in multiple stages.
+ * Some stages contain cardTypeDropDown, while the address-only
+ * stage contains SameAsDropDown / Street1Text instead.
+ *
+ * Scope directly to the wizard controls so the styling works
+ * across all of those steps.
+ */
+
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli {
+    display: block !important;
+
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
     margin: 3px 0 0 !important;
     padding: 22px 0 0 !important;
 
-    border-top: 1px solid var(--star-border, #e4e9ec) !important;
+    border-top:
+        1px solid var(--star-border, #e4e9ec) !important;
+
+    float: none !important;
+    clear: both !important;
 
     box-sizing: border-box !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli::before,
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli::after {
     display: none !important;
     content: none !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+
+/* Button row */
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
 .button-set {
     display: flex !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
     justify-content: flex-end !important;
+
     gap: 10px !important;
 
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -13327,12 +13348,24 @@ body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
     box-sizing: border-box !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+
+/* =========================================================
+   SHARED BUTTON BASE
+   ========================================================= */
+
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
 input.button {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+
+    position: static !important;
+    inset: auto !important;
+
+    float: none !important;
 
     width: auto !important;
     min-width: 110px !important;
@@ -13341,11 +13374,23 @@ input.button {
     margin: 0 !important;
     padding: 10px 19px !important;
 
-    border: 1px solid var(--star-border, #e4e9ec) !important;
+    border:
+        1px solid var(--star-navy, #21465f) !important;
+
     border-radius: 9px !important;
 
-    background: var(--star-surface-soft, #f7f9fa) !important;
-    color: var(--star-navy, #21465f) !important;
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    background-color:
+        var(--star-navy, #21465f) !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
     font-family:
         "Poppins",
@@ -13358,33 +13403,33 @@ input.button {
     font-weight: 700 !important;
     line-height: 1.3 !important;
 
+    text-align: center !important;
+    text-shadow: none !important;
+
+    opacity: 1 !important;
+
     cursor: pointer !important;
 
-    box-shadow: none !important;
+    box-shadow:
+        0 6px 15px rgba(23, 53, 72, 0.20) !important;
+
     box-sizing: border-box !important;
 
     transition:
         transform 0.12s ease,
         border-color 0.15s ease,
-        box-shadow 0.15s ease,
-        background-color 0.15s ease !important;
+        background-color 0.15s ease,
+        box-shadow 0.15s ease !important;
 }
 
-/* Cancel button receives a subtle coral treatment. */
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
-#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardCancelButton {
-    border-color: rgba(245, 109, 115, 0.30) !important;
 
-    background: var(--star-coral-light, #fff1f2) !important;
-    color: var(--star-coral-dark, #dc5961) !important;
-}
+/* =========================================================
+   BACK
+   ========================================================= */
 
-/* Continue button. */
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
-#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardContinueButton {
-    min-width: 125px !important;
-
-    border-color: var(--star-navy, #21465f) !important;
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardBackButton {
+    border-color:
+        var(--star-navy, #21465f) !important;
 
     background:
         linear-gradient(
@@ -13394,23 +13439,135 @@ body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
         ) !important;
 
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* =========================================================
+   CANCEL
+   ========================================================= */
+
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardCancelButton {
+    border-color:
+        rgba(245, 109, 115, 0.45) !important;
+
+    background:
+        var(--star-coral-light, #fff1f2) !important;
+
+    background-color:
+        var(--star-coral-light, #fff1f2) !important;
+
+    color:
+        var(--star-coral-dark, #dc5961) !important;
+
+    -webkit-text-fill-color:
+        var(--star-coral-dark, #dc5961) !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   CONTINUE
+   ========================================================= */
+
+/*
+ * RAMCO adds class="active" to Continue.
+ * Override that legacy blue active-button treatment explicitly.
+ */
+
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardContinueButton,
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardContinueButton.active,
+#FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+input.button.active {
+    min-width: 125px !important;
+
+    border-color:
+        var(--star-navy, #21465f) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--star-navy, #21465f),
+            var(--star-navy-dark, #173548)
+        ) !important;
+
+    background-color:
+        var(--star-navy, #21465f) !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
     box-shadow:
         0 7px 16px rgba(33, 70, 95, 0.24) !important;
 }
 
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+
+/* =========================================================
+   HOVER / FOCUS
+   ========================================================= */
+
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
-input.button:hover,
-body:has(#FormContentPlaceHolder_Panel_CCInfo_cardTypeDropDown)
+input.button:not(:disabled):hover,
 #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
-input.button:focus {
-    border-color: var(--star-navy-light, #4faec3) !important;
+input.button:not(:disabled):focus {
+    border-color:
+        var(--star-navy-dark, #173548) !important;
+
+    background:
+        var(--star-navy-dark, #173548) !important;
+
+    background-color:
+        var(--star-navy-dark, #173548) !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
     transform: translateY(-1px) !important;
 
-    outline: 3px solid rgba(79, 174, 195, 0.17) !important;
+    box-shadow:
+        0 8px 18px rgba(23, 53, 72, 0.25) !important;
+
+    outline:
+        3px solid rgba(79, 174, 195, 0.17) !important;
+
     outline-offset: 2px !important;
+}
+
+
+/* Keep Cancel coral on hover */
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardCancelButton:hover,
+#FormContentPlaceHolder_Panel_Panel_WizardNavigation__WizardCancelButton:focus {
+    border-color:
+        var(--star-coral, #f56d73) !important;
+
+    background:
+        var(--star-coral, #f56d73) !important;
+
+    background-color:
+        var(--star-coral, #f56d73) !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 639px) {
+
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+    .button-set {
+        flex-direction: column-reverse !important;
+    }
+
+
+    #FormContentPlaceHolder_Panel_Panel_WizardNavigationli
+    input.button {
+        width: 100% !important;
+    }
 }
 
 
